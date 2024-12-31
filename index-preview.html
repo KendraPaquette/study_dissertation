@@ -889,7 +889,7 @@ dbl (2): outer_split_num, .estimate
 <h2 data-number="2.3" class="anchored" data-anchor-id="results"><span class="header-section-number">2.3</span> Results</h2>
 <section id="demographic-and-clinical-characteristics" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="demographic-and-clinical-characteristics"><span class="header-section-number">2.3.1</span> Demographic and Clinical Characteristics</h3>
-<p>One hundred ninety-two participants were eligible. Of these, 191 consented to participate, and 169 subsequently enrolled in the study. Fifteen participants discontinued before the first monthly follow-up visit. We excluded data from one participant who did not maintain a goal of abstinence during their participation. We also excluded data from two participants due to evidence of careless responding and unusually low compliance. Our final sample consisted of 151 participants (see <strong>?@fig-consort</strong> in the Appendix for more detail on enrollment and disposition).</p>
+<p>One hundred ninety-two participants were eligible. Of these, 191 consented to participate, and 169 subsequently enrolled in the study. Fifteen participants discontinued before the first monthly follow-up visit. We excluded data from one participant who did not maintain a goal of abstinence during their participation. We also excluded data from two participants due to evidence of careless responding and unusually low compliance. Our final sample consisted of 151 participants (see <a href="#fig-consort" class="quarto-xref">Figure&nbsp;6</a> in the Appendix for more detail on enrollment and disposition).</p>
 <p>The final sample included approximately equal numbers of men (N=77; 51.0%) and women (N=74; 49.0%) who ranged in age from 21 - 72 years old. The sample was majority White (N=131; 86.8%) and non-Hispanic (N=147; 97.4%). Participants self-reported a median of 9.0 DSM-5 symptoms of AUD (mean=8.9; SD=1.9; range=4.0-11.0). Most participants (N=84; 55.6%) reported one or more lapses during participation. The median number of lapses per participant while on-study was 1.0 (mean=6.8; SD = 12.0; range=0.0-75.0). <a href="#tbl-dem" class="quarto-xref">Table&nbsp;1</a> provides more detail on demographic and clinical characteristics of the sample.</p>
 <div class="quarto-embed-nb-cell" data-notebook="C:\Users\kpaquette2\study_dissertation\notebooks\tables.qmd" data-notebook-title="Make All Tables for Dissertation" data-notebook-cellid="cell-tbl-dem">
 <div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div class="cell">
@@ -1269,7 +1269,7 @@ Table&nbsp;1: Demographic and Lapse Characteristics
 </section>
 <section id="ema-compliance-features-and-prediction-window-labels" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="ema-compliance-features-and-prediction-window-labels"><span class="header-section-number">2.3.2</span> EMA Compliance, Features, and Prediction Window Labels</h3>
-<p>Participants on average completed 3.1 (SD=0.6) of the four EMAs each day (78.4% compliance overall). Participants completed at least one EMA on 95.0% of days. Across individual weeks on-study, EMA compliance percentages ranged from 75.3%-86.8% completion for all of the 4x daily EMAs and from 91.7%-99.1% for at least one daily EMA completed (see <strong>?@fig-ema-1x</strong> in Appendix).</p>
+<p>Participants on average completed 3.1 (SD=0.6) of the four EMAs each day (78.4% compliance overall). Participants completed at least one EMA on 95.0% of days. Across individual weeks on-study, EMA compliance percentages ranged from 75.3%-86.8% completion for all of the 4x daily EMAs and from 91.7%-99.1% for at least one daily EMA completed (see <a href="#fig-ema-1x" class="quarto-xref">Figure&nbsp;7</a> in Appendix).</p>
 <p>Using these EMA reports, we created datasets with 270,081, 274,179, and 267,287 future prediction windows for the week, day, and hour window widths, respectively. Each dataset contained 286 features and an outcome labeled as <em>lapse</em> or <em>no lapse</em>. These datasets were unbalanced with respect to the outcome such that lapses were observed in 68,467 (25.4%) week windows, 21,107 (7.7%) day windows, and 1,017 (0.4%) hour windows.</p>
 <p>Features had missing values if the participant did not respond to the relevant EMA question during the associated scoring epoch. The median proportions of missing values across features were relatively low: 0.020 (range = 0 - 0.121), 0.022 (range = 0 - 0.125), and 0.023 (range = 0 - 0.127) for the week, day, and hour prediction windows. There were no missing values for demographic features, the hour and day of the start of the prediction window, or lapse rate and missing survey rate features (see Figure S3 for histograms of missingness).</p>
 </section>
@@ -1282,7 +1282,7 @@ Table&nbsp;1: Demographic and Lapse Characteristics
 </section>
 <section id="aurocs-for-full-models" class="level4" data-number="2.3.3.2">
 <h4 data-number="2.3.3.2" class="anchored" data-anchor-id="aurocs-for-full-models"><span class="header-section-number">2.3.3.2</span> auROCs for Full Models</h4>
-<p>We next selected the best <em>full model</em> (which included all features) configurations using auROCs from the <em>validation sets</em>. We evaluated these best full model configurations using <em>test set</em> performance. The median auROC across the 30 test sets was high for the week (median=0.891, IQR=0.043, range=0.785-0.963), day (median=0.899, IQR=0.05, range=0.788-0.969), and hour (median=0.929, IQR=0.045, range=0.847-0.972) prediction windows. <a href="#fig-1-ema" class="quarto-xref">Figure&nbsp;1</a> (left panel) displays the ROC curves by prediction window derived by aggregating predicted lapse probabilities across all test sets. <strong>?@fig-roc-auc</strong> in the Appendix presents the individual ROC curves from each test set.</p>
+<p>We next selected the best <em>full model</em> (which included all features) configurations using auROCs from the <em>validation sets</em>. We evaluated these best full model configurations using <em>test set</em> performance. The median auROC across the 30 test sets was high for the week (median=0.891, IQR=0.043, range=0.785-0.963), day (median=0.899, IQR=0.05, range=0.788-0.969), and hour (median=0.929, IQR=0.045, range=0.847-0.972) prediction windows. <a href="#fig-1-ema" class="quarto-xref">Figure&nbsp;1</a> (left panel) displays the ROC curves by prediction window derived by aggregating predicted lapse probabilities across all test sets. <a href="#fig-roc-auc" class="quarto-xref">Figure&nbsp;9</a> in the Appendix presents the individual ROC curves from each test set.</p>
 <p>The right panel of <a href="#fig-1-ema" class="quarto-xref">Figure&nbsp;1</a> displays posterior probability distributions for the auROC for the full models by prediction window. The median auROCs from these posterior distributions were 0.895 (week), 0.905 (day), and 0.930 (hour). These values represent our best estimates for the magnitude of the auROC parameter for each model. The 95% Bayesian CI for the auROCs for these models were relatively narrow and did not contain 0.5 (chance performance) for any window width: week [0.873-0.913], day [0.885-0.922], hour [0.914-0.942].</p>
 <div class="quarto-embed-nb-cell" data-notebook="C:\Users\kpaquette2\study_dissertation\notebooks\figures.qmd" data-notebook-title="Make All Figures for Dissertation" data-notebook-cellid="cell-fig-1-ema">
 <div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="cell-fig-1-ema" class="cell" data-fig-width="8" data-fig-height="6">
@@ -1312,7 +1312,7 @@ Figure&nbsp;1: ROC curves and posterior probabilities for auROCs by prediction w
 </section>
 <section id="other-performance-metrics-for-the-full-models" class="level4" data-number="2.3.3.5">
 <h4 data-number="2.3.3.5" class="anchored" data-anchor-id="other-performance-metrics-for-the-full-models"><span class="header-section-number">2.3.3.5</span> Other Performance Metrics for the Full Models</h4>
-<p><strong>?@fig-preds</strong> in the Appendix displays histograms for the predicted probabilities of lapse for all observations in the 30 <em>test sets</em> separately by prediction window and true outcome for the full models. We evaluated the sensitivity, specificity, balanced accuracy, PPV, and NPV when these predicted lapse probabilities were used for binary classification (<em>lapse</em> vs.&nbsp;<em>no lapse</em>) with decision thresholds identified by Youden’s Index. All three full models had high sensitivity, specificity, balanced accuracy, and NPV (<a href="#tbl-perf-ema" class="quarto-xref">Table&nbsp;2</a>). PPV, however, notably declined as the prediction window width decreased.</p>
+<p><a href="#fig-preds" class="quarto-xref">Figure&nbsp;10</a> in the Appendix displays histograms for the predicted probabilities of lapse for all observations in the 30 <em>test sets</em> separately by prediction window and true outcome for the full models. We evaluated the sensitivity, specificity, balanced accuracy, PPV, and NPV when these predicted lapse probabilities were used for binary classification (<em>lapse</em> vs.&nbsp;<em>no lapse</em>) with decision thresholds identified by Youden’s Index. All three full models had high sensitivity, specificity, balanced accuracy, and NPV (<a href="#tbl-perf-ema" class="quarto-xref">Table&nbsp;2</a>). PPV, however, notably declined as the prediction window width decreased.</p>
 <div class="quarto-embed-nb-cell" data-notebook="C:\Users\kpaquette2\study_dissertation\notebooks\tables.qmd" data-notebook-title="Make All Tables for Dissertation" data-notebook-cellid="cell-tbl-perf-ema">
 <div class="cell-container"><div class="cell-decorator"><pre>In [7]:</pre></div><div class="cell" data-tbl-footnote="Areas under the receiver operating characteristic curves (auROCs) summarize the model's sensitivity and specificity over all possible decision thresholds. Sensitivity, specificity, balanced accuracy, positive predictive value, and negative predictive value are performance metrics calculated at a single decision threshold for each model determined with Youden’s index. All metrics represent median values across 30 held-out test sets.">
 
@@ -1944,6 +1944,252 @@ Zhou, M., Fukuoka, Y., Mintz, Y., Goldberg, K., Kaminsky, P., Flowers, E., &amp;
 <h1 data-number="5"><span class="header-section-number">5</span> Appendices</h1>
 <section id="chapter-2" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="chapter-2"><span class="header-section-number">5.1</span> Chapter 2</h2>
+<p><a href="#fig-consort" class="quarto-xref">Figure&nbsp;6</a> presents a CONSORT diagram of participant retention at each study milestone.</p>
+<div class="quarto-embed-nb-cell" data-notebook="C:\Users\kpaquette2\study_dissertation\notebooks\ema_supplement.qmd" data-notebook-title="Supplemental Material for EMA Manuscript" data-notebook-cellid="cell-fig-consort">
+<div class="cell-container"><div class="cell-decorator"><pre>In [15]:</pre></div><div id="cell-fig-consort" class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>consort_plot(data <span class="op">=</span> disposition,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>             orders <span class="op">=</span> c(eligible <span class="op">=</span> <span class="st">"Eligible Sample"</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                        consented_reason <span class="op">=</span> <span class="st">"Not Consented"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                        consented <span class="op">=</span> <span class="st">"Consented"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                        enrolled_reason <span class="op">=</span> <span class="st">"Not Enrolled"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                        enrolled <span class="op">=</span> <span class="st">"Enrolled"</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                        completed_followup_reason <span class="op">=</span> <span class="st">"Discontinued"</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                        completed_followup <span class="op">=</span> <span class="st">"Completed through Followup 1"</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>                        analysis_reason <span class="op">=</span> <span class="st">"Excluded"</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>                        analysis <span class="op">=</span> <span class="st">"Final Analysis"</span>),</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>             side_box <span class="op">=</span> c(<span class="st">"consented_reason"</span>, </span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"enrolled_reason"</span>, </span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"completed_followup_reason"</span>,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"analysis_reason"</span>),</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>             cex <span class="op">=</span> <span class="fl">.8</span>,</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>             text_width <span class="op">=</span> <span class="dv">45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-consort" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="hb">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-consort-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
+<a href="index_files/figure-html/notebooks-ema_supplement-fig-consort-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: CONSORT diagram. The diagram depicts participant retention at each study milestone. It also displays reasons for discontinuation when known and reasons for data exclusions."><img src="index_files/figure-html/notebooks-ema_supplement-fig-consort-output-1.png" data-fig-pos="hb" width="672" height="480" class="figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-consort-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: CONSORT diagram. The diagram depicts participant retention at each study milestone. It also displays reasons for discontinuation when known and reasons for data exclusions.
+</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</div>
+<p><a href="#fig-ema-1x" class="quarto-xref">Figure&nbsp;7</a> presents participant EMA completion percentages for at least one daily EMA.</p>
+<div class="quarto-embed-nb-cell" data-notebook="C:\Users\kpaquette2\study_dissertation\notebooks\ema_supplement.qmd" data-notebook-title="Supplemental Material for EMA Manuscript" data-notebook-cellid="cell-fig-ema-1x">
+<div class="cell-container"><div class="cell-decorator"><pre>In [16]:</pre></div><div id="cell-fig-ema-1x" class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>week_compliance_all <span class="op">&lt;-</span> ema_week_compliance_4x <span class="op">|&gt;</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>              mutate(compliance <span class="op">=</span> compliance<span class="op">*</span><span class="dv">100</span>) <span class="op">|&gt;</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>              group_by(week) <span class="op">|&gt;</span> </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>              summarize(mean_compliance <span class="op">=</span> mean(compliance),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                        n <span class="op">=</span> n(),</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                        sd <span class="op">=</span> sd(compliance)) <span class="op">|&gt;</span> </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>              mutate(se <span class="op">=</span> sd<span class="op">/</span>sqrt(n),</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                     signal <span class="op">=</span> <span class="st">"4x Daily"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  bind_rows(ema_week_compliance_1x <span class="op">|&gt;</span> </span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>              mutate(compliance <span class="op">=</span> compliance<span class="op">*</span><span class="dv">100</span>) <span class="op">|&gt;</span> </span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>              group_by(week) <span class="op">|&gt;</span> </span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>              summarize(mean_compliance <span class="op">=</span> mean(compliance),</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>                        n <span class="op">=</span> n(),</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>                        sd <span class="op">=</span> sd(compliance)) <span class="op">|&gt;</span> </span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>              mutate(se <span class="op">=</span> sd<span class="op">/</span>sqrt(n),</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>                     signal <span class="op">=</span> <span class="st">"1x Daily"</span>)) </span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>week_compliance_all <span class="op">|&gt;</span> </span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>  mutate(signal <span class="op">=</span> factor(signal, levels <span class="op">=</span> c(<span class="st">"1x Daily"</span>, <span class="st">"4x Daily"</span>))) <span class="op">|&gt;</span> </span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  group_by(week, signal) <span class="op">|&gt;</span> </span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>  ggplot(aes(x <span class="op">=</span> week, y <span class="op">=</span> mean_compliance, group <span class="op">=</span> signal, shape <span class="op">=</span> signal)) <span class="op">+</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  geom_point(size <span class="op">=</span> <span class="dv">2</span>) <span class="op">+</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>  geom_line() <span class="op">+</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>  geom_errorbar(aes(ymin <span class="op">=</span> mean_compliance <span class="op">-</span> se, ymax <span class="op">=</span> mean_compliance <span class="op">+</span> se), </span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>                width <span class="op">=</span> <span class="fl">.3</span>, linewidth <span class="op">=</span> <span class="fl">.3</span>) <span class="op">+</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>  theme_classic() <span class="op">+</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>  scale_shape_manual(values <span class="op">=</span> c(<span class="dv">19</span>, <span class="dv">1</span>, <span class="dv">17</span>)) <span class="op">+</span></span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>  scale_x_continuous(name <span class="op">=</span> <span class="st">"Week"</span>, </span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>                     breaks <span class="op">=</span> seq(<span class="dv">1</span>, <span class="dv">12</span>, <span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>  scale_y_continuous(name <span class="op">=</span> <span class="st">"Completion percentage"</span>, </span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>                     breaks <span class="op">=</span> seq(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>), </span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>                     limits <span class="op">=</span> c(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="op">+</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>  geom_hline(aes(yintercept <span class="op">=</span> mean_compliance), week_compliance_all <span class="op">|&gt;</span> </span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>               group_by(signal) <span class="op">|&gt;</span> </span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>               summarize(mean_compliance <span class="op">=</span> mean(mean_compliance)),</span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>             linetype <span class="op">=</span> <span class="st">"dashed"</span>, linewidth <span class="op">=</span> <span class="fl">.3</span>) <span class="op">+</span></span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>  theme(legend.title <span class="op">=</span> element_blank(),</span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>        legend.position <span class="op">=</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-ema-1x" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ema-1x-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
+<a href="index_files/figure-html/notebooks-ema_supplement-fig-ema-1x-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: EMA completion by week. The plot depicts completion percentages over time (by week) across the study period for 1x (closed circles) and 4x (open circles) daily EMA. Dashed lines represent mean EMA completion over entire study period for 1x and 4x daily EMA. Error bars represent the standard error for each completion percentage by week."><img src="index_files/figure-html/notebooks-ema_supplement-fig-ema-1x-output-1.png" width="672" height="480" class="figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ema-1x-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: EMA completion by week. The plot depicts completion percentages over time (by week) across the study period for 1x (closed circles) and 4x (open circles) daily EMA. Dashed lines represent mean EMA completion over entire study period for 1x and 4x daily EMA. Error bars represent the standard error for each completion percentage by week.
+</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</div>
+<p><a href="#fig-missing" class="quarto-xref">Figure&nbsp;8</a> presents the proportion of missing data for all features by model.</p>
+<div class="quarto-embed-nb-cell" data-notebook="C:\Users\kpaquette2\study_dissertation\notebooks\ema_supplement.qmd" data-notebook-title="Supplemental Material for EMA Manuscript" data-notebook-cellid="cell-fig-missing">
+<div class="cell-container"><div class="cell-decorator"><pre>In [17]:</pre></div><div id="cell-fig-missing" class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>feat_all <span class="op">|&gt;</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  group_by(width) <span class="op">|&gt;</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  summarize(across(everything(), <span class="op">~</span>mean(<span class="kw">is</span>.na(.x)))) <span class="op">|&gt;</span> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  pivot_longer(cols <span class="op">=</span> c(everything(), <span class="op">-</span>width),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>               names_to <span class="op">=</span> <span class="st">"feature"</span>, values_to <span class="op">=</span> <span class="st">"pct_miss"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  ggplot(aes(x <span class="op">=</span> pct_miss, color <span class="op">=</span> width, fill <span class="op">=</span> width)) <span class="op">+</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  geom_histogram(alpha <span class="op">=</span> <span class="fl">.5</span>, binwidth <span class="op">=</span> <span class="fl">.01</span>) <span class="op">+</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  facet_wrap(<span class="st">"width"</span>) <span class="op">+</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  theme(legend.position <span class="op">=</span> <span class="st">"none"</span>) <span class="op">+</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  xlab(<span class="st">"Proportion of Missing Data"</span>) <span class="op">+</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  ylab(<span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-missing" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
+<a href="index_files/figure-html/notebooks-ema_supplement-fig-missing-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: Histogram of proportion of missing data by model. The plot depicts histograms of the proportion of missing data across the 268 features for each full model (Week, Day, and Hour)."><img src="index_files/figure-html/notebooks-ema_supplement-fig-missing-output-1.png" width="672" height="480" class="figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Histogram of proportion of missing data by model. The plot depicts histograms of the proportion of missing data across the 268 features for each full model (Week, Day, and Hour).
+</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</div>
+<p><a href="#fig-roc-auc" class="quarto-xref">Figure&nbsp;9</a> presents individual ROC curves and AUCs for the 30 held-out test sets.</p>
+<div class="quarto-embed-nb-cell" data-notebook="C:\Users\kpaquette2\study_dissertation\notebooks\ema_supplement.qmd" data-notebook-title="Supplemental Material for EMA Manuscript" data-notebook-cellid="cell-fig-roc-auc">
+<div class="cell-container"><div class="cell-decorator"><pre>In [18]:</pre></div><div id="cell-fig-roc-auc" class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plot_grid(fig_roc_week, fig_auc_week, fig_roc_day, fig_auc_day, fig_roc_hour, fig_auc_hour,</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>          ncol <span class="op">=</span> <span class="dv">2</span>, align <span class="op">=</span> <span class="st">"h"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-roc-auc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-roc-auc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
+<a href="index_files/figure-html/notebooks-ema_supplement-fig-roc-auc-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;9: ROC curves and auROCs by model. The plots on the left depict individual receiver operating characteristic (ROC) curves from each of the 30 test sets. The darker curves represent the aggregate ROC curve derived by concatenating all held out folds. The dotted line represents the expected ROC curve for a random classifier. The histograms on the right depict the distribution of areas under the ROC curves (auROCs) from the same 30 test sets. The rows are organized by model (week, day, hour)."><img src="index_files/figure-html/notebooks-ema_supplement-fig-roc-auc-output-1.png" width="672" height="480" class="figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-roc-auc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: ROC curves and auROCs by model. The plots on the left depict individual receiver operating characteristic (ROC) curves from each of the 30 test sets. The darker curves represent the aggregate ROC curve derived by concatenating all held out folds. The dotted line represents the expected ROC curve for a random classifier. The histograms on the right depict the distribution of areas under the ROC curves (auROCs) from the same 30 test sets. The rows are organized by model (week, day, hour).
+</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</div>
+<p><a href="#fig-preds" class="quarto-xref">Figure&nbsp;10</a> presents histograms for the predicted probabilities of lapse for all observations in the 30 held-out test sets separately by prediction window and true outcome for the full models.</p>
+<div class="quarto-embed-nb-cell" data-notebook="C:\Users\kpaquette2\study_dissertation\notebooks\ema_supplement.qmd" data-notebook-title="Supplemental Material for EMA Manuscript" data-notebook-cellid="cell-fig-preds">
+<div class="cell-container"><div class="cell-decorator"><pre>In [19]:</pre></div><div id="cell-fig-preds" class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>fig_preds_week_lapse <span class="op">&lt;-</span> preds_week <span class="op">|&gt;</span> </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  rename(truth <span class="op">=</span> label) <span class="op">|&gt;</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  mutate(estimate <span class="op">=</span> if_else(prob <span class="op">&lt;</span> <span class="fl">.5</span>, <span class="st">"No lapse"</span>, <span class="st">"Lapse"</span>),</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>         model <span class="op">=</span> <span class="st">"Week"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">filter</span>(truth <span class="op">==</span> <span class="st">"Lapse"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  ggplot(aes(x <span class="op">=</span> prob)) <span class="op">+</span> </span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>   geom_histogram(bins <span class="op">=</span> <span class="dv">15</span>, fill <span class="op">=</span> <span class="st">"#F8766D"</span>, col <span class="op">=</span> <span class="st">"black"</span>, alpha <span class="op">=</span> <span class="fl">.4</span>) <span class="op">+</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>   facet_wrap(<span class="op">~</span>model) <span class="op">+</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>   xlab(<span class="st">"Pr(Lapse)"</span>) <span class="op">+</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  geom_vline(xintercept <span class="op">=</span> j_thres_week, linetype <span class="op">=</span> <span class="st">"dashed"</span>) <span class="op">+</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  scale_y_continuous(labels <span class="op">=</span> scales::comma) <span class="op">+</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  theme(axis.title.x<span class="op">=</span>element_blank(),</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>        axis.text.x<span class="op">=</span>element_blank(),</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>        axis.ticks.x<span class="op">=</span>element_blank()) <span class="op">+</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>  ylab(<span class="st">"Count"</span>)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>fig_preds_week_nolapse <span class="op">&lt;-</span> preds_week <span class="op">|&gt;</span> </span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>  rename(truth <span class="op">=</span> label) <span class="op">|&gt;</span> </span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>  mutate(estimate <span class="op">=</span> if_else(prob <span class="op">&lt;</span> <span class="fl">.5</span>, <span class="st">"No lapse"</span>, <span class="st">"Lapse"</span>),</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>         model <span class="op">=</span> <span class="st">"Week"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>  <span class="bu">filter</span>(truth <span class="op">==</span> <span class="st">"No lapse"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>  ggplot(aes(x <span class="op">=</span> prob)) <span class="op">+</span> </span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>   geom_histogram(bins <span class="op">=</span> <span class="dv">15</span>, fill <span class="op">=</span> <span class="st">"#F8766D"</span>, col <span class="op">=</span> <span class="st">"black"</span>, alpha <span class="op">=</span> <span class="fl">.4</span>) <span class="op">+</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>   xlab(<span class="st">"Pr(Lapse)"</span>) <span class="op">+</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>  geom_vline(xintercept <span class="op">=</span> j_thres_week, linetype <span class="op">=</span> <span class="st">"dashed"</span>) <span class="op">+</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>  scale_y_continuous(labels <span class="op">=</span> scales::comma) <span class="op">+</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>  ylab(<span class="st">"Count"</span>)</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>fig_preds_day_lapse <span class="op">&lt;-</span> preds_day <span class="op">|&gt;</span> </span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>  rename(truth <span class="op">=</span> label) <span class="op">|&gt;</span> </span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>  mutate(estimate <span class="op">=</span> if_else(prob <span class="op">&lt;</span> <span class="fl">.5</span>, <span class="st">"No lapse"</span>, <span class="st">"Lapse"</span>),</span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>         model <span class="op">=</span> <span class="st">"Day"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>  <span class="bu">filter</span>(truth <span class="op">==</span> <span class="st">"Lapse"</span>) <span class="op">|&gt;</span></span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>  ggplot(aes(x <span class="op">=</span> prob)) <span class="op">+</span> </span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>   geom_histogram(bins <span class="op">=</span> <span class="dv">15</span>, fill <span class="op">=</span> <span class="st">"#00BA38"</span>, col <span class="op">=</span> <span class="st">"black"</span>, alpha <span class="op">=</span> <span class="fl">.4</span>) <span class="op">+</span></span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>   facet_wrap(<span class="op">~</span>model) <span class="op">+</span></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>   xlab(<span class="st">"Pr(Lapse)"</span>) <span class="op">+</span></span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>  geom_vline(xintercept <span class="op">=</span> j_thres_day, linetype <span class="op">=</span> <span class="st">"dashed"</span>) <span class="op">+</span></span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>  scale_y_continuous(labels <span class="op">=</span> scales::comma) <span class="op">+</span></span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a>  theme(axis.title.x<span class="op">=</span>element_blank(),</span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>        axis.text.x<span class="op">=</span>element_blank(),</span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>        axis.ticks.x<span class="op">=</span>element_blank()) <span class="op">+</span></span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>  ylab(NULL)</span>
+<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a>fig_preds_day_nolapse <span class="op">&lt;-</span> preds_day <span class="op">|&gt;</span> </span>
+<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a>  rename(truth <span class="op">=</span> label) <span class="op">|&gt;</span> </span>
+<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a>  mutate(estimate <span class="op">=</span> if_else(prob <span class="op">&lt;</span> <span class="fl">.5</span>, <span class="st">"No lapse"</span>, <span class="st">"Lapse"</span>),</span>
+<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a>         model <span class="op">=</span> <span class="st">"Day"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a>  <span class="bu">filter</span>(truth <span class="op">==</span> <span class="st">"No lapse"</span>) <span class="op">|&gt;</span></span>
+<span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a>  ggplot(aes(x <span class="op">=</span> prob)) <span class="op">+</span> </span>
+<span id="cb22-52"><a href="#cb22-52" aria-hidden="true" tabindex="-1"></a>   geom_histogram(bins <span class="op">=</span> <span class="dv">15</span>, fill <span class="op">=</span> <span class="st">"#00BA38"</span>, col <span class="op">=</span> <span class="st">"black"</span>, alpha <span class="op">=</span> <span class="fl">.4</span>) <span class="op">+</span></span>
+<span id="cb22-53"><a href="#cb22-53" aria-hidden="true" tabindex="-1"></a>   xlab(<span class="st">"Pr(Lapse)"</span>) <span class="op">+</span></span>
+<span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a>  geom_vline(xintercept <span class="op">=</span> j_thres_day, linetype <span class="op">=</span> <span class="st">"dashed"</span>) <span class="op">+</span></span>
+<span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a>  scale_y_continuous(labels <span class="op">=</span> scales::comma) <span class="op">+</span></span>
+<span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a>  ylab(NULL)</span>
+<span id="cb22-57"><a href="#cb22-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-58"><a href="#cb22-58" aria-hidden="true" tabindex="-1"></a>fig_preds_hour_lapse <span class="op">&lt;-</span> preds_hour <span class="op">|&gt;</span> </span>
+<span id="cb22-59"><a href="#cb22-59" aria-hidden="true" tabindex="-1"></a>  rename(truth <span class="op">=</span> label) <span class="op">|&gt;</span> </span>
+<span id="cb22-60"><a href="#cb22-60" aria-hidden="true" tabindex="-1"></a>  mutate(estimate <span class="op">=</span> if_else(prob <span class="op">&lt;</span> <span class="fl">.5</span>, <span class="st">"No lapse"</span>, <span class="st">"Lapse"</span>),</span>
+<span id="cb22-61"><a href="#cb22-61" aria-hidden="true" tabindex="-1"></a>         model <span class="op">=</span> <span class="st">"Hour"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb22-62"><a href="#cb22-62" aria-hidden="true" tabindex="-1"></a>  <span class="bu">filter</span>(truth <span class="op">==</span> <span class="st">"Lapse"</span>) <span class="op">|&gt;</span></span>
+<span id="cb22-63"><a href="#cb22-63" aria-hidden="true" tabindex="-1"></a>  ggplot(aes(x <span class="op">=</span> prob)) <span class="op">+</span> </span>
+<span id="cb22-64"><a href="#cb22-64" aria-hidden="true" tabindex="-1"></a>   geom_histogram(bins <span class="op">=</span> <span class="dv">15</span>, fill <span class="op">=</span> <span class="st">"#619CFF"</span>, col <span class="op">=</span> <span class="st">"black"</span>, alpha <span class="op">=</span> <span class="fl">.4</span>) <span class="op">+</span></span>
+<span id="cb22-65"><a href="#cb22-65" aria-hidden="true" tabindex="-1"></a>   facet_grid(truth<span class="op">~</span>model) <span class="op">+</span></span>
+<span id="cb22-66"><a href="#cb22-66" aria-hidden="true" tabindex="-1"></a>   xlab(<span class="st">"Pr(Lapse)"</span>) <span class="op">+</span></span>
+<span id="cb22-67"><a href="#cb22-67" aria-hidden="true" tabindex="-1"></a>  geom_vline(xintercept <span class="op">=</span> j_thres_hour, linetype <span class="op">=</span> <span class="st">"dashed"</span>) <span class="op">+</span></span>
+<span id="cb22-68"><a href="#cb22-68" aria-hidden="true" tabindex="-1"></a>  scale_y_continuous(labels <span class="op">=</span> scales::comma) <span class="op">+</span></span>
+<span id="cb22-69"><a href="#cb22-69" aria-hidden="true" tabindex="-1"></a>  theme(axis.title.x<span class="op">=</span>element_blank(),</span>
+<span id="cb22-70"><a href="#cb22-70" aria-hidden="true" tabindex="-1"></a>        axis.text.x<span class="op">=</span>element_blank(),</span>
+<span id="cb22-71"><a href="#cb22-71" aria-hidden="true" tabindex="-1"></a>        axis.ticks.x<span class="op">=</span>element_blank()) <span class="op">+</span></span>
+<span id="cb22-72"><a href="#cb22-72" aria-hidden="true" tabindex="-1"></a>  ylab(NULL)</span>
+<span id="cb22-73"><a href="#cb22-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-74"><a href="#cb22-74" aria-hidden="true" tabindex="-1"></a>fig_preds_hour_nolapse <span class="op">&lt;-</span> preds_hour <span class="op">|&gt;</span> </span>
+<span id="cb22-75"><a href="#cb22-75" aria-hidden="true" tabindex="-1"></a>  rename(truth <span class="op">=</span> label) <span class="op">|&gt;</span> </span>
+<span id="cb22-76"><a href="#cb22-76" aria-hidden="true" tabindex="-1"></a>  mutate(estimate <span class="op">=</span> if_else(prob <span class="op">&lt;</span> <span class="fl">.5</span>, <span class="st">"No lapse"</span>, <span class="st">"Lapse"</span>),</span>
+<span id="cb22-77"><a href="#cb22-77" aria-hidden="true" tabindex="-1"></a>         model <span class="op">=</span> <span class="st">"Hour"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb22-78"><a href="#cb22-78" aria-hidden="true" tabindex="-1"></a>  <span class="bu">filter</span>(truth <span class="op">==</span> <span class="st">"No lapse"</span>) <span class="op">|&gt;</span></span>
+<span id="cb22-79"><a href="#cb22-79" aria-hidden="true" tabindex="-1"></a>  ggplot(aes(x <span class="op">=</span> prob)) <span class="op">+</span> </span>
+<span id="cb22-80"><a href="#cb22-80" aria-hidden="true" tabindex="-1"></a>   geom_histogram(bins <span class="op">=</span> <span class="dv">15</span>, fill <span class="op">=</span> <span class="st">"#619CFF"</span>, col <span class="op">=</span> <span class="st">"black"</span>, alpha <span class="op">=</span> <span class="fl">.4</span>) <span class="op">+</span></span>
+<span id="cb22-81"><a href="#cb22-81" aria-hidden="true" tabindex="-1"></a>   facet_wrap(<span class="op">~</span>truth, strip.position <span class="op">=</span> <span class="st">"right"</span>) <span class="op">+</span></span>
+<span id="cb22-82"><a href="#cb22-82" aria-hidden="true" tabindex="-1"></a>   xlab(<span class="st">"Pr(Lapse)"</span>) <span class="op">+</span></span>
+<span id="cb22-83"><a href="#cb22-83" aria-hidden="true" tabindex="-1"></a>  geom_vline(xintercept <span class="op">=</span> j_thres_hour, linetype <span class="op">=</span> <span class="st">"dashed"</span>) <span class="op">+</span></span>
+<span id="cb22-84"><a href="#cb22-84" aria-hidden="true" tabindex="-1"></a>  scale_y_continuous(labels <span class="op">=</span> scales::comma) <span class="op">+</span></span>
+<span id="cb22-85"><a href="#cb22-85" aria-hidden="true" tabindex="-1"></a>  ylab(NULL)</span>
+<span id="cb22-86"><a href="#cb22-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-87"><a href="#cb22-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-88"><a href="#cb22-88" aria-hidden="true" tabindex="-1"></a>fig_week <span class="op">&lt;-</span> plot_grid(fig_preds_week_lapse, fig_preds_week_nolapse, ncol <span class="op">=</span> <span class="dv">1</span>, align <span class="op">=</span> <span class="st">"v"</span>)</span>
+<span id="cb22-89"><a href="#cb22-89" aria-hidden="true" tabindex="-1"></a>fig_day <span class="op">&lt;-</span> plot_grid(fig_preds_day_lapse, fig_preds_day_nolapse, ncol <span class="op">=</span> <span class="dv">1</span>, align <span class="op">=</span> <span class="st">"v"</span>)</span>
+<span id="cb22-90"><a href="#cb22-90" aria-hidden="true" tabindex="-1"></a>fig_hour <span class="op">&lt;-</span> plot_grid(fig_preds_hour_lapse, fig_preds_hour_nolapse, ncol <span class="op">=</span> <span class="dv">1</span>, align <span class="op">=</span> <span class="st">"v"</span>)</span>
+<span id="cb22-91"><a href="#cb22-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-92"><a href="#cb22-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-93"><a href="#cb22-93" aria-hidden="true" tabindex="-1"></a>plot_grid(fig_week, fig_day, fig_hour, nrow <span class="op">=</span> <span class="dv">1</span>, rel_widths <span class="op">=</span> c(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">1.1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-preds" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-preds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
+<a href="index_files/figure-html/notebooks-ema_supplement-fig-preds-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;10: Lapse probability predictions by model. The plots above depict predicted probabilities for all observations in the 30 test sets. The columns are organized by model (week, day, hour). The top row depicts estimated lapse probabilities for true lapses. The bottom row depicts estimated lapse probabilities for true no lapses. The dashed vertical lines represent the decision threshold for each model, determined using Youden’s index."><img src="index_files/figure-html/notebooks-ema_supplement-fig-preds-output-1.png" width="672" height="480" class="figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-preds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Lapse probability predictions by model. The plots above depict predicted probabilities for all observations in the 30 test sets. The columns are organized by model (week, day, hour). The top row depicts estimated lapse probabilities for true lapses. The bottom row depicts estimated lapse probabilities for true no lapses. The dashed vertical lines represent the decision threshold for each model, determined using Youden’s index.
+</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</div>
 </section>
 <section id="chapter-3" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="chapter-3"><span class="header-section-number">5.2</span> Chapter 3</h2>

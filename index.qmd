@@ -673,6 +673,24 @@ This study suggests it is possible to predict alcohol lapses up to two weeks int
 
 ## Chapter 2
 
+@fig-consort presents a CONSORT diagram of participant retention at each study milestone. 
 
+{{< embed notebooks/ema_supplement.qmd#fig-consort >}}   
+
+@fig-ema-1x presents participant EMA completion percentages for at least one daily EMA. 
+
+{{< embed notebooks/ema_supplement.qmd#fig-ema-1x >}}
+
+@fig-missing presents the proportion of missing data for all features by model. 
+
+{{< embed notebooks/ema_supplement.qmd#fig-missing >}}
+
+@fig-roc-auc presents individual ROC curves and AUCs for the 30 held-out test sets. 
+
+{{< embed notebooks/ema_supplement.qmd#fig-roc-auc >}}
+
+@fig-preds presents histograms for the predicted probabilities of lapse for all observations in the 30 held-out test sets separately by prediction window and true outcome for the full models.
+
+{{< embed notebooks/ema_supplement.qmd#fig-preds >}}
 
 ## Chapter 3
