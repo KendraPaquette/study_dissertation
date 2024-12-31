@@ -2,23 +2,20 @@
 title: "Supplemental Material for EMA Manuscript"
 subtitle: "Machine learning models for temporally precise lapse prediction in alcohol use disorder"
 author: "Kendra Wyant, Sarah J. Sant'Ana, Gaylen E. Fronk, John J. Curtin"
-date: '`r format(Sys.time(), "%Y-%m-%d")`'
-format: 
-  pdf:
-      text: |
-        \usepackage{caption}
-        \DeclareCaptionLabelFormat{fig}{
-          \textbf{#1 S#2}
-          labelformat=fig
-geometry: margin=.5in
-fontsize: 11pt
+date: "`r lubridate::today()`"
+number-sections: true
+output: 
+  html_document:
+    toc: true 
+    toc_depth: 4
+format:
+  html:
+    embed-resources: true
+    toc: true
+    toc-depth: 4
 editor_options: 
   chunk_output_type: console
-execute:
-  echo: false
-  warning: false
-  message: false
-  output: false
+html-table-processing: none
 ---
 
 This file contains the supplemental materials for *Machine learning models for temporally precise lapse prediction in alcohol use disorder*. It includes a transparency report and all supplemental methods, results, and figures. Additional materials are made available on our study's OSF page ([https://osf.io/w5h9y/](https://osf.io/w5h9y/)).   
