@@ -45,7 +45,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -58,6 +58,9 @@ div.csl-indent {
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <meta name="citation_title" content="Dissertation Proposal">
@@ -932,7 +935,7 @@ Table&nbsp;1: Demographic and Lapse Characteristics
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="ema-compliance-features-and-prediction-window-labels"><span class="header-section-number">2.3.2</span> EMA Compliance, Features, and Prediction Window Labels</h3>
 <p>Participants on average completed 3.1 (SD=0.6) of the four EMAs each day (78.4% compliance overall). Participants completed at least one EMA on 95.0% of days. Across individual weeks on-study, EMA compliance percentages ranged from 75.3%-86.8% completion for all of the 4x daily EMAs and from 91.7%-99.1% for at least one daily EMA completed (see <a href="#fig-ema-1x" class="quarto-xref">Figure&nbsp;7</a> in Appendix).</p>
 <p>Using these EMA reports, we created datasets with 270,081, 274,179, and 267,287 future prediction windows for the week, day, and hour window widths, respectively. Each dataset contained 286 features and an outcome labeled as <em>lapse</em> or <em>no lapse</em>. These datasets were unbalanced with respect to the outcome such that lapses were observed in 68,467 (25.4%) week windows, 21,107 (7.7%) day windows, and 1,017 (0.4%) hour windows.</p>
-<p>Features had missing values if the participant did not respond to the relevant EMA question during the associated scoring epoch. The median proportions of missing values across features were relatively low: 0.020 (range = 0 - 0.121), 0.022 (range = 0 - 0.125), and 0.023 (range = 0 - 0.127) for the week, day, and hour prediction windows. There were no missing values for demographic features, the hour and day of the start of the prediction window, or lapse rate and missing survey rate features (see Figure S3 for histograms of missingness).</p>
+<p>Features had missing values if the participant did not respond to the relevant EMA question during the associated scoring epoch. The median proportions of missing values across features were relatively low: 0.020 (range = 0 - 0.121), 0.022 (range = 0 - 0.125), and 0.023 (range = 0 - 0.127) for the week, day, and hour prediction windows. There were no missing values for demographic features, the hour and day of the start of the prediction window, or lapse rate and missing survey rate features (see <a href="#fig-missing" class="quarto-xref">Figure&nbsp;8</a> in Appendix for histograms of missingness).</p>
 </section>
 <section id="model-performance" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="model-performance"><span class="header-section-number">2.3.3</span> Model Performance</h3>
@@ -1242,7 +1245,7 @@ Figure&nbsp;4: Panel A shows the prediction time points at which our model calcu
 </section>
 <section id="fairness-analyses" class="level5" data-number="3.2.5.4.4">
 <h5 data-number="3.2.5.4.4" class="anchored" data-anchor-id="fairness-analyses"><span class="header-section-number">3.2.5.4.4</span> Fairness Analyses</h5>
-<p>We calculated the median posterior probability and 95% Bayesian CI for auROC for each model separately by race and ethnicity (not White vs.&nbsp;non-Hispanic White), income (below poverty vs.&nbsp;above poverty<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>), and sex at birth (female vs.&nbsp;male). We conducted Bayesian group comparisons to assess the likelihood that each model performs differently by group. We report the median difference and range in posterior probabilities across all models. The median auROC and Bayesian CIs are reported separately by group and model in the supplement.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>We calculated the median posterior probability and 95% Bayesian CI for auROC for each model separately by race and ethnicity (not White vs.&nbsp;non-Hispanic White), income (below poverty vs.&nbsp;above poverty<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>), and sex at birth (female vs.&nbsp;male). We conducted Bayesian group comparisons to assess the likelihood that each model performs differently by group. We report the median difference and range in posterior probabilities across all models. The median auROC and Bayesian CIs are reported separately by group and model in the Appendix.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 </section>
 </section>
 </section>
@@ -1255,7 +1258,7 @@ Figure&nbsp;4: Panel A shows the prediction time points at which our model calcu
 </section>
 <section id="model-evaluation" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="model-evaluation"><span class="header-section-number">3.3.2</span> Model Evaluation</h3>
-<p>Histograms of the full posterior probability distributions for auROC for each model are available in the supplement. The median auROCs from these posterior distributions were 0.892 (baseline), 0.886 (24 hour lag), 0.874 (72 hour lag), 0.869 (168 hour lag), and 0.851 (336 hour lag). These values represent our best estimates for the magnitude of the auROC parameter for each model. The 95% Bayesian CI for the auROCs for these models were relatively narrow and did not contain 0.5: baseline [0.872-0.910], 24 hour lag [0.865-0.905], 72 hour lag [0.851-0.894], 168 hour lag [0.846-0.891], 336 hour lag [0.825-0.874]. Panel A in <a href="#fig-2-lag" class="quarto-xref">Figure&nbsp;5</a> displays these median auROCs and 95% Bayesian CIs by model. A description of feature importance by model is available in the supplement.</p>
+<p>Histograms of the full posterior probability distributions for auROC for each model are available in the Appendix (<a href="#fig-lag-posteriors" class="quarto-xref">Figure&nbsp;11</a>). The median auROCs from these posterior distributions were 0.892 (baseline), 0.886 (24 hour lag), 0.874 (72 hour lag), 0.869 (168 hour lag), and 0.851 (336 hour lag). These values represent our best estimates for the magnitude of the auROC parameter for each model. The 95% Bayesian CI for the auROCs for these models were relatively narrow and did not contain 0.5: baseline [0.872-0.910], 24 hour lag [0.865-0.905], 72 hour lag [0.851-0.894], 168 hour lag [0.846-0.891], 336 hour lag [0.825-0.874]. Panel A in <a href="#fig-2-lag" class="quarto-xref">Figure&nbsp;5</a> displays these median auROCs and 95% Bayesian CIs by model.</p>
 <div class="quarto-embed-nb-cell">
 <div id="cell-fig-2-lag" class="cell" data-fig-width="8" data-fig-height="6">
 <div class="cell-output cell-output-display">
@@ -1360,7 +1363,7 @@ Table&nbsp;3: Median difference in auROC, 95% Bayesian credible interval (CI), a
 </section>
 <section id="fairness-analyses-1" class="level3" data-number="3.3.4">
 <h3 data-number="3.3.4" class="anchored" data-anchor-id="fairness-analyses-1"><span class="header-section-number">3.3.4</span> Fairness Analyses</h3>
-<p>Panels B-D in <a href="#fig-2-lag" class="quarto-xref">Figure&nbsp;5</a> shows the median auROC and credible intervals for each model separately by race (not White; <em>N</em> = 20 vs.&nbsp;Non-Hispanic White; <em>N</em> = 131), sex at birth (female; <em>N</em> = 74 vs.&nbsp;male; <em>N</em> = 77), and income (below poverty; <em>N</em> = 18 vs.&nbsp;above poverty; <em>N</em> = 133). There was strong evidence (probabilities &gt; .98) that our models performed better for the advantaged groups (White, male, above poverty) compared to the disadvantaged groups (not-White, female, below poverty). On average there was a median decrease in auROC of 0.161 (range 0.108-0.175) for participants who were not White compared to non-Hispanic White participants. On average there was a median decrease in auROC of 0.080 (range 0.058-0.116) for female participants compared to male participants. On average there was a median decrease in auROC of 0.092 (range 0.087-0.133) for participants below the federal poverty line compared to participants above the federal poverty line. We also report the median difference in auROC, 95% Bayesian CI, and posterior probability that that the auROC difference was greater than 0 for all comparisons separately by model in the supplement.</p>
+<p>Panels B-D in <a href="#fig-2-lag" class="quarto-xref">Figure&nbsp;5</a> shows the median auROC and credible intervals for each model separately by race (not White; <em>N</em> = 20 vs.&nbsp;Non-Hispanic White; <em>N</em> = 131), sex at birth (female; <em>N</em> = 74 vs.&nbsp;male; <em>N</em> = 77), and income (below poverty; <em>N</em> = 18 vs.&nbsp;above poverty; <em>N</em> = 133). There was strong evidence (probabilities &gt; .98) that our models performed better for the advantaged groups (White, male, above poverty) compared to the disadvantaged groups (not-White, female, below poverty). On average there was a median decrease in auROC of 0.161 (range 0.108-0.175) for participants who were not White compared to non-Hispanic White participants. On average there was a median decrease in auROC of 0.080 (range 0.058-0.116) for female participants compared to male participants. On average there was a median decrease in auROC of 0.092 (range 0.087-0.133) for participants below the federal poverty line compared to participants above the federal poverty line. We also report the median difference in auROC, 95% Bayesian CI, and posterior probability that that the auROC difference was greater than 0 for all comparisons separately by model in <a href="#tbl-fairness" class="quarto-xref">Table&nbsp;4</a> in the Appendix.</p>
 </section>
 </section>
 <section id="discussion-1" class="level2" data-number="3.4">
@@ -1684,6 +1687,40 @@ Figure&nbsp;10: Lapse probability predictions by model. The plots above depict p
 </section>
 <section id="chapter-3" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="chapter-3"><span class="header-section-number">5.2</span> Chapter 3</h2>
+<p><a href="#fig-lag-posteriors" class="quarto-xref">Figure&nbsp;11</a> presents the distribution of posterior probabilities for auROC by model lag.</p>
+<div class="quarto-embed-nb-cell">
+<div id="cell-fig-lag-posteriors" class="cell">
+<div class="cell-output cell-output-display">
+<div id="fig-lag-posteriors" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lag-posteriors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-lag_supplement-fig-lag-posteriors-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;11: The plots above depict the posterior probabilities for the areas under the receiver operating characteristic curves (auROCs) by model lag. Each row represents a model lag (0, 24, 72, 168, and 336 hours)). The solid vertical lines represent the median posterior probability. The horizontal lines represent the 95% CI."><img src="index_files/figure-html/notebooks-lag_supplement-fig-lag-posteriors-output-1.png" width="672" height="480" class="figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lag-posteriors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: The plots above depict the posterior probabilities for the areas under the receiver operating characteristic curves (auROCs) by model lag. Each row represents a model lag (0, 24, 72, 168, and 336 hours)). The solid vertical lines represent the median posterior probability. The horizontal lines represent the 95% CI.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><a href="#tbl-fairness" class="quarto-xref">Table&nbsp;4</a> presents the median difference in auROC, 95% Bayesian CI, and posterior probability that that the auROC difference was greater than 0 for all fairness comparisons separately by model.</p>
+<div class="quarto-embed-nb-cell">
+<div class="cell">
+<div id="tbl-fairness" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fairness-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Model Performance by Demographic Group
+</figcaption>
+<div aria-describedby="tbl-fairness-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 

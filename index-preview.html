@@ -127,7 +127,7 @@
       }      
     </style>
 
-    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script>
     window.document.addEventListener("DOMContentLoaded", function () {
 
       var header = window.document.querySelector("#quarto-embed-header");
@@ -181,7 +181,9 @@
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>  
       <meta name="citation_title" content="Dissertation Proposal">
 <meta name="citation_abstract" content="Insert abstract here
 ">
@@ -1271,7 +1273,7 @@ Table&nbsp;1: Demographic and Lapse Characteristics
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="ema-compliance-features-and-prediction-window-labels"><span class="header-section-number">2.3.2</span> EMA Compliance, Features, and Prediction Window Labels</h3>
 <p>Participants on average completed 3.1 (SD=0.6) of the four EMAs each day (78.4% compliance overall). Participants completed at least one EMA on 95.0% of days. Across individual weeks on-study, EMA compliance percentages ranged from 75.3%-86.8% completion for all of the 4x daily EMAs and from 91.7%-99.1% for at least one daily EMA completed (see <a href="#fig-ema-1x" class="quarto-xref">Figure&nbsp;7</a> in Appendix).</p>
 <p>Using these EMA reports, we created datasets with 270,081, 274,179, and 267,287 future prediction windows for the week, day, and hour window widths, respectively. Each dataset contained 286 features and an outcome labeled as <em>lapse</em> or <em>no lapse</em>. These datasets were unbalanced with respect to the outcome such that lapses were observed in 68,467 (25.4%) week windows, 21,107 (7.7%) day windows, and 1,017 (0.4%) hour windows.</p>
-<p>Features had missing values if the participant did not respond to the relevant EMA question during the associated scoring epoch. The median proportions of missing values across features were relatively low: 0.020 (range = 0 - 0.121), 0.022 (range = 0 - 0.125), and 0.023 (range = 0 - 0.127) for the week, day, and hour prediction windows. There were no missing values for demographic features, the hour and day of the start of the prediction window, or lapse rate and missing survey rate features (see Figure S3 for histograms of missingness).</p>
+<p>Features had missing values if the participant did not respond to the relevant EMA question during the associated scoring epoch. The median proportions of missing values across features were relatively low: 0.020 (range = 0 - 0.121), 0.022 (range = 0 - 0.125), and 0.023 (range = 0 - 0.127) for the week, day, and hour prediction windows. There were no missing values for demographic features, the hour and day of the start of the prediction window, or lapse rate and missing survey rate features (see <a href="#fig-missing" class="quarto-xref">Figure&nbsp;8</a> in Appendix for histograms of missingness).</p>
 </section>
 <section id="model-performance" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="model-performance"><span class="header-section-number">2.3.3</span> Model Performance</h3>
@@ -1587,7 +1589,7 @@ Figure&nbsp;4: Panel A shows the prediction time points at which our model calcu
 </section>
 <section id="fairness-analyses" class="level5" data-number="3.2.5.4.4">
 <h5 data-number="3.2.5.4.4" class="anchored" data-anchor-id="fairness-analyses"><span class="header-section-number">3.2.5.4.4</span> Fairness Analyses</h5>
-<p>We calculated the median posterior probability and 95% Bayesian CI for auROC for each model separately by race and ethnicity (not White vs.&nbsp;non-Hispanic White), income (below poverty vs.&nbsp;above poverty<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>), and sex at birth (female vs.&nbsp;male). We conducted Bayesian group comparisons to assess the likelihood that each model performs differently by group. We report the median difference and range in posterior probabilities across all models. The median auROC and Bayesian CIs are reported separately by group and model in the supplement.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>We calculated the median posterior probability and 95% Bayesian CI for auROC for each model separately by race and ethnicity (not White vs.&nbsp;non-Hispanic White), income (below poverty vs.&nbsp;above poverty<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>), and sex at birth (female vs.&nbsp;male). We conducted Bayesian group comparisons to assess the likelihood that each model performs differently by group. We report the median difference and range in posterior probabilities across all models. The median auROC and Bayesian CIs are reported separately by group and model in the Appendix.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 </section>
 </section>
 </section>
@@ -1600,7 +1602,7 @@ Figure&nbsp;4: Panel A shows the prediction time points at which our model calcu
 </section>
 <section id="model-evaluation" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="model-evaluation"><span class="header-section-number">3.3.2</span> Model Evaluation</h3>
-<p>Histograms of the full posterior probability distributions for auROC for each model are available in the supplement. The median auROCs from these posterior distributions were 0.892 (baseline), 0.886 (24 hour lag), 0.874 (72 hour lag), 0.869 (168 hour lag), and 0.851 (336 hour lag). These values represent our best estimates for the magnitude of the auROC parameter for each model. The 95% Bayesian CI for the auROCs for these models were relatively narrow and did not contain 0.5: baseline [0.872-0.910], 24 hour lag [0.865-0.905], 72 hour lag [0.851-0.894], 168 hour lag [0.846-0.891], 336 hour lag [0.825-0.874]. Panel A in <a href="#fig-2-lag" class="quarto-xref">Figure&nbsp;5</a> displays these median auROCs and 95% Bayesian CIs by model. A description of feature importance by model is available in the supplement.</p>
+<p>Histograms of the full posterior probability distributions for auROC for each model are available in the Appendix (<a href="#fig-lag-posteriors" class="quarto-xref">Figure&nbsp;11</a>). The median auROCs from these posterior distributions were 0.892 (baseline), 0.886 (24 hour lag), 0.874 (72 hour lag), 0.869 (168 hour lag), and 0.851 (336 hour lag). These values represent our best estimates for the magnitude of the auROC parameter for each model. The 95% Bayesian CI for the auROCs for these models were relatively narrow and did not contain 0.5: baseline [0.872-0.910], 24 hour lag [0.865-0.905], 72 hour lag [0.851-0.894], 168 hour lag [0.846-0.891], 336 hour lag [0.825-0.874]. Panel A in <a href="#fig-2-lag" class="quarto-xref">Figure&nbsp;5</a> displays these median auROCs and 95% Bayesian CIs by model.</p>
 <div class="quarto-embed-nb-cell" data-notebook="C:\Users\kpaquette2\study_dissertation\notebooks\figures.qmd" data-notebook-title="Make All Figures for Dissertation" data-notebook-cellid="cell-fig-2-lag">
 <div class="cell-container"><div class="cell-decorator"><pre>In [12]:</pre></div><div id="cell-fig-2-lag" class="cell" data-fig-width="8" data-fig-height="6">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fig_2 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1708,7 +1710,7 @@ Table&nbsp;3: Median difference in auROC, 95% Bayesian credible interval (CI), a
 </section>
 <section id="fairness-analyses-1" class="level3" data-number="3.3.4">
 <h3 data-number="3.3.4" class="anchored" data-anchor-id="fairness-analyses-1"><span class="header-section-number">3.3.4</span> Fairness Analyses</h3>
-<p>Panels B-D in <a href="#fig-2-lag" class="quarto-xref">Figure&nbsp;5</a> shows the median auROC and credible intervals for each model separately by race (not White; <em>N</em> = 20 vs.&nbsp;Non-Hispanic White; <em>N</em> = 131), sex at birth (female; <em>N</em> = 74 vs.&nbsp;male; <em>N</em> = 77), and income (below poverty; <em>N</em> = 18 vs.&nbsp;above poverty; <em>N</em> = 133). There was strong evidence (probabilities &gt; .98) that our models performed better for the advantaged groups (White, male, above poverty) compared to the disadvantaged groups (not-White, female, below poverty). On average there was a median decrease in auROC of 0.161 (range 0.108-0.175) for participants who were not White compared to non-Hispanic White participants. On average there was a median decrease in auROC of 0.080 (range 0.058-0.116) for female participants compared to male participants. On average there was a median decrease in auROC of 0.092 (range 0.087-0.133) for participants below the federal poverty line compared to participants above the federal poverty line. We also report the median difference in auROC, 95% Bayesian CI, and posterior probability that that the auROC difference was greater than 0 for all comparisons separately by model in the supplement.</p>
+<p>Panels B-D in <a href="#fig-2-lag" class="quarto-xref">Figure&nbsp;5</a> shows the median auROC and credible intervals for each model separately by race (not White; <em>N</em> = 20 vs.&nbsp;Non-Hispanic White; <em>N</em> = 131), sex at birth (female; <em>N</em> = 74 vs.&nbsp;male; <em>N</em> = 77), and income (below poverty; <em>N</em> = 18 vs.&nbsp;above poverty; <em>N</em> = 133). There was strong evidence (probabilities &gt; .98) that our models performed better for the advantaged groups (White, male, above poverty) compared to the disadvantaged groups (not-White, female, below poverty). On average there was a median decrease in auROC of 0.161 (range 0.108-0.175) for participants who were not White compared to non-Hispanic White participants. On average there was a median decrease in auROC of 0.080 (range 0.058-0.116) for female participants compared to male participants. On average there was a median decrease in auROC of 0.092 (range 0.087-0.133) for participants below the federal poverty line compared to participants above the federal poverty line. We also report the median difference in auROC, 95% Bayesian CI, and posterior probability that that the auROC difference was greater than 0 for all comparisons separately by model in <a href="#tbl-fairness" class="quarto-xref">Table&nbsp;4</a> in the Appendix.</p>
 </section>
 </section>
 <section id="discussion-1" class="level2" data-number="3.4">
@@ -2193,6 +2195,93 @@ Figure&nbsp;10: Lapse probability predictions by model. The plots above depict p
 </section>
 <section id="chapter-3" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="chapter-3"><span class="header-section-number">5.2</span> Chapter 3</h2>
+<p><a href="#fig-lag-posteriors" class="quarto-xref">Figure&nbsp;11</a> presents the distribution of posterior probabilities for auROC by model lag.</p>
+<div class="quarto-embed-nb-cell" data-notebook="C:\Users\kpaquette2\study_dissertation\notebooks\lag_supplement.qmd" data-notebook-title="Supplemental Material for Lag Manuscript" data-notebook-cellid="cell-fig-lag-posteriors">
+<div class="cell-container"><div class="cell-decorator"><pre>In [20]:</pre></div><div id="cell-fig-lag-posteriors" class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>pp_tidy <span class="op">|&gt;</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  mutate(model <span class="op">=</span> factor(model, levels <span class="op">=</span> c(<span class="st">"lag0"</span>, <span class="st">"lag24"</span>, <span class="st">"lag72"</span>, <span class="st">"lag168"</span>, <span class="st">"lag336"</span>),</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                        labels <span class="op">=</span> c(<span class="st">"0 hours"</span>, <span class="st">"24 hours"</span>, <span class="st">"72 hours"</span>, <span class="st">"168 hours"</span>, <span class="st">"336 hours"</span>))) <span class="op">|&gt;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  ggplot() <span class="op">+</span> </span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  geom_histogram(aes(x <span class="op">=</span> posterior), fill <span class="op">=</span> <span class="st">"light grey"</span>, color <span class="op">=</span> <span class="st">"black"</span>, alpha <span class="op">=</span> <span class="fl">.4</span>, </span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                 bins <span class="op">=</span> <span class="dv">30</span>) <span class="op">+</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  geom_segment(mapping <span class="op">=</span> aes(y <span class="op">=</span> <span class="dv">1200</span>, yend <span class="op">=</span> <span class="dv">1600</span>, x <span class="op">=</span> pp_median, xend <span class="op">=</span> pp_median),</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>               data <span class="op">=</span> ci) <span class="op">+</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  geom_segment(mapping <span class="op">=</span> aes(y <span class="op">=</span> <span class="dv">1400</span>, yend <span class="op">=</span> <span class="dv">1400</span>, x <span class="op">=</span> pp_lower, xend <span class="op">=</span> pp_upper),</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>                data <span class="op">=</span> ci) <span class="op">+</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  facet_wrap(<span class="op">~</span>model, ncol <span class="op">=</span> <span class="dv">1</span>) <span class="op">+</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  scale_y_continuous(<span class="st">"Posterior Probability"</span>, breaks <span class="op">=</span> c(<span class="dv">0</span>, <span class="dv">500</span>, <span class="dv">1000</span>, <span class="dv">1500</span>)) <span class="op">+</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  xlab(<span class="st">"Area Under ROC Curve"</span>) <span class="op">+</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  theme_classic() <span class="op">+</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>  theme(legend.position <span class="op">=</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-lag-posteriors" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lag-posteriors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
+<a href="index_files/figure-html/notebooks-lag_supplement-fig-lag-posteriors-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;11: The plots above depict the posterior probabilities for the areas under the receiver operating characteristic curves (auROCs) by model lag. Each row represents a model lag (0, 24, 72, 168, and 336 hours)). The solid vertical lines represent the median posterior probability. The horizontal lines represent the 95% CI."><img src="index_files/figure-html/notebooks-lag_supplement-fig-lag-posteriors-output-1.png" width="672" height="480" class="figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lag-posteriors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: The plots above depict the posterior probabilities for the areas under the receiver operating characteristic curves (auROCs) by model lag. Each row represents a model lag (0, 24, 72, 168, and 336 hours)). The solid vertical lines represent the median posterior probability. The horizontal lines represent the 95% CI.
+</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</div>
+<p><a href="#tbl-fairness" class="quarto-xref">Table&nbsp;4</a> presents the median difference in auROC, 95% Bayesian CI, and posterior probability that that the auROC difference was greater than 0 for all fairness comparisons separately by model.</p>
+<div class="quarto-embed-nb-cell" data-notebook="C:\Users\kpaquette2\study_dissertation\notebooks\lag_supplement.qmd" data-notebook-title="Supplemental Material for Lag Manuscript" data-notebook-cellid="cell-tbl-fairness">
+<div class="cell-container"><div class="cell-decorator"><pre>In [21]:</pre></div><div class="cell">
+
+<div class="cell-container"><div class="cell-decorator"><pre>In [22]:</pre></div><div><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>pp_sex <span class="op">&lt;-</span> pp_dem_contrast <span class="op">|&gt;</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">filter</span>(contrast <span class="op">==</span> <span class="st">"female vs male"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>   mutate(ci <span class="op">=</span> str_c(<span class="st">"["</span>, <span class="bu">round</span>(lower, <span class="dv">3</span>), <span class="st">", "</span>, <span class="bu">round</span>(upper, <span class="dv">3</span>), <span class="st">"]"</span>),</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>         median <span class="op">=</span> <span class="im">as</span>.character(<span class="bu">round</span>(median, <span class="dv">3</span>)),</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>         probability <span class="op">=</span> <span class="im">as</span>.character(<span class="bu">round</span>(probability, <span class="dv">3</span>))) <span class="op">|&gt;</span> </span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  select(lag, median, ci, probability) <span class="op">|&gt;</span> </span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  rename(`Lag (hours)`<span class="op">=</span> lag,</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>         Median <span class="op">=</span> median,</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>         `Bayesian CI` <span class="op">=</span> ci,</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>         Probability <span class="op">=</span> probability)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>pp_income <span class="op">&lt;-</span> pp_dem_contrast <span class="op">|&gt;</span> </span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  <span class="bu">filter</span>(contrast <span class="op">==</span> <span class="st">"below poverty vs above poverty"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>   mutate(ci <span class="op">=</span> str_c(<span class="st">"["</span>, <span class="bu">round</span>(lower, <span class="dv">3</span>), <span class="st">", "</span>, <span class="bu">round</span>(upper, <span class="dv">3</span>), <span class="st">"]"</span>),</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>         median <span class="op">=</span> <span class="im">as</span>.character(<span class="bu">round</span>(median, <span class="dv">3</span>)),</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>         probability <span class="op">=</span> <span class="im">as</span>.character(<span class="bu">round</span>(probability, <span class="dv">3</span>))) <span class="op">|&gt;</span> </span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  select(lag, median, ci, probability) <span class="op">|&gt;</span> </span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  rename(`Lag (hours)`<span class="op">=</span> lag,</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>         `Median ` <span class="op">=</span> median,</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>         `Bayesian CI ` <span class="op">=</span> ci,</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>         `Probability ` <span class="op">=</span> probability)</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>pp_race <span class="op">&lt;-</span> pp_dem_contrast <span class="op">|&gt;</span> </span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>  <span class="bu">filter</span>(contrast <span class="op">==</span> <span class="st">"not white vs non-hispanic white"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>   mutate(ci <span class="op">=</span> str_c(<span class="st">"["</span>, <span class="bu">round</span>(lower, <span class="dv">3</span>), <span class="st">", "</span>, <span class="bu">round</span>(upper, <span class="dv">3</span>), <span class="st">"]"</span>),</span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>         median <span class="op">=</span> <span class="im">as</span>.character(<span class="bu">round</span>(median, <span class="dv">3</span>)),</span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>         probability <span class="op">=</span> <span class="im">as</span>.character(<span class="bu">round</span>(probability, <span class="dv">3</span>))) <span class="op">|&gt;</span> </span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>  select(lag, median, ci, probability) <span class="op">|&gt;</span> </span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>  rename(`Lag (hours)`<span class="op">=</span> lag,</span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a>         `Median  ` <span class="op">=</span> median,</span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a>         `Bayesian CI  ` <span class="op">=</span> ci,</span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a>         `Probability   ` <span class="op">=</span> probability)</span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a>pp_sex <span class="op">|&gt;</span> </span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a>  full_join(pp_income, by <span class="op">=</span> <span class="st">"Lag (hours)"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a>  full_join(pp_race, by <span class="op">=</span> <span class="st">"Lag (hours)"</span>) <span class="op">|&gt;</span> </span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>  kbl() <span class="op">|&gt;</span> </span>
+<span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a>  add_header_above(c(<span class="st">" "</span> <span class="op">=</span> <span class="dv">1</span>, <span class="st">"Race"</span> <span class="op">=</span> <span class="dv">3</span>, <span class="st">"Sex"</span> <span class="op">=</span> <span class="dv">3</span>, <span class="st">"Income"</span> <span class="op">=</span> <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div><div id="tbl-fairness" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fairness-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Model Performance by Demographic Group
+</figcaption>
+<div aria-describedby="tbl-fairness-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</figure>
+</div></div></div>
+</div></div>
+</div>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
