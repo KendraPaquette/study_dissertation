@@ -313,7 +313,7 @@ table_ci <- ci_baseline |>
 
 ### Table 1: Model Comparisons
 
-```{r tbl-contrast}
+```{r}
 #| label: tbl-contrast-lag
 #| tbl-cap: "Median difference in auROC, 95% Bayesian credible interval (CI), and posterior probability that that the auROC difference was greater than 0 for all baseline and adjacent lag contrasts."
 
