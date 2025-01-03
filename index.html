@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Kendra Wyant">
-<meta name="dcterms.date" content="2024-12-31">
+<meta name="dcterms.date" content="2025-01-03">
 
 <title>Dissertation Proposal</title>
 <style>
@@ -67,10 +67,10 @@ div.csl-indent {
 <meta name="citation_abstract" content="Insert abstract here
 ">
 <meta name="citation_author" content="Kendra Wyant">
-<meta name="citation_publication_date" content="2024-12-31">
-<meta name="citation_cover_date" content="2024-12-31">
-<meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-12-31">
+<meta name="citation_publication_date" content="2025-01-03">
+<meta name="citation_cover_date" content="2025-01-03">
+<meta name="citation_year" content="2025">
+<meta name="citation_online_date" content="2025-01-03">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=2022 National Survey on Drug Use and Health. Public data set.;,citation_journal_title=Substance Abuse and Mental Health Services Administration;,citation_publisher=https://www.samhsa.gov/data/report/2022-nsduh-detailed-tables;">
 <meta name="citation_reference" content="citation_title=Drug Overdose Death Rates  National Institute on Drug Abuse (NIDA);,citation_abstract=The Centers for Disease Control and Prevention collects information on deaths involving many commonly used drugs The CDC’s reporting on deaths by overdose.;,citation_author=National Institute on Drug Abuse;,citation_publication_date=2023-06;,citation_cover_date=2023-06;,citation_year=2023;,citation_language=en-US;,citation_publisher=https://nida.nih.gov/research-topics/trends-statistics/overdose-death-rates;">
@@ -312,7 +312,7 @@ div.csl-indent {
                 <div>
             <div class="quarto-title-meta-heading">Published</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">December 31, 2024</p>
+              <p class="date">January 3, 2025</p>
             </div>
           </div>
           
@@ -423,6 +423,12 @@ div.csl-indent {
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>This dissertation proposal contains three projects that further the goal of an algorithm-guided recovery monitoring and support system. Two projects (chapter 2 and 3) are completed and one project (chapter 4) is a proposed future direction. These projects are explained more below:</p>
+<ul>
+<li><p>Chapter 2: Machine learning models for temporally precise lapse prediction in alcohol use disorder.</p></li>
+<li><p>Chapter 3: Lagged predictions of next week alcohol use for precision mental health support.</p></li>
+<li><p>Chapter 4: State-space models for idiographic risk monitoring and recovery support recommendations.</p></li>
+</ul>
 </section>
 <section id="machine-learning-models-for-temporally-precise-lapse-prediction-in-alcohol-use-disorder" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Machine Learning Models for Temporally Precise Lapse Prediction in Alcohol Use Disorder</h1>
@@ -935,7 +941,7 @@ Table&nbsp;1: Demographic and Lapse Characteristics
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="ema-compliance-features-and-prediction-window-labels"><span class="header-section-number">2.3.2</span> EMA Compliance, Features, and Prediction Window Labels</h3>
 <p>Participants on average completed 3.1 (SD=0.6) of the four EMAs each day (78.4% compliance overall). Participants completed at least one EMA on 95.0% of days. Across individual weeks on-study, EMA compliance percentages ranged from 75.3%-86.8% completion for all of the 4x daily EMAs and from 91.7%-99.1% for at least one daily EMA completed (see <a href="#fig-ema-1x" class="quarto-xref">Figure&nbsp;7</a> in Appendix).</p>
 <p>Using these EMA reports, we created datasets with 270,081, 274,179, and 267,287 future prediction windows for the week, day, and hour window widths, respectively. Each dataset contained 286 features and an outcome labeled as <em>lapse</em> or <em>no lapse</em>. These datasets were unbalanced with respect to the outcome such that lapses were observed in 68,467 (25.4%) week windows, 21,107 (7.7%) day windows, and 1,017 (0.4%) hour windows.</p>
-<p>Features had missing values if the participant did not respond to the relevant EMA question during the associated scoring epoch. The median proportions of missing values across features were relatively low: 0.020 (range = 0 - 0.121), 0.022 (range = 0 - 0.125), and 0.023 (range = 0 - 0.127) for the week, day, and hour prediction windows. There were no missing values for demographic features, the hour and day of the start of the prediction window, or lapse rate and missing survey rate features (see <a href="#fig-missing" class="quarto-xref">Figure&nbsp;8</a> in Appendix for histograms of missingness).</p>
+<p>Features had missing values if the participant did not respond to the relevant EMA question during the associated scoring epoch. The median proportions of missing values across features were relatively low: 0.020 (range = 0 - 0.121), 0.022 (range = 0 - 0.125), and 0.023 (range = 0 - 0.127) for the week, day, and hour prediction windows. There were no missing values for demographic features, the hour and day of the start of the prediction window, or lapse rate and missing survey rate features.</p>
 </section>
 <section id="model-performance" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="model-performance"><span class="header-section-number">2.3.3</span> Model Performance</h3>
@@ -946,7 +952,7 @@ Table&nbsp;1: Demographic and Lapse Characteristics
 </section>
 <section id="aurocs-for-full-models" class="level4" data-number="2.3.3.2">
 <h4 data-number="2.3.3.2" class="anchored" data-anchor-id="aurocs-for-full-models"><span class="header-section-number">2.3.3.2</span> auROCs for Full Models</h4>
-<p>We next selected the best <em>full model</em> (which included all features) configurations using auROCs from the <em>validation sets</em>. We evaluated these best full model configurations using <em>test set</em> performance. The median auROC across the 30 test sets was high for the week (median=0.891, IQR=0.043, range=0.785-0.963), day (median=0.899, IQR=0.05, range=0.788-0.969), and hour (median=0.929, IQR=0.045, range=0.847-0.972) prediction windows. <a href="#fig-1-ema" class="quarto-xref">Figure&nbsp;1</a> (left panel) displays the ROC curves by prediction window derived by aggregating predicted lapse probabilities across all test sets. <a href="#fig-roc-auc" class="quarto-xref">Figure&nbsp;9</a> in the Appendix presents the individual ROC curves from each test set.</p>
+<p>We next selected the best <em>full model</em> (which included all features) configurations using auROCs from the <em>validation sets</em>. We evaluated these best full model configurations using <em>test set</em> performance. The median auROC across the 30 test sets was high for the week (median=0.891, IQR=0.043, range=0.785-0.963), day (median=0.899, IQR=0.05, range=0.788-0.969), and hour (median=0.929, IQR=0.045, range=0.847-0.972) prediction windows. <a href="#fig-1-ema" class="quarto-xref">Figure&nbsp;1</a> (left panel) displays the ROC curves by prediction window derived by aggregating predicted lapse probabilities across all test sets.</p>
 <p>The right panel of <a href="#fig-1-ema" class="quarto-xref">Figure&nbsp;1</a> displays posterior probability distributions for the auROC for the full models by prediction window. The median auROCs from these posterior distributions were 0.895 (week), 0.905 (day), and 0.930 (hour). These values represent our best estimates for the magnitude of the auROC parameter for each model. The 95% Bayesian CI for the auROCs for these models were relatively narrow and did not contain 0.5 (chance performance) for any window width: week [0.873-0.913], day [0.885-0.922], hour [0.914-0.942].</p>
 <div class="quarto-embed-nb-cell">
 <div id="cell-fig-1-ema" class="cell" data-fig-width="8" data-fig-height="6">
@@ -975,7 +981,7 @@ Figure&nbsp;1: ROC curves and posterior probabilities for auROCs by prediction w
 </section>
 <section id="other-performance-metrics-for-the-full-models" class="level4" data-number="2.3.3.5">
 <h4 data-number="2.3.3.5" class="anchored" data-anchor-id="other-performance-metrics-for-the-full-models"><span class="header-section-number">2.3.3.5</span> Other Performance Metrics for the Full Models</h4>
-<p><a href="#fig-preds" class="quarto-xref">Figure&nbsp;10</a> in the Appendix displays histograms for the predicted probabilities of lapse for all observations in the 30 <em>test sets</em> separately by prediction window and true outcome for the full models. We evaluated the sensitivity, specificity, balanced accuracy, PPV, and NPV when these predicted lapse probabilities were used for binary classification (<em>lapse</em> vs.&nbsp;<em>no lapse</em>) with decision thresholds identified by Youden’s Index. All three full models had high sensitivity, specificity, balanced accuracy, and NPV (<a href="#tbl-perf-ema" class="quarto-xref">Table&nbsp;2</a>). PPV, however, notably declined as the prediction window width decreased.</p>
+<p><a href="#fig-preds" class="quarto-xref">Figure&nbsp;8</a> in the Appendix displays histograms for the predicted probabilities of lapse for all observations in the 30 <em>test sets</em> separately by prediction window and true outcome for the full models. We evaluated the sensitivity, specificity, balanced accuracy, PPV, and NPV when these predicted lapse probabilities were used for binary classification (<em>lapse</em> vs.&nbsp;<em>no lapse</em>) with decision thresholds identified by Youden’s Index. All three full models had high sensitivity, specificity, balanced accuracy, and NPV (<a href="#tbl-perf-ema" class="quarto-xref">Table&nbsp;2</a>). PPV, however, notably declined as the prediction window width decreased.</p>
 <div class="quarto-embed-nb-cell">
 <div class="cell" data-tbl-footnote="Areas under the receiver operating characteristic curves (auROCs) summarize the model's sensitivity and specificity over all possible decision thresholds. Sensitivity, specificity, balanced accuracy, positive predictive value, and negative predictive value are performance metrics calculated at a single decision threshold for each model determined with Youden’s index. All metrics represent median values across 30 held-out test sets.">
 <div id="tbl-perf-ema" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-footnote="Areas under the receiver operating characteristic curves (auROCs) summarize the model's sensitivity and specificity over all possible decision thresholds. Sensitivity, specificity, balanced accuracy, positive predictive value, and negative predictive value are performance metrics calculated at a single decision threshold for each model determined with Youden’s index. All metrics represent median values across 30 held-out test sets.">
@@ -1258,7 +1264,7 @@ Figure&nbsp;4: Panel A shows the prediction time points at which our model calcu
 </section>
 <section id="model-evaluation" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="model-evaluation"><span class="header-section-number">3.3.2</span> Model Evaluation</h3>
-<p>Histograms of the full posterior probability distributions for auROC for each model are available in the Appendix (<a href="#fig-lag-posteriors" class="quarto-xref">Figure&nbsp;11</a>). The median auROCs from these posterior distributions were 0.892 (baseline), 0.886 (24 hour lag), 0.874 (72 hour lag), 0.869 (168 hour lag), and 0.851 (336 hour lag). These values represent our best estimates for the magnitude of the auROC parameter for each model. The 95% Bayesian CI for the auROCs for these models were relatively narrow and did not contain 0.5: baseline [0.872-0.910], 24 hour lag [0.865-0.905], 72 hour lag [0.851-0.894], 168 hour lag [0.846-0.891], 336 hour lag [0.825-0.874]. Panel A in <a href="#fig-2-lag" class="quarto-xref">Figure&nbsp;5</a> displays these median auROCs and 95% Bayesian CIs by model.</p>
+<p>Histograms of the full posterior probability distributions for auROC for each model are available in the Appendix (<a href="#fig-lag-posteriors" class="quarto-xref">Figure&nbsp;9</a>). The median auROCs from these posterior distributions were 0.892 (baseline), 0.886 (24 hour lag), 0.874 (72 hour lag), 0.869 (168 hour lag), and 0.851 (336 hour lag). These values represent our best estimates for the magnitude of the auROC parameter for each model. The 95% Bayesian CI for the auROCs for these models were relatively narrow and did not contain 0.5: baseline [0.872-0.910], 24 hour lag [0.865-0.905], 72 hour lag [0.851-0.894], 168 hour lag [0.846-0.891], 336 hour lag [0.825-0.874]. Panel A in <a href="#fig-2-lag" class="quarto-xref">Figure&nbsp;5</a> displays these median auROCs and 95% Bayesian CIs by model.</p>
 <div class="quarto-embed-nb-cell">
 <div id="cell-fig-2-lag" class="cell" data-fig-width="8" data-fig-height="6">
 <div class="cell-output cell-output-display">
@@ -1601,12 +1607,12 @@ Zhou, M., Fukuoka, Y., Mintz, Y., Goldberg, K., Kaminsky, P., Flowers, E., &amp;
 <h2 data-number="5.1" class="anchored" data-anchor-id="chapter-2"><span class="header-section-number">5.1</span> Chapter 2</h2>
 <p><a href="#fig-consort" class="quarto-xref">Figure&nbsp;6</a> presents a CONSORT diagram of participant retention at each study milestone.</p>
 <div class="quarto-embed-nb-cell">
-<div id="cell-fig-consort" class="cell">
+<div id="cell-fig-consort" class="cell" data-fig-width="6" data-fig-height="8">
 <div class="cell-output cell-output-display">
-<div id="fig-consort" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="hb">
+<div id="fig-consort" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-consort-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/notebooks-ema_supplement-fig-consort-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: CONSORT diagram. The diagram depicts participant retention at each study milestone. It also displays reasons for discontinuation when known and reasons for data exclusions."><img src="index_files/figure-html/notebooks-ema_supplement-fig-consort-output-1.png" data-fig-pos="hb" width="672" height="480" class="figure-img"></a>
+<a href="index_files/figure-html/notebooks-ema_supplement-fig-consort-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: CONSORT diagram. The diagram depicts participant retention at each study milestone. It also displays reasons for discontinuation when known and reasons for data exclusions."><img src="index_files/figure-html/notebooks-ema_supplement-fig-consort-output-1.png" width="576" height="768" class="figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-consort-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6: CONSORT diagram. The diagram depicts participant retention at each study milestone. It also displays reasons for discontinuation when known and reasons for data exclusions.
@@ -1633,51 +1639,17 @@ Figure&nbsp;7: EMA completion by week. The plot depicts completion percentages o
 </div>
 </div>
 </div>
-<p><a href="#fig-missing" class="quarto-xref">Figure&nbsp;8</a> presents the proportion of missing data for all features by model.</p>
-<div class="quarto-embed-nb-cell">
-<div id="cell-fig-missing" class="cell">
-<div class="cell-output cell-output-display">
-<div id="fig-missing" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/notebooks-ema_supplement-fig-missing-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: Histogram of proportion of missing data by model. The plot depicts histograms of the proportion of missing data across the 268 features for each full model (Week, Day, and Hour)."><img src="index_files/figure-html/notebooks-ema_supplement-fig-missing-output-1.png" width="672" height="480" class="figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Histogram of proportion of missing data by model. The plot depicts histograms of the proportion of missing data across the 268 features for each full model (Week, Day, and Hour).
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p><a href="#fig-roc-auc" class="quarto-xref">Figure&nbsp;9</a> presents individual ROC curves and AUCs for the 30 held-out test sets.</p>
-<div class="quarto-embed-nb-cell">
-<div id="cell-fig-roc-auc" class="cell">
-<div class="cell-output cell-output-display">
-<div id="fig-roc-auc" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-roc-auc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/notebooks-ema_supplement-fig-roc-auc-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;9: ROC curves and auROCs by model. The plots on the left depict individual receiver operating characteristic (ROC) curves from each of the 30 test sets. The darker curves represent the aggregate ROC curve derived by concatenating all held out folds. The dotted line represents the expected ROC curve for a random classifier. The histograms on the right depict the distribution of areas under the ROC curves (auROCs) from the same 30 test sets. The rows are organized by model (week, day, hour)."><img src="index_files/figure-html/notebooks-ema_supplement-fig-roc-auc-output-1.png" width="672" height="480" class="figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-roc-auc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: ROC curves and auROCs by model. The plots on the left depict individual receiver operating characteristic (ROC) curves from each of the 30 test sets. The darker curves represent the aggregate ROC curve derived by concatenating all held out folds. The dotted line represents the expected ROC curve for a random classifier. The histograms on the right depict the distribution of areas under the ROC curves (auROCs) from the same 30 test sets. The rows are organized by model (week, day, hour).
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p><a href="#fig-preds" class="quarto-xref">Figure&nbsp;10</a> presents histograms for the predicted probabilities of lapse for all observations in the 30 held-out test sets separately by prediction window and true outcome for the full models.</p>
+<p><a href="#fig-preds" class="quarto-xref">Figure&nbsp;8</a> presents histograms for the predicted probabilities of lapse for all observations in the 30 held-out test sets separately by prediction window and true outcome for the full models.</p>
 <div class="quarto-embed-nb-cell">
 <div id="cell-fig-preds" class="cell">
 <div class="cell-output cell-output-display">
 <div id="fig-preds" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-preds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/notebooks-ema_supplement-fig-preds-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;10: Lapse probability predictions by model. The plots above depict predicted probabilities for all observations in the 30 test sets. The columns are organized by model (week, day, hour). The top row depicts estimated lapse probabilities for true lapses. The bottom row depicts estimated lapse probabilities for true no lapses. The dashed vertical lines represent the decision threshold for each model, determined using Youden’s index."><img src="index_files/figure-html/notebooks-ema_supplement-fig-preds-output-1.png" width="672" height="480" class="figure-img"></a>
+<a href="index_files/figure-html/notebooks-ema_supplement-fig-preds-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: Lapse probability predictions by model. The plots above depict predicted probabilities for all observations in the 30 test sets. The columns are organized by model (week, day, hour). The top row depicts estimated lapse probabilities for true lapses. The bottom row depicts estimated lapse probabilities for true no lapses. The dashed vertical lines represent the decision threshold for each model, determined using Youden’s index."><img src="index_files/figure-html/notebooks-ema_supplement-fig-preds-output-1.png" width="672" height="480" class="figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-preds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Lapse probability predictions by model. The plots above depict predicted probabilities for all observations in the 30 test sets. The columns are organized by model (week, day, hour). The top row depicts estimated lapse probabilities for true lapses. The bottom row depicts estimated lapse probabilities for true no lapses. The dashed vertical lines represent the decision threshold for each model, determined using Youden’s index.
+Figure&nbsp;8: Lapse probability predictions by model. The plots above depict predicted probabilities for all observations in the 30 test sets. The columns are organized by model (week, day, hour). The top row depicts estimated lapse probabilities for true lapses. The bottom row depicts estimated lapse probabilities for true no lapses. The dashed vertical lines represent the decision threshold for each model, determined using Youden’s index.
 </figcaption>
 </figure>
 </div>
@@ -1687,17 +1659,17 @@ Figure&nbsp;10: Lapse probability predictions by model. The plots above depict p
 </section>
 <section id="chapter-3" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="chapter-3"><span class="header-section-number">5.2</span> Chapter 3</h2>
-<p><a href="#fig-lag-posteriors" class="quarto-xref">Figure&nbsp;11</a> presents the distribution of posterior probabilities for auROC by model lag.</p>
+<p><a href="#fig-lag-posteriors" class="quarto-xref">Figure&nbsp;9</a> presents the distribution of posterior probabilities for auROC by model lag.</p>
 <div class="quarto-embed-nb-cell">
 <div id="cell-fig-lag-posteriors" class="cell">
 <div class="cell-output cell-output-display">
 <div id="fig-lag-posteriors" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lag-posteriors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/notebooks-lag_supplement-fig-lag-posteriors-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;11: The plots above depict the posterior probabilities for the areas under the receiver operating characteristic curves (auROCs) by model lag. Each row represents a model lag (0, 24, 72, 168, and 336 hours)). The solid vertical lines represent the median posterior probability. The horizontal lines represent the 95% CI."><img src="index_files/figure-html/notebooks-lag_supplement-fig-lag-posteriors-output-1.png" width="672" height="480" class="figure-img"></a>
+<a href="index_files/figure-html/notebooks-lag_supplement-fig-lag-posteriors-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;9: The plots above depict the posterior probabilities for the areas under the receiver operating characteristic curves (auROCs) by model lag. Each row represents a model lag (0, 24, 72, 168, and 336 hours)). The solid vertical lines represent the median posterior probability. The horizontal lines represent the 95% CI."><img src="index_files/figure-html/notebooks-lag_supplement-fig-lag-posteriors-output-1.png" width="672" height="480" class="figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lag-posteriors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: The plots above depict the posterior probabilities for the areas under the receiver operating characteristic curves (auROCs) by model lag. Each row represents a model lag (0, 24, 72, 168, and 336 hours)). The solid vertical lines represent the median posterior probability. The horizontal lines represent the 95% CI.
+Figure&nbsp;9: The plots above depict the posterior probabilities for the areas under the receiver operating characteristic curves (auROCs) by model lag. Each row represents a model lag (0, 24, 72, 168, and 336 hours)). The solid vertical lines represent the median posterior probability. The horizontal lines represent the 95% CI.
 </figcaption>
 </figure>
 </div>

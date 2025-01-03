@@ -215,6 +215,14 @@ lapses_per_subid <- read_csv(here::here(path_processed_lag, "lapse_tibble.csv"),
 
 # Introduction
 
+This dissertation proposal contains three projects that further the goal of an algorithm-guided recovery monitoring and support system. Two projects (chapter 2 and 3) are completed and one project (chapter 4) is a proposed future direction. These projects are explained more below:   
+
+- Chapter 2: Machine learning models for temporally precise lapse prediction in alcohol use disorder.
+
+- Chapter 3: Lagged predictions of next week alcohol use for precision mental health support.
+
+- Chapter 4: State-space models for idiographic risk monitoring and recovery support recommendations.
+
 # Machine Learning Models for Temporally Precise Lapse Prediction in Alcohol Use Disorder
 
 ## Introduction
@@ -363,7 +371,7 @@ Participants on average completed 3.1 (SD=0.6) of the four EMAs each day (78.4% 
 
 Using these EMA reports, we created datasets with `r formatC(nrow(labels_week), big.mark=",")`, `r formatC(nrow(labels_day), big.mark=",")`, and `r formatC(nrow(labels_hour), big.mark=",")` future prediction windows for the week, day, and hour window widths, respectively.  Each dataset contained 286 features and an outcome labeled as *lapse* or *no lapse*. These datasets were unbalanced with respect to the outcome such that lapses were observed in `r formatC(nrow(subset(labels_week, lapse == "yes")), big.mark = ",")` (`r sprintf("%1.1f", nrow(subset(labels_week, lapse == "yes"))/nrow(labels_week)*100)`%) week windows, `r formatC(nrow(subset(labels_day, lapse == "yes")), big.mark = ",")` (`r sprintf("%1.1f", nrow(subset(labels_day, lapse == "yes"))/nrow(labels_day)*100)`%) day windows, and `r formatC(nrow(subset(labels_hour, lapse == "yes")), big.mark = ",")` (`r sprintf("%1.1f", nrow(subset(labels_hour, lapse == "yes"))/nrow(labels_hour)*100)`%) hour windows.
 
-Features had missing values if the participant did not respond to the relevant EMA question during the associated scoring epoch.  The median proportions of missing values across features were relatively low: 0.020  (range = 0 - 0.121), 0.022 (range = 0 - 0.125), and 0.023 (range = 0 - 0.127) for the week, day, and hour prediction windows.  There were no missing values for demographic features, the hour and day of the start of the prediction window, or lapse rate and missing survey rate features (see @fig-missing in Appendix for histograms of missingness).
+Features had missing values if the participant did not respond to the relevant EMA question during the associated scoring epoch.  The median proportions of missing values across features were relatively low: 0.020  (range = 0 - 0.121), 0.022 (range = 0 - 0.125), and 0.023 (range = 0 - 0.127) for the week, day, and hour prediction windows.  There were no missing values for demographic features, the hour and day of the start of the prediction window, or lapse rate and missing survey rate features.
 
 ### Model Performance
 #### auROC for Baseline Models
@@ -372,7 +380,7 @@ We selected the best *baseline model* (previous lapse frequency feature only) co
 We used the 30 test set auROCs to estimate the posterior probability distribution for the auROC of these baseline models.  The median auROCs from these posterior distributions were `r sprintf("%1.3f", ci_baseline |> filter(model=="week_baseline") |> pull(median) |> as.numeric())` (week),  `r sprintf("%1.3f", ci_baseline |> filter(model=="day_baseline") |> pull(median) |> as.numeric())` (day), and `r sprintf("%1.3f", ci_baseline |> filter(model=="hour_baseline") |> pull(median) |> as.numeric())` (hour).  These values represent our best estimates for the magnitude of the auROC parameter for each model.  The 95% Bayesian CI for the auROCs for these models were relatively narrow and did not contain 0.5 (chance performance) for any window width: week [`r sprintf("%1.3f", ci_baseline |> filter(model=="week_baseline") |> pull(lower) |> as.numeric())`-`r sprintf("%1.3f", ci_baseline |> filter(model=="week_baseline") |> pull(upper) |> as.numeric())`], day [`r sprintf("%1.3f", ci_baseline |> filter(model=="day_baseline") |> pull(lower) |> as.numeric())`-`r sprintf("%1.3f", ci_baseline |> filter(model=="day_baseline") |> pull(upper) |> as.numeric())`], hour [`r sprintf("%1.3f", ci_baseline |> filter(model=="hour_baseline") |> pull(lower) |> as.numeric())`-`r sprintf("%1.3f", ci_baseline |> filter(model=="hour_baseline") |> pull(upper) |> as.numeric())`].
 
 #### auROCs for Full Models
-We next selected the best *full model* (which included all features) configurations using auROCs from the *validation sets*. We evaluated these best full model configurations using *test set* performance. The median auROC across the 30 test sets was high for the week (median=`r sprintf("%1.3f", auc_week |> pull(roc_auc) |> median())`, IQR=`r sprintf("%1.3f", auc_week |> pull(roc_auc) |> IQR())`, range=`r sprintf("%1.3f", auc_week |> pull(roc_auc) |> min())`-`r sprintf("%1.3f", auc_week |> pull(roc_auc) |> max())`), day (median=`r sprintf("%1.3f", auc_day |> pull(roc_auc) |> median())`, IQR=`r sprintf("%1.2f", auc_day |> pull(roc_auc) |> IQR())`, range=`r sprintf("%1.3f", auc_day |> pull(roc_auc) |> min())`-`r sprintf("%1.3f", auc_day |> pull(roc_auc) |> max())`), and hour (median=`r sprintf("%1.3f", auc_hour |> pull(roc_auc) |> median())`, IQR=`r sprintf("%1.3f", auc_hour |> pull(roc_auc) |> IQR())`, range=`r sprintf("%1.3f", auc_hour |> pull(roc_auc) |> min())`-`r sprintf("%1.3f", auc_hour |> pull(roc_auc) |> max())`) prediction windows. @fig-1-ema (left panel) displays the ROC curves by prediction window derived by aggregating predicted lapse probabilities across all test sets.  @fig-roc-auc in the Appendix presents the individual ROC curves from each test set.
+We next selected the best *full model* (which included all features) configurations using auROCs from the *validation sets*. We evaluated these best full model configurations using *test set* performance. The median auROC across the 30 test sets was high for the week (median=`r sprintf("%1.3f", auc_week |> pull(roc_auc) |> median())`, IQR=`r sprintf("%1.3f", auc_week |> pull(roc_auc) |> IQR())`, range=`r sprintf("%1.3f", auc_week |> pull(roc_auc) |> min())`-`r sprintf("%1.3f", auc_week |> pull(roc_auc) |> max())`), day (median=`r sprintf("%1.3f", auc_day |> pull(roc_auc) |> median())`, IQR=`r sprintf("%1.2f", auc_day |> pull(roc_auc) |> IQR())`, range=`r sprintf("%1.3f", auc_day |> pull(roc_auc) |> min())`-`r sprintf("%1.3f", auc_day |> pull(roc_auc) |> max())`), and hour (median=`r sprintf("%1.3f", auc_hour |> pull(roc_auc) |> median())`, IQR=`r sprintf("%1.3f", auc_hour |> pull(roc_auc) |> IQR())`, range=`r sprintf("%1.3f", auc_hour |> pull(roc_auc) |> min())`-`r sprintf("%1.3f", auc_hour |> pull(roc_auc) |> max())`) prediction windows. @fig-1-ema (left panel) displays the ROC curves by prediction window derived by aggregating predicted lapse probabilities across all test sets. 
 
 The right panel of @fig-1-ema displays posterior probability distributions for the auROC for the full models by prediction window.  The median auROCs from these posterior distributions were `r sprintf("%1.3f", ci |> filter(model=="Week") |> pull(median) |> as.numeric())` (week),  `r sprintf("%1.3f", ci |> filter(model=="Day") |> pull(median) |> as.numeric())` (day), and `r sprintf("%1.3f", ci |> filter(model=="Hour") |> pull(median) |> as.numeric())` (hour).  These values represent our best estimates for the magnitude of the auROC parameter for each model.  The 95% Bayesian CI for the auROCs for these models were relatively narrow and did not contain 0.5 (chance performance) for any window width: week [`r sprintf("%1.3f", ci |> filter(model=="Week") |> pull(lower) |> as.numeric())`-`r sprintf("%1.3f", ci |> filter(model=="Week") |> pull(upper) |> as.numeric())`], day [`r sprintf("%1.3f", ci |> filter(model=="Day") |> pull(lower) |> as.numeric())`-`r sprintf("%1.3f", ci |> filter(model=="Day") |> pull(upper) |> as.numeric())`], hour [`r sprintf("%1.3f", ci |> filter(model=="Hour") |> pull(lower) |> as.numeric())`-`r sprintf("%1.3f", ci |> filter(model=="Hour") |> pull(upper) |> as.numeric())`].
 
@@ -680,14 +688,6 @@ This study suggests it is possible to predict alcohol lapses up to two weeks int
 @fig-ema-1x presents participant EMA completion percentages for at least one daily EMA. 
 
 {{< embed notebooks/ema_supplement.qmd#fig-ema-1x >}}
-
-@fig-missing presents the proportion of missing data for all features by model. 
-
-{{< embed notebooks/ema_supplement.qmd#fig-missing >}}
-
-@fig-roc-auc presents individual ROC curves and AUCs for the 30 held-out test sets. 
-
-{{< embed notebooks/ema_supplement.qmd#fig-roc-auc >}}
 
 @fig-preds presents histograms for the predicted probabilities of lapse for all observations in the 30 held-out test sets separately by prediction window and true outcome for the full models.
 
