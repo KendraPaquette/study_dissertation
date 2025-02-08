@@ -35,7 +35,7 @@ Of course, these are not the only things needed for a successful recovery monito
 
 ## Aims of this proposal
 
-This dissertation proposal provides an initial line of research for developing an algorithm to be used in a recovery monitoring support system. Two projects (chapters 2 and 3) are completed and one project (chapter 4) is a proposed future direction. These projects are explained more below:
+This dissertation proposal provides an initial line of research for developing an algorithm to be used in a recovery monitoring support system. Two projects (chapters 2 and 3) are completed and two projects (chapters 3 and 4) are proposed future directions. These projects are explained more below:
 
  - **Chapter 2:** Machine learning models for temporally precise lapse prediction in alcohol use disorder 
 
@@ -50,18 +50,26 @@ This dissertation proposal provides an initial line of research for developing a
     This project showed that we could use the same 4x daily EMA to predict alcohol use occurring within a 24-hour window up to two weeks into the future. We considered several meaningful lags for prediction windows: 1 day, 3 days, 1 week, and 2 weeks. These models with lagged prediction windows can also be used to provide personalized support recommendations, but with the added benefit of advanced warning. Thus, giving an individual extra time to implement the recommendation.
 
     The models were promising, however, limitations exist. Most notably was a lack of fairness in the performance of our models between demographic subgroups. Our models performed better for individuals who were White, male, and had a personal income above the Federal poverty line. 
-    
-    Another limitation was the computational expense of building several models to predict probabilities of lapse at varying times in the future. Better yet would be a single model that could look as far into the future as desired.
 
 
-- **Chapter 4:** State-space models for idiographic risk monitoring and recovery support recommendations
+- **Chapter 4:** Using sensing data to predict opioid use in a national sample of patients with opioid use disorder
 
     This project will build on the previous projects and address the noted limitations above in several ways. First and foremost this project will use a new dataset. Data come from a personal sensing study for opioid lapse in a national sample of participants with opioid use disorder. These data offer more diversity with regard to race/ethnicity, income, and geographic location. We expect a more representative dataset will help mitigate some of the fairness discrepancies seen in our race/ethnicity and income subgroup comparisons.
 
     Second, this project will extend the past work to other substance use disorders. While there may be some small differences in risk factors for opioid vs alcohol use disorder. Treatment and continuing care is largely the same. 
 
-    Third, data were collected from individuals for 12 months. This is extended window is critical for understanding the value of algorithm-guided continuing care systems, as recovery is an ongoing process. The longer duration of participation will also give us the chance to experiment with lagged prediction windows further than two weeks into the future.
+    Third, data were collected from individuals for 12 months. This is extended window is critical for understanding the value of algorithm-guided continuing care systems, as recovery is an ongoing process. The longer duration of participation will also give us the chance to experiment with lagged prediction windows further than two weeks into the future (i.e., no lag, 2-week, and 4-week lag).
 
     Fourth, in this proposed project, model features will be derived from two complementary sensing methods: 1X daily EMA and continuous geolocation data. Geolocation is a passive sensing method that could compliment EMA well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the EMA. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people.
 
-    Finally, in this project we will be comparing traditional machine learning methods (used in chapters 2 and 3) with idiographic modeling methods. While traditional machine learning methods are good for modeling high dimensional feature sets intended to capture complex clinical phenomena. There are limitations in their ability to capitalize on the inherent repeated measures nature of the data. Bayesian state-space models may be one promising approach to idiographic prediction models. In this study, we will compare our best machine learning model with our best state-space model to evaluate performance, fairness, and usability of features as intervenable targets for recommendations.
+    An anticipated limitation of the above machine learning approach is the computational expense of building several models to predict probabilities of lapse at varying times in the future. Better yet would be a single model that could look as far into the future as desired.
+    
+    Additionally, while we can engineer features to capture individual change in important predictors, machine learning models remain a nomothetic approach. Given the heterogeneity in lapse risk and the complex interactions between environment and individual differences, an idiographic approach to lapse prediction may be better suited for tailoring recovery support recommendations.
+
+
+- **Chapter 5:** State-space models for idiographic risk monitoring and recovery support recommendations
+
+    Hierarchical Bayesian state-space models may be one promising approach for idiographic prediction models. State-space models model measured inputs (e.g., ema responses, time spent in risky locations, time spent at home) and outputs (i.e., lapse or no lapse) from time series data with latent states. Using state-space models in a Hierarchichal Bayesian framework, allows for key parameters to differ for each participant. Moreover, the latent states can be extracted from the model (e.g., using the Kalman filter) and used for understanding lapse risk and recommending the most appropriate recovery tool. Finally, a single state-space model can be used to make a prediction of a lapse at any point in the future (i.e., for any lapse observation), eliminating the need for multiple models. In this project, we will evaluate the performance and fairness of a state-space model. We will also assess the usability of latent states as intervenable targets for recommendations.
+    
+    
+*Note: I ended up separating the traditional and state space models into separate chapters. I think the discussion chapter will be a good space to make comparisons between the approaches, instead of trying to do it all in one chapter.*
