@@ -1,0 +1,19 @@
+---
+title: "Chapter 4"
+subtitle: "Using sensing data to predict opioid use in a national sample of patients with opioid use disorder"
+format: html
+date: last-modified
+bibliography: references.bib
+---
+
+This project will build on the previous projects and address the noted limitations above in several ways. First and foremost this project will use a new dataset. Data come from a personal sensing study for opioid lapse in a national sample of participants with opioid use disorder. These data offer more diversity with regard to race/ethnicity, income, and geographic location. We expect a more representative dataset will help mitigate some of the fairness discrepancies seen in our race/ethnicity and income subgroup comparisons.
+
+Second, this project will extend the past work to other substance use disorders. While there may be some small differences in risk factors for opioid vs alcohol use disorder. Treatment and continuing care is largely the same. 
+
+Third, data were collected from individuals for 12 months. This is extended window is critical for understanding the value of algorithm-guided continuing care systems, as recovery is an ongoing process. The longer duration of participation will also give us the chance to experiment with lagged prediction windows further than two weeks into the future (i.e., no lag, 2-week, and 4-week lag).
+
+Fourth, in this proposed project, model features will be derived from two complementary sensing methods: 1X daily EMA and continuous geolocation data. Geolocation is a passive sensing method that could compliment EMA well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the EMA. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people.
+
+An anticipated limitation of the above machine learning approach is the computational expense of building several models to predict probabilities of lapse at varying times in the future. Better yet would be a single model that could look as far into the future as desired.
+    
+Additionally, while we can engineer features to capture individual change in important predictors, machine learning models remain a nomothetic approach. Given the heterogeneity in lapse risk and the complex interactions between environment and individual differences, an idiographic approach to lapse prediction may be better suited for tailoring recovery support recommendations.
