@@ -2,3 +2,9 @@
   quarto-pub:
     - id: cce15875-4315-4e7d-ae1c-8e6939c9a3e5
       url: https://kendra-wyant.quarto.pub/chapter-5
+- source: intro.qmd
+  quarto-pub:
+    - id: 1d863e60-e1ff-4db1-8772-ad367881c40e
+      url: https://kendra-wyant.quarto.pub/intro-b7fc
+    - id: f7dd84f7-77e1-4ff6-ae42-29c932d3f1af
+      url: https://kendra-wyant.quarto.pub/intro
