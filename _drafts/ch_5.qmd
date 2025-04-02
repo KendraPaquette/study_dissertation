@@ -42,7 +42,9 @@ State-space models use the observed data to estimate the unknown latent states, 
 
 ### Model Evaluation
 
-We will use participant-grouped 3 repeats of 10-fold cross-validation to assess model performance using area under the ROC curve (auROC). Grouped cross-validation assigns assigns all data from a participant into a single fold. Data from individuals in the held-in folds will be used to fit prior distributions for the model parameters. Idiographic models will then be fir to each individual in the held-out fold.
+We will use participant-grouped 3 repeats of 10-fold cross-validation to assess model performance using area under the ROC curve (auROC). Grouped cross-validation assigns assigns all data from a participant into a single fold. Data from individuals in the held-in folds will be used to fit prior distributions for the model parameters. Idiographic models will then be fit to each individual in the held-out fold.
+
+We will attach group-level Bayesian priors generated from the remaining participants to help prevent over-fitting and improve stability of the models' performance. 
 
 
 Notes:   
