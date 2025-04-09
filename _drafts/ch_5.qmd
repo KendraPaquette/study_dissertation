@@ -8,20 +8,13 @@ bibliography: references.bib
 
 # Introduction
 
-Lapse risk is multidimensional. The extant relapse prevention literature suggests relapse is preceeded by a complex interplay of factors, including include emotional or cognitive states, environmental contingencies, and physiological states. 
+Lapse risk is multidimensional. The extant relapse prevention literature suggests relapse is preceeded by a complex interplay of factors, including include emotional or cognitive states, environmental contingencies, and physiological states<!--cite sources-->. For reasons related to burden and cost, researchers typically rely on a handful of course categories of risk-relevant features (e.g., self-reported craving, self-reported self-efficacy, geolocation-sensed time spent in risky locations) to model an unknown hidden state of an individual (i.e., their true lapse risk).
 
-Lapse risk factors differ between individuals and within an individual over time.
+Moreover, lapse risk factors differ between individuals and within an individual over time. Personalized models (i.e., a model built for a specific individual using their own data) that make use of time-varying information in repeated measures may be able to better understand between and within subject differences in lapse risk trajectories, leading to more accurate predictions.  
 
-These components make it difficult to succinctly and definitively measure lapse risk. Instead, course categories of risk-relevant features (e.g., self-reported craving, self-reported self-efficacy, geolocation-sensed time spent in risky locations) are measured as a proxy for the unknown hidden state of an individual (i.e., their true lapse risk).
+State-space models may be one approach for modeling the multidimensional, heterogeneous, and time-varying construct of lapse risk. State-space models are time series models that describe the relationship between the observed measured inputs and the unknown latent state while accounting for how this latent state evolves over time. They personalize lapse risk prediction by using an individual's own data to make future predictions about lapse risk for that single individual. Furthermore, predictions can be made at any point into the future at a single prediction timepoint from a single model. These individual models that integrate time-varying information could improve performance for our lagged prediction models. Thay may also help mitigate issues of unfairness, as the model will weigh the individual's own data more heavily than group level estimates. 
 
-State-space models model the relationship between the observed measured inputs and the unknown latent state while accounting for how this latent state evolves over time for a specific individual. State-space models consist of: 
-
-1. A transition (or state) equation that describes how the latent state evolves over time based on its previous state and observed inputs (current ema?). 
-    
-2. An observation equation that describes the functional relationship between the unobserved, latent states and observed inputs.
-
-In this project, we will use a hierarchichal Gaussian linear state-space model (also known as a dynamic linear model) to make idiographic predictions of lapse risk. The hierarchical framework allows the key model parameters to differ for each individual while still keeping parameter values within a distribution of possible values expected for the given population. We will also assign prior distributions to all individual- and population-level model parameters, consistent with a Bayesian approach.
-
+In this study, we will evaluate the performance and fairness of a hierarchichal Gaussian linear state-space model (also known as a dynamic linear model) for opioid lapse risk prediction using the EMA and geolocation data set introduced in Chapter 4. We will evaluate both immediate (i.e., in the next 24 hours) and future (i.e., next 2 weeks and next 1 month) lapse risk. We will also assess the usability of latent states as intervenable targets for recommendations.
 
 # Methods
 
@@ -29,29 +22,36 @@ In this project, we will use a hierarchichal Gaussian linear state-space model (
 
 ### State-space Model
 
-The transition equation describes how the unknown latent state evolves over time. The observation equation describes the relationship between the unknown latent state and the observed inputs. For both models, we will use a linear formula with Gaussian noise.
+State-space models consist of 1. a transition (or state) equation that describes how the latent state evolves over time based on its previous state and observed inputs (current ema?), and 2. an observation equation that describes the functional relationship between the unobserved, latent states and observed inputs.
+
+For both equations, we will use a linear formula with Gaussian noise.
 
 **Transition equation:** $x_{t+1} = A*x_{t} + w_t$, where $x_{t+1}$ represents the hidden state at the next timepoint, $A$ is the state transition matrix, $x_{t}$ is the hidden state at the current timepoint, and $w_t$ is zero mean Gaussian noise. 
 
 **Observation equation:** $y_t = C*x_t + v_t$, where $y_t$ is the observed EMA and Geolocation inputs, $C$ is the observation matrix, $x_t$ is the hidden state at the current timepoint and $v_t$ is zero mean Gaussian noise. 
 
-We will use a Bayseian fitting approach called maximum a posteriori (MAP) estimation to establish prior distributions for the model parameters: transition matrix ($A$), observation matrix ($C$), and noise ($w_t$,$v_t$). These priors will be established from held-in data. Parameters and noise variance will be estimated for each individual in the held out data. Thus, model priors will be combined with observed data from a new individual to fit an idiographic model for that individual. When few data for the individual are available, the fit will rely more heavily on the prior distributions for the model parameters. As more data become available the model fit will primarily the participant’s data and the influence of the prior distributions diminishes.   
+We will also assign prior distributions to all individual- and population-level model parameters, consistent with a Bayesian approach. We will use a Bayseian fitting approach called maximum a posteriori (MAP) estimation to establish prior distributions for the model parameters: transition matrix ($A$), observation matrix ($C$), and noise ($w_t$,$v_t$). These priors will be established from held-in data. Parameters and noise variance will be estimated for each individual in the held out data. Thus, model priors will be combined with observed data from a new individual to fit an idiographic model for that individual. When few data for the individual are available, the fit will rely more heavily on the prior distributions for the model parameters. As more data become available the model fit will primarily the participant’s data and the influence of the prior distributions diminishes.   
 
 State-space models use the observed data to estimate the unknown latent states, not to directly predict the outcome label. Therefore, state-space models can handle missing data without the need for imputation.
 
 
 ### Model Evaluation
 
-We will use participant-grouped 3 repeats of 10-fold cross-validation to assess model performance using area under the ROC curve (auROC). Grouped cross-validation assigns assigns all data from a participant into a single fold. Data from individuals in the held-in folds will be used to fit prior distributions for the model parameters. Idiographic models will then be fit to each individual in the held-out fold.
+We will use participant-grouped 3 repeats of 10-fold cross-validation to assess model performance using area under the ROC curve (auROC). Grouped cross-validation assigns assigns all data from a participant into a single fold. Data from individuals in the held-in folds will be used to fit prior distributions for the model parameters. Idiographic models will then be fit to each individual in the held-out fold. 
 
 We will attach group-level Bayesian priors generated from the remaining participants to help prevent over-fitting and improve stability of the models' performance. 
 
-
-Notes:   
-Use all available data or sliding windows? (Eric's paper suggest SSM doesn't really out perform ML models until at least 60 days of data.) - maybe in both ch. 4 and 5 show figure of auROC by month on study (up to 12 months)?
+We will assess model performance for three different lag-times (i.e., time between prediction timepoint and start of the prediction window) - no lag (i.e., immediate predictions), 2-week lag, and 1-month lag.
 
 
-Lags = no lag, 2 weeks, and 4 weeks? A single state-space model can be used to make a prediction of a lapse at any point in the future (i.e., for any lapse observation), eliminating the need for multiple models.
+**Outstanding questions:**    
+
+Our model will not start making predictions until participants have at least 2 weeks (?) of data. Models probably won't be doing very good then at the beginning. Eric's models didn't outperform xgboost until at least 30 days of data - acknowledge this as limitation for model being used in recovery monitoring support system.
+
+All available data will up until the prediction timepoint will be used (?). Refit models everyday before making next predictions? (Eric used sliding windows of data)
+
+Maybe in both ch. 4 and 5 show figure of auROC by month on study (up to 12 months)?
+
 
 
 ### Latent States for Personalized Recovery Support Recommendations
