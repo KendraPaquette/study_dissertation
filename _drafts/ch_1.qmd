@@ -79,7 +79,7 @@ A few other limitations were inherent in the data set. First, was the length of 
 
 **Chapter 4:** Using sensing data to predict opioid lapse risk in a national sample of patients with opioid use disorder
 
-In this study, I will take advantage of an existing dataset of personal sensing data (1X daily EMA and geolocation) and opioid lapse reports from a national sample of people with opioid use disorder to predict immediate (i.e., in the next 24 hours) lapses back to opioid use. 
+In this study, we will take advantage of an existing dataset of personal sensing data (1X daily EMA and geolocation) and opioid lapse reports from a national sample of people with opioid use disorder to predict immediate (i.e., in the next 24 hours) lapses back to opioid use. 
 
 This study will allow us to generalize lapse prediction algorithms to other drugs beyond alcohol. Notably, a successful model will demonstrate that lapse prediction can be done with a drug where its use is illegal and people may be less willing to provide information about lapses and risk factors. 
     

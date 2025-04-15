@@ -6,14 +6,24 @@ date: last-modified
 bibliography: references.bib
 ---
 
-This project will build on the previous projects and address the noted limitations above in several ways. First and foremost this project will use a new dataset. Data come from a personal sensing study for opioid lapse in a national sample of participants with opioid use disorder. These data offer more diversity with regard to race/ethnicity, income, and geographic location. We expect a more representative dataset will help mitigate some of the fairness discrepancies seen in our race/ethnicity and income subgroup comparisons.
+# Introduction
 
-Second, this project will extend the past work to other substance use disorders. While there may be some small differences in risk factors for opioid vs alcohol use disorder. Treatment and continuing care is largely the same. 
+- More features would improve personalization
+- Differences between alcohol and other drug reporting
 
-Third, data were collected from individuals for 12 months. This is extended window is critical for understanding the value of algorithm-guided continuing care systems, as recovery is an ongoing process. The longer duration of participation will also give us the chance to experiment with lagged prediction windows further than two weeks into the future (i.e., no lag, 2-week, and 4-week lag).
 
-Fourth, in this proposed project, model features will be derived from two complementary sensing methods: 1X daily EMA and continuous geolocation data. Geolocation is a passive sensing method that could compliment EMA well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the EMA. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people.
 
-An anticipated limitation of the above machine learning approach is the computational expense of building several models to predict probabilities of lapse at varying times in the future. Better yet would be a single model that could look as far into the future as desired.
-    
-Additionally, while we can engineer features to capture individual change in important predictors, machine learning models remain a nomothetic approach. Given the heterogeneity in lapse risk and the complex interactions between environment and individual differences, an idiographic approach to lapse prediction may be better suited for tailoring recovery support recommendations.
+
+# Specific Aims
+
+In this study, we will take advantage of an existing dataset of personal sensing data (1X daily EMA and geolocation) and opioid lapse reports from a national sample of people with opioid use disorder to predict immediate (i.e., in the next 24 hours) lapses back to opioid use. 
+
+Specifically, we will:
+
+**1. Evaluate the performance (auROC) of a machine learning model that predicts opioid lapses from geolocation and 1X daily EMA.** This aim will allow us to determine whether lapse prediction models can be generalized to other drugs beyond alcohol. Notably, a successful model will demonstrate that lapse prediction can be done with a drug where its use is illegal and people may be less willing to provide information about lapses and risk factors. 
+
+**2. Assess model fairness in performance across important subgroups with known disparities in substance use treatment access and/or outcomes - race/ethnicity (not White vs. non-Hispanic White), income (below poverty vs. above poverty), sex at birth (female vs. male), and geographic location (rural vs. urban).** These data offer more diversity with regard to race/ethnicity, income, and geographic location. This aim will allow us to determine if improving the quality of the training data with respect to diversity is sufficient to address issues of fairness.  
+
+**3. Describe the relative importance of features on model performance.** Model features will be derived from two complementary sensing methods: 1X daily EMA and continuous geolocation data. Geolocation sensing, a passive sensing method, could compliment EMA well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the EMA. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people. This aim will help determine whether a sufficient number of unique important features emerge from these data.
+
+# Methods

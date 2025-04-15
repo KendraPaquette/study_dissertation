@@ -12,9 +12,27 @@ Lapse risk is multidimensional. The extant relapse prevention literature suggest
 
 Moreover, lapse risk factors differ between individuals and within an individual over time. Personalized models (i.e., a model built for a specific individual using their own data) that make use of time-varying information in repeated measures may be able to better understand between and within subject differences in lapse risk trajectories, leading to more accurate predictions.  
 
-State-space models may be one approach for modeling the multidimensional, heterogeneous, and time-varying construct of lapse risk. State-space models are time series models that describe the relationship between the observed measured inputs and the unknown latent state while accounting for how this latent state evolves over time. They personalize lapse risk prediction by using an individual's own data to make future predictions about lapse risk for that single individual. Furthermore, predictions can be made at any point into the future at a single prediction timepoint from a single model. These individual models that integrate time-varying information could improve performance for our lagged prediction models. Thay may also help mitigate issues of unfairness, as the model will weigh the individual's own data more heavily than group level estimates. 
+State-space models may be one approach for modeling the multidimensional, heterogeneous, and time-varying construct of lapse risk. State-space models are time series models that describe the relationship between the observed measured inputs and the unknown latent state while accounting for how this latent state evolves over time. They personalize lapse risk prediction by using an individual's own data to make future predictions about lapse risk for that single individual. Furthermore, predictions can be made at any point into the future at a single prediction timepoint from a single model. These individual models that integrate time-varying information could improve performance for our lagged prediction models. They may also help mitigate issues of unfairness, as the model will weigh the individual's own data more heavily than group level estimates. 
 
-In this study, we will evaluate the performance and fairness of a hierarchichal Gaussian linear state-space model (also known as a dynamic linear model) for opioid lapse risk prediction using the EMA and geolocation data set introduced in Chapter 4. We will evaluate both immediate (i.e., in the next 24 hours) and future (i.e., next 2 weeks and next 1 month) lapse risk. We will also assess the usability of latent states as intervenable targets for recommendations.
+
+# Specific Aims
+In this study, we will evaluate the performance, fairness, and usability of a hierarchichal Gaussian linear state-space model (also known as a dynamic linear model) for opioid lapse risk prediction using the EMA and geolocation data set introduced in Chapter 4. 
+
+Specifically, we will:
+
+**1. Evaluate model performance (auROC) for predicting immediate (next day) opioid use.**
+
+- look at performance over time on study (by month)
+- first month wait till 4 days of data and then refit after each week till hit 1 month
+- then update monthly
+- Will visually show performance by month on study (compare to xgboost which will probably be pretty consistent?)
+
+**2. Use the same model from aim 1 to evaluate its performance for predicting future lapse risk (next two weeks and next 1 month).**
+
+**3. Assess fairness in performance of the model for predicting immediate and future lapse risk across the same important subgroups - race/ethnicity (not White vs. non-Hispanic White), income (below poverty vs. above poverty), sex at birth (female vs. male), and geographic location (rural vs. urban).**
+
+**4. Assess the usability of latent states as intervenable targets for recommendations.**
+
 
 # Methods
 
