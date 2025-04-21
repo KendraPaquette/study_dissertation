@@ -36,6 +36,10 @@ Specifically, we will:
 
 # Methods
 
+## Data
+
+- refer to chapter 3 for description of data
+
 ## Planned Data Analyses
 
 ### State-space Model

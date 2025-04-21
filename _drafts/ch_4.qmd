@@ -1,6 +1,6 @@
 ---
 title: "Chapter 4"
-subtitle: "Using sensing data to predict opioid use in a national sample of patients with opioid use disorder"
+subtitle: "Using sensing data to predict opioid lapse risk in a national sample of patients with opioid use disorder"
 format: html
 date: last-modified
 bibliography: references.bib
@@ -8,10 +8,15 @@ bibliography: references.bib
 
 # Introduction
 
+Studies show high agreement between recent (i.e., 1-4 days) self-report and biological markers (i.e., urine, saliva, hair) of drug use [@bharatAgreementSelfreportedIllicit2023]. This suggests people may be willing to report illicit substance use behaviors. 
+
+However, it is unclear if people in recovery from substance use disorders, other than alcohol, can sustain long-term adherence (e.g., one year or more) needed for a recovery monitoring support system that uses self-report data. It is also unclear whether people in recovery can or are willing to accurately report other risk information. 
+
+Additionally, models that only use self-report information could 
+
 - More features would improve personalization
-- Differences between alcohol and other drug reporting
 
-
+This project will use daily surveys and sensed geolocation for up to one year from people in recovery for opioid use disorder.
 
 
 # Specific Aims
@@ -27,3 +32,25 @@ Specifically, we will:
 **3. Describe the relative importance of features on model performance.** Model features will be derived from two complementary sensing methods: 1X daily EMA and continuous geolocation data. Geolocation sensing, a passive sensing method, could compliment EMA well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the EMA. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people. This aim will help determine whether a sufficient number of unique important features emerge from these data.
 
 # Methods
+
+## Participants
+
+## Procedure
+
+## Measures
+
+### Individual Characteristics
+
+### Daily Surveys
+
+### Monthly Surveys
+
+### Sensed Geolocation
+
+## Planned Data Analyses
+
+### Labels
+
+### Feature Engineering
+
+### Model Training and Evaluation
