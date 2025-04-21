@@ -4,36 +4,57 @@ subtitle: "Using sensing data to predict opioid lapse risk in a national sample 
 format: html
 date: last-modified
 bibliography: references.bib
+editor_options: 
+  chunk_output_type: console
 ---
+
+```{r}
+#| echo: false
+
+library(tidyverse) |> 
+  suppressMessages()
+
+options(knitr.kable.NA = '')
+```
+
 
 # Introduction
 
 Studies show high agreement between recent (i.e., 1-4 days) self-report and biological markers (i.e., urine, saliva, hair) of drug use [@bharatAgreementSelfreportedIllicit2023]. This suggests people may be willing to report illicit substance use behaviors. 
 
-However, it is unclear if people in recovery from substance use disorders, other than alcohol, can sustain long-term adherence (e.g., one year or more) needed for a recovery monitoring support system that uses self-report data. It is also unclear whether people in recovery can or are willing to accurately report other risk information. 
+However, it is unclear if people in recovery from substance use disorders, other than alcohol, can sustain long-term adherence (e.g., one year or more) needed for a recovery monitoring support system that uses self-report data. Previous studies examining adherence to frequent self-report prompts among people with illicit substance use disorders have typically only prompted for 7-30 days [@jonesComplianceEcologicalMomentary2019] (except @kennedySexDifferencesCocaine2013 prompted for 175 days and found 75% adherence).
 
-Additionally, models that only use self-report information could 
+It is also unclear whether people in recovery from illicit substance use disorders can, or are willing to, accurately report other risk information needed to develop accurate prediction models. For example, people with substance use disorder may experience greater instability in their day-to-day lives (e.g., stigma or legal consequences may make access to healthcare, stable housing, or supportive relationships more difficult). This instability could make it difficult to recall and report recent behaviors and events promptly or accurately. It may also skew their baseline perception of what constitutes a risky or stressful experience. 
 
-- More features would improve personalization
+Supplementing self-report data with passively sensed data (e.g., geolocation) could make up for imprecise reports of risk factors or be used for lapse prediction during periods of non-adherence to self-report surveys. Additionally, more data will produce more features that could allow for better personalization of support recommendations.
 
-This project will use daily surveys and sensed geolocation for up to one year from people in recovery for opioid use disorder.
-
+This project will use daily surveys and sensed geolocation for up to one year from a national sample of people with opioid use disorder to predict immediate (i.e., in the next 24 hours) lapses back to opioid use. 
 
 # Specific Aims
 
-In this study, we will take advantage of an existing dataset of personal sensing data (1X daily EMA and geolocation) and opioid lapse reports from a national sample of people with opioid use disorder to predict immediate (i.e., in the next 24 hours) lapses back to opioid use. 
+In this study, we will expand our previous modeling procedure to opioid use disorder and evaluate performance, fairness, and top features for predicting opioid lapse risk.
 
 Specifically, we will:
 
-**1. Evaluate the performance (auROC) of a machine learning model that predicts opioid lapses from geolocation and 1X daily EMA.** This aim will allow us to determine whether lapse prediction models can be generalized to other drugs beyond alcohol. Notably, a successful model will demonstrate that lapse prediction can be done with a drug where its use is illegal and people may be less willing to provide information about lapses and risk factors. 
+**1. Evaluate the performance (auROC) of a machine learning model that predicts opioid lapses from geolocation and daily surveys.** This aim will allow us to determine whether lapse prediction models can be generalized to other drugs beyond alcohol. Notably, a successful model will demonstrate that lapse prediction can be done with a drug where its use is illegal and people may be less willing to provide information about lapses and risk factors. It will also show the feasibility of using self-report data over long periods of reocvery (i.e., 12 months).
 
 **2. Assess model fairness in performance across important subgroups with known disparities in substance use treatment access and/or outcomes - race/ethnicity (not White vs. non-Hispanic White), income (below poverty vs. above poverty), sex at birth (female vs. male), and geographic location (rural vs. urban).** These data offer more diversity with regard to race/ethnicity, income, and geographic location. This aim will allow us to determine if improving the quality of the training data with respect to diversity is sufficient to address issues of fairness.  
 
-**3. Describe the relative importance of features on model performance.** Model features will be derived from two complementary sensing methods: 1X daily EMA and continuous geolocation data. Geolocation sensing, a passive sensing method, could compliment EMA well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the EMA. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people. This aim will help determine whether a sufficient number of unique important features emerge from these data.
+**3. Describe the relative importance of features on model performance.** Model features will be derived from two complementary sensing methods: daily surveys and continuous geolocation data. Geolocation sensing, a passive sensing method, could compliment daily surveys well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the daily surveys. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people. This aim will help determine whether a sufficient number of unique important features emerge from these data.
 
 # Methods
 
 ## Participants
+We recruited participants in early recovery from opioid use disorder. Participants were recruited through print and targeted digital advertisements (craigslist, reddit, Facebook) and partnerships with MOUD treatment centers. We required that participants:  
+
+1. were age 18 or older,
+2. could write, speak, and read in English,
+3. enrolled in an MOUD treatment program (for at least one month but not longer than 12 months) and adherent (taken daily medication every day or nearly every day in past month) or enrolled in or recently completed an intensive outpatient treatment program for opioid use disorder,
+4. had a goal of abstinence from opioids,
+5. had an android smartphone that they were willing to use as their single phone for duration of the study, and
+6. had active cellular plan that they were willing to maintain for duration of the study.
+
+Participants were considered enrolled in the study if they were eligible, consented, and provided data for at least one month. A total of 336 participants enrolled in the study. We excluded data from one participant whose geolocation data showed they did not reside in the US. We also excluded 11 participants due to careless responding on the daily surveys and/or lapses reported nearly every day on study, suggesting they did not have a goal of abstinence. Our final sample consisted of 324 participants.
 
 ## Procedure
 
@@ -54,3 +75,92 @@ Specifically, we will:
 ### Feature Engineering
 
 ### Model Training and Evaluation
+
+# Results
+
+## Participant Characteristics
+
+The table below presents the demographic and clinical characteristics of the 324 participants in our analysis sample.
+
+```{r}
+#| echo: false
+#| message: false
+
+dem <- read_csv(here::here("data/risk2_dem.csv"),
+                show_col_types = FALSE) |> 
+  rename(` ` = `...1`)
+
+dem |> 
+  knitr::kable(digits = 1) |> 
+  kableExtra::kable_classic() |> 
+  kableExtra::group_rows(start_row = 2, end_row = 8) |> 
+  kableExtra::group_rows(start_row = 10, end_row = 14) |> 
+  kableExtra::group_rows(start_row = 16, end_row = 20) |> 
+  kableExtra::group_rows(start_row = 22, end_row = 28) |> 
+  kableExtra::group_rows(start_row = 30, end_row = 35) |> 
+  kableExtra::group_rows(start_row = 37, end_row = 42) |> 
+  kableExtra::group_rows(start_row = 44, end_row = 51) |> 
+  kableExtra::group_rows(start_row = 53, end_row = 54) |> 
+  kableExtra::group_rows(start_row = 57, end_row = 60) |> 
+  kableExtra::group_rows(start_row = 62, end_row = 66) |> 
+  kableExtra::group_rows(start_row = 68, end_row = 69)
+```
+
+## Adherence
+The median time on study for participants was 354 days (range 31-416 days). @fig-disp shows proportion of participants that remained on study over the 12 months. 
+
+```{r}
+#| label: fig-disp
+#| echo: false
+
+disposition <- read_csv(here::here("data/risk2_disp.csv"),
+                show_col_types = FALSE)
+
+disposition |> 
+  group_by(month) |> 
+  ggplot(aes(x = month, y = prop)) +
+  geom_point() +
+  geom_line() +
+  theme_classic() +
+  scale_x_continuous(name = "Month", 
+                     breaks = seq(1, 12, 1)) +
+  scale_y_continuous(name = "Proportion of participants retained on study", 
+                     breaks = seq(0, 1, .1), 
+                     limits = c(0, 1)) +
+  labs(title = "Participant Attrition by month (N enrolled = 324)") +
+  theme(legend.title = element_blank()) 
+```
+
+On average participants completed the daily surveys on 71.4% of study days. Adherence to daily surveys drops slightly in the first three months on study and then remains stable for the remaining 9 months (@fig-adher). Additionally, participants completed, on average, 96.4% of the monthly surveys.
+
+```{r}
+#| label: fig-adher
+#| echo: false
+
+adherence <- read_csv(here::here("data/risk2_ema_adherence.csv"),
+                show_col_types = FALSE)
+
+adherence |> 
+  group_by(month) |> 
+  summarize(mean_adherence = mean(adherence)) |> 
+  ggplot(aes(x = month, y = mean_adherence)) +
+  geom_point() +
+  geom_line() +
+  theme_classic() +
+  scale_x_continuous(name = "Month", 
+                     breaks = seq(1, 12, 1)) +
+  scale_y_continuous(name = "Adherence", 
+                     breaks = seq(0, 1, .1), 
+                     limits = c(0, 1)) +
+  labs(title = "Daily update adherence over time (N = 336) ") +
+  theme(legend.title = element_blank()) +
+  geom_hline(aes(yintercept = mean(mean_adherence)), linetype = "dashed", linewidth = .3)
+```
+
+<!--report proportion of participants who provided some geolocation data-->
+
+## Model Performance
+
+## Model Fairness
+
+## Feature Importance

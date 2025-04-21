@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="ch_4_files/libs/clipboard/clipboard.min.js"></script>
@@ -30,10 +50,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="ch_4_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="ch_4_files/libs/quarto-html/anchor.min.js"></script>
 <link href="ch_4_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="ch_4_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="ch_4_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="ch_4_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="ch_4_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="ch_4_files/libs/bootstrap/bootstrap-c0367b04c37547644fece4185067e4a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="ch_4_files/libs/bootstrap/bootstrap-8a79a254b8e706d3c925cde0a310d4f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="ch_4_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="ch_4_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 </head>
@@ -47,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Chapter 4</h1>
-<p class="subtitle lead">Using sensing data to predict opioid use in a national sample of patients with opioid use disorder</p>
+<p class="subtitle lead">Using sensing data to predict opioid lapse risk in a national sample of patients with opioid use disorder</p>
 </div>
 
 
@@ -72,24 +96,34 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<ul>
-<li>More features would improve personalization</li>
-<li>longer duration</li>
-<li>Differences between alcohol and other drug reporting</li>
-</ul>
+<p>Studies show high agreement between recent (i.e., 1-4 days) self-report and biological markers (i.e., urine, saliva, hair) of drug use <span class="citation" data-cites="bharatAgreementSelfreportedIllicit2023">(<a href="#ref-bharatAgreementSelfreportedIllicit2023" role="doc-biblioref">Bharat et al. 2023</a>)</span>. This suggests people may be willing to report illicit substance use behaviors.</p>
+<p>However, it is unclear if people in recovery from substance use disorders, other than alcohol, can sustain long-term adherence (e.g., one year or more) needed for a recovery monitoring support system that uses self-report data. Previous studies examining adherence to frequent self-report prompts among people with illicit substance use disorders have typically only prompted for 7-30 days <span class="citation" data-cites="jonesComplianceEcologicalMomentary2019">(<a href="#ref-jonesComplianceEcologicalMomentary2019" role="doc-biblioref">Jones et al. 2019</a>)</span> (except <span class="citation" data-cites="kennedySexDifferencesCocaine2013">Kennedy et al. (<a href="#ref-kennedySexDifferencesCocaine2013" role="doc-biblioref">2013</a>)</span> prompted for 175 days and found 75% adherence).</p>
+<p>It is also unclear whether people in recovery from illicit substance use disorders can, or are willing to, accurately report other risk information needed to develop accurate prediction models. For example, people with substance use disorder may experience greater instability in their day-to-day lives (e.g., stigma or legal consequences may make access to healthcare, stable housing, or supportive relationships more difficult). This instability could make it difficult to recall and report recent behaviors and events promptly or accurately. It may also skew their baseline perception of what constitutes a risky or stressful experience.</p>
+<p>Supplementing self-report data with passively sensed data (e.g., geolocation) could make up for imprecise reports of risk factors or be used for lapse prediction during periods of non-adherence to self-report surveys. Additionally, more data will produce more features that could allow for better personalization of support recommendations.</p>
+<p>This project will use daily surveys and sensed geolocation for up to one year from a national sample of people with opioid use disorder to predict immediate (i.e., in the next 24 hours) lapses back to opioid use.</p>
 </section>
 <section id="specific-aims" class="level1">
 <h1>Specific Aims</h1>
-<p>In this study, we will take advantage of an existing dataset of personal sensing data (1X daily EMA and geolocation) and opioid lapse reports from a national sample of people with opioid use disorder to predict immediate (i.e., in the next 24 hours) lapses back to opioid use.</p>
+<p>In this study, we will expand our previous modeling procedure to opioid use disorder and evaluate performance, fairness, and top features for predicting opioid lapse risk.</p>
 <p>Specifically, we will:</p>
-<p><strong>1. Evaluate the performance (auROC) of a machine learning model that predicts opioid lapses from geolocation and 1X daily EMA.</strong> This aim will allow us to determine whether lapse prediction models can be generalized to other drugs beyond alcohol. Notably, a successful model will demonstrate that lapse prediction can be done with a drug where its use is illegal and people may be less willing to provide information about lapses and risk factors.</p>
+<p><strong>1. Evaluate the performance (auROC) of a machine learning model that predicts opioid lapses from geolocation and daily surveys.</strong> This aim will allow us to determine whether lapse prediction models can be generalized to other drugs beyond alcohol. Notably, a successful model will demonstrate that lapse prediction can be done with a drug where its use is illegal and people may be less willing to provide information about lapses and risk factors. It will also show the feasibility of using self-report data over long periods of reocvery (i.e., 12 months).</p>
 <p><strong>2. Assess model fairness in performance across important subgroups with known disparities in substance use treatment access and/or outcomes - race/ethnicity (not White vs.&nbsp;non-Hispanic White), income (below poverty vs.&nbsp;above poverty), sex at birth (female vs.&nbsp;male), and geographic location (rural vs.&nbsp;urban).</strong> These data offer more diversity with regard to race/ethnicity, income, and geographic location. This aim will allow us to determine if improving the quality of the training data with respect to diversity is sufficient to address issues of fairness.</p>
-<p><strong>3. Describe the relative importance of features on model performance.</strong> Model features will be derived from two complementary sensing methods: 1X daily EMA and continuous geolocation data. Geolocation sensing, a passive sensing method, could compliment EMA well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the EMA. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people. This aim will help determine whether a sufficient number of unique important features emerge from these data.</p>
+<p><strong>3. Describe the relative importance of features on model performance.</strong> Model features will be derived from two complementary sensing methods: daily surveys and continuous geolocation data. Geolocation sensing, a passive sensing method, could compliment daily surveys well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the daily surveys. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people. This aim will help determine whether a sufficient number of unique important features emerge from these data.</p>
 </section>
 <section id="methods" class="level1">
 <h1>Methods</h1>
 <section id="participants" class="level2">
 <h2 class="anchored" data-anchor-id="participants">Participants</h2>
+<p>We recruited participants in early recovery from opioid use disorder. Participants were recruited through print and targeted digital advertisements (craigslist, reddit, Facebook) and partnerships with MOUD treatment centers. We required that participants:</p>
+<ol type="1">
+<li>were age 18 or older,</li>
+<li>could write, speak, and read in English,</li>
+<li>enrolled in an MOUD treatment program (for at least one month but not longer than 12 months) and adherent (taken daily medication every day or nearly every day in past month) or enrolled in or recently completed an intensive outpatient treatment program for opioid use disorder,</li>
+<li>had a goal of abstinence from opioids,</li>
+<li>had an android smartphone that they were willing to use as their single phone for duration of the study, and</li>
+<li>had active cellular plan that they were willing to maintain for duration of the study.</li>
+</ol>
+<p>Participants were considered enrolled in the study if they were eligible, consented, and provided data for at least one month. A total of 336 participants enrolled in the study. We excluded data from one participant whose geolocation data showed they did not reside in the US. We also excluded 11 participants due to careless responding on the daily surveys and/or lapses reported nearly every day on study, suggesting they did not have a goal of abstinence. Our final sample consisted of 324 participants.</p>
 </section>
 <section id="procedure" class="level2">
 <h2 class="anchored" data-anchor-id="procedure">Procedure</h2>
@@ -122,8 +156,682 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<section id="participant-characteristics" class="level2">
+<h2 class="anchored" data-anchor-id="participant-characteristics">Participant Characteristics</h2>
+<p>The table below presents the demographic and clinical characteristics of the 324 participants in our analysis sample.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="lightable-classic caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">N</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">%</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">M</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">SD</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even" data-grouplength="7">
+<td colspan="6" style="text-align: left; border-bottom: 0;"><strong></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">18-21</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">22-25</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">26-35</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">37.0</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">36-45</td>
+<td style="text-align: right;">115</td>
+<td style="text-align: right;">35.5</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">46-55</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">19.1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">56-65</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Over 65</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gender</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd" data-grouplength="5">
+<td colspan="6" style="text-align: left; border-bottom: 0;"><strong></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Man</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">54.0</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Non-binary</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Not listed above</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Prefer not to say</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Woman</td>
+<td style="text-align: right;">142</td>
+<td style="text-align: right;">43.8</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Orientation</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even" data-grouplength="5">
+<td colspan="6" style="text-align: left; border-bottom: 0;"><strong></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Bisexual</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">13.0</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Lesbian or gay</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">5.2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Not listed above</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Not sure</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Straight, that is, not gay or lesbian</td>
+<td style="text-align: right;">258</td>
+<td style="text-align: right;">79.6</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Race or Origin (Select all that apply)</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd" data-grouplength="7">
+<td colspan="6" style="text-align: left; border-bottom: 0;"><strong></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">American Indian or Alaska Native</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">5.9</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Asian</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Black or African American</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">16.4</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Hispanic, Latino, or Spanish Origin</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">9.0</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Native Hawaiian or Other Pacific Islander</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.9</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Not Listed Above</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">White or Caucasian</td>
+<td style="text-align: right;">251</td>
+<td style="text-align: right;">77.5</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Education</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even" data-grouplength="6">
+<td colspan="6" style="text-align: left; border-bottom: 0;"><strong></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">8th grade or less</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Some high school, but did not graduate</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">8.6</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">High school graduate or GED</td>
+<td style="text-align: right;">102</td>
+<td style="text-align: right;">31.5</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Some college or 2-year degree</td>
+<td style="text-align: right;">140</td>
+<td style="text-align: right;">43.2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">4-year college graduate</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">10.2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">More than 4-year or advanced degree</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Employment</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even" data-grouplength="6">
+<td colspan="6" style="text-align: left; border-bottom: 0;"><strong></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Disabled, not able to work</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">11.1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Employed, working 1-39 hours per week</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Employed, working 40 or more hours per week</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">18.5</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Not employed, NOT looking for work</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">10.2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Not employed, looking for work</td>
+<td style="text-align: right;">116</td>
+<td style="text-align: right;">35.8</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Retired</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.9</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Annual Household Income</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even" data-grouplength="8">
+<td colspan="6" style="text-align: left; border-bottom: 0;"><strong></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Less than $25,000</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">55.6</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$25,000 - $34,999</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">13.9</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$35,000 - $49,999</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">12.0</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$50,000 - $74,999</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">10.2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$75,000 - $99,999</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$100,000 - $149,999</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$150,000 - $199,999</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$200,000 or more</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">In a Committed Romantic Relationship</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even" data-grouplength="2">
+<td colspan="6" style="text-align: left; border-bottom: 0;"><strong></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">No</td>
+<td style="text-align: right;">141</td>
+<td style="text-align: right;">43.5</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Yes</td>
+<td style="text-align: right;">181</td>
+<td style="text-align: right;">55.9</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSM-5 OUD Symptom Count</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">9.9</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: left;">0 - 11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OUD Medication</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd" data-grouplength="4">
+<td colspan="6" style="text-align: left; border-bottom: 0;"><strong></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">I am not taking any medications for opioid use</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">9.6</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Medication taken daily (e.g., Suboxone, Methadone) and medication taken monthly (e.g., Vivitrol)</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">12.3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Medications taken daily (e.g., Suboxone, Methadone)</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">71.0</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Medications taken monthly (e.g., Vivitrol)</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">6.8</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of Overdoses in Lifetime</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd" data-grouplength="5">
+<td colspan="6" style="text-align: left; border-bottom: 0;"><strong></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">0</td>
+<td style="text-align: right;">135</td>
+<td style="text-align: right;">41.7</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">1 time</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">14.2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">2-3 times</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">23.5</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">4-5 times</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">8.3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">More than 5 times</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">11.7</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reported 1 or More Lapse During Study Period</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even" data-grouplength="2">
+<td colspan="6" style="text-align: left; border-bottom: 0;"><strong></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Yes</td>
+<td style="text-align: right;">137</td>
+<td style="text-align: right;">42.3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">No</td>
+<td style="text-align: right;">187</td>
+<td style="text-align: right;">57.7</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of reported lapses</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">9.1</td>
+<td style="text-align: right;">25.0</td>
+<td style="text-align: left;">0 - 164</td>
+</tr>
+</tbody>
+</table>
 
-</main>
+
+</div>
+</div>
+</section>
+<section id="adherence" class="level2">
+<h2 class="anchored" data-anchor-id="adherence">Adherence</h2>
+<p>The median time on study for participants was 354 days (range 31-416 days). <a href="#fig-disp" class="quarto-xref">Figure&nbsp;1</a> shows proportion of participants that remained on study over the 12 months.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-disp" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-disp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch_4_files/figure-html/fig-disp-1.png" id="fig-disp" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-disp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>On average participants completed the daily surveys on 71.4% of study days. Adherence to daily surveys drops slightly in the first three months on study and then remains stable for the remaining 9 months (<a href="#fig-adher" class="quarto-xref">Figure&nbsp;2</a>). Additionally, participants completed, on average, 96.4% of the monthly surveys.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-adher" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adher-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch_4_files/figure-html/fig-adher-1.png" id="fig-adher" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-adher-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!--report proportion of participants who provided some geolocation data-->
+</section>
+<section id="model-performance" class="level2">
+<h2 class="anchored" data-anchor-id="model-performance">Model Performance</h2>
+</section>
+<section id="model-fairness" class="level2">
+<h2 class="anchored" data-anchor-id="model-fairness">Model Fairness</h2>
+</section>
+<section id="feature-importance" class="level2 unnumbered">
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Feature Importance</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bharatAgreementSelfreportedIllicit2023" class="csl-entry" role="listitem">
+Bharat, Chrianna, Paige Webb, Zachary Wilkinson, Rebecca McKetin, Jason Grebely, Michael Farrell, Adam Holland, et al. 2023. <span>“Agreement Between Self-Reported Illicit Drug Use and Biological Samples: A Systematic Review and Meta-Analysis.”</span> <em>Addiction</em> 118 (9): 1624–48. <a href="https://doi.org/10.1111/add.16200">https://doi.org/10.1111/add.16200</a>.
+</div>
+<div id="ref-jonesComplianceEcologicalMomentary2019" class="csl-entry" role="listitem">
+Jones, Andrew, Danielle Remmerswaal, Ilse Verveer, Eric Robinson, Ingmar H. A. Franken, Cheng K. Fred Wen, and Matt Field. 2019. <span>“Compliance with Ecological Momentary Assessment Protocols in Substance Users: A Meta-Analysis.”</span> <em>Addiction (Abingdon, England)</em> 114 (4): 609–19. <a href="https://doi.org/10/gfsjzg">https://doi.org/10/gfsjzg</a>.
+</div>
+<div id="ref-kennedySexDifferencesCocaine2013" class="csl-entry" role="listitem">
+Kennedy, Ashley P., David H. Epstein, Karran A. Phillips, and Kenzie L. Preston. 2013. <span>“Sex Differences in Cocaine/Heroin Users: Drug-Use Triggers and Craving in Daily Life.”</span> <em>Drug and Alcohol Dependence</em> 132 (1-2): 29–37. <a href="https://doi.org/10.1016/j.drugalcdep.2012.12.025">https://doi.org/10.1016/j.drugalcdep.2012.12.025</a>.
+</div>
+</div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
