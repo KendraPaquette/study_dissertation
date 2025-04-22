@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -50,14 +50,12 @@ div.csl-indent {
 <script src="ch_4_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="ch_4_files/libs/quarto-html/anchor.min.js"></script>
 <link href="ch_4_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="ch_4_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="ch_4_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="ch_4_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="ch_4_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="ch_4_files/libs/bootstrap/bootstrap-8a79a254b8e706d3c925cde0a310d4f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="ch_4_files/libs/bootstrap/bootstrap-c0367b04c37547644fece4185067e4a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="ch_4_files/libs/kePrint-0.0.1/kePrint.js"></script>
-
 <link href="ch_4_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
 
 
 </head>
@@ -98,7 +96,7 @@ div.csl-indent {
 <h1>Introduction</h1>
 <p>Studies show high agreement between recent (i.e., 1-4 days) self-report and biological markers (i.e., urine, saliva, hair) of drug use <span class="citation" data-cites="bharatAgreementSelfreportedIllicit2023">(<a href="#ref-bharatAgreementSelfreportedIllicit2023" role="doc-biblioref">Bharat et al. 2023</a>)</span>. This suggests people may be willing to report illicit substance use behaviors.</p>
 <p>However, it is unclear if people in recovery from substance use disorders, other than alcohol, can sustain long-term adherence (e.g., one year or more) needed for a recovery monitoring support system that uses self-report data. Previous studies examining adherence to frequent self-report prompts among people with illicit substance use disorders have typically only prompted for 7-30 days <span class="citation" data-cites="jonesComplianceEcologicalMomentary2019">(<a href="#ref-jonesComplianceEcologicalMomentary2019" role="doc-biblioref">Jones et al. 2019</a>)</span> (except <span class="citation" data-cites="kennedySexDifferencesCocaine2013">Kennedy et al. (<a href="#ref-kennedySexDifferencesCocaine2013" role="doc-biblioref">2013</a>)</span> prompted for 175 days and found 75% adherence).</p>
-<p>It is also unclear whether people in recovery from illicit substance use disorders can, or are willing to, accurately report other risk information needed to develop accurate prediction models. For example, people with substance use disorder may experience greater instability in their day-to-day lives (e.g., stigma or legal consequences may make access to healthcare, stable housing, or supportive relationships more difficult). This instability could make it difficult to recall and report recent behaviors and events promptly or accurately. It may also skew their baseline perception of what constitutes a risky or stressful experience.</p>
+<p>It is also unclear whether people in recovery from illicit substance use disorders can, or are willing to, accurately report other risk information needed to develop accurate prediction models. For example, people with substance use disorders may experience greater instability in their day-to-day lives (e.g., stigma or legal consequences may make access to healthcare, stable housing, or supportive relationships more difficult). This instability could make it difficult to recall and report recent behaviors and events promptly or accurately. It may also skew their baseline perception of what constitutes a risky or stressful experience.</p>
 <p>Supplementing self-report data with passively sensed data (e.g., geolocation) could make up for imprecise reports of risk factors or be used for lapse prediction during periods of non-adherence to self-report surveys. Additionally, more data will produce more features that could allow for better personalization of support recommendations.</p>
 <p>This project will use daily surveys and sensed geolocation for up to one year from a national sample of people with opioid use disorder to predict immediate (i.e., in the next 24 hours) lapses back to opioid use.</p>
 </section>
@@ -124,42 +122,6 @@ div.csl-indent {
 <li>had active cellular plan that they were willing to maintain for duration of the study.</li>
 </ol>
 <p>Participants were considered enrolled in the study if they were eligible, consented, and provided data for at least one month. A total of 336 participants enrolled in the study. We excluded data from one participant whose geolocation data showed they did not reside in the US. We also excluded 11 participants due to careless responding on the daily surveys and/or lapses reported nearly every day on study, suggesting they did not have a goal of abstinence. Our final sample consisted of 324 participants.</p>
-</section>
-<section id="procedure" class="level2">
-<h2 class="anchored" data-anchor-id="procedure">Procedure</h2>
-</section>
-<section id="measures" class="level2">
-<h2 class="anchored" data-anchor-id="measures">Measures</h2>
-<section id="individual-characteristics" class="level3">
-<h3 class="anchored" data-anchor-id="individual-characteristics">Individual Characteristics</h3>
-</section>
-<section id="daily-surveys" class="level3">
-<h3 class="anchored" data-anchor-id="daily-surveys">Daily Surveys</h3>
-</section>
-<section id="monthly-surveys" class="level3">
-<h3 class="anchored" data-anchor-id="monthly-surveys">Monthly Surveys</h3>
-</section>
-<section id="sensed-geolocation" class="level3">
-<h3 class="anchored" data-anchor-id="sensed-geolocation">Sensed Geolocation</h3>
-</section>
-</section>
-<section id="planned-data-analyses" class="level2">
-<h2 class="anchored" data-anchor-id="planned-data-analyses">Planned Data Analyses</h2>
-<section id="labels" class="level3">
-<h3 class="anchored" data-anchor-id="labels">Labels</h3>
-</section>
-<section id="feature-engineering" class="level3">
-<h3 class="anchored" data-anchor-id="feature-engineering">Feature Engineering</h3>
-</section>
-<section id="model-training-and-evaluation" class="level3">
-<h3 class="anchored" data-anchor-id="model-training-and-evaluation">Model Training and Evaluation</h3>
-</section>
-</section>
-</section>
-<section id="results" class="level1">
-<h1>Results</h1>
-<section id="participant-characteristics" class="level2">
-<h2 class="anchored" data-anchor-id="participant-characteristics">Participant Characteristics</h2>
 <p>The table below presents the demographic and clinical characteristics of the 324 participants in our analysis sample.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -775,53 +737,52 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="adherence" class="level2">
-<h2 class="anchored" data-anchor-id="adherence">Adherence</h2>
-<p>The median time on study for participants was 354 days (range 31-416 days). <a href="#fig-disp" class="quarto-xref">Figure&nbsp;1</a> shows proportion of participants that remained on study over the 12 months.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-disp" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-disp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch_4_files/figure-html/fig-disp-1.png" id="fig-disp" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-disp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>On average participants completed the daily surveys on 71.4% of study days. Adherence to daily surveys drops slightly in the first three months on study and then remains stable for the remaining 9 months (<a href="#fig-adher" class="quarto-xref">Figure&nbsp;2</a>). Additionally, participants completed, on average, 96.4% of the monthly surveys.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-adher" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-adher-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch_4_files/figure-html/fig-adher-1.png" id="fig-adher" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-adher-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<!--report proportion of participants who provided some geolocation data-->
+<section id="procedure" class="level2">
+<h2 class="anchored" data-anchor-id="procedure">Procedure</h2>
+<p>Participants who screened eligible were consented and onboarded over video or phone call. All participants were instructed to download the STARR study app (a version of CHESS). After this meeting participants were instructed to watch a set of video tutorials for learning how to use the app. One week later they participated in a check-in video or phone call with study staff to answer any questions about the app and troubleshoot any technical issues. At this time, study staff also mailed onboarding materials to participants, including a payment card. Participants were expected to complete monthly surveys to remain on study. At the end of the study participants met with study staff for a final debriefing video or phone call.</p>
 </section>
-<section id="model-performance" class="level2">
-<h2 class="anchored" data-anchor-id="model-performance">Model Performance</h2>
+<section id="measures" class="level2">
+<h2 class="anchored" data-anchor-id="measures">Measures</h2>
+<section id="individual-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="individual-characteristics">Individual Characteristics</h3>
+<p>We collected self-report information about demographics (age, gender, orientation, race/ethnicity, education, employment, income, relationship status, location) and clinical characteristics (DSM-5 OUD symptom count, MOUD medication, number of lifetime overdoses) to characterize our sample. Demographic information will be included as features in our models. A subset of these variables (gender, race/ethnicity, income, and location) will be used for model fairness analyses, as they have documented disparities in treatment access and outcomes.</p>
+<p>As part of the aims of the parent project we collected many other trait and state measures throughout the study. A complete list of all measures will be made available on our study’s OSF page.</p>
 </section>
-<section id="model-fairness" class="level2">
-<h2 class="anchored" data-anchor-id="model-fairness">Model Fairness</h2>
+<section id="daily-surveys" class="level3">
+<h3 class="anchored" data-anchor-id="daily-surveys">Daily Surveys</h3>
+<p>Participants completed one brief (16 questions) daily survey. Daily surveys became available in star app each morning at 6 am. The survey remind open until 5:59 am the next day. Push notifications were also sent to participants to remind them that they had a new task that had not been completed yet.</p>
+<p>On each survey, participants reported dates/times of any previously unreported past opioid use. They also reported any other drugs or alcohol used in the past 24 hours and whether they took their MOUD as prescribed. Next, participants rated the maximum intensity of recent (i.e., since last EMA) experiences of pain, craving, risky situations, stressful events, and pleasant events. Next, participants rated their sleep and how depressed, angry, anxious, relaxed, and happy they have felt in the past 24 hours. Finally, participants rated how motivated they were to completely avoid using opioids for non-medical reasons and how confident they were in their ability to completely avoid using opioids for non-medical reasons.</p>
+<p>Participants were withdrawn early from the study if they did not complete at least 20 daily surveys in a four week period.</p>
 </section>
-<section id="feature-importance" class="level2 unnumbered">
+<section id="monthly-surveys" class="level3">
+<h3 class="anchored" data-anchor-id="monthly-surveys">Monthly Surveys</h3>
+<p>Monthly surveys consisted of several clinical scales as part of the parent project’s aims. The monthly survey was also personalized to ask a series of questions about participants’ frequent locations (identified by geolocation sensing - see Sensed Geolocation section below). For locations that participants visited twice in a month, they were asked to identify the type of location, what they do there, how pleasant and unpleasant their experience is there, and how much this place helps and harms their recovery from opioids.</p>
+<p>Participants were withdrawn early from the study if they missed three monthly surveys.</p>
+</section>
+<section id="sensed-geolocation" class="level3">
+<h3 class="anchored" data-anchor-id="sensed-geolocation">Sensed Geolocation</h3>
+<p>Continuous sensed geolocation was collected through the STARR app. Geolocation was contextualized by asking questions about frequently visited locations in each monthly survey (see Monthly Surveys section above).</p>
+<p>Participants were shown how to temporarily turn off sharing geolocation with us. However, participants were expected to share their location with the STARR app and were withdrawn from the study if they did consistently provide geolocation data (i.e., disabling location sharing for more than 12 hours in a four-week period).</p>
+</section>
+</section>
+<section id="planned-data-analyses" class="level2">
+<h2 class="anchored" data-anchor-id="planned-data-analyses">Planned Data Analyses</h2>
+<section id="labels" class="level3">
+<h3 class="anchored" data-anchor-id="labels">Labels</h3>
+<p>Prediction windows are 24 hours in width. The 24-hour windows roll day-by-day starting at 6 am in the participant’s own time zone. The start and end date/time of past opioid use were reported on the first daily survey item. Each prediction window was labeled as a lapse if opioid use was reported as occurring between 6 am that day and 5:59 am the next morning. Windows with no reported opioid use were labeled as no lapse.</p>
+<p>We ended up with a total of 93376 labels, with 2% labeled as lapses.</p>
+</section>
+<section id="feature-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="feature-engineering">Feature Engineering</h3>
+</section>
+<section id="model-training-and-evaluation" class="level3 unnumbered">
 
 
 </section>
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Feature Importance</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Model Training and Evaluation</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-bharatAgreementSelfreportedIllicit2023" class="csl-entry" role="listitem">
 Bharat, Chrianna, Paige Webb, Zachary Wilkinson, Rebecca McKetin, Jason Grebely, Michael Farrell, Adam Holland, et al. 2023. <span>“Agreement Between Self-Reported Illicit Drug Use and Biological Samples: A Systematic Review and Meta-Analysis.”</span> <em>Addiction</em> 118 (9): 1624–48. <a href="https://doi.org/10.1111/add.16200">https://doi.org/10.1111/add.16200</a>.
 </div>

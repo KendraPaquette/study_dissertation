@@ -24,7 +24,7 @@ Studies show high agreement between recent (i.e., 1-4 days) self-report and biol
 
 However, it is unclear if people in recovery from substance use disorders, other than alcohol, can sustain long-term adherence (e.g., one year or more) needed for a recovery monitoring support system that uses self-report data. Previous studies examining adherence to frequent self-report prompts among people with illicit substance use disorders have typically only prompted for 7-30 days [@jonesComplianceEcologicalMomentary2019] (except @kennedySexDifferencesCocaine2013 prompted for 175 days and found 75% adherence).
 
-It is also unclear whether people in recovery from illicit substance use disorders can, or are willing to, accurately report other risk information needed to develop accurate prediction models. For example, people with substance use disorder may experience greater instability in their day-to-day lives (e.g., stigma or legal consequences may make access to healthcare, stable housing, or supportive relationships more difficult). This instability could make it difficult to recall and report recent behaviors and events promptly or accurately. It may also skew their baseline perception of what constitutes a risky or stressful experience. 
+It is also unclear whether people in recovery from illicit substance use disorders can, or are willing to, accurately report other risk information needed to develop accurate prediction models. For example, people with substance use disorders may experience greater instability in their day-to-day lives (e.g., stigma or legal consequences may make access to healthcare, stable housing, or supportive relationships more difficult). This instability could make it difficult to recall and report recent behaviors and events promptly or accurately. It may also skew their baseline perception of what constitutes a risky or stressful experience. 
 
 Supplementing self-report data with passively sensed data (e.g., geolocation) could make up for imprecise reports of risk factors or be used for lapse prediction during periods of non-adherence to self-report surveys. Additionally, more data will produce more features that could allow for better personalization of support recommendations.
 
@@ -38,7 +38,7 @@ Specifically, we will:
 
 **1. Evaluate the performance (auROC) of a machine learning model that predicts opioid lapses from geolocation and daily surveys.** This aim will allow us to determine whether lapse prediction models can be generalized to other drugs beyond alcohol. Notably, a successful model will demonstrate that lapse prediction can be done with a drug where its use is illegal and people may be less willing to provide information about lapses and risk factors. It will also show the feasibility of using self-report data over long periods of reocvery (i.e., 12 months).
 
-**2. Assess model fairness in performance across important subgroups with known disparities in substance use treatment access and/or outcomes - race/ethnicity (not White vs. non-Hispanic White), income (below poverty vs. above poverty), sex at birth (female vs. male), and geographic location (rural vs. urban).** These data offer more diversity with regard to race/ethnicity, income, and geographic location. This aim will allow us to determine if improving the quality of the training data with respect to diversity is sufficient to address issues of fairness.  
+**2. Assess model fairness in performance across important subgroups with known disparities in substance use treatment access and/or outcomes - race/ethnicity (not White vs. non-Hispanic White), income (below poverty vs. above poverty), gender (female vs. male), and geographic location (rural vs. urban).** These data offer more diversity with regard to race/ethnicity, income, and geographic location. This aim will allow us to determine if improving the quality of the training data with respect to diversity is sufficient to address issues of fairness.  
 
 **3. Describe the relative importance of features on model performance.** Model features will be derived from two complementary sensing methods: daily surveys and continuous geolocation data. Geolocation sensing, a passive sensing method, could compliment daily surveys well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the daily surveys. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people. This aim will help determine whether a sufficient number of unique important features emerge from these data.
 
@@ -55,30 +55,6 @@ We recruited participants in early recovery from opioid use disorder. Participan
 6. had active cellular plan that they were willing to maintain for duration of the study.
 
 Participants were considered enrolled in the study if they were eligible, consented, and provided data for at least one month. A total of 336 participants enrolled in the study. We excluded data from one participant whose geolocation data showed they did not reside in the US. We also excluded 11 participants due to careless responding on the daily surveys and/or lapses reported nearly every day on study, suggesting they did not have a goal of abstinence. Our final sample consisted of 324 participants.
-
-## Procedure
-
-## Measures
-
-### Individual Characteristics
-
-### Daily Surveys
-
-### Monthly Surveys
-
-### Sensed Geolocation
-
-## Planned Data Analyses
-
-### Labels
-
-### Feature Engineering
-
-### Model Training and Evaluation
-
-# Results
-
-## Participant Characteristics
 
 The table below presents the demographic and clinical characteristics of the 324 participants in our analysis sample.
 
@@ -106,61 +82,45 @@ dem |>
   kableExtra::group_rows(start_row = 68, end_row = 69)
 ```
 
-## Adherence
-The median time on study for participants was 354 days (range 31-416 days). @fig-disp shows proportion of participants that remained on study over the 12 months. 
+## Procedure
+Participants who screened eligible were consented and onboarded over video or phone call. All participants were instructed to download the STARR study app (a version of CHESS). After this meeting participants were instructed to watch a set of video tutorials for learning how to use the app. One week later they participated in a check-in video or phone call with study staff to answer any questions about the app and troubleshoot any technical issues. At this time, study staff also mailed onboarding materials to participants, including a payment card. Participants were expected to complete monthly surveys to remain on study. At the end of the study participants met with study staff for a final debriefing video or phone call.
 
-```{r}
-#| label: fig-disp
-#| echo: false
+## Measures
 
-disposition <- read_csv(here::here("data/risk2_disp.csv"),
-                show_col_types = FALSE)
+### Individual Characteristics
+We collected self-report information about demographics (age, gender, orientation, race/ethnicity, education, employment, income, relationship status, location) and clinical characteristics (DSM-5 OUD symptom count, MOUD medication, number of lifetime overdoses) to characterize our sample. Demographic information will be included as features in our models. A subset of these variables (gender, race/ethnicity, income, and location) will be used for model fairness analyses, as they have documented disparities in treatment access and outcomes.
 
-disposition |> 
-  group_by(month) |> 
-  ggplot(aes(x = month, y = prop)) +
-  geom_point() +
-  geom_line() +
-  theme_classic() +
-  scale_x_continuous(name = "Month", 
-                     breaks = seq(1, 12, 1)) +
-  scale_y_continuous(name = "Proportion of participants retained on study", 
-                     breaks = seq(0, 1, .1), 
-                     limits = c(0, 1)) +
-  labs(title = "Participant Attrition by month (N enrolled = 324)") +
-  theme(legend.title = element_blank()) 
-```
+As part of the aims of the parent project we collected many other trait and state measures throughout the study. A complete list of all measures will be made available on our study’s OSF page.
 
-On average participants completed the daily surveys on 71.4% of study days. Adherence to daily surveys drops slightly in the first three months on study and then remains stable for the remaining 9 months (@fig-adher). Additionally, participants completed, on average, 96.4% of the monthly surveys.
+### Daily Surveys
+Participants completed one brief (16 questions) daily survey. Daily surveys became available in star app each morning at 6 am. The survey remind open until 5:59 am the next day. Push notifications were also sent to participants to remind them that they had a new task that had not been completed yet.
 
-```{r}
-#| label: fig-adher
-#| echo: false
+On each survey, participants reported dates/times of any previously unreported past opioid use. They also reported any other drugs or alcohol used in the past 24 hours and whether they took their MOUD as prescribed. Next, participants rated the maximum intensity of recent (i.e., since last EMA) experiences of pain, craving, risky situations, stressful events, and pleasant events. Next, participants rated their sleep and how depressed, angry, anxious, relaxed, and happy they have felt in the past 24 hours. Finally, participants rated how motivated they were to completely avoid using opioids for non-medical reasons and how confident they were in their ability to completely avoid using opioids for non-medical reasons.
 
-adherence <- read_csv(here::here("data/risk2_ema_adherence.csv"),
-                show_col_types = FALSE)
+Participants were withdrawn early from the study if they did not complete at least 20 daily surveys in a four week period.
 
-adherence |> 
-  group_by(month) |> 
-  summarize(mean_adherence = mean(adherence)) |> 
-  ggplot(aes(x = month, y = mean_adherence)) +
-  geom_point() +
-  geom_line() +
-  theme_classic() +
-  scale_x_continuous(name = "Month", 
-                     breaks = seq(1, 12, 1)) +
-  scale_y_continuous(name = "Adherence", 
-                     breaks = seq(0, 1, .1), 
-                     limits = c(0, 1)) +
-  labs(title = "Daily update adherence over time (N = 336) ") +
-  theme(legend.title = element_blank()) +
-  geom_hline(aes(yintercept = mean(mean_adherence)), linetype = "dashed", linewidth = .3)
-```
+### Monthly Surveys
+Monthly surveys consisted of several clinical scales as part of the parent project's aims. The monthly survey was also personalized to ask a series of questions about participants' frequent locations (identified by geolocation sensing - see Sensed Geolocation section below). For locations that participants visited twice in a month, they were asked to identify the type of location, what they do there, how pleasant and unpleasant their experience is there, and how much this place helps and harms their recovery from opioids. 
 
-<!--report proportion of participants who provided some geolocation data-->
+Participants were withdrawn early from the study if they missed three monthly surveys.
 
-## Model Performance
+### Sensed Geolocation
+Continuous sensed geolocation was collected through the STARR app. Geolocation was contextualized by asking questions about frequently visited locations in each monthly survey (see Monthly Surveys section above). 
 
-## Model Fairness
+Participants were shown how to temporarily turn off sharing geolocation with us. However, participants were expected to share their location with the STARR app and were withdrawn from the study if they did consistently provide geolocation data (i.e., disabling location sharing for more than 12 hours in a four-week period). 
 
-## Feature Importance
+## Planned Data Analyses
+
+### Labels
+Prediction windows are 24 hours in width. The 24-hour windows roll day-by-day starting at 6 am in the participant's own time zone. The start and end date/time of past opioid use were reported on the first daily survey item. Each prediction window was labeled as a lapse if opioid use was reported as occurring between 6 am that day and 5:59 am the next morning. Windows with no reported opioid use were labeled as no lapse. 
+
+We ended up with a total of 93376 labels, with 2% labeled as lapses.
+
+### Feature Engineering
+
+### Model Training and Evaluation
+
+
+
+
+
