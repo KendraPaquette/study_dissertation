@@ -90,13 +90,13 @@ The longer duration of participation also provides the opportunity to experiment
 
 **Chapter 5:** State-space models for idiographic risk monitoring and recovery support recommendations
 
-In this study, we propose Hierarchical Bayesian state-space models as an alternative approach for prediction models. State-space models model measured inputs (e.g., ema responses, time spent in risky locations, time spent at home) and outputs (i.e., lapse or no lapse) from time series data with latent states. The hierarchical nature, will allow us to better use and understand time-varying information. State-space models explicitly model how the latent state of an individual's lapse risk evolves over time. These states can then be extracted from the model and used for understanding lapse risk and improving recovery support recommendations. 
+In this study, we propose Hierarchical Bayesian state-space models as an alternative approach for prediction models. State-space models model measured inputs (e.g., ema responses, time spent in risky locations, time spent at home) and outputs (i.e., lapse or no lapse) from time series data with latent states. The hierarchical nature, will allow us to better use and understand time-varying information. State-space models explicitly model how the latent state of an individual's lapse risk evolves over time. 
     
 Given the heterogeneity in lapse risk and the complex interactions between environment and individual differences, a time series model that use an individual's own data to make future predictions may perform better than models trained at the group-level. Therefore, we will build an individual model for each participant using their own data. Although our immediate lapse risk models have been performing quite well, individual models could improve performance for our lagged prediction models. Individual models also may help mitigate issues of unfairness, as the model will weigh the individual's own data more heavily than group level estimates.
 
 Additionally, time series models could potentially improve the efficiency and performance of lagged prediction models. A single model can be used to predict a lapse at any point in the future, eliminating the need for multiple models for predicting immediate and future lapse risk. 
 
-Therefore, in this study, we will evaluate the performance and fairness of a state-space model approach for opioid lapse risk prediction using the EMA and geolocation data set introduced in Chapter 4. We will evaluate both immediate (i.e., in the next 24 hours) and future (i.e., next 2 weeks and next 1 month) lapse risk. We will also assess the usability of latent states as intervenable targets for recommendations. 
+Therefore, in this study, we will evaluate the performance and fairness of a state-space model approach for opioid lapse risk prediction using the EMA and geolocation data set introduced in Chapter 4. We will evaluate both immediate (i.e., in the next 24 hours) and future (i.e., next 2 weeks and next 1 month) lapse risk. 
   
 
   
