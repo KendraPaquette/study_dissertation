@@ -293,7 +293,7 @@ For both equations, we will use a linear formula with Gaussian noise.
 
 **Transition equation:** $x_{t+1} = A*x_{t} + w_t$, where $x_{t+1}$ represents the hidden state at the next timepoint, $A$ is the state transition matrix, $x_{t}$ is the hidden state at the current timepoint, and $w_t$ is zero mean Gaussian noise. 
 
-**Observation equation:** $y_t = C*x_t + v_t$, where $y_t$ is the observed EMA and Geolocation inputs, $C$ is the observation matrix, $x_t$ is the hidden state at the current timepoint and $v_t$ is zero mean Gaussian noise. 
+**Observation equation:** $y_t = C*x_t + v_t$, where $y_t$ is the observed survey and Geolocation inputs, $C$ is the observation matrix, $x_t$ is the hidden state at the current timepoint and $v_t$ is zero mean Gaussian noise. 
 
 We will also assign prior distributions to all individual- and population-level model parameters, consistent with a Bayesian approach. We will use a Bayseian fitting approach called maximum a posteriori (MAP) estimation to establish prior distributions for the model parameters: transition matrix ($A$), observation matrix ($C$), and noise ($w_t$,$v_t$). These priors will be established from held-in data. Parameters and noise variance will be estimated for each individual in the held out data. Thus, model priors will be combined with observed data from a new individual to fit an idiographic model for that individual. When few data for the individual are available, the fit will rely more heavily on the prior distributions for the model parameters. As more data become available the model fit will primarily the participant’s data and the influence of the prior distributions diminishes.   
 
