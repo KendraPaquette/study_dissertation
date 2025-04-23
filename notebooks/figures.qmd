@@ -1,0 +1,211 @@
+---
+title: "Make All Figures for Dissertation"
+author: "Kendra Wyant"
+date: "`r lubridate::today()`"
+number-sections: true
+output: 
+  html_document:
+    toc: true 
+    toc_depth: 4
+format:
+  html:
+    embed-resources: true
+    toc: true
+    toc-depth: 4
+editor_options: 
+  chunk_output_type: console
+html-table-processing: none
+---
+
+```{r}
+#| message: false
+#| warning: false
+
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(source("https://github.com/jjcurtin/lab_support/blob/main/format_path.R?raw=true"))
+suppressPackageStartupMessages(library(tidyposterior))
+library(kableExtra, exclude = "group_rows")
+library(patchwork)
+
+theme_set(theme_classic())
+
+path_models_lag <- format_path(str_c("studydata/risk/models/lag"))
+path_shared <- format_path("studydata/risk/data_processed/shared")
+path_processed <- format_path("studydata/risk/data_processed/lag")
+```
+
+Data for figures
+```{r}
+test_metrics_all_pp_perf <- read_csv(here::here(path_models_lag,
+                                                "posteriors.csv"),
+                                     show_col_types = FALSE)
+
+ci <- read_csv(here::here(path_models_lag, "pp_perf_tibble.csv"), 
+                                 show_col_types = FALSE) |> 
+  mutate(model = factor(model, levels = c("0 lag", "24 lag", "72 lag", "168 lag", "336 lag"),
+                        labels = c("No lag", "1 day", "3 days", "1 week", "2 weeks")))
+
+global_all <- read_rds(here::here(path_models_lag, "shap_global_all.rds")) |> 
+   filter(str_detect(variable_grp, "EMA")) |> 
+   mutate(variable_grp = str_remove(variable_grp, "\\(EMA item\\)"),
+          variable_grp = reorder(variable_grp, mean_value, sum),
+          model = factor(model, levels = c("336 lag", "168 lag", "72 lag", "24 lag", "0 lag"),
+                         labels = c("2 weeks", "1 week", "3 days", "1 day", "No lag" ))) |> 
+  filter(model %in% c("2 weeks", "No lag"))
+
+shap_levels <- global_all |>
+  mutate(variable_grp = reorder(variable_grp, mean_value, sum)) |>
+  pull(variable_grp) |>
+  levels()
+```
+
+# Chapter 2: EMA
+
+## Figure 1: ROC and Posterior Probability
+
+```{r}
+#| label: fig-1-ema
+#| fig-cap: "ROC curves and posterior probabilities for auROCs by prediction window. The left panel depicts the aggregate receiver operating characteristic (ROC) curve for each model, derived by concatenating predicted lapse probabilities across all test sets. The dotted line represents the expected ROC curve for a random classifier. The histograms on the right depict the posterior probability distribution for the areas under the receiver operating characteristic curves (auROCs) for each model. The vertical lines represent the median posterior probability and the horizontal line represents the boundaries 95% CI."
+#| fig-width: 8
+#| fig-height: 6
+
+knitr::include_graphics(path = here::here("figures/ema_1.jpeg"))
+```
+
+
+## Figure 2: Precision-Recall Curves
+
+```{r}
+#| label: fig-2-ema
+#| fig-cap: "Precision-recall Curves by Prediction Window for the Full Models. The plot depicts the aggregate precision-recall curves for each full model, derived by concatenating predicted lapse probabilities across all test sets. The dotted lines depict the sensitivities (0.718, 0.473, and 0.327 for week, day, and hour models, respectively) associated with decision thresholds that yield 0.700 positive predictive value for each of those models."
+#| fig-width: 8
+#| fig-height: 6
+
+knitr::include_graphics(path = here::here("figures/ema_2.jpeg"))
+```
+
+
+
+## Figure 3: Shapley Plots
+
+```{r}
+#| label: fig-3-ema
+#| fig-cap: "Feature importance (Shapley values) for Full Models by Prediction Window. Panel A displays the global importance (mean |Shapley value|) for feature categories for each full model. Raw EMA features are grouped into categories by the original question from the EMA. Features based on the rates of previous lapses and previous missing surveys, as well as demographics, and the time of day and day of the week for the start of the prediction window are also included. Feature categories are ordered by their aggregate global importance (i.e., total bar length) across the three models.  The importance of each feature category for specific models is displayed separately by color. Panels B-D display local Shapley values that quantify the influence of feature categories on individual observations (i.e., a single prediction window for a specific participant) for each model."
+#| fig-width: 8
+#| fig-height: 6
+
+knitr::include_graphics(path = here::here("figures/ema_3.jpeg"))
+```
+
+# Chapter 3: Lag
+
+## Figure 1: Prediction Methods
+```{r}
+#| label: fig-methods-lag
+#| fig-cap: "Panel A shows the prediction time points at which our model calculated a predicted probability of a lapse. All available data up until, but not including, the prediction time point was used to generate these predictions. Features were created for varying scoring epochs before the prediction time point (i.e., 12, 24, 48, 72, and 168 hours). Prediction time points were updated hourly. Panel B shows how the prediction window (i.e., window of time in which a lapse might occur) rolls forward hour-by-hour with the prediction time point with the prediction time point. The prediction window width for all our models was one week (i.e., models predicted the probability of a lapse occurring within a one week window). Additionally, there were five possible lag times between the prediction time point and start of the prediction window. A prediction window either started immediately after the prediction time point (0 lag) or was lagged by 24, 72, 168, or 336 hours."
+
+knitr::include_graphics(path = here::here("figures/methods.png"), error = FALSE)
+```
+
+
+
+## Figure 2: Posterior probabilities for auROC by model 
+
+```{r}
+#| label: fig-2-lag
+#| fig-cap: "Posterior probability distributions for area under ROC curve (auROC) for each model (no lag, 1-day, 3-day, 1-week, and 2-week lag). Horizonatal lines depict 95% Bayesian credible intervals (CI) and vertical solid lines depict median posterior probability for auROC. Vertical dashed line represents expected performance from a random classifier (.5 auROC)."
+#| fig-width: 7
+#| fig-height: 6
+
+pp_tidy |> 
+  mutate(model = factor(model, levels = c("lag0", "lag24", "lag72", "lag168", "lag336"),
+                        labels = c("No lag", "1 day", "3 days", "1 week", "2 weeks"))) |>
+  ggplot() + 
+  geom_histogram(aes(x = posterior), fill = "light grey", color = "black", linewidth = .5,  
+                 bins = 60) +
+  geom_segment(mapping = aes(y = 3400, yend = 3800, x = pp_median, xend = pp_median),
+               linewidth = .5, data = ci) +
+  geom_segment(mapping = aes(y = 3600, yend = 3600, x = pp_lower, xend = pp_upper),
+                linewidth = .5, data = ci) +
+  facet_wrap(~model, ncol = 1) +
+  geom_vline(xintercept = .5, linewidth = .5, linetype = "dashed") +
+  scale_y_continuous("Posterior Probability") +
+  xlab("Area Under ROC Curve") +
+  expand_limits(x = c(.5, 1)) +
+  theme_classic() 
+```
+
+
+## Figure 3: Global and Local Shapley Plots
+
+```{r}
+global_panel <- global_all |>
+  ggplot() +
+  geom_bar(aes(x = variable_grp, y = mean_value, fill = model), 
+           stat = "identity", position = "dodge") +
+  labs(y = "Mean(|Shapley Value|)",
+       x = NULL,
+       fill = NULL) +
+  scale_fill_manual(values = c("#458892", "#751c6d")) +
+  theme(axis.text=element_text(size=9.5),
+        legend.key.size = unit(0.25, "cm"),
+        panel.border = element_rect(colour = "black", fill = NA, linewidth = 1),
+        legend.position = "right") +
+  coord_flip()
+```
+
+```{r}
+shap_feat_0 <- read_rds(here::here(path_models_lag, 
+                                   "outer_shapsgrp_1day_0_v3_nested_main.rds")) |> 
+  filter(str_detect(variable_grp, "EMA")) |> 
+  mutate(variable_grp = str_remove(variable_grp, "\\(EMA item\\)"),
+         variable_grp = factor(variable_grp, levels = shap_levels)) |> 
+  group_by(variable_grp) |> 
+  summarize(min(value), max(value)) |> 
+  mutate(model = "No lag")
+
+shap_feat_336 <- read_rds(here::here(path_models_lag, 
+                                     "outer_shapsgrp_1day_336_v3_nested_main.rds")) |> 
+  filter(str_detect(variable_grp, "EMA")) |> 
+  mutate(variable_grp = str_remove(variable_grp, "\\(EMA item\\)"),
+         variable_grp = factor(variable_grp, levels = shap_levels))  |> 
+  group_by(variable_grp) |> 
+  summarize(min(value), max(value)) |> 
+  mutate(model = "2 weeks")
+
+panel_shap_local <- shap_feat_0 |>
+  bind_rows(shap_feat_336) |> 
+  mutate(model = factor(model, levels = c("2 weeks", "No lag"))) |> 
+  rename(min = `min(value)`,
+         max = `max(value)`) |> 
+  ggplot() +
+  geom_segment(aes(x = variable_grp, y = min, yend = max, group = model,
+                   color = model),
+               position = position_dodge(width = .5), 
+               linewidth = 1) +
+  ylab("Raw Shapley Value") +
+  xlab(NULL) +
+  labs(color = NULL) +
+  scale_color_manual(values = c("#458892", "#751c6d")) +
+  theme(legend.position = "none",
+        axis.text=element_text(size=9.5),
+        panel.border = element_rect(colour = "black", fill = NA, 
+                                    linewidth = 1))+
+  geom_hline(aes(yintercept = 0), linetype = "dashed",
+             linewidth = .5) +
+  scale_y_continuous(limits = c(-2, 6), breaks = seq(-2, 6, 2)) +
+  coord_flip()
+```
+
+
+```{r}
+#| label: fig-3-lag
+#| fig-cap: "Panel A displays the global importance (mean |Shapley value|) for feature categories for the no lag and 2-week lag models. Feature categories are ordered by their aggregate global importance. The importance of each feature category for each model is displayed separately by color. Panels B displays the variation in local feature importance for the no lag and 2-week lag models. Lines start at minimum Shapley value and end at maximum Shapley value."
+#| fig-width: 8
+#| fig-height: 5
+
+global_panel + panel_shap_local + 
+  plot_layout(guides = "collect") &
+  plot_annotation(tag_levels = "A") 
+```
+
