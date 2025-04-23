@@ -8,7 +8,7 @@ bibliography: references.bib
 
 # Introduction
 
-Lapse risk is multidimensional. The extant relapse prevention literature suggests relapse is preceeded by a complex interplay of factors, including include emotional or cognitive states, environmental contingencies, and physiological states<!--cite sources-->. For reasons related to burden and cost, researchers typically rely on a handful of course categories of risk-relevant features (e.g., self-reported craving, self-reported self-efficacy, geolocation-sensed time spent in risky locations) to model an unknown hidden state of an individual (i.e., their true lapse risk).
+Lapse risk is multidimensional. The extant relapse prevention literature suggests relapse is preceeded by a complex interplay of factors, including include emotional or cognitive states, environmental contingencies, and physiological states [@witkiewitzModelingComplexityPosttreatment2007; @witkiewitzTherapistsGuideEvidenceBased2007]. For reasons related to burden and cost, researchers typically rely on a handful of course categories of risk-relevant features (e.g., self-reported craving, self-reported self-efficacy, geolocation-sensed time spent in risky locations) to model an unknown hidden state of an individual (i.e., their true lapse risk).
 
 Moreover, lapse risk factors differ between individuals and within an individual over time. Personalized models (i.e., a model built for a specific individual using their own data) that make use of time-varying information in repeated measures may be able to better understand between and within subject differences in lapse risk trajectories, leading to more accurate predictions.  
 
@@ -16,29 +16,20 @@ State-space models may be one approach for modeling the multidimensional, hetero
 
 
 # Specific Aims
-In this study, we will evaluate the performance, fairness, and usability of a hierarchichal Gaussian linear state-space model (also known as a dynamic linear model) for opioid lapse risk prediction using the EMA and geolocation data set introduced in Chapter 4. 
+In this study, we will evaluate the performance and fairness of a hierarchichal Gaussian linear state-space model (also known as a dynamic linear model) for opioid lapse risk prediction using the same daily survey and geolocation data introduced in study 3 (Chapter 4). 
 
 Specifically, we will:
 
-**1. Evaluate model performance (auROC) for predicting immediate (next day) opioid use.**
+**1. Evaluate the performance (auROC) of personalized state-space model that predict immediate (next day) opioid lapse risk from geolocation and daily surveys.** This aim will allow us to assess how individual models that account for time-varying models perform over time (i.e., each month for up to 12 months). We will be evaluating this model independently in this study, however, model performance achieved in study 3 can be used as a benchmark for comparison.
 
-- look at performance over time on study (by month)
-- first month wait till 4 days of data and then refit after each week till hit 1 month
-- then update monthly
-- Will visually show performance by month on study (compare to xgboost which will probably be pretty consistent?)
+**2. Use the same model from Aim 1 to evaluate its performance for predicting future lapse risk (i.e., lapse risk in the next two weeks and the next month).** A benefit of time series models, like state-space models, is that they could potentially improve the efficiency and performance of lagged prediction models (compared to traditional machine learning approaches). A single model can be used to predict a lapse in the next day or at any point in the future. We will evaluate how well our individual models predict lapse risk two weeks and one month into the future.
 
-**2. Use the same model from aim 1 to evaluate its performance for predicting future lapse risk (next two weeks and next 1 month).**
-
-**3. Assess fairness in performance of the model for predicting immediate and future lapse risk across the same important subgroups - race/ethnicity (not White vs. non-Hispanic White), income (below poverty vs. above poverty), sex at birth (female vs. male), and geographic location (rural vs. urban).**
-
-**4. Assess the usability of latent states as intervenable targets for recommendations.**
+**3. Assess model fairness in model performance for immediate lapses across the same important subgroups assessed in study 3 - race/ethnicity (not White vs. non-Hispanic White), income (below \$25,000 vs. above \$25,000), gender (female vs. male vs. other), and geographic location (rural vs. urban).** Individual models may help mitigate issues of unfairness, seen in our previous group-level machine learning models, as the model will weigh the individual's own data more heavily than group level estimates.
 
 
 # Methods
 
-## Data
-
-- refer to chapter 3 for description of data
+Refer to Chapter 4 for a description of the data set that will be used in this study.
 
 ## Planned Data Analyses
 
@@ -56,32 +47,26 @@ We will also assign prior distributions to all individual- and population-level 
 
 State-space models use the observed data to estimate the unknown latent states, not to directly predict the outcome label. Therefore, state-space models can handle missing data without the need for imputation.
 
+### Predictions
+
+Prediction windows are 24 hours in width. The 24-hour windows roll day-by-day starting at 6 am in the participant's own time zone. The start and end date/time of past opioid use were reported on the first daily survey item. Each prediction window was labeled as a lapse if opioid use was reported as occurring between 6 am that day and 5:59 am the next morning. Windows with no reported opioid use were labeled as no lapse. 
+
+The first label for each participant will be two weeks after their study start date. This will ensure we have at least two weeks of daily surveys and geolocation data.
+
+All available data will up until the start of the prediction window will be used. The predictors, or model inputs, will be the raw daily survey responses and a single geolocation risk score (calculated from the previous 24 hours of geolocation data). The formula for calculating the geolocation risk score will be informed by the top geolocation predictors that emerge in study 3 (Chapter 4).
+
+In the first month models will be fit every 2 weeks. After month 1 the model will update (i.e., be refit with the additional data) each month. 
 
 ### Model Evaluation
+We will use participant-grouped 3 repeats of 10-fold cross-validation to assess model performance using area under the ROC curve (auROC). Grouped cross-validation assigns assigns all data from a participant into a single fold. Data from individuals in the held-in folds will be used to fit prior distributions for the model parameters. 
 
-We will use participant-grouped 3 repeats of 10-fold cross-validation to assess model performance using area under the ROC curve (auROC). Grouped cross-validation assigns assigns all data from a participant into a single fold. Data from individuals in the held-in folds will be used to fit prior distributions for the model parameters. Idiographic models will then be fit to each individual in the held-out fold. 
+Individual models will then be fit to each individual in the held-out fold. We will attach the group-level Bayesian priors generated from the held-in participants to help prevent over-fitting and improve stability of the models' performance. Each individual model will output a predicted probability of lapse in the next day, in a 24-hour window two weeks from the prediction timepoint, and in a 24-hour window one month from the prediction timepoint.
 
-We will attach group-level Bayesian priors generated from the remaining participants to help prevent over-fitting and improve stability of the models' performance. 
+Models will be evaluated separately for each prediction lag duration (immediate/no lag, 2-week lag, 1-month lag). We will aggregate prediction accuracy across held-out participants at 12 different timepoints (months 1-12). We will use a Bayesian hierarchical generalized linear model to estimate the posterior probability distributions and 95% Bayesian credible intervals (CIs) from the 30 held-out test sets at each model evaluation timepoint for each lag. We will use the rstanarm default autoscaled, weakly informative, data-dependent priors and set two random intercepts to account for our resampling method: one for the repeat, and another for the fold nested within repeat. We will report the median posterior probability for auROC and Bayesian CI at all 12 model evaluation timepoints for each lag.
 
-We will assess model performance for three different lag-times (i.e., time between prediction timepoint and start of the prediction window) - no lag (i.e., immediate predictions), 2-week lag, and 1-month lag.
-
-
-**Outstanding questions:**    
-
-Our model will not start making predictions until participants have at least 2 weeks (?) of data. Models probably won't be doing very good then at the beginning. Eric's models didn't outperform xgboost until at least 30 days of data - acknowledge this as limitation for model being used in recovery monitoring support system.
-
-All available data will up until the prediction timepoint will be used (?). Refit models everyday before making next predictions? (Eric used sliding windows of data)
-
-Maybe in both ch. 4 and 5 show figure of auROC by month on study (up to 12 months)?
-
-
-
-### Latent States for Personalized Recovery Support Recommendations
-The latent states can be extracted from the modeland used for understanding lapse risk and recommending the most appropriate recovery tool. 
-
-We will use the Kalman filter to extract estimates of the latent states for each prediction timepoint.  
 
 ### Model Fairness
+We will calculate the median posterior probability and 95% Bayesian CI for auROC for our immediate model separately by race/ethnicity (not White vs. non-Hispanic White), income (below \$25,000 vs. above \$25,000), gender (female vs. male vs. other), and location (rural vs. urban) at each model evaluation timepoint (months 1-12). We will conduct Bayesian group comparisons to assess the likelihood that each model performs differently by group. We will report the precise posterior probability for the difference in auROCs and the 95% Bayesian CIs for each model comparison.
 
 
 
