@@ -58,11 +58,11 @@ Machine learning models can handle the high dimensional feature sets that may re
 
 ## Aims of this proposal
 
-This dissertation proposal describes a program of research that seeks to develop an algorithm to be used in a recovery monitoring and support system. Two projects (chapters 2 and 3) are completed and two projects (chapters 3 and 4) are planned and under development. These projects are explained more below:
+This dissertation proposal describes a program of research that seeks to develop an algorithm to be used in a recovery monitoring and support system. Two studies (chapters 2 and 3) are completed and two studies (chapters 3 and 4) are planned and under development. These studies are explained more below:
 
 **Chapter 2:** Machine learning models for temporally precise lapse prediction in alcohol use disorder 
 
-This project demonstrated that 4x daily EMA could be used to build temporally precise machine learning models to predict alcohol lapses. Specifically, we built three models to predict the probability of an alcohol lapse in the next week, day, and hour. Our models performed exceptionally well with median posterior probabilities for area under the ROC curve (auROC) of .90, .91, and .93 for predicting lapse probabilities into the next week, day, and hour, respectively. 
+This study demonstrated that 4x daily EMA could be used to build temporally precise machine learning models to predict alcohol lapses. Specifically, we built three models to predict the probability of an alcohol lapse in the next week, day, and hour. Our models performed exceptionally well with median posterior probabilities for area under the ROC curve (auROC) of .90, .91, and .93 for predicting lapse probabilities into the next week, day, and hour, respectively. 
 
 In this study we also demonstrated it is possible to understand important features overall for a model (i.e., across all observations for all participants) and important features for an individual prediction (i.e., for a single individual at a specific moment). We found on average past use, craving, and abstinence self-efficacy were the most important features affecting predicted probability scores across the three models. We also saw a wide range of individual feature importance values across all people and all days, suggesting that even features with relative low overall importance were still clinically important for some people at some moments.
 
@@ -75,7 +75,7 @@ Finally, in this study, we failed to assess model fairness. In recent years, the
 
 **Chapter 3:**  Lagged predictions of next day alcohol lapse risk for personalized and adaptive continuing care support
 
-This project showed that the same 4x daily EMA could be used to predict alcohol use occurring within a 24-hour window up to two weeks into the future. We considered several meaningful lags between the prediction timepoint and start of the prediction window: 1 day, 3 days, 1 week, and 2 weeks. These models with lagged prediction windows can be used to provide personalized support recommendations with the added benefit of advanced warning. Thus, giving an individual extra time to implement the recommendation.
+This study showed that the same 4x daily EMA could be used to predict alcohol use occurring within a 24-hour window up to two weeks into the future. We considered several meaningful lags between the prediction timepoint and start of the prediction window: 1 day, 3 days, 1 week, and 2 weeks. These models with lagged prediction windows can be used to provide personalized support recommendations with the added benefit of advanced warning. Thus, giving an individual extra time to implement the recommendation.
 
 Model performance decreased as the start of the prediction window was lagged further from the prediction timepoint with median posterior probabilities for auROC of .88 (1-day lag), .87 (3-day lag), .86 (1-week lag), and .84 (2-week lag). This decrease in performance is not surprising given what we know about prediction and alcohol lapse. Many important lapse risk factors are fluctuating processes that can change day-by-day, if not more frequently. As lag times increase, features become less proximal to the start of the prediction window. Still, auROCs of .80 and higher are generally considered to indicate good performance and the benefit of advanced notice of lapse risk likely outweighs the cost to performance.
 
@@ -135,7 +135,7 @@ It is also unclear whether people in recovery from illicit substance use disorde
 
 Supplementing self-report data with passively sensed data (e.g., geolocation) could make up for imprecise reports of risk factors or be used for lapse prediction during periods of non-adherence to self-report surveys. Additionally, more data will produce more features that could allow for better personalization of support recommendations.
 
-This project will use daily surveys and sensed geolocation for up to one year from a national sample of people with opioid use disorder to predict immediate (i.e., in the next 24 hours) lapses back to opioid use. 
+This study will use daily surveys and sensed geolocation for up to one year from a national sample of people with opioid use disorder to predict immediate (i.e., in the next 24 hours) lapses back to opioid use. 
 
 ## Specific Aims
 
@@ -287,13 +287,13 @@ Refer to Chapter 4 @sec-methods for a complete description of the data set and s
 
 #### State-space Model
 
-State-space models consist of 1. a transition (or state) equation that describes how the latent state evolves over time based on its previous state and observed inputs (current ema?), and 2. an observation equation that describes the functional relationship between the unobserved, latent states and observed inputs.
+State-space models consist of 1. a transition (or state) equation that describes how the latent state evolves over time based on its previous state and observed inputs (e.g., daily surveys, geolocation risk score), and 2. an observation equation that describes the functional relationship between the unobserved, latent states and observed inputs.
 
 For both equations, we will use a linear formula with Gaussian noise.
 
 **Transition equation:** $x_{t+1} = A*x_{t} + w_t$, where $x_{t+1}$ represents the hidden state at the next timepoint, $A$ is the state transition matrix, $x_{t}$ is the hidden state at the current timepoint, and $w_t$ is zero mean Gaussian noise. 
 
-**Observation equation:** $y_t = C*x_t + v_t$, where $y_t$ is the observed EMA and Geolocation inputs, $C$ is the observation matrix, $x_t$ is the hidden state at the current timepoint and $v_t$ is zero mean Gaussian noise. 
+**Observation equation:** $y_t = C*x_t + v_t$, where $y_t$ is the observed survey and Geolocation inputs, $C$ is the observation matrix, $x_t$ is the hidden state at the current timepoint and $v_t$ is zero mean Gaussian noise. 
 
 We will also assign prior distributions to all individual- and population-level model parameters, consistent with a Bayesian approach. We will use a Bayseian fitting approach called maximum a posteriori (MAP) estimation to establish prior distributions for the model parameters: transition matrix ($A$), observation matrix ($C$), and noise ($w_t$,$v_t$). These priors will be established from held-in data. Parameters and noise variance will be estimated for each individual in the held out data. Thus, model priors will be combined with observed data from a new individual to fit an idiographic model for that individual. When few data for the individual are available, the fit will rely more heavily on the prior distributions for the model parameters. As more data become available the model fit will primarily the participant’s data and the influence of the prior distributions diminishes.   
 
