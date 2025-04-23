@@ -1,0 +1,321 @@
+---
+title: Dissertation Proposal
+author:
+  - name: Kendra Wyant
+    orcid: 0000-0002-0767-7589
+    corresponding: true
+    email: kpaquette2@wisc.edu
+    affiliations:
+date: last-modified
+citeproc: true
+bibliography: references.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+number-sections: true 
+editor_options: 
+  chunk_output_type: console
+format:
+  html: default
+---
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+
+options(knitr.kable.NA = '')
+```
+
+
+# Chapter 1: Introduction
+
+## Substance Use Disorders
+
+In 2023, over 46 million U.S. adults had a substance use disorder in the past year [@substanceabuseandmentalhealthservicesadministration2023NSDUHDetailed]. This is nearly 18% of the U.S. adult population.
+
+Substance use disorders are associated with high rates of morbidity and mortality. Opioid overdose rates remain high and continue to increase each year [@IncreasesDrugOpioid; @friedmanTrendsDrugOverdose2022]. Excessive alcohol use is a leading preventable cause of death, with the majority of these deaths caused by alcohol-attributed cancer, heart problems and stroke, and liver cirrhosis [@ARDIAlcoholAttributableDeaths]. Additionally, alcohol-impaired driving accounts for over 30% of traffic fatalities each year [@unitedstatesdepartmentoftransportation2024].  
+
+The economic cost of substance use disorders is substantial. In 2016 the economic cost associated with substance use disorders was estimated to exceed \$442 billion in lost productivity, health care expenses, law enforcement, and other criminal justice costs [@substanceabuseandmentalhealthservicesadministrationusFacingAddictionAmerica2016]. When also accounting for costs associated with loss of life and reduced quality of life, one research group estimated that in 2017 the cost of opioid use disorder alone exceeded \$1 trillion [@florenceEconomicBurdenOpioid2021]. 
+
+## Treatment
+
+Substance use disorders are chronic conditions, characterized by high relapse rates. [@mclellanDrugDependenceChronic2000; @dennisManagingAddictionChronic2007], substantial co-morbidity with other physical and mental health problems [@substanceabuseandmentalhealthservicesadministration2023NSDUHDetailed; @dennisManagingAddictionChronic2007], and an increased risk of mortality [@hedegaardDrugOverdoseDeaths; @centersfordiseasecontrolandpreventioncdcAnnualAverageUnited].  
+
+Initial treatments, including medication (e.g., methadone, buprenorphine, and naltrexone for opioid use disorder and acamprosate, disulfiram, and naltrexone for alcohol use disorder) and evidenced-based psychosocial treatments (e.g., relapse prevention [@marlattRelapsePreventionMaintenance1985; @marlattRelapsePreventionSecond2007], mindfulness-based relapse prevention [@bowenMindfulnessBasedRelapsePrevention2021], and cognitive-behavioral therapy [@lieseCognitiveBehavioralTherapyAddictive2022]), are efficacious for symptom stabilization and harm reduction when provided. Unfortunately, too often individuals do not receive treatment [@substanceabuseandmentalhealthservicesadministration2023NSDUHDetailed]. 
+
+Equally concerning, is the lack of continuing support and care provided to individuals after completing initial treatment [@stanojlovicTargetingBarriersSubstance2021; @sociasAdoptingCascadeCare2016]. Continuing care, including on-going monitoring, tailored adjustments to lifestyle and behaviors over time, and when necessary re-engagement with more intensive treatment, is the gold standard for treating chronic conditions, like diabetes, hypertension, and asthma. Similarly, substance use treatment has been shown to be most effective when care is prescribed over longer durations and involves active efforts to keep patients engaged in their recovery [@mckayImpactContinuingCare2021]. Yet, for reasons including cost and insurance reimbursement issues, lack of collaborative provider teams, passive referral processes, geographic barriers to accessing services, patient dropout, and changes in the patient’s clinical needs over time [@dennisManagingAddictionChronic2007; @taiTreatmentSubstanceUse2013; @mckayImpactContinuingCare2021; @stanojlovicTargetingBarriersSubstance2021], our current treatment system for substance use disorders does not not appear to have the capacity for long-term clinician-delivered care. This leaves individuals left to determine on their own "How can I best support my recovery today?"
+
+This type of self-monitoring can be extremely difficult. The risk factors that precede lapse (i.e., single instances of goal-inconsistent substance use) and full relapse back to harmful use during recovery are individualized, numerous, dynamic and interactive [@witkiewitzModelingComplexityPosttreatment2007; @brandonRelapseRelapsePrevention2007]. Therefore, the optimal supports to address these risk factors and encourage continued, successful recovery vary both across individuals and within an individual over time. 
+
+<!--could make the point then that although people arent receiving initial treatment, we  have them ready but for continuing care, we likely need to develop an entirely new system of care.--><!--KW: this is interesting, keeping this comment in for now.-->
+
+## Recovery Monitoring and Support System
+
+An algorithm-guided recovery monitoring and support system could help patients monitor their current and future risk of lapse and make adjustments in their activities and supports to meet their recovery goals after initial treatment. Such a tool could offer personalized, adaptive recommendations aligned with evidenced-based care (i.e., relapse prevention model) and prompt individuals to engage with support at times of high risk. For example, individuals could receive daily messages about changes in their lapse risk and receive personalized recommendations based on top features contributing to their risk, like an urge surfing recommendation for someone with strong cravings. Moreover, it would provide a scalable option for long-term monitoring and support to address the substantial unmet need for continuing care for substance use disorders. 
+
+For such a system to exist, at least three pre-requisites must be met^[Of course, these are not the only things needed for a successful recovery monitoring support system. For example, people must be willing and able to provide sensing data and the system must able to provide risk-relevant feedback to the individual in a useful and clinically helpful way. While important, these questions are outside the scope of the current proposal (see @wyantAcceptabilityPersonalSensing2023 and @wyantOptimizingMessageComponentsinprep).]. One, the system must be able to collect a rich and densely sampled source (or sources) of risk-relevant data. Two, the system must have access to a model that can predict substance use with high performance and temporal precision and have interpretable model inputs for support recommendations to be mapped onto. Three, the model must perform fairly. The accuracy of the predictions and usefulness and relevance of the recommendations should be similar for everyone. Advances in both smartphone sensing [@mohrPersonalSensingUnderstanding2017] and machine learning [@hastieElementsStatisticalLearning2009] now make this possible.
+
+Smartphone sensing approaches (e.g., ecological momentary assessment [EMA], geolocation sensing) can provide the frequent, longitudinal measurement of proximal risk factors that is necessary for prediction of future lapses with high temporal precision. 
+
+Machine learning models can handle the high dimensional feature sets that may result from feature engineering densely sampled raw EMA over time. They can also accommodate non-linear and interactive relationships between features and lapse probability.  And methods from interpretable machine learning can be used to understand which risk features contribute most strongly to a lapse prediction for a specific individual at a specific moment in time.
+
+## Aims of this proposal
+
+This dissertation proposal describes a program of research that seeks to develop an algorithm to be used in a recovery monitoring and support system. Two projects (chapters 2 and 3) are completed and two projects (chapters 3 and 4) are planned and under development. These projects are explained more below:
+
+**Chapter 2:** Machine learning models for temporally precise lapse prediction in alcohol use disorder 
+
+This project demonstrated that 4x daily EMA could be used to build temporally precise machine learning models to predict alcohol lapses. Specifically, we built three models to predict the probability of an alcohol lapse in the next week, day, and hour. Our models performed exceptionally well with median posterior probabilities for area under the ROC curve (auROC) of .90, .91, and .93 for predicting lapse probabilities into the next week, day, and hour, respectively. 
+
+In this study we also demonstrated it is possible to understand important features overall for a model (i.e., across all observations for all participants) and important features for an individual prediction (i.e., for a single individual at a specific moment). We found on average past use, craving, and abstinence self-efficacy were the most important features affecting predicted probability scores across the three models. We also saw a wide range of individual feature importance values across all people and all days, suggesting that even features with relative low overall importance were still clinically important for some people at some moments.
+
+These findings suggest that it is feasible to identify periods of high lapse risk at varying levels of temporal precision and extract important risk features. If embedded in a recovery monitoring and support system, output from models that predict immediate lapses, like these, could be used to provide individuals critical information about their immediate risk of lapse. Daily (or more or less frequent) messages could be sent to individuals that relay information about changes in their risk and make supportive recommendations for immediate action based on the top features contributing to their risk. For example, recommending a coping with craving activity for someone experiencing strong cravings, recommending a guided relaxation video for someone reporting recent stressful events, or encouraging individuals to reflect on recent past successes or reasons for choosing abstinence or moderation when reported self-efficacy is low. Importantly, this assumes that the recommendations can be implemented immediately. Thus, the individual has already likely learned the skill and it is not contingent on scheduling or other people.   
+
+However, often the most clinically appropriate support recommendation takes time to set up. Scheduling positive or pleasant activities, increasing social engagement, or attending a peer-led recovery meeting may require days or weeks to implement. In these cases, patients would benefit from advanced warning about changes in their risk. This advanced warning could be obtained by lagging lapse probability predictions further into the future (e.g., predicting the probability of a lapse in a 24-hour window that begins two weeks in the future). 
+
+Finally, in this study, we failed to assess model fairness. In recent years, the machine learning field has begun to understand the critical importance of evaluating model fairness when algorithms are used to inform important decisions (e.g., healthcare services offered, eligibility for loans, early parole). Algorithms that perform favorably for only a single majority group could widen existing disparities in access to resources and important clinical outcomes [@veinotGoodIntentionsAre2018]. Future studies included in this proposal will explicitly evaluate model performance parity across important subgroups. 
+
+
+**Chapter 3:**  Lagged predictions of next day alcohol lapse risk for personalized and adaptive continuing care support
+
+This project showed that the same 4x daily EMA could be used to predict alcohol use occurring within a 24-hour window up to two weeks into the future. We considered several meaningful lags between the prediction timepoint and start of the prediction window: 1 day, 3 days, 1 week, and 2 weeks. These models with lagged prediction windows can be used to provide personalized support recommendations with the added benefit of advanced warning. Thus, giving an individual extra time to implement the recommendation.
+
+Model performance decreased as the start of the prediction window was lagged further from the prediction timepoint with median posterior probabilities for auROC of .88 (1-day lag), .87 (3-day lag), .86 (1-week lag), and .84 (2-week lag). This decrease in performance is not surprising given what we know about prediction and alcohol lapse. Many important lapse risk factors are fluctuating processes that can change day-by-day, if not more frequently. As lag times increase, features become less proximal to the start of the prediction window. Still, auROCs of .80 and higher are generally considered to indicate good performance and the benefit of advanced notice of lapse risk likely outweighs the cost to performance.
+
+In this study, we also assessed model fairness by comparing model performance (posterior probability for auROC) across important subgroups with known disparities in substance use treatment access and/or outcomes - race/ethnicity (not White vs. non-Hispanic White), income (below poverty vs. above poverty), and sex at birth (female vs. male). There was strong evidence that our models performed better for individuals who were non-Hispanic White, male, and had a personal income above the Federal poverty line.
+
+The relative ordering of important features remained somewhat consistent across the models. Past use, future efficacy, and craving were the top three features for all models. However on average these features became less important as model predictions lagged further into the future, consistent with their lower performance. As with the previous study, we found a wide range of individual importance values for features across the models.
+
+These results are promising, however, several limitations exist. Most notably was a lack of fairness in the performance of our models among subgroups. The largest contributing factor is likely the lack of diversity in our training data. Even with our coarse dichotomous grouping of race we only had 20 participants in the not White group (compared to 131 in the White group). We also saw a similar pattern in our income groups (49 people in the below poverty group compared to 102 people in the above poverty group).
+
+However, we had equal representation of men and women and still found our models performed better for men. We chose our 9 EMA items based on the extant relapse risk literature. Historically women were excluded from early substance use research due to their childbearing potential. It is possible that these constructs more precisely describe relapse risk factors for men than for women. 
+
+One solution, would be to add additional EMA items to the daily surveys in hopes to capture important risk factors for women. This however, would quickly increase the burden of our surveys. EMA acceptability studies suggest that longer surveys, but not more frequent prompts, promote increased perceived burden and compromised data quantity and quality [@eiseleEffectsSamplingFrequency2020]. Therefore, supplementing EMA with another lower burden sensing method may be preferred. Additionally, passive sensing data may be well-suited for data-driven (bottom-up) feature engineering approaches. Compared to traditional, theory-driven (top-down) methods, data-driven features can identify patterns and characteristics predictive of lapse in specific groups and reduce potential bias in features by minimizing researcher involvement.
+    
+A few other limitations were inherent in the data set. First, was the length of participation. As participants only provided data for up to three months, we were limited by how far into the future we could lag predictions. It is likely that even more advanced warning (e.g., 1 month) would be helpful for implementing more intensive supports (e.g., re-engagement with clinician-delivered care). Second, the results presented in chapters 2-3 focus on alcohol lapse prediction. Alcohol differs from other substances in several ways. It is legal and generally viewed to be socially acceptable (e.g., it is often integrated into celebrations and social gatherings). As a result, individuals who use other substances (e.g., opioids) may face more stigma and be less willing to report substance use and risk information. Therefore, it is not clear that similar prediction models will perform as well. 
+
+
+**Chapter 4:** Using sensing data to predict opioid lapse risk in a national sample of patients with opioid use disorder
+
+In this study, we will take advantage of an existing dataset of personal sensing data (1X daily EMA and geolocation) and opioid lapse reports from a national sample of people with opioid use disorder to predict immediate (i.e., in the next 24 hours) lapses back to opioid use. 
+
+This study will allow us to generalize lapse prediction algorithms to other drugs beyond alcohol. Notably, a successful model will demonstrate that lapse prediction can be done with a drug where its use is illegal and people may be less willing to provide information about lapses and risk factors. 
+    
+These data also offer more diversity with regard to race/ethnicity and income. This will allow us to determine if improving the quality of the training data with respect to diversity is sufficient to address issues of fairness. These data also offer diversity across geographic location (e.g., rural vs. urban), likely another important factor in evaluating fairness. 
+
+In this proposed study, model features will be derived from two complementary sensing methods: 1X daily EMA and continuous geolocation data. Geolocation sensing, a passive sensing method, could compliment EMA well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the EMA. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people.
+
+Participants provided data for up to 12 months. This extended window of recovery (12 months vs. 3 months) is critical for evaluating the value of an algorithm intended for ongoing continuing care support and understanding how lapse risk evolves as people progress in their recovery (i.e., past 3 months). Unfortunately, our ability to address explanatory questions about the time course of lapse risk, and how individuals might cluster on different recovery trajectories is limited with traditional machine learning methods. These methods do not capture the repeated nature of sensing data. Each lapse prediction is treated as a new independent observation. We can account for the repeated observations in our sensing data by engineering features that capture individual changes over time to produce unbiased and precise estimates of predictive performance. However, more traditional time series models are better suited for understanding the temporal dynamics of lapse risk over long periods of recovery.
+
+The longer duration of participation also provides the opportunity to experiment with lagged prediction windows further than two weeks into the future (i.e., 1 month). However, in a machine learning framework, different models must be built to predict lapses at varying times in the future. For example, a recovery monitoring support system that detects both immediate lapse risk (i.e., in the next 24 hours) and future lapse risk (i.e, in the next 2 weeks and in the next month) would need three models. This approach is time consuming, cumbersome, and still only provides coarse understanding of time-course. Therefore, this study will only predict immediate lapse risk.
+
+
+**Chapter 5:** State-space models for idiographic risk monitoring and recovery support recommendations
+
+In this study, we propose Hierarchical Bayesian state-space models as an alternative approach for prediction models. State-space models model measured inputs (e.g., ema responses, time spent in risky locations, time spent at home) and outputs (i.e., lapse or no lapse) from time series data with latent states. The hierarchical nature, will allow us to better use and understand time-varying information. State-space models explicitly model how the latent state of an individual's lapse risk evolves over time. 
+    
+Given the heterogeneity in lapse risk and the complex interactions between environment and individual differences, a time series model that use an individual's own data to make future predictions may perform better than models trained at the group-level. Therefore, we will build an individual model for each participant using their own data. Although our immediate lapse risk models have been performing quite well, individual models could improve performance for our lagged prediction models. Individual models also may help mitigate issues of unfairness, as the model will weigh the individual's own data more heavily than group level estimates.
+
+Additionally, time series models could potentially improve the efficiency and performance of lagged prediction models. A single model can be used to predict a lapse at any point in the future, eliminating the need for multiple models for predicting immediate and future lapse risk. 
+
+Therefore, in this study, we will evaluate the performance and fairness of a state-space model approach for opioid lapse risk prediction using the EMA and geolocation data set introduced in Chapter 4. We will evaluate both immediate (i.e., in the next 24 hours) and future (i.e., next 2 weeks and next 1 month) lapse risk. 
+  
+
+# Chapter 2: Machine learning models for temporally precise lapse prediction in alcohol use disorder 
+    
+
+# Chapter 3: Lagged predictions of next day alcohol lapse risk for personalized and adaptive continuing care support
+
+# Chapter 4: Using sensing data to predict opioid lapse risk in a national sample of patients with opioid use disorder
+
+## Introduction
+
+Studies show high agreement between recent (i.e., 1-4 days) self-report and biological markers (i.e., urine, saliva, hair) of drug use [@bharatAgreementSelfreportedIllicit2023]. This suggests people may be willing to report illicit substance use behaviors. 
+
+However, it is unclear if people in recovery from substance use disorders, other than alcohol, can sustain long-term adherence (e.g., one year or more) needed for a recovery monitoring support system that uses self-report data. Previous studies examining adherence to frequent self-report prompts among people with illicit substance use disorders have typically only prompted for 7-30 days [@jonesComplianceEcologicalMomentary2019] (except @kennedySexDifferencesCocaine2013 prompted for 175 days and found 75% adherence).
+
+It is also unclear whether people in recovery from illicit substance use disorders can, or are willing to, accurately report other risk information needed to develop accurate prediction models. For example, people with substance use disorders may experience greater instability in their day-to-day lives (e.g., stigma or legal consequences may make access to healthcare, stable housing, or supportive relationships more difficult). This instability could make it difficult to recall and report recent behaviors and events promptly or accurately. It may also skew their baseline perception of what constitutes a risky or stressful experience. 
+
+Supplementing self-report data with passively sensed data (e.g., geolocation) could make up for imprecise reports of risk factors or be used for lapse prediction during periods of non-adherence to self-report surveys. Additionally, more data will produce more features that could allow for better personalization of support recommendations.
+
+This project will use daily surveys and sensed geolocation for up to one year from a national sample of people with opioid use disorder to predict immediate (i.e., in the next 24 hours) lapses back to opioid use. 
+
+## Specific Aims
+
+In this study, we will expand our previous modeling procedure to opioid use disorder and evaluate performance, fairness, and top features for predicting opioid lapse risk.
+
+Specifically, we will:
+
+**1. Evaluate the performance (auROC) of a machine learning model that predicts opioid lapse risk from geolocation and daily surveys.** This aim will allow us to determine whether lapse prediction models can be generalized to other drugs beyond alcohol. Notably, a successful model will demonstrate that lapse prediction can be done with a drug where its use is illegal and people may be less willing to provide information about lapses and risk factors. It will also show the feasibility of using self-report data over long periods of reocvery (i.e., 12 months).
+
+**2. Assess model fairness in performance across important subgroups with known disparities in substance use treatment access and/or outcomes - race/ethnicity (not White vs. non-Hispanic White), income (below \$25,000 vs. above \$25,000), gender (female vs. male vs. other), and geographic location (rural vs. urban).** These data offer more diversity with regard to race/ethnicity, income, and geographic location. This aim will allow us to determine if improving the quality of the training data with respect to diversity is sufficient to address issues of fairness.  
+
+**3. Describe the relative importance of features on model performance.** Model features will be derived from two complementary sensing methods: daily surveys and continuous geolocation data. Geolocation sensing, a passive sensing method, could compliment daily surveys well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the daily surveys. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people. This aim will help determine whether a sufficient number of unique important features emerge from these data.
+
+## Methods
+
+### Participants
+We recruited participants in early recovery from opioid use disorder. Participants were recruited through print and targeted digital advertisements (craigslist, reddit, Facebook) and partnerships with MOUD treatment centers. We required that participants:  
+
+1. were age 18 or older,
+2. could write, speak, and read in English,
+3. enrolled in an MOUD treatment program (for at least one month but not longer than 12 months) and adherent (taken daily medication every day or nearly every day in past month) or enrolled in or recently completed an intensive outpatient treatment program for opioid use disorder,
+4. had a goal of abstinence from opioids,
+5. had an android smartphone that they were willing to use as their single phone for duration of the study, and
+6. had active cellular plan that they were willing to maintain for duration of the study.
+
+Participants were considered enrolled in the study if they were eligible, consented, and provided data for at least one month. A total of 336 participants enrolled in the study. We excluded data from one participant whose geolocation data showed they did not reside in the US. We also excluded 11 participants due to careless responding on the daily surveys and/or lapses reported nearly every day on study, suggesting they did not have a goal of abstinence. Our final sample consisted of 324 participants.
+
+The table below presents the demographic and clinical characteristics of the 324 participants in our analysis sample.
+
+```{r}
+#| echo: false
+#| message: false
+
+dem <- read_csv(here::here("data/risk2_dem.csv"),
+                show_col_types = FALSE) |> 
+  rename(` ` = `...1`)
+
+dem |> 
+  knitr::kable(digits = 1) |> 
+  kableExtra::kable_classic() |> 
+  kableExtra::group_rows(start_row = 2, end_row = 8) |> 
+  kableExtra::group_rows(start_row = 10, end_row = 14) |> 
+  kableExtra::group_rows(start_row = 16, end_row = 20) |> 
+  kableExtra::group_rows(start_row = 22, end_row = 28) |> 
+  kableExtra::group_rows(start_row = 30, end_row = 35) |> 
+  kableExtra::group_rows(start_row = 37, end_row = 42) |> 
+  kableExtra::group_rows(start_row = 44, end_row = 51) |> 
+  kableExtra::group_rows(start_row = 53, end_row = 54) |> 
+  kableExtra::group_rows(start_row = 57, end_row = 60) |> 
+  kableExtra::group_rows(start_row = 62, end_row = 66) |> 
+  kableExtra::group_rows(start_row = 68, end_row = 69)
+```
+
+### Procedure
+Participants who screened eligible were consented and onboarded over video or phone call. All participants were instructed to download the STARR study app (a version of CHESS). After this meeting participants were instructed to watch a set of video tutorials for learning how to use the app. One week later they participated in a check-in video or phone call with study staff to answer any questions about the app and troubleshoot any technical issues. At this time, study staff also mailed onboarding materials to participants, including a payment card. Participants were expected to complete monthly surveys to remain on study. At the end of the study participants met with study staff for a final debriefing video or phone call.
+
+### Measures
+
+#### Individual Characteristics
+We collected self-report information about demographics (age, gender, orientation, race/ethnicity, education, employment, income, relationship status, location) and clinical characteristics (DSM-5 OUD symptom count, MOUD medication, number of lifetime overdoses) to characterize our sample. Demographic information will be included as features in our models. A subset of these variables (gender, race/ethnicity, income, and location) will be used for model fairness analyses, as they have documented disparities in treatment access and outcomes.
+
+As part of the aims of the parent project we collected many other trait and state measures throughout the study. A complete list of all measures will be made available on our study’s OSF page.
+
+#### Daily Surveys
+Participants completed one brief (16 questions) daily survey. Daily surveys became available in star app each morning at 6 am. The survey remind open until 5:59 am the next day. Push notifications were also sent to participants to remind them that they had a new task that had not been completed yet.
+
+On each survey, participants reported dates/times of any previously unreported past opioid use. They also reported any other drugs or alcohol used in the past 24 hours and whether they took their MOUD as prescribed. Next, participants rated the maximum intensity of recent (i.e., since last EMA) experiences of pain, craving, risky situations, stressful events, and pleasant events. Next, participants rated their sleep and how depressed, angry, anxious, relaxed, and happy they have felt in the past 24 hours. Finally, participants rated how motivated they were to completely avoid using opioids for non-medical reasons and how confident they were in their ability to completely avoid using opioids for non-medical reasons.
+
+Participants were withdrawn early from the study if they did not complete at least 20 daily surveys in a four week period.
+
+#### Monthly Surveys
+Monthly surveys consisted of several clinical scales as part of the parent project's aims. The monthly survey was also personalized to ask a series of questions about participants' frequent locations (identified by geolocation sensing - see Sensed Geolocation section below). For locations that participants visited twice in a month, they were asked to identify the type of location, what they do there, how pleasant and unpleasant their experience is there, and how much this place helps and harms their recovery from opioids. 
+
+Participants were withdrawn early from the study if they missed three monthly surveys.
+
+#### Sensed Geolocation
+Continuous sensed geolocation was collected through the STARR app. Geolocation was contextualized by asking questions about frequently visited locations in each monthly survey (see Monthly Surveys section above). 
+
+Participants were shown how to temporarily turn off sharing geolocation with us. However, participants were expected to share their location with the STARR app and were withdrawn from the study if they did consistently provide geolocation data (i.e., disabling location sharing for more than 12 hours in a four-week period). 
+
+### Planned Data Analyses
+
+#### Labels
+Prediction windows are 24 hours in width. The 24-hour windows roll day-by-day starting at 6 am in the participant's own time zone. The start and end date/time of past opioid use were reported on the first daily survey item. Each prediction window was labeled as a lapse if opioid use was reported as occurring between 6 am that day and 5:59 am the next morning. Windows with no reported opioid use were labeled as no lapse. 
+
+We ended up with a total of 93376 labels, with 2% labeled as lapses.
+
+#### Feature Engineering
+
+Features will be derived from four sources:
+
+1. Prediction window: We will dummy-code features for day of the week for the start of the prediction window.
+
+2. Demographics: We will create dummy-coded features for age (18-25 years, 26-35 years, 36-45 years, 46-55 years, 56 years or older), personal income (less than \$25,000, more than \$25,000), gender (male, female, other), race/ethnicity (non-Hispanic White vs. not White), geographic location (urban, rural), relationship status (in committed relationship, not in committed relationsip), education (high school or less, some college, college degree), and employment (employed, not employed).
+
+3. Previous daily survey responses: We will create raw and change features using daily surveys in varying feature scoring epochs (i.e., 48, 72, and 168 hours) before the start of the prediction window for all daily survey items. Raw features will include min, max, and median scores for each daily survey item across all daily surveys in each epoch for that participant. We will also calculate change features by subtracting each participant’s baseline mean score for each daily survey item from their raw feature. These baseline mean scores will be calculated using all of their daily surveys collected from the start of their participation until the start of the prediction window. We also will create raw and change features based on the most recent response for each daily survey question and raw and change rate features from previously reported lapses and number of completed daily surveys.
+
+4. Geolocation data: We will calculate raw and change features for time spent in locations harmful to recovery, time spent in locations helpful for recovery, time spent in pleasant locations, time spent in unpleasant locations,  location variance, type of location, and activity done at location over varying feature scoring epochs (i.e., 6, 12, 24, 48, 72, and 168 hours).
+
+Other generic feature engineering steps will include imputing missing data (median imputation for numeric features, mode imputation for nominal features) and removing zero and near-zero variance features as determined from held-in data (see Cross-validation section below).
+
+#### Model Training and Evaluation
+
+##### Cross Validation
+We will consider candidate Xgboost model configurations that differ across sensible values for key hyperparameters and outcome resampling method (i.e., no resampling and up-sampling and down-sampling of the outcome using majority/no lapse to minority/lapse ratios ranging from 1:1 to 5:1).
+
+We will use participant-grouped, nested cross-validation for model training, selection, and evaluation with auROC. auROC indexes the probability that the model will predict a higher score for a randomly selected positive case (lapse) relative to a randomly selected negative case (no lapse). Grouped cross-validation assigns all data from a participant as either held-in or held-out to avoid bias introduced when predicting a participant’s data from their own data. We will use 1 repeat of 10-fold cross-validation for the inner loops (i.e., validation sets) and 3 repeats of 10-fold cross-validation for the outer loop (i.e., test sets). Best model configurations will be selected using median auROC across the 10 validation sets. Final performance of these best model configurations will be evaluated using median auROC across the 30 test sets.
+
+##### Bayesian Model
+We will use a Bayesian hierarchical generalized linear model to estimate the posterior probability distributions and 95% Bayesian credible intervals (CIs) from the 30 held-out test sets for our best model. We will use the rstanarm default autoscaled, weakly informative, data-dependent priors that take into account the order of magnitude of the variables to provide some regularization to stabilize computation and avoid over-fitting. We will set two random intercepts to account for our resampling method: one for the repeat, and another for the fold nested within repeat. 
+
+From the Bayesian model we will obtain the posterior distribution and Bayeisan CI for auROCs our best model. To evaluate our models’ overall performance we will report the median posterior probability for auROC and Bayesian CI. This represents our best estimate for the magnitude of the auROC parameter. If the credible interval does not contain .5 (chance performance), this provides strong evidence (> .95 probability) that our model is capturing signal in the data.
+
+##### Fairness Analyses
+We will calculate the median posterior probability and 95% Bayesian CI for auROC for our best model separately by race/ethnicity (not White vs. non-Hispanic White), income (below \$25,000 vs. above \$25,000), gender (female vs. male vs. other), and location (rural vs. urban). We will conduct Bayesian group comparisons to assess the likelihood that each model performs differently by group. We will report the precise posterior probability for the difference in auROCs and the 95% Bayesian CIs for each model comparison.
+
+##### Feature Importance
+We will calculate Shapley values in log-odds units for binary classification models from the 30 test sets to provide a description of the importance of categories of features across our best model. We will average the three Shapley values for each observation for each feature (i.e., across the three repeats) to increase their stability. An inherent property of Shapley values is their additivity, allowing us to combine features into feature categories. We will create separate feature categories for each of the 15 daily survey questions, past opioid use, missing daily surveys, time spent in risky locations, and time spent at known locations (separate by type of location). We will calculate the local (i.e., for each observation) importance for each category of features by adding Shapley values across all features in a category, separately for each observation. We will calculate global importance for each feature category by averaging the absolute value of the Shapley values of all features in the category across all observations. These local and global importance scores based on Shapley values allow us to contextualize relative feature importance for our model.
+
+
+# Chapter 5: State-space models for idiographic risk monitoring and recovery support recommendations
+
+## Introduction
+
+Lapse risk is multidimensional. The extant relapse prevention literature suggests relapse is preceeded by a complex interplay of factors, including include emotional or cognitive states, environmental contingencies, and physiological states [@witkiewitzModelingComplexityPosttreatment2007; @witkiewitzTherapistsGuideEvidenceBased2007]. For reasons related to burden and cost, researchers typically rely on a handful of course categories of risk-relevant features (e.g., self-reported craving, self-reported self-efficacy, geolocation-sensed time spent in risky locations) to model an unknown hidden state of an individual (i.e., their true lapse risk).
+
+Moreover, lapse risk factors differ between individuals and within an individual over time. Personalized models (i.e., a model built for a specific individual using their own data) that make use of time-varying information in repeated measures may be able to better understand between and within subject differences in lapse risk trajectories, leading to more accurate predictions.  
+
+State-space models may be one approach for modeling the multidimensional, heterogeneous, and time-varying construct of lapse risk. State-space models are time series models that describe the relationship between the observed measured inputs and the unknown latent state while accounting for how this latent state evolves over time. They personalize lapse risk prediction by using an individual's own data to make future predictions about lapse risk for that single individual. Furthermore, predictions can be made at any point into the future at a single prediction timepoint from a single model. These individual models that integrate time-varying information could improve performance for our lagged prediction models. They may also help mitigate issues of unfairness, as the model will weigh the individual's own data more heavily than group level estimates. 
+
+
+## Specific Aims
+In this study, we will evaluate the performance and fairness of a hierarchichal Gaussian linear state-space model (also known as a dynamic linear model) for opioid lapse risk prediction using the same daily survey and geolocation data introduced in study 3 (Chapter 4). 
+
+Specifically, we will:
+
+**1. Evaluate the performance (auROC) of personalized state-space model that predict immediate (next day) opioid lapse risk from geolocation and daily surveys.** This aim will allow us to assess how individual models that account for time-varying models perform over time (i.e., each month for up to 12 months). We will be evaluating this model independently in this study, however, model performance achieved in study 3 can be used as a benchmark for comparison.
+
+**2. Use the same model from Aim 1 to evaluate its performance for predicting future lapse risk (i.e., lapse risk in the next two weeks and the next month).** A benefit of time series models, like state-space models, is that they could potentially improve the efficiency and performance of lagged prediction models (compared to traditional machine learning approaches). A single model can be used to predict a lapse in the next day or at any point in the future. We will evaluate how well our individual models predict lapse risk two weeks and one month into the future.
+
+**3. Assess model fairness in model performance for immediate lapses across the same important subgroups assessed in study 3 - race/ethnicity (not White vs. non-Hispanic White), income (below \$25,000 vs. above \$25,000), gender (female vs. male vs. other), and geographic location (rural vs. urban).** Individual models may help mitigate issues of unfairness, seen in our previous group-level machine learning models, as the model will weigh the individual's own data more heavily than group level estimates.
+
+
+## Methods
+
+Refer to Chapter 4 for a description of the data set and study procedures.
+
+### Planned Data Analyses
+
+#### State-space Model
+
+State-space models consist of 1. a transition (or state) equation that describes how the latent state evolves over time based on its previous state and observed inputs (current ema?), and 2. an observation equation that describes the functional relationship between the unobserved, latent states and observed inputs.
+
+For both equations, we will use a linear formula with Gaussian noise.
+
+**Transition equation:** $x_{t+1} = A*x_{t} + w_t$, where $x_{t+1}$ represents the hidden state at the next timepoint, $A$ is the state transition matrix, $x_{t}$ is the hidden state at the current timepoint, and $w_t$ is zero mean Gaussian noise. 
+
+**Observation equation:** $y_t = C*x_t + v_t$, where $y_t$ is the observed EMA and Geolocation inputs, $C$ is the observation matrix, $x_t$ is the hidden state at the current timepoint and $v_t$ is zero mean Gaussian noise. 
+
+We will also assign prior distributions to all individual- and population-level model parameters, consistent with a Bayesian approach. We will use a Bayseian fitting approach called maximum a posteriori (MAP) estimation to establish prior distributions for the model parameters: transition matrix ($A$), observation matrix ($C$), and noise ($w_t$,$v_t$). These priors will be established from held-in data. Parameters and noise variance will be estimated for each individual in the held out data. Thus, model priors will be combined with observed data from a new individual to fit an idiographic model for that individual. When few data for the individual are available, the fit will rely more heavily on the prior distributions for the model parameters. As more data become available the model fit will primarily the participant’s data and the influence of the prior distributions diminishes.   
+
+State-space models use the observed data to estimate the unknown latent states, not to directly predict the outcome label. Therefore, state-space models can handle missing data without the need for imputation.
+
+#### Predictions
+
+Prediction windows are 24 hours in width. The 24-hour windows roll day-by-day starting at 6 am in the participant's own time zone. The start and end date/time of past opioid use were reported on the first daily survey item. Each prediction window was labeled as a lapse if opioid use was reported as occurring between 6 am that day and 5:59 am the next morning. Windows with no reported opioid use were labeled as no lapse. 
+
+The first label for each participant will be two weeks after their study start date. This will ensure we have at least two weeks of daily surveys and geolocation data.
+
+All available data will up until the start of the prediction window will be used. The predictors, or model inputs, will be the raw daily survey responses and a single geolocation risk score (calculated from the previous 24 hours of geolocation data). The formula for calculating the geolocation risk score will be informed by the top geolocation predictors that emerge in study 3 (Chapter 4).
+
+In the first month models will be fit every 2 weeks. After month 1 the model will update (i.e., be refit with the additional data) each month. 
+
+#### Model Evaluation
+We will use participant-grouped 3 repeats of 10-fold cross-validation to assess model performance using area under the ROC curve (auROC). Grouped cross-validation assigns assigns all data from a participant into a single fold. Data from individuals in the held-in folds will be used to fit prior distributions for the model parameters. 
+
+Individual models will then be fit to each individual in the held-out fold. We will attach the group-level Bayesian priors generated from the held-in participants to help prevent over-fitting and improve stability of the models' performance. Each individual model will output a predicted probability of lapse in the next day, in a 24-hour window two weeks from the prediction timepoint, and in a 24-hour window one month from the prediction timepoint.
+
+Models will be evaluated separately for each prediction lag duration (immediate/no lag, 2-week lag, 1-month lag). We will aggregate prediction accuracy across held-out participants at 12 different timepoints (months 1-12). We will use a Bayesian hierarchical generalized linear model to estimate the posterior probability distributions and 95% Bayesian credible intervals (CIs) from the 30 held-out test sets at each model evaluation timepoint for each lag. We will use the rstanarm default autoscaled, weakly informative, data-dependent priors and set two random intercepts to account for our resampling method: one for the repeat, and another for the fold nested within repeat. We will report the median posterior probability for auROC and Bayesian CI at all 12 model evaluation timepoints for each lag.
+
+#### Model Fairness
+We will calculate the median posterior probability and 95% Bayesian CI for auROC for our immediate model separately by race/ethnicity (not White vs. non-Hispanic White), income (below \$25,000 vs. above \$25,000), gender (female vs. male vs. other), and location (rural vs. urban) at each model evaluation timepoint (months 1-12). We will conduct Bayesian group comparisons to assess the likelihood that each model performs differently by group. We will report the precise posterior probability for the difference in auROCs and the 95% Bayesian CIs for each model comparison.
+
