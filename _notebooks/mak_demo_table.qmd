@@ -1,0 +1,240 @@
+---
+title: "Demographics Table" 
+author: "Kendra Wyant"
+date: "`r lubridate::today()`"
+format: 
+  html: 
+    embed-resources: true
+    toc: true 
+    toc_depth: 4
+editor_options: 
+  chunk_output_type: console
+--- 
+
+```{r}
+#| message: false
+#| warning: false
+
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(source("https://github.com/jjcurtin/lab_support/blob/main/format_path.R?raw=true"))
+library(kableExtra)
+
+path_shared <- format_path("studydata/risk2/data_processed/shared")
+path_ema <- format_path("studydata/risk2/data_processed/ema")
+
+options(knitr.kable.NA = '')
+```
+
+
+
+## Data and calculations
+
+```{r}
+study_dates <- read_csv(here::here(path_ema, "study_dates.csv"),
+                show_col_types = FALSE) 
+
+intake <- read_csv(here::here(path_shared, "survey_intake.csv"),
+                show_col_types = FALSE) |> 
+  filter(subid %in% study_dates$subid) |> 
+  glimpse()
+
+lapses <- read_csv(here::here(path_shared, "survey_lapses.csv"), 
+                   show_col_types = FALSE) |> 
+  filter(subid %in% study_dates$subid) 
+```
+
+
+
+```{r}
+n_total <- nrow(intake)
+
+dem_age <- intake |>
+  select(var = age) |>
+  group_by(var) |>
+  summarise(n = n()) |>
+  mutate(perc = (n / sum(n)) * 100) |> 
+  add_row(var = "Age", .before = 1)
+
+dem_gender <-  intake |>
+  select(var = gender) |>
+  group_by(var) |>
+  summarise(n = n()) |>
+  mutate(perc = (n / sum(n)) * 100) |> 
+  add_row(var = "Gender", .before = 1)
+
+dem_orient <-  intake |>
+  select(var = orientation) |>
+  group_by(var) |>
+  summarise(n = n()) |>
+  mutate(perc = (n / sum(n)) * 100) |> 
+  add_row(var = "Orientation", .before = 1)
+
+dem_race <- intake |>
+  select(starts_with("race"), -race_other_text) |> 
+  pivot_longer(everything(), names_to = "race", values_to = "var") |>
+  mutate(var = case_when(var == "yes" & race == "race_ai_an" ~ 
+                           "American Indian or Alaska Native",
+                         var == "yes" & race == "race_asian" ~ "Asian",
+                         var == "yes" & race == "race_black" ~ 
+                           "Black or African American",
+                         var == "yes" & race == "race_hispanic" ~ 
+                           "Hispanic, Latino, or Spanish Origin",
+                         var == "yes" & race == "race_nat_hi" ~ 
+                           "Native Hawaiian or Other Pacific Islander",
+                         var == "yes" & race == "race_other" ~ "Not Listed Above",
+                         var == "yes" & race == "race_white" ~ "White or Caucasian")) |> 
+  filter(!is.na(var)) |>
+  group_by(var) |>
+  summarise(n = n()) |>
+  mutate(perc = (n / n_total) * 100) |>
+  add_row(var = "Race or Origin (Select all that apply)", .before = 1)
+
+
+dem_education <- intake |>
+  select(var = education) |>
+  mutate(var = fct_relevel(factor(var,
+                         c("8th grade or less", 
+                           "Some high school, but did not graduate", 
+                           "High school graduate or GED",
+                           "Some college or 2-year degree", 
+                           "4-year college graduate", 
+                           "More than 4-year or advanced degree")))) |>
+  group_by(var) |>
+  summarise(n = n()) |>
+  mutate(perc = (n / sum(n)) * 100) |>
+  add_row(var = "Education", .before = 1)
+
+dem_employment <- intake |>
+  select(var = employment) |>
+  group_by(var) |>
+  summarise(n = n()) |>
+  mutate(perc = (n / sum(n)) * 100) |>
+  add_row(var = "Employment", .before = 1)
+
+dem_income <- intake |>
+  select(var = income) |>
+  mutate(var = case_match(var, 
+                          "$150, 000 - $199,999" ~ "$150,000 - $199,999",
+                          "$200, 000 or more" ~ "$200,000 or more",
+                          "$25,000 - $34, 999" ~ "$25,000 - $34,999",
+                          "$50,000 - $74, 999" ~ "$50,000 - $74,999",
+                          "$75, 000 - $99, 999" ~ "$75,000 - $99,999",
+                          .default = var)) |>
+   mutate(var = fct_relevel(factor(var,
+                         c("Less than $25,000", 
+                           "$25,000 - $34,999", 
+                           "$35,000 - $49,999",
+                           "$50,000 - $74,999", 
+                           "$75,000 - $99,999", 
+                           "$100,000 - $149,999",
+                           "$150,000 - $199,999",
+                           "$200,000 or more")))) |>
+  group_by(var) |>
+  summarise(n = n()) |>
+  mutate(perc = (n / sum(n)) * 100) |> 
+  add_row(var = "Annual Household Income", .before = 1)
+
+
+dem_romantic <- intake |>
+  select(var = relationship_status) |>
+  group_by(var) |>
+  summarise(n = n()) |>
+  mutate(perc = (n / sum(n)) * 100) |> 
+  add_row(var = "In a Committed Romantic Relationship", .before = 1)
+
+dem_oud <- intake |>
+  summarise(mean = mean(dsm_c, na.rm = TRUE),
+            SD = sd(dsm_c, na.rm = TRUE),
+            min = min(dsm_c, na.rm = TRUE),
+            max = max(dsm_c, na.rm = TRUE)) |>
+  mutate(var = "DSM-5 OUD Symptom Count",
+         n = as.numeric(""),
+         perc = as.numeric("")) |>
+  select(var, n, perc, everything()) 
+
+dem_med <- intake |>
+  select(var = med) |>
+  group_by(var) |>
+  summarise(n = n()) |>
+  mutate(perc = (n / sum(n)) * 100) |> 
+  add_row(var = "OUD Medication", .before = 1)
+
+dem_od <- intake |>
+  select(var = whoassist_life_overdose) |>
+  mutate(var = if_else(var == "No", "0", var)) |> 
+  group_by(var) |>
+  summarise(n = n()) |>
+  mutate(perc = (n / sum(n)) * 100) |> 
+  add_row(var = "Number of Overdoses in Lifetime", .before = 1)
+
+lapses_per_subid <- intake |>
+  select(subid) |>
+  left_join(lapses |>
+  janitor::tabyl(subid) |>
+  select(-percent), by = "subid") |>
+  mutate(n = if_else(is.na(n), 0, n),
+         lapse = if_else(n > 0, "yes", "no"))
+
+lapse_info <- lapses_per_subid |>
+  group_by(lapse) |>
+  rename(var = lapse) |>
+  mutate(var = factor(var, levels = c("yes", "no"), labels = c("Yes", "No"))) |>
+  summarise(n = n()) |>
+  mutate(perc = (n / n_total) * 100,
+         mean = NA,
+         SD = NA,
+         min = NA,
+         max = NA) |>
+  full_join(lapses_per_subid |>
+  summarise(mean = mean(n),
+            SD = sd(n),
+            min = min(n),
+            max = max(n)) |>
+  mutate(var = "Number of reported lapses"),
+  by = c("var", "mean", "SD", "min", "max")) |> 
+  add_row(var = "Reported 1 or More Lapse During Study Period", .before = 1)
+
+table_dem <- dem_age |> 
+  bind_rows(dem_gender) |> 
+  bind_rows(dem_orient) |> 
+  bind_rows(dem_race) |>
+  bind_rows(dem_education) |>
+  bind_rows(dem_employment) |>
+  bind_rows(dem_income) |>
+  bind_rows(dem_romantic) |>
+  bind_rows(dem_oud) |>
+  bind_rows(dem_med) |> 
+  bind_rows(dem_od) |> 
+  bind_rows(lapse_info) |>
+  filter(!is.na(var)) |> 
+  mutate(range = str_c(min, " - ", max)) |> 
+  select(-c(min, max)) |> 
+  rename(` ` = var,
+         N = n,
+         `%` = perc,
+         M = mean,
+         Range = range)
+```
+
+```{r}
+table_dem |> 
+  write_csv(here::here("../study_dissertation/data/risk2_dem.csv"))
+```
+
+
+
+
+### Table 1: Demographic and Clinical Characteristics
+
+
+```{r}
+#| label: tbl-demo
+#| tbl-cap: "Demographic and Clinical Characteristics"
+
+table_dem |> 
+  knitr::kable(digits = 1)
+
+```
+
+
+
