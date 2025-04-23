@@ -24,7 +24,7 @@ options(knitr.kable.NA = '')
 ```
 
 
-# Chapter 1: Introduction
+# Introduction
 
 ## Substance Use Disorders
 
@@ -118,12 +118,12 @@ Additionally, time series models could potentially improve the efficiency and pe
 Therefore, in this study, we will evaluate the performance and fairness of a state-space model approach for opioid lapse risk prediction using the EMA and geolocation data set introduced in Chapter 4. We will evaluate both immediate (i.e., in the next 24 hours) and future (i.e., next 2 weeks and next 1 month) lapse risk. 
   
 
-# Chapter 2: Machine learning models for temporally precise lapse prediction in alcohol use disorder 
+# Machine learning models for temporally precise lapse prediction in alcohol use disorder 
     
 
-# Chapter 3: Lagged predictions of next day alcohol lapse risk for personalized and adaptive continuing care support
+# Lagged predictions of next day alcohol lapse risk for personalized and adaptive continuing care support
 
-# Chapter 4: Using sensing data to predict opioid lapse risk in a national sample of patients with opioid use disorder
+# Using sensing data to predict opioid lapse risk in a national sample of patients with opioid use disorder
 
 ## Introduction
 
