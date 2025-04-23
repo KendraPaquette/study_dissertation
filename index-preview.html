@@ -486,7 +486,7 @@
   <ul class="collapse">
   <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1"><span class="header-section-number">4.1</span> Introduction</a></li>
   <li><a href="#specific-aims" id="toc-specific-aims" class="nav-link" data-scroll-target="#specific-aims"><span class="header-section-number">4.2</span> Specific Aims</a></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">4.3</span> Methods</a>
+  <li><a href="#sec-methods" id="toc-sec-methods" class="nav-link" data-scroll-target="#sec-methods"><span class="header-section-number">4.3</span> Methods</a>
   <ul class="collapse">
   <li><a href="#participants" id="toc-participants" class="nav-link" data-scroll-target="#participants"><span class="header-section-number">4.3.1</span> Participants</a></li>
   <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure"><span class="header-section-number">4.3.2</span> Procedure</a></li>
@@ -498,7 +498,7 @@
   <ul class="collapse">
   <li><a href="#introduction-2" id="toc-introduction-2" class="nav-link" data-scroll-target="#introduction-2"><span class="header-section-number">5.1</span> Introduction</a></li>
   <li><a href="#specific-aims-1" id="toc-specific-aims-1" class="nav-link" data-scroll-target="#specific-aims-1"><span class="header-section-number">5.2</span> Specific Aims</a></li>
-  <li><a href="#methods-1" id="toc-methods-1" class="nav-link" data-scroll-target="#methods-1"><span class="header-section-number">5.3</span> Methods</a>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">5.3</span> Methods</a>
   <ul class="collapse">
   <li><a href="#planned-data-analyses-1" id="toc-planned-data-analyses-1" class="nav-link" data-scroll-target="#planned-data-analyses-1"><span class="header-section-number">5.3.1</span> Planned Data Analyses</a></li>
   </ul></li>
@@ -595,8 +595,8 @@
 <p><strong>2. Assess model fairness in performance across important subgroups with known disparities in substance use treatment access and/or outcomes - race/ethnicity (not White vs.&nbsp;non-Hispanic White), income (below $25,000 vs.&nbsp;above $25,000), gender (female vs.&nbsp;male vs.&nbsp;other), and geographic location (rural vs.&nbsp;urban).</strong> These data offer more diversity with regard to race/ethnicity, income, and geographic location. This aim will allow us to determine if improving the quality of the training data with respect to diversity is sufficient to address issues of fairness.</p>
 <p><strong>3. Describe the relative importance of features on model performance.</strong> Model features will be derived from two complementary sensing methods: daily surveys and continuous geolocation data. Geolocation sensing, a passive sensing method, could compliment daily surveys well. It could provide insight into information difficult to measure with self-report (e.g., the amount of time spent in risky locations, or changes in routine that could indicate life stressors) or that would add additional burden by increasing the number of questions on the daily surveys. Furthermore, by adding more data sources gives us more features and that could mean better personalization of predictions and recommendations for more people. This aim will help determine whether a sufficient number of unique important features emerge from these data.</p>
 </section>
-<section id="methods" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="methods"><span class="header-section-number">4.3</span> Methods</h2>
+<section id="sec-methods" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sec-methods"><span class="header-section-number">4.3</span> Methods</h2>
 <section id="participants" class="level3" data-number="4.3.1">
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="participants"><span class="header-section-number">4.3.1</span> Participants</h3>
 <p>We recruited participants in early recovery from opioid use disorder. Participants were recruited through print and targeted digital advertisements (craigslist, reddit, Facebook) and partnerships with MOUD treatment centers. We required that participants:</p>
@@ -1331,9 +1331,9 @@
 <p><strong>2. Use the same model from Aim 1 to evaluate its performance for predicting future lapse risk (i.e., lapse risk in the next two weeks and the next month).</strong> A benefit of time series models, like state-space models, is that they could potentially improve the efficiency and performance of lagged prediction models (compared to traditional machine learning approaches). A single model can be used to predict a lapse in the next day or at any point in the future. We will evaluate how well our individual models predict lapse risk two weeks and one month into the future.</p>
 <p><strong>3. Assess model fairness in model performance for immediate lapses across the same important subgroups assessed in study 3 - race/ethnicity (not White vs.&nbsp;non-Hispanic White), income (below $25,000 vs.&nbsp;above $25,000), gender (female vs.&nbsp;male vs.&nbsp;other), and geographic location (rural vs.&nbsp;urban).</strong> Individual models may help mitigate issues of unfairness, seen in our previous group-level machine learning models, as the model will weigh the individual’s own data more heavily than group level estimates.</p>
 </section>
-<section id="methods-1" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="methods-1"><span class="header-section-number">5.3</span> Methods</h2>
-<p>Refer to Chapter 4 for a description of the data set and study procedures.</p>
+<section id="methods" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="methods"><span class="header-section-number">5.3</span> Methods</h2>
+<p>Refer to Chapter 4 <a href="#sec-methods" class="quarto-xref">Section&nbsp;4.3</a> for a complete description of the data set and study procedures.</p>
 <section id="planned-data-analyses-1" class="level3" data-number="5.3.1">
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="planned-data-analyses-1"><span class="header-section-number">5.3.1</span> Planned Data Analyses</h3>
 <section id="state-space-model" class="level4" data-number="5.3.1.1">
