@@ -287,7 +287,7 @@ Refer to Chapter 4 @sec-methods for a complete description of the data set and s
 
 #### State-space Model
 
-State-space models consist of 1. a transition (or state) equation that describes how the latent state evolves over time based on its previous state and observed inputs (daily surveys), and 2. an observation equation that describes the functional relationship between the unobserved, latent states and observed inputs.
+State-space models consist of 1. a transition (or state) equation that describes how the latent state evolves over time based on its previous state and observed inputs (e.g., daily surveys, geolocation risk score), and 2. an observation equation that describes the functional relationship between the unobserved, latent states and observed inputs.
 
 For both equations, we will use a linear formula with Gaussian noise.
 
