@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.28">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,16 +46,18 @@ div.csl-indent {
 
 
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-403b266e0422bd1d9cb7916029ba2e74.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-10daa034703793678e481cc8cee6d76f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
@@ -330,7 +332,7 @@ window.Quarto = {
 <meta name="citation_reference" content="citation_title=A psychiatry wait list had 880 patients; a hospital couldn’t keep up;,citation_abstract=Therapists are reporting long waiting lists as demand for mental health care to treat depression and anxiety surges.;,citation_author=Rachel Zimmerman;,citation_publication_date=2022-11;,citation_cover_date=2022-11;,citation_year=2022;,citation_language=en-US;,citation_journal_title=Washington Post;,citation_publisher=https://www.washingtonpost.com/wellness/2022/10/29/therapists-waiting-lists-depression-anxiety/;">
 </head>
 
-<body class="quarto-light">
+<body>
 
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
@@ -382,23 +384,53 @@ window.Quarto = {
   <li><a href="#recovery-monitoring-and-support-system" id="toc-recovery-monitoring-and-support-system" class="nav-link" data-scroll-target="#recovery-monitoring-and-support-system"><span class="header-section-number">1.3</span> Recovery Monitoring and Support System</a></li>
   <li><a href="#aims-of-this-proposal" id="toc-aims-of-this-proposal" class="nav-link" data-scroll-target="#aims-of-this-proposal"><span class="header-section-number">1.4</span> Aims of this proposal</a></li>
   </ul></li>
-  <li><a href="#machine-learning-models-for-temporally-precise-lapse-prediction-in-alcohol-use-disorder" id="toc-machine-learning-models-for-temporally-precise-lapse-prediction-in-alcohol-use-disorder" class="nav-link" data-scroll-target="#machine-learning-models-for-temporally-precise-lapse-prediction-in-alcohol-use-disorder"><span class="header-section-number">2</span> Machine learning models for temporally precise lapse prediction in alcohol use disorder</a></li>
+  <li><a href="#machine-learning-models-for-temporally-precise-lapse-prediction-in-alcohol-use-disorder" id="toc-machine-learning-models-for-temporally-precise-lapse-prediction-in-alcohol-use-disorder" class="nav-link" data-scroll-target="#machine-learning-models-for-temporally-precise-lapse-prediction-in-alcohol-use-disorder"><span class="header-section-number">2</span> Machine learning models for temporally precise lapse prediction in alcohol use disorder</a>
+  <ul class="collapse">
+  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1"><span class="header-section-number">2.1</span> Introduction</a>
+  <ul class="collapse">
+  <li><a href="#improving-digital-therapeutics-via-personal-sensing" id="toc-improving-digital-therapeutics-via-personal-sensing" class="nav-link" data-scroll-target="#improving-digital-therapeutics-via-personal-sensing"><span class="header-section-number">2.1.1</span> Improving Digital Therapeutics via Personal Sensing</a></li>
+  <li><a href="#promising-preliminary-research" id="toc-promising-preliminary-research" class="nav-link" data-scroll-target="#promising-preliminary-research"><span class="header-section-number">2.1.2</span> Promising Preliminary Research</a></li>
+  <li><a href="#the-current-study" id="toc-the-current-study" class="nav-link" data-scroll-target="#the-current-study"><span class="header-section-number">2.1.3</span> The Current Study</a></li>
+  </ul></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method"><span class="header-section-number">2.2</span> Method</a>
+  <ul class="collapse">
+  <li><a href="#transparency-and-openness" id="toc-transparency-and-openness" class="nav-link" data-scroll-target="#transparency-and-openness"><span class="header-section-number">2.2.1</span> Transparency and Openness</a></li>
+  <li><a href="#participants" id="toc-participants" class="nav-link" data-scroll-target="#participants"><span class="header-section-number">2.2.2</span> Participants</a></li>
+  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure"><span class="header-section-number">2.2.3</span> Procedure</a></li>
+  <li><a href="#measures" id="toc-measures" class="nav-link" data-scroll-target="#measures"><span class="header-section-number">2.2.4</span> Measures</a></li>
+  <li><a href="#data-analytic-strategy" id="toc-data-analytic-strategy" class="nav-link" data-scroll-target="#data-analytic-strategy"><span class="header-section-number">2.2.5</span> Data Analytic Strategy</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">2.3</span> Results</a>
+  <ul class="collapse">
+  <li><a href="#demographic-and-clinical-characteristics" id="toc-demographic-and-clinical-characteristics" class="nav-link" data-scroll-target="#demographic-and-clinical-characteristics"><span class="header-section-number">2.3.1</span> Demographic and Clinical Characteristics</a></li>
+  <li><a href="#ema-compliance-features-and-prediction-window-labels" id="toc-ema-compliance-features-and-prediction-window-labels" class="nav-link" data-scroll-target="#ema-compliance-features-and-prediction-window-labels"><span class="header-section-number">2.3.2</span> EMA Compliance, Features, and Prediction Window Labels</a></li>
+  <li><a href="#model-performance" id="toc-model-performance" class="nav-link" data-scroll-target="#model-performance"><span class="header-section-number">2.3.3</span> Model Performance</a></li>
+  <li><a href="#feature-importance-for-full-models" id="toc-feature-importance-for-full-models" class="nav-link" data-scroll-target="#feature-importance-for-full-models"><span class="header-section-number">2.3.4</span> Feature Importance for Full Models</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">2.4</span> Discussion</a>
+  <ul class="collapse">
+  <li><a href="#model-performance-1" id="toc-model-performance-1" class="nav-link" data-scroll-target="#model-performance-1"><span class="header-section-number">2.4.1</span> Model Performance</a></li>
+  <li><a href="#understanding-contextualizing-model-performance" id="toc-understanding-contextualizing-model-performance" class="nav-link" data-scroll-target="#understanding-contextualizing-model-performance"><span class="header-section-number">2.4.2</span> Understanding &amp; Contextualizing Model Performance</a></li>
+  <li><a href="#considerations-for-clinical-implementation" id="toc-considerations-for-clinical-implementation" class="nav-link" data-scroll-target="#considerations-for-clinical-implementation"><span class="header-section-number">2.4.3</span> Considerations for Clinical Implementation</a></li>
+  <li><a href="#additional-limitations-and-future-directions" id="toc-additional-limitations-and-future-directions" class="nav-link" data-scroll-target="#additional-limitations-and-future-directions"><span class="header-section-number">2.4.4</span> Additional Limitations and Future Directions</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#lagged-predictions-of-next-day-alcohol-lapse-risk-for-personalized-and-adaptive-continuing-care-support" id="toc-lagged-predictions-of-next-day-alcohol-lapse-risk-for-personalized-and-adaptive-continuing-care-support" class="nav-link" data-scroll-target="#lagged-predictions-of-next-day-alcohol-lapse-risk-for-personalized-and-adaptive-continuing-care-support"><span class="header-section-number">3</span> Lagged predictions of next day alcohol lapse risk for personalized and adaptive continuing care support</a></li>
   <li><a href="#using-sensing-data-to-predict-opioid-lapse-risk-in-a-national-sample-of-patients-with-opioid-use-disorder" id="toc-using-sensing-data-to-predict-opioid-lapse-risk-in-a-national-sample-of-patients-with-opioid-use-disorder" class="nav-link" data-scroll-target="#using-sensing-data-to-predict-opioid-lapse-risk-in-a-national-sample-of-patients-with-opioid-use-disorder"><span class="header-section-number">4</span> Using sensing data to predict opioid lapse risk in a national sample of patients with opioid use disorder</a>
   <ul class="collapse">
-  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1"><span class="header-section-number">4.1</span> Introduction</a></li>
+  <li><a href="#introduction-2" id="toc-introduction-2" class="nav-link" data-scroll-target="#introduction-2"><span class="header-section-number">4.1</span> Introduction</a></li>
   <li><a href="#specific-aims" id="toc-specific-aims" class="nav-link" data-scroll-target="#specific-aims"><span class="header-section-number">4.2</span> Specific Aims</a></li>
   <li><a href="#sec-methods" id="toc-sec-methods" class="nav-link" data-scroll-target="#sec-methods"><span class="header-section-number">4.3</span> Methods</a>
   <ul class="collapse">
-  <li><a href="#participants" id="toc-participants" class="nav-link" data-scroll-target="#participants"><span class="header-section-number">4.3.1</span> Participants</a></li>
-  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure"><span class="header-section-number">4.3.2</span> Procedure</a></li>
-  <li><a href="#measures" id="toc-measures" class="nav-link" data-scroll-target="#measures"><span class="header-section-number">4.3.3</span> Measures</a></li>
+  <li><a href="#participants-1" id="toc-participants-1" class="nav-link" data-scroll-target="#participants-1"><span class="header-section-number">4.3.1</span> Participants</a></li>
+  <li><a href="#procedure-1" id="toc-procedure-1" class="nav-link" data-scroll-target="#procedure-1"><span class="header-section-number">4.3.2</span> Procedure</a></li>
+  <li><a href="#measures-1" id="toc-measures-1" class="nav-link" data-scroll-target="#measures-1"><span class="header-section-number">4.3.3</span> Measures</a></li>
   <li><a href="#planned-data-analyses" id="toc-planned-data-analyses" class="nav-link" data-scroll-target="#planned-data-analyses"><span class="header-section-number">4.3.4</span> Planned Data Analyses</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#chapter-5-state-space-models-for-idiographic-risk-monitoring-and-recovery-support-recommendations" id="toc-chapter-5-state-space-models-for-idiographic-risk-monitoring-and-recovery-support-recommendations" class="nav-link" data-scroll-target="#chapter-5-state-space-models-for-idiographic-risk-monitoring-and-recovery-support-recommendations"><span class="header-section-number">5</span> Chapter 5: State-space models for idiographic risk monitoring and recovery support recommendations</a>
   <ul class="collapse">
-  <li><a href="#introduction-2" id="toc-introduction-2" class="nav-link" data-scroll-target="#introduction-2"><span class="header-section-number">5.1</span> Introduction</a></li>
+  <li><a href="#introduction-3" id="toc-introduction-3" class="nav-link" data-scroll-target="#introduction-3"><span class="header-section-number">5.1</span> Introduction</a></li>
   <li><a href="#specific-aims-1" id="toc-specific-aims-1" class="nav-link" data-scroll-target="#specific-aims-1"><span class="header-section-number">5.2</span> Specific Aims</a></li>
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">5.3</span> Methods</a>
   <ul class="collapse">
@@ -406,7 +438,7 @@ window.Quarto = {
   </ul></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li></ul></div></nav>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li><li><a href="notebooks/figures-preview.html"><i class="bi bi-journal-code"></i>Make All Figures for Dissertation</a></li><li><a href="notebooks/tables-preview.html"><i class="bi bi-journal-code"></i>Make All Tables for Dissertation</a></li></ul></div></nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -475,14 +507,709 @@ window.Quarto = {
 </section>
 <section id="machine-learning-models-for-temporally-precise-lapse-prediction-in-alcohol-use-disorder" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Machine learning models for temporally precise lapse prediction in alcohol use disorder</h1>
+<section id="introduction-1" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="introduction-1"><span class="header-section-number">2.1</span> Introduction</h2>
+<p>Over 30 million adults in the United States (US) had an active alcohol use disorder (AUD) in 2021, and 23.3% reported engaging in past-month binge drinking <span class="citation" data-cites="samhsacenterforbehavioralhealthstatisticsandquality2021NSDUHDetailed2021">(<a href="#ref-samhsacenterforbehavioralhealthstatisticsandquality2021NSDUHDetailed2021" role="doc-biblioref">SAMHSA Center for Behavioral Health Statistics and Quality, 2021</a>)</span>. Alcohol ranks as the third leading preventable cause of death in the US, accounting for approximately 140,000 fatalities <span class="citation" data-cites="centersfordiseasecontrolandpreventioncdcAnnualAverageUnited">(<a href="#ref-centersfordiseasecontrolandpreventioncdcAnnualAverageUnited" role="doc-biblioref">Centers for Disease Control and Prevention (CDC), n.d.</a>)</span> and economic costs that exceed $249 billion annually <span class="citation" data-cites="substanceabuseandmentalhealthservicesadministrationusFacingAddictionAmerica2016">(<a href="#ref-substanceabuseandmentalhealthservicesadministrationusFacingAddictionAmerica2016" role="doc-biblioref">Substance Abuse and Mental Health Services Administration (US) &amp; Office of the Surgeon General (US), 2016</a>)</span>.</p>
+<p>Existing clinician-delivered treatments for AUD that were derived from Marlatt’s relapse prevention model <span class="citation" data-cites="marlattRelapsePreventionMaintenance1985">(<a href="#ref-marlattRelapsePreventionMaintenance1985" role="doc-biblioref">Marlatt &amp; Gordon, 1985</a>)</span> are effective when delivered (e.g., cognitive-behavioral therapy, mindfulness-based relapse prevention <span class="citation" data-cites="bowenRelativeEfficacyMindfulnessBased2014">(<a href="#ref-bowenRelativeEfficacyMindfulnessBased2014" role="doc-biblioref">Bowen et al., 2014</a>)</span>). Unfortunately, fewer than 1 in 20 adults with an active AUD receive any treatment <span class="citation" data-cites="samhsacenterforbehavioralhealthstatisticsandquality2021NSDUHDetailed2021">(<a href="#ref-samhsacenterforbehavioralhealthstatisticsandquality2021NSDUHDetailed2021" role="doc-biblioref">SAMHSA Center for Behavioral Health Statistics and Quality, 2021</a>)</span>. Even more concerning, failure to access treatment is associated with demographic factors including race, ethnicity, geographic region, and socioeconomic status, which further increase mental health disparities <span class="citation" data-cites="officeofthesurgeongeneralusMentalHealthCulture2001">(<a href="#ref-officeofthesurgeongeneralusMentalHealthCulture2001" role="doc-biblioref">Office of the Surgeon General (US) et al., 2001</a>)</span>. This treatment gap and associated disparities stem from well-known barriers to receiving clinician-delivered mental healthcare related to affordability, accessibility, availability, and acceptability <span class="citation" data-cites="jacobsonDigitalTherapeuticsMental2022">(<a href="#ref-jacobsonDigitalTherapeuticsMental2022" role="doc-biblioref">Jacobson et al., 2022</a>)</span>.</p>
+<p>Digital therapeutics may help to overcome these barriers associated with in-person, clinician-delivered treatments. Digital therapeutics provide evidence-based interventions and other supports via smartphones to prevent, treat, or manage a medical disorder, either independently or in conjunction with traditional treatments <span class="citation" data-cites="jacobsonDigitalTherapeuticsMental2022">(<a href="#ref-jacobsonDigitalTherapeuticsMental2022" role="doc-biblioref">Jacobson et al., 2022</a>)</span>. They offer highly scalable, on-demand therapeutic support that is accessible whenever and wherever it is needed most. Several large, randomized controlled trials have confirmed that digital therapeutics for AUD improve clinical outcomes <span class="citation" data-cites="gustafsonSmartphoneApplicationSupport2014 campbellInternetdeliveredTreatmentSubstance2014 jacobsonDigitalTherapeuticsMental2022">(<a href="#ref-campbellInternetdeliveredTreatmentSubstance2014" role="doc-biblioref">Campbell et al., 2014</a>; <a href="#ref-gustafsonSmartphoneApplicationSupport2014" role="doc-biblioref">Gustafson et al., 2014</a>; <a href="#ref-jacobsonDigitalTherapeuticsMental2022" role="doc-biblioref">Jacobson et al., 2022</a>)</span>. Additionally, US adults (including patients with AUD <span class="citation" data-cites="wyantAcceptabilityPersonalSensing2023">(<a href="#ref-wyantAcceptabilityPersonalSensing2023" role="doc-biblioref">Wyant et al., 2023</a>)</span>) display high rates of smartphone ownership (over 85% in 2021), with minimal variation across race, ethnicity, socioeconomic status, and geographic settings. Therefore, digital therapeutics may not only mitigate in-person treatment barriers but also combat associated disparities <span class="citation" data-cites="jacobsonDigitalTherapeuticsMental2022">(<a href="#ref-jacobsonDigitalTherapeuticsMental2022" role="doc-biblioref">Jacobson et al., 2022</a>)</span>.</p>
+<section id="improving-digital-therapeutics-via-personal-sensing" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="improving-digital-therapeutics-via-personal-sensing"><span class="header-section-number">2.1.1</span> Improving Digital Therapeutics via Personal Sensing</h3>
+<p>Despite the documented benefits of digital therapeutics, their full potential has not yet been realized. Patients often don’t engage with digital therapeutics as developers intended, and long-term engagement may not be sustained or matched to patients’ needs <span class="citation" data-cites="hatchExpertConsensusSurvey2018 jacobsonDigitalTherapeuticsMental2022">(<a href="#ref-hatchExpertConsensusSurvey2018" role="doc-biblioref">Hatch et al., 2018</a>; <a href="#ref-jacobsonDigitalTherapeuticsMental2022" role="doc-biblioref">Jacobson et al., 2022</a>)</span>. The substantial benefits of digital therapeutics come from easy, 24/7 access to their intervention and other support modules. However, the burden falls primarily on the patient to identify the most appropriate modules for them in that specific moment during their recovery.</p>
+<p>This difficulty is magnified by the dynamic, chronic, and relapsing nature of AUD <span class="citation" data-cites="brandonRelapseRelapsePrevention2007">(<a href="#ref-brandonRelapseRelapsePrevention2007" role="doc-biblioref">Brandon et al., 2007</a>)</span>. Numerous risk and protective factors interact in complex, non-linear ways to influence the probability, timing, and severity of relapse (i.e., a goal-inconsistent return to frequent, harmful alcohol use) <span class="citation" data-cites="witkiewitzModelingComplexityPosttreatment2007">(<a href="#ref-witkiewitzModelingComplexityPosttreatment2007" role="doc-biblioref">K. Witkiewitz &amp; Marlatt, 2007</a>)</span>. Factors such as urges, mood, lifestyle imbalances, self-efficacy, and motivation can all vary over time. Social networks may evolve to become more protective or risky, and high-risk situations can arise unexpectedly. Consequently, both relapse risk and the factors driving that risk fluctuate over time.</p>
+<p>Successful, continuous monitoring of risk for relapse and its contributing factors would enable patients to adapt their lifestyle, behaviors, and supports to their changing needs. Successful monitoring could also direct patients to engage with the most appropriate digital therapeutic modules, addressing the unique risks present at any given moment throughout their recovery. Such continuous monitoring is now feasible via personal sensing (i.e., in-situ data collection via sensors embedded in individuals’ daily lives) <span class="citation" data-cites="epsteinPredictionStressDrug2020 soysterPooledPersonspecificMachine2022 moshontzProspectivePredictionLapses2021 wyantAcceptabilityPersonalSensing2023 chihPredictiveModelingAddiction2014 baeMobilePhoneSensors2018">(<a href="#ref-baeMobilePhoneSensors2018" role="doc-biblioref">Bae et al., 2018</a>; <a href="#ref-chihPredictiveModelingAddiction2014" role="doc-biblioref">Chih et al., 2014</a>; <a href="#ref-epsteinPredictionStressDrug2020" role="doc-biblioref">Epstein et al., 2020</a>; <a href="#ref-moshontzProspectivePredictionLapses2021" role="doc-biblioref">Moshontz et al., 2021</a>; <a href="#ref-soysterPooledPersonspecificMachine2022" role="doc-biblioref">Soyster et al., 2022</a>; <a href="#ref-wyantAcceptabilityPersonalSensing2023" role="doc-biblioref">Wyant et al., 2023</a>)</span>.</p>
+<p>The current project focuses explicitly on using ecological momentary assessment (EMA) for monitoring risk of return to alcohol use. EMA can be easily implemented with only a smartphone. Moreover, comparable item responses can be collected consistently across different hardware and operating systems. Thus, EMA can be incorporated essentially identically into any existing or future smartphone-based digital therapeutic. EMA, like other personal sensing methods, can support the frequent, in-situ, longitudinal measurement necessary for monitoring fluctuating relapse risk. Long-term monitoring with EMA has been well-tolerated by individuals with AUD <span class="citation" data-cites="wyantAcceptabilityPersonalSensing2023">(<a href="#ref-wyantAcceptabilityPersonalSensing2023" role="doc-biblioref">Wyant et al., 2023</a>)</span>. Additionally, previous research has validated the use of EMA to measure known risk and protective factors for relapse, including craving <span class="citation" data-cites="dulinSmartphonebasedMomentaryIntervention2017">(<a href="#ref-dulinSmartphonebasedMomentaryIntervention2017" role="doc-biblioref">Dulin &amp; Gonzalez, 2017</a>)</span>, mood <span class="citation" data-cites="russellAffectRelativeDayLevel2020">(<a href="#ref-russellAffectRelativeDayLevel2020" role="doc-biblioref">Russell et al., 2020</a>)</span>, stressors <span class="citation" data-cites="wemmDaydayProspectiveAnalysis2019">(<a href="#ref-wemmDaydayProspectiveAnalysis2019" role="doc-biblioref">Wemm et al., 2019</a>)</span>, positive life events <span class="citation" data-cites="dvorakTensionReductionAffect2018">(<a href="#ref-dvorakTensionReductionAffect2018" role="doc-biblioref">Dvorak et al., 2018</a>)</span>, and motivation/efficacy <span class="citation" data-cites="dvorakEcologicalMomentaryAssessment2014">(<a href="#ref-dvorakEcologicalMomentaryAssessment2014" role="doc-biblioref">Dvorak et al., 2014</a>)</span>. EMA offers privileged access into these and other subjective factors that may be difficult to quantify reliably through other sensing methods.</p>
+</section>
+<section id="promising-preliminary-research" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="promising-preliminary-research"><span class="header-section-number">2.1.2</span> Promising Preliminary Research</h3>
+<p>Preliminary research is now emerging that uses EMA responses as features in machine learning models to predict the probability of future alcohol use <span class="citation" data-cites="baeMobilePhoneSensors2018 soysterPooledPersonspecificMachine2022 waltersUsingMachineLearning2021 chihPredictiveModelingAddiction2014">(<a href="#ref-baeMobilePhoneSensors2018" role="doc-biblioref">Bae et al., 2018</a>; <a href="#ref-chihPredictiveModelingAddiction2014" role="doc-biblioref">Chih et al., 2014</a>; <a href="#ref-soysterPooledPersonspecificMachine2022" role="doc-biblioref">Soyster et al., 2022</a>; <a href="#ref-waltersUsingMachineLearning2021" role="doc-biblioref">Walters et al., 2021</a>)</span>. This research is important because it rigorously required strict temporal ordering necessary for true prediction, with features measured before alcohol use outcomes. It also used resampling methods (e.g., cross-validation) that prioritize model generalizability to increase the likelihood these models will perform well with new people.</p>
+<p>Despite this initial promise, several important limitations exist. Some prediction models have been trained using convenience samples (e.g., college students) <span class="citation" data-cites="soysterPooledPersonspecificMachine2022 baeMobilePhoneSensors2018">(<a href="#ref-baeMobilePhoneSensors2018" role="doc-biblioref">Bae et al., 2018</a>; <a href="#ref-soysterPooledPersonspecificMachine2022" role="doc-biblioref">Soyster et al., 2022</a>)</span>. Other models have been developed to predict hazardous alcohol use in non-treatment-seeking populations <span class="citation" data-cites="waltersUsingMachineLearning2021">(<a href="#ref-waltersUsingMachineLearning2021" role="doc-biblioref">Walters et al., 2021</a>)</span>. In both these instances, features that predict planned or otherwise intentional alcohol use among individuals not motivated to change their behavior may not generalize to people in AUD recovery. Moreover, individuals who have not yet begun to contemplate and/or commit to behavior change regarding their alcohol use are unlikely to use digital therapeutics designed for AUD recovery <span class="citation" data-cites="prochaskaSearchHowPeople1992">(<a href="#ref-prochaskaSearchHowPeople1992" role="doc-biblioref">Prochaska et al., 1992</a>)</span>.</p>
+<p>A handful of other models have been trained to predict putative precursors of substance use, such as craving <span class="citation" data-cites="burgess-hullTrajectoriesCravingMedicationassisted2022 dumortierClassifyingSmokingUrges2016">(<a href="#ref-burgess-hullTrajectoriesCravingMedicationassisted2022" role="doc-biblioref">Burgess-Hull et al., 2022</a>; <a href="#ref-dumortierClassifyingSmokingUrges2016" role="doc-biblioref">Dumortier et al., 2016</a>)</span> and stress <span class="citation" data-cites="epsteinPredictionStressDrug2020">(<a href="#ref-epsteinPredictionStressDrug2020" role="doc-biblioref">Epstein et al., 2020</a>)</span>. Although craving and stress may be associated with substance use, their relationships with relapse are complex, inconsistent, and not always very strong <span class="citation" data-cites="fronkStressAllostasisSubstance2020 sayetteRoleCravingSubstance2016">(<a href="#ref-fronkStressAllostasisSubstance2020" role="doc-biblioref">Fronk et al., 2020</a>; <a href="#ref-sayetteRoleCravingSubstance2016" role="doc-biblioref">Sayette, 2016</a>)</span>. For these reasons, we believe that explicit substance use may be a better target for prediction.</p>
+<p>With respect to explicit substance use, we also argue that models that predict lapses (i.e., single instances of goal-inconsistent substance use) rather than relapse may be preferred. Lapses are clearly defined, observable, and have temporally precise onsets and offsets. Conversely, definitions of relapse vary widely <span class="citation" data-cites="witkiewitzModelingComplexityPosttreatment2007">(<a href="#ref-witkiewitzModelingComplexityPosttreatment2007" role="doc-biblioref">K. Witkiewitz &amp; Marlatt, 2007</a>)</span>, and it is difficult to delineate precisely when relapse begins or ends. Lapses always precede relapse and therefore may serve as an early warning sign for intervention. Finally, maladaptive responses to a lapse (e.g., abstinence violation effects; <span class="citation" data-cites="marlattRelapsePreventionMaintenance1985">(<a href="#ref-marlattRelapsePreventionMaintenance1985" role="doc-biblioref">Marlatt &amp; Gordon, 1985</a>)</span>) can undermine recovery by themselves, making lapses clinically meaningful events to detect and address.</p>
+<p>An early alcohol lapse prediction model developed by Gustafson and colleagues <span class="citation" data-cites="chihPredictiveModelingAddiction2014">(<a href="#ref-chihPredictiveModelingAddiction2014" role="doc-biblioref">Chih et al., 2014</a>)</span> provided the foundation on which our current project builds. Participants completed EMAs once per week for 8 months while using a digital therapeutic after discharge from an inpatient treatment program for AUD. These EMAs were used as features in a machine learning model to predict lapses. However, the temporal precision for both the features and outcome was coarse. Model predictions were updated only once per week at most, and lapse onsets could occur anytime within the next two weeks. This coarseness restricts the model from being used to implement <em>just-in-time</em> interventions (e.g., guided mindfulness or other stress reduction techniques, urge surfing) that are well-suited to digital therapeutics.</p>
+</section>
+<section id="the-current-study" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="the-current-study"><span class="header-section-number">2.1.3</span> The Current Study</h3>
+<p>The current study addresses these limitations of previously developed prediction models. We trained our models using participants in early recovery from moderate to severe AUD who reported a goal of alcohol abstinence. We developed three separate models that provide hour-by-hour probabilities of a future lapse back to alcohol use with increasing temporal precision: lapses in the next week, next day, and next hour. Model features were engineered from raw scores and longitudinal change in responses to 4X daily EMAs. These features were derived to measure theoretically-implicated risk factors and contexts that have considerable support as predictors of lapses including past use, craving, past pleasant events, past and future risky situations, past and future stressful events, emotional valence and arousal, and self-efficacy <span class="citation" data-cites="marlattRelapsePreventionMaintenance1985 fronkStressAllostasisSubstance2020 witkiewitzModelingComplexityPosttreatment2007">(<a href="#ref-fronkStressAllostasisSubstance2020" role="doc-biblioref">Fronk et al., 2020</a>; for reviews, see <a href="#ref-marlattRelapsePreventionMaintenance1985" role="doc-biblioref">Marlatt &amp; Gordon, 1985</a>; <a href="#ref-witkiewitzModelingComplexityPosttreatment2007" role="doc-biblioref">K. Witkiewitz &amp; Marlatt, 2007</a>)</span>.</p>
+<p>In this study, we characterize the performance of these three prediction models in held-out data (i.e., for observations from participants who were not used to train the models). We also evaluated the relative feature importance of key relapse prevention constructs in the models as part of the model validation process and to contribute to the relapse prevention literature. This research represents an important step toward the development of a “smart” (machine learning guided) sensing and prediction system that can be embedded within a digital therapeutic both to identify periods of peak lapse risk and to recommend specific supports to address factors contributing to this risk.</p>
+</section>
+</section>
+<section id="method" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="method"><span class="header-section-number">2.2</span> Method</h2>
+<section id="transparency-and-openness" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="transparency-and-openness"><span class="header-section-number">2.2.1</span> Transparency and Openness</h3>
+<p>We adhere to research transparency principles that are crucial for robust and replicable science. We reported how we determined the sample size, all data exclusions, all manipulations, and all study measures. Finally, our data, analysis scripts, annotated results, questionnaires, and other study materials are publicly available (<a href="https://osf.io/w5h9y/">https://osf.io/w5h9y/</a>).</p>
+<p>Our study design and analyses were not pre-registered. However, we restricted many researcher degrees of freedom via cross-validation. Cross-validation inherently includes replication; models are fit on held-in training sets, decisions are made in held-out validation sets, and final performance is evaluated on held-out test sets.</p>
+</section>
+<section id="participants" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="participants"><span class="header-section-number">2.2.2</span> Participants</h3>
+<p>We recruited 151 participants in early recovery (1-8 weeks of abstinence) from AUD in Madison, Wisconsin, US. This sample size was determined based on traditional power analysis methods for logistic regression <span class="citation" data-cites="hsiehSampleSizeTables1989">(<a href="#ref-hsiehSampleSizeTables1989" role="doc-biblioref">Hsieh, 1989</a>)</span> because comparable approaches for machine learning models have not yet been validated. Participants were recruited through print and targeted digital advertisements and partnerships with treatment centers. We required participants:</p>
+<ol type="1">
+<li>were age 18 or older,</li>
+<li>could write and read in English,</li>
+<li>had at least moderate AUD (&gt;= 4 self-reported DSM-5 symptoms),</li>
+<li>were abstinent from alcohol for 1-8 weeks, and</li>
+<li>were willing to use a single smartphone (personal or study provided) while on study.</li>
+</ol>
+<p>We also excluded participants exhibiting severe symptoms of psychosis or paranoia.</p>
+</section>
+<section id="procedure" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="procedure"><span class="header-section-number">2.2.3</span> Procedure</h3>
+<p>Participants completed five study visits over approximately three months. After an initial phone screen, participants attended an in-person screening visit to determine eligibility, complete informed consent, and collect self-report measures. Eligible, consented participants returned approximately one week later for an intake visit. Three additional follow-up visits occurred about every 30 days that participants remained on study. Participants were expected to complete four daily EMAs while on study. Other personal sensing data streams (geolocation, cellular communications, sleep quality, and audio check-ins) were collected as part of the parent grant’s aims (R01 AA024391).</p>
+</section>
+<section id="measures" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="measures"><span class="header-section-number">2.2.4</span> Measures</h3>
+<section id="ecological-momentary-assessments" class="level4" data-number="2.2.4.1">
+<h4 data-number="2.2.4.1" class="anchored" data-anchor-id="ecological-momentary-assessments"><span class="header-section-number">2.2.4.1</span> Ecological Momentary Assessments</h4>
+<p>Participants completed four brief (7-10 questions) EMAs daily. The first and last EMAs of the day were scheduled within one hour of participants’ typical wake and sleep times. The other two EMAs were scheduled randomly within the first and second halves of their typical day, with at least one hour between EMAs. Participants learned how to complete the EMA and the meaning of each question during their intake visit.</p>
+<p>On all EMAs, participants reported dates/times of any unreported past alcohol use. Next, participants rated the intensity of four recent experiences:</p>
+<ul>
+<li>craving [“How intense was your greatest urge to drink?”],</li>
+<li>risky situations [“Did you encounter any risky situations (people, places, or things)? If yes, rate the intensity of the situation.”],</li>
+<li>stressful events [“Has a hassle or stressful event occurred? If yes, rate the intensity of the event.”],</li>
+<li>pleasant events [Has a pleasant or positive event occurred? If yes, rate the intensity of the event.”].</li>
+</ul>
+<p>For each of these experiences, participants rated the maximum intensity since their last EMA on a 12-point ordinal scale (mid- and end-point anchors of “Mild”, “Moderate”, and “Strong”). If they did not experience an event since their last EMA, participants selected “No” to indicate that no experience occurred for that respective question.</p>
+<p>Next, participants rated their current affect using 11-point bipolar scales measuring valence (end-point anchors of “Unpleasant/Unhappy” to “Pleasant/Happy”) and arousal (end-point anchors of “Calm/Sleepy” to “Aroused/Alert”).</p>
+<p>On the first EMA each day, participants used an 11-point bipoloar scale (end-point anchors of “Very Unlikely” to “Very Likely”) to rate the likelihood of:</p>
+<ul>
+<li>future risky situations [“How likely are you to encounter risky situations (people, places, or things) within the next week?”],</li>
+<li>future stressful events [“How likely are you to encounter a stressful event within the next week?”],</li>
+<li>abstinence efficacy [“How likely are you to drink any alcohol within the next week?”].</li>
+</ul>
+</section>
+<section id="individual-differences" class="level4" data-number="2.2.4.2">
+<h4 data-number="2.2.4.2" class="anchored" data-anchor-id="individual-differences"><span class="header-section-number">2.2.4.2</span> Individual Differences</h4>
+<p>We collected self-report information about demographics (age, sex, race, ethnicity, education, marital status, employment, and income) and clinical characteristics (AUD milestones, number of quit attempts, lifetime AUD treatment history, lifetime receipt of AUD medication, DSM-5 AUD symptom count, and current drug use <span class="citation" data-cites="whoassistworkinggroupAlcoholSmokingSubstance2002">(<a href="#ref-whoassistworkinggroupAlcoholSmokingSubstance2002" role="doc-biblioref">WHO ASSIST Working Group, 2002</a>)</span>). This information was collected primarily to characterize the sample and to evaluate the diversity of the training data. We also included demographic features in our models to quantify the importance of relapse prevention constructs beyond these static characteristics, given known disparities in AUD and other health outcomes <span class="citation" data-cites="jacobsonDigitalTherapeuticsMental2022">(<a href="#ref-jacobsonDigitalTherapeuticsMental2022" role="doc-biblioref">Jacobson et al., 2022</a>)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+</section>
+</section>
+<section id="data-analytic-strategy" class="level3" data-number="2.2.5">
+<h3 data-number="2.2.5" class="anchored" data-anchor-id="data-analytic-strategy"><span class="header-section-number">2.2.5</span> Data Analytic Strategy</h3>
+<p>Data preprocessing, modeling, and Bayesian analyses were done in R using the tidymodels ecosystem <span class="citation" data-cites="kuhnTidymodelsCollectionPackages2020">(<a href="#ref-kuhnTidymodelsCollectionPackages2020" role="doc-biblioref">Kuhn &amp; Wickham, 2020</a>)</span>. Models were trained and evaluated using high-throughput computing resources provided by the University of Wisconsin Center for High Throughput Computing <span class="citation" data-cites="chtc">(<a href="#ref-chtc" role="doc-biblioref">Center for High Throughput Computing, 2006</a>)</span>.</p>
+<section id="lapse-labels" class="level4" data-number="2.2.5.1">
+<h4 data-number="2.2.5.1" class="anchored" data-anchor-id="lapse-labels"><span class="header-section-number">2.2.5.1</span> Lapse Labels</h4>
+<p>We predicted future lapses in three prediction window widths: one week, one day, and one hour. Prediction windows were updated hourly. All classification models provide hour-by-hour predictions of future lapse probability for all three window widths.</p>
+<p>For each participant, the first prediction window for all three widths began at midnight on their second day of participation and ended one week, one day, or one hour later. This ensured at least 24 hours of past EMAs for future lapse prediction in these first windows. Subsequent windows for each participant were created by repeatedly rolling the window start/end forward one hour until the end of their study participation (i.e., each participant’s last prediction window started one week, one day, or one hour before their last recorded EMA).</p>
+<p>We labeled each prediction window as <em>lapse</em> or <em>no lapse</em> using participants’ reports from the EMA question “Have you drank any alcohol that you have not yet reported?”. If participants answered yes to this question, they entered the date and hour of the start and end of the drinking episode. During monthly follow-up sessions, participants could review and correct their lapses reported by EMA and report to staff any additional lapses.</p>
+<p>A prediction window was labeled <em>lapse</em> if the start date/hour of any drinking episode fell within that window. A window was labeled <em>no lapse</em> if no alcohol use occurred within that window +/- 24 hours. If no alcohol use occurred within the window but did occur within 24 hours of the start or end of the window, the window was excluded. We used this conservative 24-hour fence for labeling windows as <em>no lapse</em> (vs.&nbsp;excluded) to increase the fidelity of these labels. Given that most windows were labeled <em>no lapse</em>, and the outcome was highly unbalanced, it was not problematic to exclude some <em>no lapse</em> events to further increase confidence in those labels.</p>
+</section>
+<section id="feature-engineering" class="level4" data-number="2.2.5.2">
+<h4 data-number="2.2.5.2" class="anchored" data-anchor-id="feature-engineering"><span class="header-section-number">2.2.5.2</span> Feature Engineering</h4>
+<p>Features were calculated using only data collected before the start of each prediction window to ensure our models were making true <em>future predictions</em>. We created features for both baseline and full models. The baseline models were developed to determine how well we could predict lapses using a simple model based only on the participants’ histories of previous lapses. The full models used all EMA responses combined with demographic and day/time features.</p>
+<p>The baseline models had only one dummy-coded feature: lapse frequency (high vs.&nbsp;low). The median number of lapses across participants during the study period was 1. Therefore, the lapse frequency feature was coded low when the participant had a history of 1 or fewer lapses before that prediction window. This feature was coded high when the participant had more than 1 lapse before that window.</p>
+<p>Features for the full model were derived from three sources: 1) common demographic characteristics, 2) day of the week and hour of the day at prediction window onset, and 3) previous EMA responses. We created a quantitative feature for age, and dummy-coded features for sex (male vs.&nbsp;female), race/ethnicity (White/Non-Hispanic vs.&nbsp;other), marital status (never married vs.&nbsp;married vs.&nbsp;other), and education (high school or less vs.&nbsp;some college vs.&nbsp;4-year degree or more). We created dummy-coded features to indicate time of day (5pm - midnight vs.&nbsp;any other time) and day of week that the prediction window began.</p>
+<p>We created raw EMA features for varying scoring epochs before the start of the prediction window for all EMA items excluding the alcohol use question. For the six EMA questions that appeared on all four daily EMAs, we used five scoring epochs of 12, 24, 48, 72, and 168 hours. For the three EMA questions that only appeared on the morning EMA, we used three scoring epochs of 48, 72, and 168 hours. Raw features included min, max, and median scores for each EMA question across all EMAs in each epoch for that participant. We calculated change features by subtracting the participant’s mean score for each EMA question (using all EMAs collected before the start of the prediction window) from the associated raw feature. These change features allowed us to capture within-subject effects by comparing recent EMA responses relative to an individual’s own baseline. For both raw and change features, the feature was set to missing (and later imputed; see below) if no responses to the specific EMA question were provided by the participant within the associated scoring epoch.</p>
+<p>We also created raw and change features based on the most recent response for each EMA question (excluding the alcohol use question). This generated two features for each EMA question: 1) raw value of the most recent previous response, and 2) difference between that raw value and the mean response to that EMA question over all EMAs collected before that prediction window.</p>
+<p>We also calculated raw and change rate features from previously reported lapses. We calculated lapse rate features using the same five scoring epochs described earlier. Raw lapse rate features were generated by dividing the total number of previously observed lapses within a scoring epoch by the duration of that epoch. For change rate features, we subtracted the rate of previous lapses for that participant (i.e., total number of lapses while on-study divided by total hours on-study before the prediction window) from their associated raw lapse rate. We employed a similar approach to calculate raw and change rate of missing EMAs (i.e., number of full EMA surveys that were requested but not completed in a scoring epoch / duration of epoch).</p>
+<p>Other generic feature engineering steps included: 1) imputing missing data (median imputation for numeric features, mode imputation for nominal features); 2) dummy coding for nominal features; and 3) removing zero-variance features. Medians/modes for missing data imputation and identification of zero variance features were derived from held-in (training) data and applied to held-out (validation and test) data (see Cross-validation section below). We recognize that median/mode imputation is a coarse method for handling missing data; however, computational costs of more sophisticated methods (e.g., KNN imputation, multiple imputation) were not practical for this study. A sample feature engineering script (i.e., tidymodels recipe) containing all feature engineering steps is available on our OSF study page.</p>
+</section>
+<section id="model-training-and-evaluation" class="level4" data-number="2.2.5.3">
+<h4 data-number="2.2.5.3" class="anchored" data-anchor-id="model-training-and-evaluation"><span class="header-section-number">2.2.5.3</span> Model Training and Evaluation</h4>
+<section id="statistical-algorithm-and-hyperparameters." class="level5" data-number="2.2.5.3.1">
+<h5 data-number="2.2.5.3.1" class="anchored" data-anchor-id="statistical-algorithm-and-hyperparameters."><span class="header-section-number">2.2.5.3.1</span> Statistical Algorithm and Hyperparameters.</h5>
+<p>We trained and evaluated six separate classification models: one baseline and one full model for each prediction window (week, day, and hour). We initially considered four well-established statistical algorithms (XGBoost, Random Forest, K-Nearest Neighbors, and Elastic Net) that vary across characteristics expected to affect model performance (e.g., flexibility, complexity, handling higher-order interactions natively) <span class="citation" data-cites="kuhnAppliedPredictiveModeling2018">(<a href="#ref-kuhnAppliedPredictiveModeling2018" role="doc-biblioref">Kuhn &amp; Johnson, 2018</a>)</span>. However, preliminary exploratory analyses suggested that XGBoost consistently outperformed the other three algorithms<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Furthermore, the Shapley Additive Explanations (SHAP) method, which we planned to use for explanatory analyses of feature importance in our full models, is optimized for XGBoost. Consequently, we focused our primary model training and evaluation on the XGBoost algorithm only.</p>
+<p>Candidate XGBoost model configurations differed across sensible values for the hyperparameters mtry, tree depth, and learning rate using grid search. All configurations used 500 trees with early stopping to prevent over-fitting. All other hyperparameters were set to tidymodels package defaults. Candidate model configurations also differed on outcome resampling method (i.e., up-sampling and down-sampling of the outcome using majority/no lapse to minority/lapse ratios ranging from 1:1 to 5:1). We calibrated predicted probabilities using the beta distribution to support optimal decision-making under variable outcome distributions <span class="citation" data-cites="kullSigmoidsHowObtain2017">(<a href="#ref-kullSigmoidsHowObtain2017" role="doc-biblioref">Kull et al., 2017</a>)</span>.</p>
+<p>Model training and evaluation used all participants (N = 151), regardless if they had any positive labels (i.e., lapses) because XGBoost itself does not use grouping of observations within participants. This grouping is handled instead by a participant-grouped cross-validation procedure (below).</p>
+</section>
+<section id="performance-metric." class="level5" data-number="2.2.5.3.2">
+<h5 data-number="2.2.5.3.2" class="anchored" data-anchor-id="performance-metric."><span class="header-section-number">2.2.5.3.2</span> Performance Metric.</h5>
+<p>Our primary performance metric for model selection and evaluation was area under the Receiver Operating Characteristic Curve (auROC) <span class="citation" data-cites="kuhnAppliedPredictiveModeling2018">(<a href="#ref-kuhnAppliedPredictiveModeling2018" role="doc-biblioref">Kuhn &amp; Johnson, 2018</a>)</span>. auROC indexes the probability that the model will predict a higher score for a randomly selected positive case (lapse) relative to a randomly selected negative case (no lapse). This metric was selected because it 1) combines sensitivity and specificity, which are both important characteristics for clinical implementation; 2) is an aggregate metric across all decision thresholds, which is important because optimal decision thresholds may differ across settings and goals; and 3) is unaffected by class imbalance, which is important for comparing models with differing prediction window widths and levels of class imbalance.</p>
+</section>
+<section id="cross-validation." class="level5" data-number="2.2.5.3.3">
+<h5 data-number="2.2.5.3.3" class="anchored" data-anchor-id="cross-validation."><span class="header-section-number">2.2.5.3.3</span> Cross-validation.</h5>
+<p>We used participant-grouped, nested cross-validation for model training, selection, and evaluation with auROC. Grouped cross-validation assigns all data from a participant as either held-in or held-out to avoid bias introduced when predicting a participant’s data from their own data. Nested cross-validation uses two nested loops for dividing and holding out folds: an outer loop, where held-out folds serve as <em>test sets</em> for model evaluation; and inner loops, where held-out folds serve as <em>validation sets</em> for model selection. Importantly, these sets are independent, maintaining separation between data used to train the models, select the best models, and evaluate those best models. Therefore, nested cross-validation removes optimization bias from the evaluation of model performance in the test sets and can yield lower variance performance estimates than single test set approaches <span class="citation" data-cites="jonathanUseCrossvalidationAssess2000">(<a href="#ref-jonathanUseCrossvalidationAssess2000" role="doc-biblioref">Jonathan et al., 2000</a>)</span>.</p>
+<p>We used 1 repeat of 10-fold cross-validation for the inner loops and 3 repeats of 10-fold cross-validation for the outer loop. Best model configurations were selected using median auROC across the 10 <em>validation sets</em>. Final performance evaluation of those best model configurations used median auROC across the 30 <em>test sets</em>. We report median auROC for our six best model configurations in the test sets. In addition, we report other key performance metrics for the best full model configurations including sensitivity, specificity, balanced accuracy, positive predictive value (PPV), and negative predictive value (NPV) from the test sets <span class="citation" data-cites="kuhnAppliedPredictiveModeling2018">(<a href="#ref-kuhnAppliedPredictiveModeling2018" role="doc-biblioref">Kuhn &amp; Johnson, 2018</a>)</span>.</p>
+</section>
+</section>
+<section id="bayesian-estimation-of-auroc-and-model-comparisons" class="level4" data-number="2.2.5.4">
+<h4 data-number="2.2.5.4" class="anchored" data-anchor-id="bayesian-estimation-of-auroc-and-model-comparisons"><span class="header-section-number">2.2.5.4</span> Bayesian Estimation of auROC and Model Comparisons</h4>
+<p>We used a Bayesian hierarchical generalized linear model to estimate the posterior probability distributions and 95% Bayesian confidence intervals (CIs) for auROC for the six best models. Bayesian analyses were accomplished using the tidyposterior <span class="citation" data-cites="kuhnTidyposteriorBayesianAnalysis2022">(<a href="#ref-kuhnTidyposteriorBayesianAnalysis2022" role="doc-biblioref">Kuhn, 2022</a>)</span> and rstanarm <span class="citation" data-cites="goodrichRstanarmBayesianApplied2023">(<a href="#ref-goodrichRstanarmBayesianApplied2023" role="doc-biblioref">Goodrich et al., 2023</a>)</span> packages in R. Following recommendations from the rstanarm team and others <span class="citation" data-cites="rstudioteamRStudioIntegratedDevelopment2020 gabryPriorDistributionsRstanarm2023">(<a href="#ref-gabryPriorDistributionsRstanarm2023" role="doc-biblioref">Gabry &amp; Goodrich, 2023</a>; <a href="#ref-rstudioteamRStudioIntegratedDevelopment2020" role="doc-biblioref">RStudio Team, 2020</a>)</span>, we used the rstanarm default autoscaled, weakly informative, data-dependent priors that take into account the order of magnitude of the variables to provide some regularization to stabilize computation and avoid over-fitting. Specifically, the priors were set as follows: residual standard deviation ~ normal(location=0, scale=exp(2)), intercept (after centering predictors) ~ normal(location=2.3, scale=1.3), the two coefficients for window width contrasts ~ normal (location=0, scale=2.69), and covariance ~ decov(regularization=1, concentration=1, shape=1, scale=1).</p>
+<p>To estimate the probability that the full model outperformed the baseline model, we regressed the auROCs (logit transformed) from the 30 test sets for each model as a function of model type (baseline vs.&nbsp;full). To determine the probability that full models’ performances differed systematically from each other, we regressed the auROCs (logit transformed) from the 30 test sets for each full model as a function of prediction window width (week vs.&nbsp;day vs.&nbsp;hour). Following recommendations from the tidymodels team <span class="citation" data-cites="kuhnTidyposteriorBayesianAnalysis2022">(<a href="#ref-kuhnTidyposteriorBayesianAnalysis2022" role="doc-biblioref">Kuhn, 2022</a>)</span>, we set two random intercepts: one for the repeat, and another for the fold within repeat (folds are nested within repeats for 3x10-fold cross-validation). We report the 95% (equal-tailed) Bayesian CIs from the posterior probability distributions for our models’ auROCs. We also report 95% (equal-tailed) Bayesian CIs for the differences in performance associated with the Bayesian comparisons.</p>
+</section>
+<section id="shapley-additive-explanations-for-feature-importance" class="level4" data-number="2.2.5.5">
+<h4 data-number="2.2.5.5" class="anchored" data-anchor-id="shapley-additive-explanations-for-feature-importance"><span class="header-section-number">2.2.5.5</span> Shapley Additive Explanations for Feature Importance</h4>
+<p>We computed Shapley Values <span class="citation" data-cites="lundbergUnifiedApproachInterpreting2017">(<a href="#ref-lundbergUnifiedApproachInterpreting2017" role="doc-biblioref">Lundberg &amp; Lee, 2017</a>)</span> to provide a consistent, objective explanation of the importance of categories of features (based on EMA questions) across our three full models. Shapley values possess several useful properties including: Additivity (Shapley values for each feature can be computed independently and summed); Efficiency (the sum of Shapley values across features must add up to the difference between predicted and observed outcomes for each observation); Symmetry (Shapley values for two features should be equal if the two features contribute equally to all possible coalitions); and Dummy (a feature that does not change the predicted value in any coalition will have a Shapley value of 0).</p>
+<p>We calculated Shapley values from the 30 test sets using the SHAPforxgboost package that provides Shapley values in log-odds units for binary classification models. We averaged the three Shapley values for each observation for each feature across the three repeats to increase their stability. The additivity property of Shapley values allowed us to create 18 feature categories from the 286 separate features. We created separate feature categories for each of the nine EMA questions (excluding the alcohol use question), the rates of past alcohol use and missing surveys, the time of day and day of the week of the start of the prediction window, and the five demographic variables included in the models. For the EMA questions and rates of past alcohol use and missing surveys, these categories included all individual raw and change features across the three to five scoring epochs (see Feature Engineering above) and the most recent response. To calculate the local (i.e., for each observation) importance for each category of features, we added Shapley values across all features in a category, separately for each observation. To calculate global importance for each feature category, we averaged the absolute value of the Shapley values of all features in the category across all observations. These local and global importance scores based on Shapley values allow us to answer questions of relative feature importance. However, these are descriptive analyses because standard errors or other indices of uncertainty for importance scores are not available for Shapley values.</p>
+</section>
+</section>
+</section>
+<section id="results" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="results"><span class="header-section-number">2.3</span> Results</h2>
+<section id="demographic-and-clinical-characteristics" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="demographic-and-clinical-characteristics"><span class="header-section-number">2.3.1</span> Demographic and Clinical Characteristics</h3>
+<p>One hundred ninety-two participants were eligible. Of these, 191 consented to participate, and 169 subsequently enrolled in the study. Fifteen participants discontinued before the first monthly follow-up visit. We excluded data from one participant who did not maintain a goal of abstinence during their participation. We also excluded data from two participants due to evidence of careless responding and unusually low compliance. Our final sample consisted of 151 participants.</p>
+<p>The final sample included approximately equal numbers of men (N = 77, 51.0%) and women (N = 74, 49.0%) who ranged in age from 21 to 72 years old. The sample was majority White (N = 131, 86.8%) and non-Hispanic (N = 147, 97.4%). Participants self-reported a median of 9.0 DSM-5 symptoms of AUD (M = 8.9, SD = 1.9, range = 4.0–11.0) and a median of 4.0 previous quit attempts (M = 5.5, SD = 5.8, range = 0.0–30.0). Most participants (N = 84, 55.6%) reported one or more lapses during participation. The median number of lapses per participant while on study was 1.0 (M = 6.8, SD = 12.0, range = 0.0–75.0). <a href="#tbl-dem" class="quarto-xref">Table&nbsp;1</a> provides more detail on demographic and clinical characteristics of the sample.</p>
+<div class="quarto-embed-nb-cell">
+<div class="cell">
+<div id="tbl-dem" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Demographic and Lapse Characteristics
+</figcaption>
+<div aria-describedby="tbl-dem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">var</th>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">%</th>
+<th style="text-align: left;">M</th>
+<th style="text-align: left;">SD</th>
+<th style="text-align: left;">Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;">41</td>
+<td style="text-align: left;">11.9</td>
+<td style="text-align: left;">21-72</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sex</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">49.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">51.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Race</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">American Indian/Alaska Native</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Asian</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Black/African American</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">5.3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">White/Caucasian</td>
+<td style="text-align: right;">131</td>
+<td style="text-align: right;">86.8</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Other/Multiracial</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hispanic, Latino, or Spanish origin</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2.6</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">147</td>
+<td style="text-align: right;">97.4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Education</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Less than high school or GED degree</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.7</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">High school or GED</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">9.3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Some college</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">27.2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2-Year degree</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">9.3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">College degree</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">38.4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Advanced degree</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Employment</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Employed full-time</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: right;">47.7</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Employed part-time</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">17.2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Full-time student</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Homemaker</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.7</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Disabled</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Retired</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">5.3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unemployed</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">11.9</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Temporarily laid off, sick leave, or maternity leave</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Other, not otherwise specified</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Personal Income</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;">$34,298</td>
+<td style="text-align: left;">$31,807</td>
+<td style="text-align: left;">$0-200,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Marital Status</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Never married</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">44.4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Married</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">21.2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Divorced</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">29.8</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Separated</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Widowed</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DSM-5 AUD Symptom Count</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;">8.9</td>
+<td style="text-align: left;">1.9</td>
+<td style="text-align: left;">4-11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reported 1 or More Lapse During Study Period</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">84</td>
+<td style="text-align: right;">55.6</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">44.4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of reported lapses</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;">6.8</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">0-75</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ema-compliance-features-and-prediction-window-labels" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="ema-compliance-features-and-prediction-window-labels"><span class="header-section-number">2.3.2</span> EMA Compliance, Features, and Prediction Window Labels</h3>
+<p>Participants on average completed 3.1 (SD=0.6) of the four EMAs each day (78.4% compliance overall). Participants completed at least one EMA on 95.0% of days. Across individual weeks on-study, EMA compliance percentages ranged from 75.3%-86.8% completion for all of the 4x daily EMAs and from 91.7%-99.1% for at least one daily EMA completed.</p>
+<p>Using these EMA reports, we created data sets with 270,081, 274,179, and 267,287 future prediction windows for the week, day, and hour window widths, respectively. Each data set contained 286 features and an outcome labeled as lapse or no lapse. These data sets were unbalanced with respect to the outcome such that lapses were observed in 68,467 (25.4%) week windows, 21,107 (7.7%) day windows, and 1,017 (0.4%) hour windows.</p>
+<p>Features had missing values if the participant did not respond to the relevant EMA question during the associated scoring epoch. The median proportions of missing values across features were relatively low: 0.020 (range = 0 - 0.121), 0.022 (range = 0 - 0.125), and 0.023 (range = 0 - 0.127) for the week, day, and hour prediction windows. There were no missing values for demographic features, the hour and day of the start of the prediction window, or lapse rate and missing survey rate features.</p>
+</section>
+<section id="model-performance" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="model-performance"><span class="header-section-number">2.3.3</span> Model Performance</h3>
+<section id="auroc-for-baseline-models" class="level4" data-number="2.3.3.1">
+<h4 data-number="2.3.3.1" class="anchored" data-anchor-id="auroc-for-baseline-models"><span class="header-section-number">2.3.3.1</span> auROC for Baseline Models</h4>
+<p>We selected the best <em>baseline model</em> (previous lapse frequency feature only) configurations using auROCs from the <em>validation sets</em>. We evaluated these best baseline model configurations using <em>test set</em> performance to remove the optimization bias present in performance metrics from validation sets. The median auROC across the 30 test sets was moderate for the week (Mdn = 0.792, IQR = 0.079, range = 0.671–0.915), day (Mdn = 0.784, IQR = 0.070, range = 0.687–0.890), and hour (Mdn = 0.779, IQR = 0.077, range = 0.675–0.884) prediction windows.</p>
+<p>We used the 30 test set auROCs to estimate the posterior probability distribution for the auROC of these baseline models. The median auROCs from these posterior distributions were 0.798 (week), 0.785 (day), and 0.780 (hour). These values represent our best estimates for the magnitude of the auROC parameter for each model. The 95% Bayesian CIs for the auROCs for these models were relatively narrow and did not contain 0.5 (chance performance) for any window width: week [0.770–0.822], day [0.757–0.810], and hour [0.752–0.806].</p>
+</section>
+<section id="aurocs-for-full-models" class="level4" data-number="2.3.3.2">
+<h4 data-number="2.3.3.2" class="anchored" data-anchor-id="aurocs-for-full-models"><span class="header-section-number">2.3.3.2</span> auROCs for Full Models</h4>
+<p>We next selected the best <em>full model</em> (which included all features) configurations using auROCs from the <em>validation sets</em>. We evaluated these best full model configurations using <em>test set</em> performance. The median auROC across the 30 test sets was high for the week (Mdn = 0.891, IQR = 0.043, range = 0.785– 0.963), day (Mdn = 0.899, IQR = 0.05, range = 0.788–0.969), and hour (Mdn = 0.929, IQR = 0.045, range = 0.847–0.972) prediction windows. <a href="#fig-1-ema" class="quarto-xref">Figure&nbsp;1</a> (left panel) displays the ROC curves by prediction window derived by aggregating predicted lapse probabilities across all test sets.</p>
+<p>The right panel of <a href="#fig-1-ema" class="quarto-xref">Figure&nbsp;1</a> displays posterior probability distributions for the auROC for the full models by prediction window. The median auROCs from these posterior distributions were 0.895 (week), 0.905 (day), and 0.930 (hour). These values represent our best estimates for the magnitude of the auROC parameter for each model. The 95% Bayesian CIs for the auROCs for these models were relatively narrow and did not contain 0.5 (chance performance) for any window width: week [0.876–0.910], day [0.888–0.919], and hour [0.916–0.940].</p>
+<div class="quarto-embed-nb-cell">
+<div id="cell-fig-1-ema" class="cell" data-fig-width="8" data-fig-height="6">
+<div class="cell-output cell-output-display">
+<div id="fig-1-ema" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-1-ema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-figures-fig-1-ema-output-1.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: ROC curves and posterior probabilities for auROCs by prediction window. The left panel depicts the aggregate receiver operating characteristic (ROC) curve for each model, derived by concatenating predicted lapse probabilities across all test sets. The dotted line represents the expected ROC curve for a random classifier. The histograms on the right depict the posterior probability distribution for the areas under the receiver operating characteristic curves (auROCs) for each model. The vertical lines represent the median posterior probability and the horizontal line represents the boundaries 95% CI."><img src="index_files/figure-html/notebooks-figures-fig-1-ema-output-1.jpeg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1-ema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: ROC curves and posterior probabilities for auROCs by prediction window. The left panel depicts the aggregate receiver operating characteristic (ROC) curve for each model, derived by concatenating predicted lapse probabilities across all test sets. The dotted line represents the expected ROC curve for a random classifier. The histograms on the right depict the posterior probability distribution for the areas under the receiver operating characteristic curves (auROCs) for each model. The vertical lines represent the median posterior probability and the horizontal line represents the boundaries 95% CI.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="bayesian-comparisons-of-baseline-vs.-full-models" class="level4" data-number="2.3.3.3">
+<h4 data-number="2.3.3.3" class="anchored" data-anchor-id="bayesian-comparisons-of-baseline-vs.-full-models"><span class="header-section-number">2.3.3.3</span> Bayesian Comparisons of Baseline vs.&nbsp;Full Models</h4>
+<p>We used the posterior probability distributions for the auROCs to formally compare the baseline versus full models (matched for prediction window). The median increase in auROC for the full versus baseline week model was 0.097 (95% CI [0.081–0.114]), yielding a probability of 1.000 that the full week model had superior performance. The median increase in auROC for the full versus baseline day model was 0.120 (95% CI [0.102–0.138]), yielding a probability of 1.000 that the full-day model had superior performance. The median increase in auROC for the full versus baseline hour model was 0.149 (95% CI [0.131–0.170]), yielding a probability of 1.000 that the full hour model had superior performance.</p>
+</section>
+<section id="bayesian-comparisons-of-full-models-by-prediction-window" class="level4" data-number="2.3.3.4">
+<h4 data-number="2.3.3.4" class="anchored" data-anchor-id="bayesian-comparisons-of-full-models-by-prediction-window"><span class="header-section-number">2.3.3.4</span> Bayesian Comparisons of Full Models by Prediction Window</h4>
+<p>We also used the posterior probability distributions for the auROCs for the three full models to formally compare the differences in performance by prediction window width. The median increase in auROC for the hour versus the day model was 0.025 (95% CI [0.017–0.034]), yielding a probability of 1.000 that the hour (vs.&nbsp;day) model had superior performance. The median increase in auROC for the hour versus the week model was 0.035 (95% CI [0.026–0.045]), yielding a probability of 1.000 that the hour model (vs.&nbsp;week) had superior performance. The median increase in auROC for the day versus the week model was 0.010 (95% CI [0.001–0.020]), yielding a probability of 0.982 that the day (vs.&nbsp;week) model had superior performance.</p>
+</section>
+<section id="other-performance-metrics-for-the-full-models" class="level4" data-number="2.3.3.5">
+<h4 data-number="2.3.3.5" class="anchored" data-anchor-id="other-performance-metrics-for-the-full-models"><span class="header-section-number">2.3.3.5</span> Other Performance Metrics for the Full Models</h4>
+<p>We evaluated the sensitivity, specificity, balanced accuracy, PPV, and NPV when the predicted lapse probabilities were used for binary classification (<em>lapse</em> vs.&nbsp;<em>no lapse</em>) with decision thresholds identified by Youden’s Index. All three full models had high sensitivity, specificity, balanced accuracy, and NPV (<a href="#tbl-perf-ema" class="quarto-xref">Table&nbsp;2</a>). PPV, however, notably declined as the prediction window width decreased.</p>
+<div class="quarto-embed-nb-cell">
+<div class="cell" data-tbl-footnote="Areas under the receiver operating characteristic curves (auROCs) summarize the model's sensitivity and specificity over all possible decision thresholds. Sensitivity, specificity, balanced accuracy, positive predictive value, and negative predictive value are performance metrics calculated at a single decision threshold for each model determined with Youden’s index. All metrics represent median values across 30 held-out test sets.">
+<div id="tbl-perf-ema" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-footnote="Areas under the receiver operating characteristic curves (auROCs) summarize the model's sensitivity and specificity over all possible decision thresholds. Sensitivity, specificity, balanced accuracy, positive predictive value, and negative predictive value are performance metrics calculated at a single decision threshold for each model determined with Youden’s index. All metrics represent median values across 30 held-out test sets.">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-perf-ema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Performance Metrics for Full models by Prediction Window
+</figcaption>
+<div aria-describedby="tbl-perf-ema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Metric</th>
+<th style="text-align: right;">Week</th>
+<th style="text-align: right;">Day</th>
+<th style="text-align: right;">Hour</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">auROC</td>
+<td style="text-align: right;">0.8906310</td>
+<td style="text-align: right;">0.8989930</td>
+<td style="text-align: right;">0.9293432</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sensitivity</td>
+<td style="text-align: right;">0.8232301</td>
+<td style="text-align: right;">0.8275224</td>
+<td style="text-align: right;">0.8636420</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">specificity</td>
+<td style="text-align: right;">0.8192581</td>
+<td style="text-align: right;">0.8454889</td>
+<td style="text-align: right;">0.8813554</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">balanced accuracy</td>
+<td style="text-align: right;">0.8275871</td>
+<td style="text-align: right;">0.8345976</td>
+<td style="text-align: right;">0.8536644</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">positive predictive value</td>
+<td style="text-align: right;">0.6301088</td>
+<td style="text-align: right;">0.2997223</td>
+<td style="text-align: right;">0.0254053</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">negative predictive value</td>
+<td style="text-align: right;">0.9435759</td>
+<td style="text-align: right;">0.9877148</td>
+<td style="text-align: right;">0.9994361</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>PPV can be increased by increasing the decision threshold; however, increasing the decision threshold will also lower the model’s sensitivity. To evaluate the trade-off between PPV (i.e., precision) and sensitivity (i.e., recall) across decision thresholds, we created Precision-Recall curves by concatenating predicted lapse probabilities across the 30 test sets (<a href="#fig-2-ema" class="quarto-xref">Figure&nbsp;2</a>). For example, the dotted lines in <a href="#fig-2-ema" class="quarto-xref">Figure&nbsp;2</a> depict the sensitivities (0.718, 0.473, and 0.327 for week, day, and hour models, respectively) associated with decision thresholds that yield 0.700 PPV for each model.</p>
+<div class="quarto-embed-nb-cell">
+<div id="cell-fig-2-ema" class="cell" data-fig-width="8" data-fig-height="6">
+<div class="cell-output cell-output-display">
+<div id="fig-2-ema" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2-ema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-figures-fig-2-ema-output-1.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Precision-recall Curves by Prediction Window for the Full Models. The plot depicts the aggregate precision-recall curves for each full model, derived by concatenating predicted lapse probabilities across all test sets. The dotted lines depict the sensitivities (0.718, 0.473, and 0.327 for week, day, and hour models, respectively) associated with decision thresholds that yield 0.700 positive predictive value for each of those models."><img src="index_files/figure-html/notebooks-figures-fig-2-ema-output-1.jpeg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2-ema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Precision-recall Curves by Prediction Window for the Full Models. The plot depicts the aggregate precision-recall curves for each full model, derived by concatenating predicted lapse probabilities across all test sets. The dotted lines depict the sensitivities (0.718, 0.473, and 0.327 for week, day, and hour models, respectively) associated with decision thresholds that yield 0.700 positive predictive value for each of those models.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="feature-importance-for-full-models" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="feature-importance-for-full-models"><span class="header-section-number">2.3.4</span> Feature Importance for Full Models</h3>
+<p>Global importance (mean |Shapley value|) for feature categories for each full model appears in Panel A of <a href="#fig-3-ema" class="quarto-xref">Figure&nbsp;3</a>. Past use was the most important feature category for lapse prediction across prediction window widths. Future abstinence efficacy was also globally important across window widths. Time-varying constructs (craving, time of day) appear to have more impact in lapse prediction for the hour model compared to the day and week models.</p>
+<p>Sina plots of local Shapley values (i.e., the influence of feature categories on individual observations) for each model show that some feature categories (e.g., past pleasant events, future stressful events) impact lapse probability for specific individuals at specific times even if they are not globally important across all observations (<a href="#fig-3-ema" class="quarto-xref">Figure&nbsp;3</a>, Panels B-D).</p>
+<div class="quarto-embed-nb-cell">
+<div id="cell-fig-3-ema" class="cell" data-fig-width="8" data-fig-height="6">
+<div class="cell-output cell-output-display">
+<div id="fig-3-ema" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3-ema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-figures-fig-3-ema-output-1.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Feature importance (Shapley values) for Full Models by Prediction Window. Panel A displays the global importance (mean |Shapley value|) for feature categories for each full model. Raw EMA features are grouped into categories by the original question from the EMA. Features based on the rates of previous lapses and previous missing surveys, as well as demographics, and the time of day and day of the week for the start of the prediction window are also included. Feature categories are ordered by their aggregate global importance (i.e., total bar length) across the three models. The importance of each feature category for specific models is displayed separately by color. Panels B-D display local Shapley values that quantify the influence of feature categories on individual observations (i.e., a single prediction window for a specific participant) for each model."><img src="index_files/figure-html/notebooks-figures-fig-3-ema-output-1.jpeg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-ema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Feature importance (Shapley values) for Full Models by Prediction Window. Panel A displays the global importance (mean |Shapley value|) for feature categories for each full model. Raw EMA features are grouped into categories by the original question from the EMA. Features based on the rates of previous lapses and previous missing surveys, as well as demographics, and the time of day and day of the week for the start of the prediction window are also included. Feature categories are ordered by their aggregate global importance (i.e., total bar length) across the three models. The importance of each feature category for specific models is displayed separately by color. Panels B-D display local Shapley values that quantify the influence of feature categories on individual observations (i.e., a single prediction window for a specific participant) for each model.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="discussion" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="discussion"><span class="header-section-number">2.4</span> Discussion</h2>
+<section id="model-performance-1" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="model-performance-1"><span class="header-section-number">2.4.1</span> Model Performance</h3>
+<p>All baseline models, which used only past frequency of lapses to predict future lapses, performed moderately well with auROCs in the upper .70s. These results confirm what we would expect: past behavior is a relatively good predictor of future behavior. However, there was still substantial room for increased predictive performance. Furthermore, these baseline models do not identify specific risk factors contributing to lapse predictions at any moment in time for each participant.</p>
+<p>All three full models performed exceptionally well, yielding auROCs of 0.89, 0.90, and 0.93 for week, day, and hour level models, respectively. auROCs above .9 are generally described as having “excellent” performance; the model will correctly assign a higher probability to a positive case (e.g., lapse) than a negative case 90% of the time <span class="citation" data-cites="mandrekarReceiverOperatingCharacteristic2010">(<a href="#ref-mandrekarReceiverOperatingCharacteristic2010" role="doc-biblioref">Mandrekar, 2010</a>)</span>. Bayesian comparisons indicated that these full models performed better than the baseline models for the same prediction window. This confirms that EMA can predict future alcohol lapses in the next week, next day, and next hour with high sensitivity and specificity for new individuals. And, as we describe later, using features that map onto important relapse prevention risk constructs may illuminate momentary contributors to predicted lapses.</p>
+<p>This study addressed several important limitations of previous research to advance toward robust sensing and prediction models that can be embedded within digital therapeutics. First, our models were trained on a relatively large, treatment-seeking sample of adults in early recovery from AUD that closely matches the individuals most likely to benefit from such models within a digital therapeutic. Second, we explicitly predicted episodes of goal-inconsistent alcohol use (i.e., lapses) because features that predict goal-inconsistent use likely differ from those that predict other types of alcohol use. Third, we measured EMA features and alcohol use with sufficient frequency and granularity to train well-performing models with high temporal resolution - specifically, hour-by-hour predicted probabilities for lapses in the next week, day, and hour. Fourth, we collected features and outcomes over three months during a high risk period (initial remission <span class="citation" data-cites="hagmanDefiningRecoveryAlcohol2022">(<a href="#ref-hagmanDefiningRecoveryAlcohol2022" role="doc-biblioref">Hagman et al., 2022</a>)</span> from AUD). Fifth, we used cutting-edge resampling methods (grouped, nested, k-fold cross-validation) to provide valid estimates of how our models would perform with new individuals. Finally, we used interpretable machine learning methods (SHAP <span class="citation" data-cites="lundbergUnifiedApproachInterpreting2017 molnarInterpretableMachineLearning2022">(<a href="#ref-lundbergUnifiedApproachInterpreting2017" role="doc-biblioref">Lundberg &amp; Lee, 2017</a>; <a href="#ref-molnarInterpretableMachineLearning2022" role="doc-biblioref">Molnar, 2022</a>)</span>) to better understand how our models made predictions globally and locally for specific participants at discrete moments in time.</p>
+</section>
+<section id="understanding-contextualizing-model-performance" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="understanding-contextualizing-model-performance"><span class="header-section-number">2.4.2</span> Understanding &amp; Contextualizing Model Performance</h3>
+<p>We used SHAP to describe the relative importance of key relapse prevention model constructs (represented by categories of features) to predicted lapses in our three full models. Some constructs consistently emerged as globally important across week, day, and hour level models. Unsurprisingly, the largest contribution to lapse prediction was past use. This is consistent with decades of research on relapse precipitants and our understanding of human behavior more generally (i.e., past behavior predicts future behavior) <span class="citation" data-cites="marlattRelapsePreventionMaintenance1985">(<a href="#ref-marlattRelapsePreventionMaintenance1985" role="doc-biblioref">Marlatt &amp; Gordon, 1985</a>)</span>. Decreases in abstinence self-efficacy were also strongly associated with increased probability of future lapses across windows.</p>
+<p>The relative importance of some constructs descriptively differed by window width. Punctate, time-varying constructs (e.g., craving, arousal, recent risky situation) had greater impact on predicted lapse probabilities in the hour model compared to day or week models. The time of day feature was relatively important (top four) in the hour model, such that lapses were more likely for hour-level prediction windows that began in the evenings. The day of week feature made a small contribution to the hour and day models given that lapses were more likely on weekends. The time and day features were not useful in the week model because its associated prediction window (a full week) spanned all days and times, making the time and day that the window began irrelevant. The increased global importance for all these punctate features/constructs to immediate lapse risk likely contributed to the hour model outperforming the day and week models. These important global differences in next hour lapse risk also highlight the need for just-in-time interventions that can address these imminent but short-lived risks.</p>
+<p>The individual, local Shapley values also shed light on the multidimensional and heterogeneous nature of lapse risk in our sample. Sina plots of local Shapley values (<a href="#fig-3-ema" class="quarto-xref">Figure&nbsp;3</a>) display meaningful ranges of scores for most feature categories. This means that even feature categories with lower global importance (e.g., past pleasant events, future stressful events) still consequentially impacted predictions for some individuals at specific times. This variability in locally important features highlights the potential benefits of recommending optimal interventions and other supports that are personalized for that person at that moment in time.</p>
+<p>Our demographic features did not display high global or local importance. Despite the diversity in sex, age, education, and marital status in our sample, these features did not meaningfully contribute to lapse prediction. Although this does not preclude these features’ predictive utility, it does suggest that other EMA feature categories may be more relevant for lapse prediction than these characteristics. Race/ethnicity also did not emerge as globally or locally important features. However, the limited representation of participants of color in our sample warrants caution in drawing conclusions about the predictive utility of race and ethnicity at this time.</p>
+</section>
+<section id="considerations-for-clinical-implementation" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="considerations-for-clinical-implementation"><span class="header-section-number">2.4.3</span> Considerations for Clinical Implementation</h3>
+<section id="smart-digital-therapeutics" class="level4" data-number="2.4.3.1">
+<h4 data-number="2.4.3.1" class="anchored" data-anchor-id="smart-digital-therapeutics"><span class="header-section-number">2.4.3.1</span> Smart Digital Therapeutics</h4>
+<p>We believe these full models may be most effective when embedded in a “smart” digital therapeutic that guides patients toward optimal, adaptive engagement to address their ongoing and momentary risks. These models can provide the patient’s predicted future lapse probability and the features that meaningfully contribute to that probability. We consciously selected EMA items that map onto well-known risk factors from the relapse prevention literature. Consequently, these outputs can be used to recommend specific intervention and support modules that are risk-relevant for each patient - much like a clinician would do if they were available in-the-moment. For example, during sensed periods of high stress, stress reduction techniques (e.g., guided mindfulness) could be recommended. If increased time with risky people or locations is driving lapse risk, the digital therapeutic can support patients to attend support meetings, or encourage participation in the in-app discussion board.</p>
+<p>Module recommendations can also be tuned more precisely using the patient’s current lapse probability. If increased craving yields a high predicted lapse probability, stimulus control modules would be recommended (e.g., remove drinking cues, leave unsafe environment). Conversely, if craving is detected but lapse probability is lower, urge management modules that permit coping with the craving in-place could be recommended (e.g., urge surfing, distracting activities/games).</p>
+<p>Of course, we must first determine how best to provide module recommendations such that patients trust and follow the recommendation. Increasing the interpretability and transparency of otherwise “black box” machine learning prediction models can improve perceptions, but providing complex or unnecessary information may instead undermine trust <span class="citation" data-cites="molnarInterpretableMachineLearning2022">(<a href="#ref-molnarInterpretableMachineLearning2022" role="doc-biblioref">Molnar, 2022</a>)</span>. Additional research using appropriate research designs is needed to optimize recommendation messaging to increase adherence and clinical outcomes <span class="citation" data-cites="collinsOptimizationBehavioralBiobehavioral2018">(<a href="#ref-collinsOptimizationBehavioralBiobehavioral2018" role="doc-biblioref">Collins, 2018</a>)</span>.</p>
+<p>A smart digital therapeutic can potentially improve clinical outcomes in multiple ways. First, feedback from the prediction model could improve patient insight and self-monitoring by connecting their daily experiences to changing risk. Second, it can remove patient uncertainty by guiding selection from the substantial content available. Third, a smart digital therapeutic could encourage risk-relevant engagement. Rather than trying to increase overall time using the digital therapeutic, patients could be guided to use the supports that specifically target their personal risk factors at that moment in time. Thus, smart digital therapeutics are well-positioned to pursue the precision mental health goal to “provide the right treatment to the right patient at the right time, every time” <span class="citation" data-cites="kaiserObamaGivesEast2015">(<a href="#ref-kaiserObamaGivesEast2015" role="doc-biblioref">Kaiser, 2015</a>)</span>.</p>
+</section>
+<section id="categorical-lapse-predictions" class="level4" data-number="2.4.3.2">
+<h4 data-number="2.4.3.2" class="anchored" data-anchor-id="categorical-lapse-predictions"><span class="header-section-number">2.4.3.2</span> Categorical Lapse Predictions</h4>
+<p>Our models natively provide quantitative predictions of lapse probabilities. These lapse probabilities can also be used to make categorical predictions (lapse vs.&nbsp;no-lapse) by applying a decision threshold to the quantitative predicted lapse probabilities (i.e., predict lapse when the probability exceeds the decision threshold).</p>
+<p>We observed high sensitivity and specificity for these categorical predictions at a decision threshold selected to balance these two performance metrics. However, the PPV (proportion of predicted lapses that were true lapses) of these categorical predictions in our full models was moderate to very low at this threshold (ranging from .630 down to .025 across window widths). For this reason, categorical predictions should be provided to patients with extreme caution, if at all. Instead, we favor the quantitative lapse probabilities as risk indicators to guide intervention and support recommendations.</p>
+<p>If categorical predictions are necessary, PPV can be improved by raising the decision threshold, but this comes at the cost of reduced sensitivity. We explored this trade-off in the precision-recall curves displayed in <a href="#fig-2-ema" class="quarto-xref">Figure&nbsp;2</a>. From these curves, it is clear decision thresholds that yield higher PPV (e.g., .700) exist for all three full models, but the associated sensitivity will be lower (e.g., 0.718, 0.473, and 0.327 for the week, day, and hour models, respectively, at this threshold). Clinical implementation of categorical predictions will require selecting an optimal decision threshold after weighing the cost of missing true lapses (low sensitivity) vs.&nbsp;predicting lapses that subsequently do not occur (low PPV). Different thresholds could be used depending on the purpose, context, available resources, or even patient preference.</p>
+</section>
+</section>
+<section id="additional-limitations-and-future-directions" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="additional-limitations-and-future-directions"><span class="header-section-number">2.4.4</span> Additional Limitations and Future Directions</h3>
+<p>Successful clinical implementation of our models will require several important steps to address limitations in our work to-date. First, we need to enrich the training data to include diversity across race, ethnicity, and geographic region. Our current prediction models may not work well for people of color or people from rural communities. Prediction models must use diverse training samples to avoid exacerbating rather than mitigating existing disparities. We must also collect data from individuals in later stages of recovery beyond initial remission; features that predict lapses may differ in these later periods. We are intentionally addressing these issues in a current NIH protocol that recruits nationally for demographic and geographic diversity and follows participants for up to 1.5 years into their recovery <span class="citation" data-cites="moshontzProspectivePredictionLapses2021">(<a href="#ref-moshontzProspectivePredictionLapses2021" role="doc-biblioref">Moshontz et al., 2021</a>)</span>.</p>
+<p>The chronic nature of AUD may require sustained use of a sensing and prediction system. Consequently, the burden of using such systems must be considered. Participants with AUD find three months of 4x daily EMA to be generally acceptable and report that they could hypothetically sustain this for at least a year if there were clinical benefits to them <span class="citation" data-cites="wyantAcceptabilityPersonalSensing2023">(<a href="#ref-wyantAcceptabilityPersonalSensing2023" role="doc-biblioref">Wyant et al., 2023</a>)</span>. They also report that 1x daily EMA may be more feasible still <span class="citation" data-cites="wyantAcceptabilityPersonalSensing2023">(<a href="#ref-wyantAcceptabilityPersonalSensing2023" role="doc-biblioref">Wyant et al., 2023</a>)</span>. We plan to develop future prediction models that use only the single morning EMA to contrast the assessment burden vs.&nbsp;model performance trade-off between our current models and putatively lower burden models. We also plan to train models that use features based on passively sensed geolocation and cellular communications data-streams (i.e., meta-data from calls and text messages; text message content) that were also collected from our participants. These passively sensed signals may be sufficient as inputs to an exceptionally low burden prediction model. Alternatively, they can be added to models that also include EMA to increase model performance further and/or to reduce the frequency or length of the EMA surveys while maintaining comparable performance.</p>
+<p>Our current models predict probability of imminent lapses. The hour and day full models are well-positioned to identify and recommend just-in-time interventions to address these immediate risks. However, the week model may not have sufficient temporal specificity to recommend immediate patient action. Instead, its clinical utility may improve if we shift this coarser window width into the future. For example, we could train a model to predict the probability of lapse at any point during a week window that begins two weeks in the future. This “time-lagged” model could provide patients with increased lead time to implement supports that might not be immediately available to them (e.g., schedule therapy appointment, request support from an AA sponsor).</p>
+<p>Finally, XGBoost does not take advantage of grouping observations within participants or systematic variation unique to individual participants<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Independence of observations is not necessary for statistically valid prediction. When observations are grouped/repeated within participants, linear mixed effects models or other statistical models that can estimate both population-level (fixed) effects and participant-level (random) effects may predict better for the participants on which they were trained than would XGBoost. However, we are not interested in making predictions for participants in our training set. We want to know how well our models will work with new individuals like those that will use smart digital therapeutics in the future.</p>
+<p>In some domains, there has been increasing interest in idiographic approaches where models are trained and then implemented for the same individual<span class="citation" data-cites="fisherOpenTrialPersonalized2019 wrightAppliedAmbulatoryAssessment2019">(<a href="#ref-fisherOpenTrialPersonalized2019" role="doc-biblioref">Fisher et al., 2019</a>; <a href="#ref-wrightAppliedAmbulatoryAssessment2019" role="doc-biblioref">Wright &amp; Zimmermann, 2019</a>)</span>. Such approaches may also yield superior predictive performance but are not possible to implement for outcomes like alcohol use lapse. A person-specific lapse prediction model requires a sufficient number of positive labels (i.e., lapses) for that individual. It may be too late to prevent relapse if we must wait until an individual has lapsed multiple (perhaps many) times to offer help. We believe the most promising approaches may involve first developing population-based models and updating these models with person-specific information as the patient uses the system <span class="citation" data-cites="zhouEvaluatingMachineLearning2018">(<a href="#ref-zhouEvaluatingMachineLearning2018" role="doc-biblioref">Zhou et al., 2018</a>)</span>. We are pursuing these cutting-edge models as a near-term future direction.</p>
+<p>In this study, we have demonstrated that sensing and prediction systems can now be developed to predict future lapses with high temporal resolution. Important steps still remain before these systems can be embedded within smart digital therapeutics and delivered to patients. However, the necessary steps are clear and, when completed, these smart digital therapeutics hold promise to advance us toward precision mental health solutions that may reduce both barriers and disparities in AUD treatment.</p>
+</section>
+</section>
 </section>
 <section id="lagged-predictions-of-next-day-alcohol-lapse-risk-for-personalized-and-adaptive-continuing-care-support" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Lagged predictions of next day alcohol lapse risk for personalized and adaptive continuing care support</h1>
 </section>
 <section id="using-sensing-data-to-predict-opioid-lapse-risk-in-a-national-sample-of-patients-with-opioid-use-disorder" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Using sensing data to predict opioid lapse risk in a national sample of patients with opioid use disorder</h1>
-<section id="introduction-1" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="introduction-1"><span class="header-section-number">4.1</span> Introduction</h2>
+<section id="introduction-2" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="introduction-2"><span class="header-section-number">4.1</span> Introduction</h2>
 <p>Studies show high agreement between recent (i.e., 1-4 days) self-report and biological markers (i.e., urine, saliva, hair) of drug use <span class="citation" data-cites="bharatAgreementSelfreportedIllicit2023">(<a href="#ref-bharatAgreementSelfreportedIllicit2023" role="doc-biblioref">Bharat et al., 2023</a>)</span>. This suggests people may be willing to report illicit substance use behaviors.</p>
 <p>However, it is unclear if people in recovery from substance use disorders, other than alcohol, can sustain long-term adherence (e.g., one year or more) needed for a recovery monitoring support system that uses self-report data. Previous studies examining adherence to frequent self-report prompts among people with illicit substance use disorders have typically only prompted for 7-30 days <span class="citation" data-cites="jonesComplianceEcologicalMomentary2019">(<a href="#ref-jonesComplianceEcologicalMomentary2019" role="doc-biblioref">Jones et al., 2019</a>)</span> (except <span class="citation" data-cites="kennedySexDifferencesCocaine2013">Kennedy et al. (<a href="#ref-kennedySexDifferencesCocaine2013" role="doc-biblioref">2013</a>)</span> prompted for 175 days and found 75% adherence).</p>
 <p>It is also unclear whether people in recovery from illicit substance use disorders can, or are willing to, accurately report other risk information needed to develop accurate prediction models. For example, people with substance use disorders may experience greater instability in their day-to-day lives (e.g., stigma or legal consequences may make access to healthcare, stable housing, or supportive relationships more difficult). This instability could make it difficult to recall and report recent behaviors and events promptly or accurately. It may also skew their baseline perception of what constitutes a risky or stressful experience.</p>
@@ -499,8 +1226,8 @@ window.Quarto = {
 </section>
 <section id="sec-methods" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="sec-methods"><span class="header-section-number">4.3</span> Methods</h2>
-<section id="participants" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="participants"><span class="header-section-number">4.3.1</span> Participants</h3>
+<section id="participants-1" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="participants-1"><span class="header-section-number">4.3.1</span> Participants</h3>
 <p>We recruited participants in early recovery from opioid use disorder. Participants were recruited through print and targeted digital advertisements (craigslist, reddit, Facebook) and partnerships with MOUD treatment centers. We required that participants:</p>
 <ol type="1">
 <li>were age 18 or older,</li>
@@ -1121,15 +1848,17 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+
+
 </div>
-<a class="quarto-notebook-link" id="nblink-1" href="index-preview.html">Source: Article Notebook</a></div>
+</div>
 </section>
-<section id="procedure" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="procedure"><span class="header-section-number">4.3.2</span> Procedure</h3>
+<section id="procedure-1" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="procedure-1"><span class="header-section-number">4.3.2</span> Procedure</h3>
 <p>Participants who screened eligible were consented and onboarded over video or phone call. All participants were instructed to download the STARR study app (a version of CHESS). After this meeting participants were instructed to watch a set of video tutorials for learning how to use the app. One week later they participated in a check-in video or phone call with study staff to answer any questions about the app and troubleshoot any technical issues. At this time, study staff also mailed onboarding materials to participants, including a payment card. Participants were expected to complete monthly surveys to remain on study. At the end of the study participants met with study staff for a final debriefing video or phone call.</p>
 </section>
-<section id="measures" class="level3" data-number="4.3.3">
-<h3 data-number="4.3.3" class="anchored" data-anchor-id="measures"><span class="header-section-number">4.3.3</span> Measures</h3>
+<section id="measures-1" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="measures-1"><span class="header-section-number">4.3.3</span> Measures</h3>
 <section id="individual-characteristics" class="level4" data-number="4.3.3.1">
 <h4 data-number="4.3.3.1" class="anchored" data-anchor-id="individual-characteristics"><span class="header-section-number">4.3.3.1</span> Individual Characteristics</h4>
 <p>We collected self-report information about demographics (age, gender, orientation, race/ethnicity, education, employment, income, relationship status, location) and clinical characteristics (DSM-5 OUD symptom count, MOUD medication, number of lifetime overdoses) to characterize our sample. Demographic information will be included as features in our models. A subset of these variables (gender, race/ethnicity, income, and location) will be used for model fairness analyses, as they have documented disparities in treatment access and outcomes.</p>
@@ -1159,8 +1888,8 @@ window.Quarto = {
 <p>Prediction windows are 24 hours in width. The 24-hour windows roll day-by-day starting at 6 am in the participant’s own time zone. The start and end date/time of past opioid use were reported on the first daily survey item. Each prediction window was labeled as a lapse if opioid use was reported as occurring between 6 am that day and 5:59 am the next morning. Windows with no reported opioid use were labeled as no lapse.</p>
 <p>We ended up with a total of 93376 labels, with 2% labeled as lapses.</p>
 </section>
-<section id="feature-engineering" class="level4" data-number="4.3.4.2">
-<h4 data-number="4.3.4.2" class="anchored" data-anchor-id="feature-engineering"><span class="header-section-number">4.3.4.2</span> Feature Engineering</h4>
+<section id="feature-engineering-1" class="level4" data-number="4.3.4.2">
+<h4 data-number="4.3.4.2" class="anchored" data-anchor-id="feature-engineering-1"><span class="header-section-number">4.3.4.2</span> Feature Engineering</h4>
 <p>Features will be derived from four sources:</p>
 <ol type="1">
 <li><p>Prediction window: We will dummy-code features for day of the week for the start of the prediction window.</p></li>
@@ -1170,8 +1899,8 @@ window.Quarto = {
 </ol>
 <p>Other generic feature engineering steps will include imputing missing data (median imputation for numeric features, mode imputation for nominal features) and removing zero and near-zero variance features as determined from held-in data (see Cross-validation section below).</p>
 </section>
-<section id="model-training-and-evaluation" class="level4" data-number="4.3.4.3">
-<h4 data-number="4.3.4.3" class="anchored" data-anchor-id="model-training-and-evaluation"><span class="header-section-number">4.3.4.3</span> Model Training and Evaluation</h4>
+<section id="model-training-and-evaluation-1" class="level4" data-number="4.3.4.3">
+<h4 data-number="4.3.4.3" class="anchored" data-anchor-id="model-training-and-evaluation-1"><span class="header-section-number">4.3.4.3</span> Model Training and Evaluation</h4>
 <section id="cross-validation" class="level5" data-number="4.3.4.3.1">
 <h5 data-number="4.3.4.3.1" class="anchored" data-anchor-id="cross-validation"><span class="header-section-number">4.3.4.3.1</span> Cross Validation</h5>
 <p>We will consider candidate Xgboost model configurations that differ across sensible values for key hyperparameters and outcome resampling method (i.e., no resampling and up-sampling and down-sampling of the outcome using majority/no lapse to minority/lapse ratios ranging from 1:1 to 5:1).</p>
@@ -1196,8 +1925,8 @@ window.Quarto = {
 </section>
 <section id="chapter-5-state-space-models-for-idiographic-risk-monitoring-and-recovery-support-recommendations" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Chapter 5: State-space models for idiographic risk monitoring and recovery support recommendations</h1>
-<section id="introduction-2" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="introduction-2"><span class="header-section-number">5.1</span> Introduction</h2>
+<section id="introduction-3" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction-3"><span class="header-section-number">5.1</span> Introduction</h2>
 <p>Lapse risk is multidimensional. The extant relapse prevention literature suggests relapse is preceeded by a complex interplay of factors, including include emotional or cognitive states, environmental contingencies, and physiological states <span class="citation" data-cites="witkiewitzModelingComplexityPosttreatment2007 witkiewitzTherapistsGuideEvidenceBased2007">(<a href="#ref-witkiewitzTherapistsGuideEvidenceBased2007" role="doc-biblioref">K. A. Witkiewitz &amp; Marlatt, 2007</a>; <a href="#ref-witkiewitzModelingComplexityPosttreatment2007" role="doc-biblioref">K. Witkiewitz &amp; Marlatt, 2007</a>)</span>. For reasons related to burden and cost, researchers typically rely on a handful of course categories of risk-relevant features (e.g., self-reported craving, self-reported self-efficacy, geolocation-sensed time spent in risky locations) to model an unknown hidden state of an individual (i.e., their true lapse risk).</p>
 <p>Moreover, lapse risk factors differ between individuals and within an individual over time. Personalized models (i.e., a model built for a specific individual using their own data) that make use of time-varying information in repeated measures may be able to better understand between and within subject differences in lapse risk trajectories, leading to more accurate predictions.</p>
 <p>State-space models may be one approach for modeling the multidimensional, heterogeneous, and time-varying construct of lapse risk. State-space models are time series models that describe the relationship between the observed measured inputs and the unknown latent state while accounting for how this latent state evolves over time. They personalize lapse risk prediction by using an individual’s own data to make future predictions about lapse risk for that single individual. Furthermore, predictions can be made at any point into the future at a single prediction timepoint from a single model. These individual models that integrate time-varying information could improve performance for our lagged prediction models. They may also help mitigate issues of unfairness, as the model will weigh the individual’s own data more heavily than group level estimates.</p>
@@ -1251,23 +1980,62 @@ window.Quarto = {
 <div id="ref-ARDIAlcoholAttributableDeaths" class="csl-entry" role="listitem">
 <em><span>ARDI Alcohol-Attributable Deaths</span>, <span>US</span> <span></span> <span>CDC</span></em>. (n.d.). https://nccd.cdc.gov/DPH_ARDI/Default/Report.aspx?T=AAM&amp;P=F1F85724-AEC5-4421-BC88-3E8899866842&amp;R=EACE3036-77C9-4893-9F93-17A5E1FEBE01&amp;M=7F40785C-D481-440A-970F-50EFBD21B35B&amp;F=&amp;D=.
 </div>
+<div id="ref-baeMobilePhoneSensors2018" class="csl-entry" role="listitem">
+Bae, S., Chung, T., Ferreira, D., Dey, A. K., &amp; Suffoletto, B. (2018). Mobile phone sensors and supervised machine learning to identify alcohol use events in young adults: <span>Implications</span> for just-in-time adaptive interventions. <em>Addictive Behaviors</em>, <em>83</em>, 42–47. <a href="https://doi.org/10.1016/j.addbeh.2017.11.039">https://doi.org/10.1016/j.addbeh.2017.11.039</a>
+</div>
 <div id="ref-bharatAgreementSelfreportedIllicit2023" class="csl-entry" role="listitem">
 Bharat, C., Webb, P., Wilkinson, Z., McKetin, R., Grebely, J., Farrell, M., Holland, A., Hickman, M., Tran, L. T., Clark, B., Peacock, A., Darke, S., Li, J.-H., &amp; Degenhardt, L. (2023). Agreement between self-reported illicit drug use and biological samples: A systematic review and meta-analysis. <em>Addiction</em>, <em>118</em>(9), 1624–1648. <a href="https://doi.org/10.1111/add.16200">https://doi.org/10.1111/add.16200</a>
 </div>
 <div id="ref-bowenMindfulnessBasedRelapsePrevention2021" class="csl-entry" role="listitem">
 Bowen, S., Chawla, N., Grow, J., &amp; Marlatt, G. A. (2021). <em>Mindfulness-<span>Based Relapse Prevention</span> for <span>Addictive Behaviors</span>: <span>A Clinician</span>’s <span>Guide</span></em> (Second edition). The Guilford Press.
 </div>
+<div id="ref-bowenRelativeEfficacyMindfulnessBased2014" class="csl-entry" role="listitem">
+Bowen, S., Witkiewitz, K., Clifasefi, S. L., Grow, J., Chawla, N., Hsu, S. H., Carroll, H. A., Harrop, E., Collins, S. E., Lustyk, M. K., &amp; Larimer, M. E. (2014). Relative <span>Efficacy</span> of <span>Mindfulness-Based Relapse Prevention</span>, <span>Standard Relapse Prevention</span>, and <span>Treatment</span> as <span>Usual</span> for <span>Substance Use Disorders</span>. <em>JAMA Psychiatry</em>, <em>71</em>(5), 547–556. <a href="https://doi.org/10.1001/jamapsychiatry.2013.4546">https://doi.org/10.1001/jamapsychiatry.2013.4546</a>
+</div>
 <div id="ref-brandonRelapseRelapsePrevention2007" class="csl-entry" role="listitem">
 Brandon, T. H., Vidrine, J. I., &amp; Litvin, E. B. (2007). Relapse and relapse prevention. <em>Annual Review of Clinical Psychology</em>, <em>3</em>(1), 257–284. <a href="https://doi.org/10.1146/annurev.clinpsy.3.022806.091455">https://doi.org/10.1146/annurev.clinpsy.3.022806.091455</a>
+</div>
+<div id="ref-burgess-hullTrajectoriesCravingMedicationassisted2022" class="csl-entry" role="listitem">
+Burgess-Hull, A. J., Panlilio, L. V., Preston, K. L., &amp; Epstein, D. H. (2022). Trajectories of craving during medication-assisted treatment for opioid-use disorder: <span>Subtyping</span> for early identification of higher risk. <em>Drug and Alcohol Dependence</em>, <em>233</em>, 109362. <a href="https://doi.org/10.1016/j.drugalcdep.2022.109362">https://doi.org/10.1016/j.drugalcdep.2022.109362</a>
+</div>
+<div id="ref-campbellInternetdeliveredTreatmentSubstance2014" class="csl-entry" role="listitem">
+Campbell, A. N. C., Nunes, E. V., Matthews, A. G., Stitzer, M., Miele, G. M., Polsky, D., Turrigiano, E., Walters, S., McClure, E. A., Kyle, T. L., Wahle, A., Van Veldhuisen, P., Goldman, B., Babcock, D., Stabile, P. Q., Winhusen, T., &amp; Ghitza, U. E. (2014). Internet-delivered treatment for substance abuse: A multisite randomized controlled trial. <em>The American Journal of Psychiatry</em>, <em>171</em>(6), 683–690. <a href="https://doi.org/10.1176/appi.ajp.2014.13081055">https://doi.org/10.1176/appi.ajp.2014.13081055</a>
+</div>
+<div id="ref-chtc" class="csl-entry" role="listitem">
+Center for High Throughput Computing. (2006). <em>Center for high throughput computing</em>. Center for High Throughput Computing. <a href="https://doi.org/10.21231/GNT1-HW21">https://doi.org/10.21231/GNT1-HW21</a>
 </div>
 <div id="ref-centersfordiseasecontrolandpreventioncdcAnnualAverageUnited" class="csl-entry" role="listitem">
 Centers for Disease Control and Prevention (CDC). (n.d.). Annual <span>Average</span> for <span>United States</span> 2011–2015 <span>Alcohol-Attributable Deaths Due</span> to <span>Excessive Alcohol Use</span>, <span>All Ages</span>. In <em>2022 Alcohol Related Disease Impact (ARDI) Application Website</em>. https://nccd.cdc.gov/DPH_ARDI/Default/Default.aspx.
 </div>
+<div id="ref-chihPredictiveModelingAddiction2014" class="csl-entry" role="listitem">
+Chih, M.-Y., Patton, T., McTavish, F. M., Isham, A. J., Judkins-Fisher, C. L., Atwood, A. K., &amp; Gustafson, D. H. (2014). Predictive modeling of addiction lapses in a mobile health application. <em>Journal of Substance Abuse Treatment</em>, <em>46</em>(1), 29–35. <a href="https://doi.org/10.1016/j.jsat.2013.08.004">https://doi.org/10.1016/j.jsat.2013.08.004</a>
+</div>
+<div id="ref-collinsOptimizationBehavioralBiobehavioral2018" class="csl-entry" role="listitem">
+Collins, L. M. (2018). <em>Optimization of <span>Behavioral</span>, <span>Biobehavioral</span>, and <span>Biomedical Interventions</span>: <span>The Multiphase Optimization Strategy</span> (<span>MOST</span>)</em>. Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-72206-1">https://doi.org/10.1007/978-3-319-72206-1</a>
+</div>
 <div id="ref-dennisManagingAddictionChronic2007" class="csl-entry" role="listitem">
 Dennis, M., &amp; Scott, C. K. (2007). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2797101">Managing <span>Addiction</span> as a <span>Chronic Condition</span></a>. <em>Addiction Science &amp; Clinical Practice</em>, <em>4</em>(1), 45–55.
 </div>
+<div id="ref-dulinSmartphonebasedMomentaryIntervention2017" class="csl-entry" role="listitem">
+Dulin, P. L., &amp; Gonzalez, V. M. (2017). Smartphone-based, momentary intervention for alcohol cravings amongst individuals with an alcohol use disorder. <em>Psychology of Addictive Behaviors: Journal of the Society of Psychologists in Addictive Behaviors</em>, <em>31</em>(5), 601–607. <a href="https://doi.org/10.1037/adb0000292">https://doi.org/10.1037/adb0000292</a>
+</div>
+<div id="ref-dumortierClassifyingSmokingUrges2016" class="csl-entry" role="listitem">
+Dumortier, A., Beckjord, E., Shiffman, S., &amp; Sejdić, E. (2016). Classifying smoking urges via machine learning. <em>Computer Methods and Programs in Biomedicine</em>, <em>137</em>, 203–213. <a href="https://doi.org/10.1016/j.cmpb.2016.09.016">https://doi.org/10.1016/j.cmpb.2016.09.016</a>
+</div>
+<div id="ref-dvorakEcologicalMomentaryAssessment2014" class="csl-entry" role="listitem">
+Dvorak, R. D., Pearson, M. R., &amp; Day, A. M. (2014). Ecological <span>Momentary Assessment</span> of <span>Acute Alcohol Use Disorder Symptoms</span>: <span>Associations With Mood</span>, <span>Motives</span>, and <span>Use</span> on <span>Planned Drinking Days</span>. <em>Experimental and Clinical Psychopharmacology</em>, <em>22</em>(4), 285–297. <a href="https://doi.org/10.1037/a0037157">https://doi.org/10.1037/a0037157</a>
+</div>
+<div id="ref-dvorakTensionReductionAffect2018" class="csl-entry" role="listitem">
+Dvorak, R. D., Stevenson, B. L., Kilwein, T. M., Sargent, E. M., Dunn, M. E., Leary, A. V., &amp; Kramer, M. P. (2018). Tension reduction and affect regulation: <span>An</span> examination of mood indices on drinking and non-drinking days among university student drinkers. <em>Experimental and Clinical Psychopharmacology</em>, <em>26</em>(4), 377–390. <a href="https://doi.org/10.1037/pha0000210">https://doi.org/10.1037/pha0000210</a>
+</div>
 <div id="ref-eiseleEffectsSamplingFrequency2020" class="csl-entry" role="listitem">
 Eisele, G., Vachon, H., Lafit, G., Kuppens, P., Houben, M., Myin-Germeys, I., &amp; Viechtbauer, W. (2020). <em>The effects of sampling frequency and questionnaire length on perceived burden, compliance, and careless responding in experience sampling data in a student population</em>.
+</div>
+<div id="ref-epsteinPredictionStressDrug2020" class="csl-entry" role="listitem">
+Epstein, D. H., Tyburski, M., Kowalczyk, W. J., Burgess-Hull, A. J., Phillips, K. A., Curtis, B. L., &amp; Preston, K. L. (2020). Prediction of stress and drug craving ninety minutes in the future with passively collected <span>GPS</span> data. <em>Npj Digital Medicine</em>, <em>3</em>(1), 26. <a href="https://doi.org/10/ghqvcw">https://doi.org/10/ghqvcw</a>
+</div>
+<div id="ref-fisherOpenTrialPersonalized2019" class="csl-entry" role="listitem">
+Fisher, A. J., Bosley, H. G., Fernandez, K. C., Reeves, J. W., Soyster, P. D., Diamond, A. E., &amp; Barkin, J. (2019). Open trial of a personalized modular treatment for mood and anxiety. <em>Behaviour Research and Therapy</em>, <em>116</em>, 69–79. <a href="https://doi.org/10.1016/j.brat.2019.01.010">https://doi.org/10.1016/j.brat.2019.01.010</a>
 </div>
 <div id="ref-florenceEconomicBurdenOpioid2021" class="csl-entry" role="listitem">
 Florence, C., Luo, F., &amp; Rice, K. (2021). The economic burden of opioid use disorder and fatal opioid overdose in the <span>United States</span>, 2017. <em>Drug and Alcohol Dependence</em>, <em>218</em>, 108350. <a href="https://doi.org/10.1016/j.drugalcdep.2020.108350">https://doi.org/10.1016/j.drugalcdep.2020.108350</a>
@@ -1275,23 +2043,71 @@ Florence, C., Luo, F., &amp; Rice, K. (2021). The economic burden of opioid use 
 <div id="ref-friedmanTrendsDrugOverdose2022" class="csl-entry" role="listitem">
 Friedman, J., Godvin, M., Shover, C. L., Gone, J. P., Hansen, H., &amp; Schriger, D. L. (2022). Trends in <span>Drug Overdose Deaths Among US Adolescents</span>, <span>January</span> 2010 to <span>June</span> 2021. <em>JAMA</em>, <em>327</em>(14), 1398–1400. <a href="https://doi.org/10.1001/jama.2022.2847">https://doi.org/10.1001/jama.2022.2847</a>
 </div>
+<div id="ref-fronkStressAllostasisSubstance2020" class="csl-entry" role="listitem">
+Fronk, G. E., Sant’Ana, S. J., Kaye, J. T., &amp; Curtin, J. J. (2020). Stress <span>Allostasis</span> in <span>Substance Use Disorders</span>: <span>Promise</span>, <span>Progress</span>, and <span>Emerging Priorities</span> in <span>Clinical Research</span>. <em>Annual Review of Clinical Psychology</em>, <em>16</em>(1), 401–430. <a href="https://doi.org/10.1146/annurev-clinpsy-102419-125016">https://doi.org/10.1146/annurev-clinpsy-102419-125016</a>
+</div>
+<div id="ref-gabryPriorDistributionsRstanarm2023" class="csl-entry" role="listitem">
+Gabry, J., &amp; Goodrich, B. (2023). Prior <span>Distributions</span> for rstanarm <span>Models</span>. In <em>CRAN R-Project</em>. https://cran.r-project.org/web/packages/rstanarm/vignettes/priors.html.
+</div>
+<div id="ref-goodrichRstanarmBayesianApplied2023" class="csl-entry" role="listitem">
+Goodrich, B., Gabry, J., Ali, I., &amp; Brilleman, S. (2023). <em>Rstanarm: <span>Bayesian Applied Regression Modeling</span> via <span>Stan</span></em>.
+</div>
+<div id="ref-gustafsonSmartphoneApplicationSupport2014" class="csl-entry" role="listitem">
+Gustafson, D. H., McTavish, F. M., Chih, M.-Y., Atwood, A. K., Johnson, R. A., Boyle, M. G., Levy, M. S., Driscoll, H., Chisholm, S. M., Dillenburg, L., Isham, A., &amp; Shah, D. (2014). A smartphone application to support recovery from alcoholism: A randomized clinical trial. <em>JAMA Psychiatry</em>, <em>71</em>(5), 566–572. <a href="https://doi.org/10.1001/jamapsychiatry.2013.4642">https://doi.org/10.1001/jamapsychiatry.2013.4642</a>
+</div>
+<div id="ref-hagmanDefiningRecoveryAlcohol2022" class="csl-entry" role="listitem">
+Hagman, B. T., Falk, D., Litten, R., &amp; Koob, G. F. (2022). Defining <span>Recovery From Alcohol Use Disorder</span>: <span>Development</span> of an <span>NIAAA Research Definition</span>. <em>The American Journal of Psychiatry</em>, <em>179</em>(11), 807–813. <a href="https://doi.org/10.1176/appi.ajp.21090963">https://doi.org/10.1176/appi.ajp.21090963</a>
+</div>
 <div id="ref-hastieElementsStatisticalLearning2009" class="csl-entry" role="listitem">
 Hastie, T., Tibshirani, R., &amp; Friedman, J. H. (2009). <em>The elements of statistical learning: Data mining, inference, and prediction</em> (2nd ed). Springer.
+</div>
+<div id="ref-hatchExpertConsensusSurvey2018" class="csl-entry" role="listitem">
+Hatch, A., Hoffman, J. E., Ross, R., &amp; Docherty, J. P. (2018). Expert <span>Consensus Survey</span> on <span>Digital Health Tools</span> for <span>Patients With Serious Mental Illness</span>: <span>Optimizing</span> for <span>User Characteristics</span> and <span>User Support</span>. <em>JMIR Mental Health</em>, <em>5</em>(2), e46. <a href="https://doi.org/10.2196/mental.9777">https://doi.org/10.2196/mental.9777</a>
 </div>
 <div id="ref-hedegaardDrugOverdoseDeaths" class="csl-entry" role="listitem">
 Hedegaard, H., Miniño, A. M., Spencer, M. R., &amp; Warner, M. (n.d.). <em>Drug overdose deaths in the <span>United States</span>, 1999–2020</em>.
 </div>
+<div id="ref-hsiehSampleSizeTables1989" class="csl-entry" role="listitem">
+Hsieh, F. (1989). Sample size tables for logistic regression. <em>Statistics in Medicine</em>, <em>8</em>, 795–802.
+</div>
 <div id="ref-IncreasesDrugOpioid" class="csl-entry" role="listitem">
 <em>Increases in <span>Drug</span> and <span>Opioid Overdose Deaths</span> — <span>United States</span>, 2000–2014</em>. (n.d.). https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6450a3.htm.
+</div>
+<div id="ref-jacobsonDigitalTherapeuticsMental2022" class="csl-entry" role="listitem">
+Jacobson, N. C., Kowatsch, T., &amp; Marsch, L. A. (Eds.). (2022). <em>Digital <span>Therapeutics</span> for <span>Mental Health</span> and <span>Addiction</span>: <span>The State</span> of the <span>Science</span> and <span>Vision</span> for the <span>Future</span></em> (1st edition). Academic Press.
+</div>
+<div id="ref-jonathanUseCrossvalidationAssess2000" class="csl-entry" role="listitem">
+Jonathan, P., Krzanowski, W. J., &amp; McCarthy, W. V. (2000). On the use of cross-validation to assess performance in multivariate prediction. <em>Statistics and Computing</em>, <em>10</em>(3), 209–229. <a href="https://doi.org/10.1023/A:1008987426876">https://doi.org/10.1023/A:1008987426876</a>
 </div>
 <div id="ref-jonesComplianceEcologicalMomentary2019" class="csl-entry" role="listitem">
 Jones, A., Remmerswaal, D., Verveer, I., Robinson, E., Franken, I. H. A., Wen, C. K. F., &amp; Field, M. (2019). Compliance with ecological momentary assessment protocols in substance users: A meta-analysis. <em>Addiction (Abingdon, England)</em>, <em>114</em>(4), 609–619. <a href="https://doi.org/10/gfsjzg">https://doi.org/10/gfsjzg</a>
 </div>
+<div id="ref-kaiserObamaGivesEast2015" class="csl-entry" role="listitem">
+Kaiser, J. (2015). Obama gives <span>East Room</span> rollout to <span>Precision Medicine Initiative</span>. In <em>Science</em>. https://www.science.org/content/article/obama-gives-east-room-rollout-precision-medicine-initiative.
+</div>
 <div id="ref-kennedySexDifferencesCocaine2013" class="csl-entry" role="listitem">
 Kennedy, A. P., Epstein, D. H., Phillips, K. A., &amp; Preston, K. L. (2013). Sex differences in cocaine/heroin users: Drug-use triggers and craving in daily life. <em>Drug and Alcohol Dependence</em>, <em>132</em>(1-2), 29–37. <a href="https://doi.org/10.1016/j.drugalcdep.2012.12.025">https://doi.org/10.1016/j.drugalcdep.2012.12.025</a>
 </div>
+<div id="ref-kuhnTidyposteriorBayesianAnalysis2022" class="csl-entry" role="listitem">
+Kuhn, M. (2022). <em>Tidyposterior: <span>Bayesian Analysis</span> to <span>Compare Models</span> using <span>Resampling Statistics</span></em>.
+</div>
+<div id="ref-kuhnAppliedPredictiveModeling2018" class="csl-entry" role="listitem">
+Kuhn, M., &amp; Johnson, K. (2018). <em>Applied <span>Predictive Modeling</span></em> (1st ed. 2013, Corr. 2nd printing 2018 edition). Springer. <a href="https://doi.org/10.1007/978-1-4614-6849-3">https://doi.org/10.1007/978-1-4614-6849-3</a>
+</div>
+<div id="ref-kuhnTidymodelsCollectionPackages2020" class="csl-entry" role="listitem">
+Kuhn, M., &amp; Wickham, H. (2020). <em>Tidymodels: A collection of packages for modeling and machine learning using tidyverse principles</em>.
+</div>
+<div id="ref-kullSigmoidsHowObtain2017" class="csl-entry" role="listitem">
+Kull, M., Filho, T. M. S., &amp; Flach, P. (2017). Beyond sigmoids: <span>How</span> to obtain well-calibrated probabilities from binary classifiers with beta calibration. <em>Electronic Journal of Statistics</em>, <em>11</em>(2), 5052–5080. <a href="https://doi.org/10.1214/17-EJS1338SI">https://doi.org/10.1214/17-EJS1338SI</a>
+</div>
 <div id="ref-lieseCognitiveBehavioralTherapyAddictive2022" class="csl-entry" role="listitem">
 Liese, B. S., &amp; Beck, A. T. (2022). <em>Cognitive-<span>Behavioral Therapy</span> of <span>Addictive Disorders</span></em> (First edition). The Guilford Press.
+</div>
+<div id="ref-lundbergUnifiedApproachInterpreting2017" class="csl-entry" role="listitem">
+Lundberg, S. M., &amp; Lee, S.-I. (2017). A unified approach to interpreting model predictions. <em>Proceedings of the 31st <span>International Conference</span> on <span>Neural Information Processing Systems</span></em>, 4768–4777.
+</div>
+<div id="ref-mandrekarReceiverOperatingCharacteristic2010" class="csl-entry" role="listitem">
+Mandrekar, J. N. (2010). Receiver operating characteristic curve in diagnostic test assessment. <em>Journal of Thoracic Oncology: Official Publication of the International Association for the Study of Lung Cancer</em>, <em>5</em>(9), 1315–1316. <a href="https://doi.org/10.1097/JTO.0b013e3181ec173d">https://doi.org/10.1097/JTO.0b013e3181ec173d</a>
 </div>
 <div id="ref-marlattRelapsePreventionSecond2007" class="csl-entry" role="listitem">
 Marlatt, G. A., &amp; Donovan, D. M. (Eds.). (2007). <em>Relapse <span>Prevention</span>, <span>Second Edition</span>: <span>Maintenance Strategies</span> in the <span>Treatment</span> of <span>Addictive Behaviors</span></em> (2nd edition). The Guilford Press.
@@ -1308,8 +2124,35 @@ McLellan, A. T., Lewis, D. C., O’Brien, C. P., &amp; Kleber, H. D. (2000). Dru
 <div id="ref-mohrPersonalSensingUnderstanding2017" class="csl-entry" role="listitem">
 Mohr, D. C., Zhang, M., &amp; Schueller, S. M. (2017). Personal <span>Sensing</span>: <span>Understanding Mental Health Using Ubiquitous Sensors</span> and <span>Machine Learning</span>. <em>Annual Review of Clinical Psychology</em>, <em>13</em>(1), 23–47. <a href="https://doi.org/10.1146/annurev-clinpsy-032816-044949">https://doi.org/10.1146/annurev-clinpsy-032816-044949</a>
 </div>
+<div id="ref-molnarInterpretableMachineLearning2022" class="csl-entry" role="listitem">
+Molnar, C. (2022). <em>Interpretable <span>Machine Learning</span>: <span>A Guide For Making Black Box Models Explainable</span></em>. Independently published.
+</div>
+<div id="ref-moshontzProspectivePredictionLapses2021" class="csl-entry" role="listitem">
+Moshontz, H., Colmenares, A. J., Fronk, G. E., Sant’Ana, S. J., Wyant, K., Wanta, S. E., Maus, A., Jr, D. H. G., Shah, D., &amp; Curtin, J. J. (2021). Prospective <span>Prediction</span> of <span>Lapses</span> in <span>Opioid Use Disorder</span>: <span>Protocol</span> for a <span>Personal Sensing Study</span>. <em>JMIR Research Protocols</em>, <em>10</em>(12), e29563. <a href="https://doi.org/10.2196/29563">https://doi.org/10.2196/29563</a>
+</div>
+<div id="ref-officeofthesurgeongeneralusMentalHealthCulture2001" class="csl-entry" role="listitem">
+Office of the Surgeon General (US), Center for Mental Health Services (US), &amp; National Institute of Mental Health (US). (2001). <em><a href="https://www.ncbi.nlm.nih.gov/pubmed/20669516">Mental <span>Health</span>: <span>Culture</span>, <span>Race</span>, and <span>Ethnicity</span></a></em>. <span>Substance Abuse and Mental Health Services Administration (US)</span>.
+</div>
+<div id="ref-prochaskaSearchHowPeople1992" class="csl-entry" role="listitem">
+Prochaska, J. O., DiClemente, C. C., &amp; Norcross, J. C. (1992). In search of how people change: <span>Applications</span> to addictive behaviors. <em>American Psychologist</em>, <em>47</em>(9), 1102–1114. <a href="https://doi.org/10.1037/0003-066X.47.9.1102">https://doi.org/10.1037/0003-066X.47.9.1102</a>
+</div>
+<div id="ref-rstudioteamRStudioIntegratedDevelopment2020" class="csl-entry" role="listitem">
+RStudio Team. (2020). <em><span>RStudio</span>: <span>Integrated Development</span> for <span>R</span></em>. RStudio, Inc.
+</div>
+<div id="ref-russellAffectRelativeDayLevel2020" class="csl-entry" role="listitem">
+Russell, M. A., Linden-Carmichael, A. N., Lanza, S. T., Fair, E. V., Sher, K. J., &amp; Piasecki, T. M. (2020). Affect <span>Relative</span> to <span>Day-Level Drinking Initiation</span>: <span>Analyzing Ecological Momentary Assessment Data</span> with <span>Multilevel Spline Modeling</span>. <em>Psychology of Addictive Behaviors : Journal of the Society of Psychologists in Addictive Behaviors</em>, <em>34</em>(3), 434–446. <a href="https://doi.org/10.1037/adb0000550">https://doi.org/10.1037/adb0000550</a>
+</div>
+<div id="ref-samhsacenterforbehavioralhealthstatisticsandquality2021NSDUHDetailed2021" class="csl-entry" role="listitem">
+SAMHSA Center for Behavioral Health Statistics and Quality. (2021). 2021 <span>NSDUH Detailed Tables</span> <span></span> <span>CBHSQ Data</span>. In <em>Substance Abuse and Mental Health Services Administration</em>. https://www.samhsa.gov/data/report/2021-nsduh-detailed-tables.
+</div>
+<div id="ref-sayetteRoleCravingSubstance2016" class="csl-entry" role="listitem">
+Sayette, M. A. (2016). The <span>Role</span> of <span>Craving</span> in <span>Substance Use Disorders</span>: <span>Theoretical</span> and <span>Methodological Issues</span>. <em>Annual Review of Clinical Psychology</em>, <em>12</em>, 407–433. <a href="https://doi.org/10.1146/annurev-clinpsy-021815-093351">https://doi.org/10.1146/annurev-clinpsy-021815-093351</a>
+</div>
 <div id="ref-sociasAdoptingCascadeCare2016" class="csl-entry" role="listitem">
 Socías, M. E., Volkow, N., &amp; Wood, E. (2016). Adopting the <span>“cascade of care”</span> framework: An opportunity to close the implementation gap in addiction care? <em>Addiction</em>, <em>111</em>(12), 2079–2081. <a href="https://doi.org/10.1111/add.13479">https://doi.org/10.1111/add.13479</a>
+</div>
+<div id="ref-soysterPooledPersonspecificMachine2022" class="csl-entry" role="listitem">
+Soyster, P. D., Ashlock, L., &amp; Fisher, A. J. (2022). Pooled and person-specific machine learning models for predicting future alcohol consumption, craving, and wanting to drink: <span>A</span> demonstration of parallel utility. <em>Psychology of Addictive Behaviors: Journal of the Society of Psychologists in Addictive Behaviors</em>, <em>36</em>(3), 296–306. <a href="https://doi.org/10.1037/adb0000666">https://doi.org/10.1037/adb0000666</a>
 </div>
 <div id="ref-stanojlovicTargetingBarriersSubstance2021" class="csl-entry" role="listitem">
 Stanojlović, M., &amp; Davidson, L. (2021). Targeting the <span>Barriers</span> in the <span>Substance Use Disorder Continuum</span> of <span>Care With Peer Recovery Support</span>. <em>Substance Abuse: Research and Treatment</em>, <em>15</em>, 1178221820976988. <a href="https://doi.org/10.1177/1178221820976988">https://doi.org/10.1177/1178221820976988</a>
@@ -1329,11 +2172,23 @@ United States. Department of Transportation. National Highway Traffic Safety Adm
 <div id="ref-veinotGoodIntentionsAre2018" class="csl-entry" role="listitem">
 Veinot, T. C., Mitchell, H., &amp; Ancker, J. S. (2018). Good intentions are not enough: How informatics interventions can worsen inequality. <em>Journal of the American Medical Informatics Association: JAMIA</em>, <em>25</em>(8), 1080–1088. <a href="https://doi.org/10.1093/jamia/ocy052">https://doi.org/10.1093/jamia/ocy052</a>
 </div>
+<div id="ref-waltersUsingMachineLearning2021" class="csl-entry" role="listitem">
+Walters, S. T., Businelle, M. S., Suchting, R., Li, X., Hébert, E. T., &amp; Mun, E.-Y. (2021). Using machine learning to identify predictors of imminent drinking and create tailored messages for at-risk drinkers experiencing homelessness. <em>Journal of Substance Abuse Treatment</em>, <em>127</em>, 108417. <a href="https://doi.org/10.1016/j.jsat.2021.108417">https://doi.org/10.1016/j.jsat.2021.108417</a>
+</div>
+<div id="ref-wemmDaydayProspectiveAnalysis2019" class="csl-entry" role="listitem">
+Wemm, S. E., Larkin, C., Hermes, G., Tennen, H., &amp; Sinha, R. (2019). A day-by-day prospective analysis of stress, craving and risk of next day alcohol intake during alcohol use disorder treatment. <em>Drug and Alcohol Dependence</em>, <em>204</em>, 107569. <a href="https://doi.org/10.1016/j.drugalcdep.2019.107569">https://doi.org/10.1016/j.drugalcdep.2019.107569</a>
+</div>
+<div id="ref-whoassistworkinggroupAlcoholSmokingSubstance2002" class="csl-entry" role="listitem">
+WHO ASSIST Working Group. (2002). <a href="https://www.ncbi.nlm.nih.gov/pubmed/12199834">The <span>Alcohol</span>, <span>Smoking</span> and <span>Substance Involvement Screening Test</span> (<span>ASSIST</span>): Development, reliability and feasibility</a>. <em>Addiction (Abingdon, England)</em>, <em>97</em>(9), 1183–1194.
+</div>
 <div id="ref-witkiewitzTherapistsGuideEvidenceBased2007" class="csl-entry" role="listitem">
 Witkiewitz, K. A., &amp; Marlatt, G. A. (Eds.). (2007). <em>Therapist’s <span>Guide</span> to <span>Evidence-Based Relapse Prevention</span></em> (1st edition). Academic Press.
 </div>
 <div id="ref-witkiewitzModelingComplexityPosttreatment2007" class="csl-entry" role="listitem">
 Witkiewitz, K., &amp; Marlatt, G. A. (2007). Modeling the complexity of post-treatment drinking: <span>It</span>’s a rocky road to relapse. <em>Clinical Psychology Review</em>, <em>27</em>(6), 724–738. <a href="https://doi.org/10.1016/j.cpr.2007.01.002">https://doi.org/10.1016/j.cpr.2007.01.002</a>
+</div>
+<div id="ref-wrightAppliedAmbulatoryAssessment2019" class="csl-entry" role="listitem">
+Wright, A. G. C., &amp; Zimmermann, J. (2019). Applied <span>Ambulatory Assessment</span>: <span>Integrating Idiographic</span> and <span>Nomothetic Principles</span> of <span>Measurement</span>. <em>Psychological Assessment</em>, <em>31</em>(12), 1467–1480. <a href="https://doi.org/10.1037/pas0000685">https://doi.org/10.1037/pas0000685</a>
 </div>
 <div id="ref-wyantAcceptabilityPersonalSensing2023" class="csl-entry" role="listitem">
 Wyant, K., Moshontz, H., Ward, S. B., Fronk, G. E., &amp; Curtin, J. J. (2023). Acceptability of <span>Personal Sensing Among People With Alcohol Use Disorder</span>: <span>Observational Study</span>. <em>JMIR mHealth and uHealth</em>, <em>11</em>(1), e41833. <a href="https://doi.org/10.2196/41833">https://doi.org/10.2196/41833</a>
@@ -1341,250 +2196,250 @@ Wyant, K., Moshontz, H., Ward, S. B., Fronk, G. E., &amp; Curtin, J. J. (2023). 
 <div id="ref-wyantOptimizingMessageComponentsinprep" class="csl-entry" role="listitem">
 Wyant, K., Sant’Ana, S., Punturieri, C., Yu, J., Fronk, G., Kornfield, R., Wanta, S., Maggard, C., Herrmann, M., &amp; Curtin, J. (in prep). <em>Optimizing <span>Message Components</span> of a <span>Recovery Monitoring Support System</span> for <span>Engagement</span> and <span>Clinical Outcomes</span> for <span>Alcohol Use Disorder</span>: <span>Protocol</span> for an <span>Optimization Study</span></em>.
 </div>
+<div id="ref-zhouEvaluatingMachineLearning2018" class="csl-entry" role="listitem">
+Zhou, M., Fukuoka, Y., Mintz, Y., Goldberg, K., Kaminsky, P., Flowers, E., &amp; Aswani, A. (2018). Evaluating <span>Machine Learning</span>–<span>Based Automated Personalized Daily Step Goals Delivered Through</span> a <span>Mobile Phone App</span>: <span>Randomized Controlled Trial</span>. <em>JMIR mHealth and uHealth</em>, <em>6</em>(1), e9117. <a href="https://doi.org/10.2196/mhealth.9117">https://doi.org/10.2196/mhealth.9117</a>
+</div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>Of course, these are not the only things needed for a successful recovery monitoring support system. For example, people must be willing and able to provide sensing data and the system must able to provide risk-relevant feedback to the individual in a useful and clinically helpful way. While important, these questions are outside the scope of the current proposal (see <span class="citation" data-cites="wyantAcceptabilityPersonalSensing2023">Wyant et al. (<a href="#ref-wyantAcceptabilityPersonalSensing2023" role="doc-biblioref">2023</a>)</span> and <span class="citation" data-cites="wyantOptimizingMessageComponentsinprep">Wyant et al. (<a href="#ref-wyantOptimizingMessageComponentsinprep" role="doc-biblioref">in prep</a>)</span>).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Features for income and employment were inadvertently excluded from all models.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>In early exploratory analyses, we evaluated auROCs of all four algorithms using grouped k-fold cross-validation for models based on preliminary feature engineering using the EMAs. XGBoost models consistently outperformed other algorithms such that we focused all further development on XGBoost to reduce the substantial computational time associated with model training and evaluation.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Although XGBoost ignores participant-level information, we do leverage this information to some degree by including change features that anchor participants’ EMA responses to their own previous responses.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
       }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
-        }
-        return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1592,162 +2447,218 @@ Wyant, K., Sant’Ana, S., Punturieri, C., Yu, J., Fronk, G., Kornfield, R., Wan
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
