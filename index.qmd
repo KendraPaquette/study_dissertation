@@ -161,7 +161,7 @@ We recruited participants in early recovery from opioid use disorder. Participan
 5. had an android smartphone that they were willing to use as their single phone for duration of the study, and
 6. had active cellular plan that they were willing to maintain for duration of the study.
 
-Participants were considered enrolled in the study if they were eligible, consented, and provided data for at least one month. A total of 336 participants enrolled in the study. We excluded data from one participant whose geolocation data showed they did not reside in the US. We also excluded 11 participants due to careless responding on the daily surveys and/or lapses reported nearly every day on study, suggesting they did not have a goal of abstinence. Our final sample consisted of 324 participants.
+Participants were considered enrolled in the study if they were eligible, consented, and provided data for at least one month. A total of 336 participants enrolled in the study. We excluded data from one participant whose geolocation data showed they did not reside in the US. We also excluded 11 participants due to careless responding on the daily surveys and/or lapses reported nearly every day on study, suggesting they did not have a goal of abstinence. Our final sample consisted of 324 participants from 38 states across the US.
 
 The table below presents the demographic and clinical characteristics of the 324 participants in our analysis sample.
 
@@ -305,7 +305,7 @@ Prediction windows are 24 hours in width. The 24-hour windows roll day-by-day st
 
 The first label for each participant will be two weeks after their study start date. This will ensure we have at least two weeks of daily surveys and geolocation data.
 
-All available data will up until the start of the prediction window will be used. The predictors, or model inputs, will be the raw daily survey responses and a single geolocation risk score (calculated from the previous 24 hours of geolocation data). The formula for calculating the geolocation risk score will be informed by the top geolocation predictors that emerge in study 3 (Chapter 4).
+All available data up until the start of the prediction window will be used. The predictors, or model inputs, will be the raw daily survey responses and a single geolocation risk score (calculated from the previous 24 hours of geolocation data). The formula for calculating the geolocation risk score will be informed by the top geolocation predictors that emerge in study 3 (Chapter 4).
 
 In the first month models will be fit every 2 weeks. After month 1 the model will update (i.e., be refit with the additional data) each month. 
 
