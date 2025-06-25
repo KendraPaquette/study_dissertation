@@ -321,7 +321,7 @@ ema_month_adherence |>
   scale_y_continuous(name = "Adherence", 
                      breaks = seq(0, 1, .1), 
                      limits = c(0, 1)) +
-  labs(title = "Daily update adherence over time (N = 336) ") +
+  labs(title = "Daily update adherence over time (N = 324) ") +
   theme(legend.title = element_blank()) +
   geom_hline(aes(yintercept = mean(mean_adherence)), linetype = "dashed", linewidth = .3)
 ```
