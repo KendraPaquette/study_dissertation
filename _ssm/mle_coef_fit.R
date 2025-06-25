@@ -1,8 +1,14 @@
-run_mle_fit <- function(subid_data,subid_info,fit_lapse=FALSE){
+run_mle_fit <- function(the_subid, data, info, fit_lapse=FALSE){
+
+  subid_info <- info |> 
+    filter(subid == the_subid)
   
-  last_ema_day <- subid_info$last_morning_ema_day
-  first_ema_day <- subid_info$first_morning_ema_day
-  mema_count <- subid_info$mema_count
+  subid_data <- data |> 
+    filter(subid == the_subid)
+  
+  first_ema_day <- 1
+  last_ema_day <- subid_info$study_days
+  ema_count <- subid_info$n
   
   # # # # # # # # # # # # # # # # # # # # #
   #             MODEL SETUP               #
@@ -39,7 +45,7 @@ run_mle_fit <- function(subid_data,subid_info,fit_lapse=FALSE){
   settings<-list()
   settings[['tinit']]<-1
   settings[['subid']] <-subid_info$subid
-  settings[['mema_count']] <- subid_info$mema_count
+  settings[['mema_count']] <- subid_info$ema_count
   settings[['last_ema']] <- subid_info$last_morning_ema_day
   settings[['first_ema']] <- subid_info$first_morning_ema_day
   
@@ -71,7 +77,7 @@ run_mle_fit <- function(subid_data,subid_info,fit_lapse=FALSE){
   #     Attach Data     #
   # # # # # # # # # # # #
   # Put in the data
-  datamat <- t(as.matrix(subid_data))[c(3,4,5,6,7,8,9,10,11,14),start_day:Tfinal]
+  datamat <- t(as.matrix(subid_data))[c(3,4,5,6,7,8,9,10,11,12),start_day:Tfinal]
   
   mod[['data']]<-datamat
   

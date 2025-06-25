@@ -69,7 +69,7 @@ mod[["par"]] <- init_par(mod[["dims"]])
 # Select the fitting distribution using the id
 # not sure where this data file is made or format it is in
 # KW: ask Eric about raw prior distribution
-prior_path<-'mle_coef_fits_lapse_not_fitted.csv'
+prior_path<-'mle_coef_fits.csv'
 
 raw_prior <- read_csv(here::here("../data/", prior_path))
 
