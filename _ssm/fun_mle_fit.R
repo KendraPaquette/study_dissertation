@@ -45,9 +45,9 @@ run_mle_fit <- function(the_subid, data, info, fit_lapse=FALSE){
   settings<-list()
   settings[['tinit']]<-1
   settings[['subid']] <-subid_info$subid
-  settings[['mema_count']] <- subid_info$ema_count
-  settings[['last_ema']] <- subid_info$last_morning_ema_day
-  settings[['first_ema']] <- subid_info$first_morning_ema_day
+  settings[['mema_count']] <- ema_count
+  settings[['last_ema']] <- last_ema_day
+  settings[['first_ema']] <- first_ema_day
   
   mod[['settings']]<-settings
   
@@ -68,8 +68,8 @@ run_mle_fit <- function(the_subid, data, info, fit_lapse=FALSE){
   # # # # # # # # # # # #
   # Check for the length of the time series, add to dims
   # Tfinal := final time series index
-  Tfinal <- min(last_ema_day,89) + 1
-  start_day <- first_ema_day + 1
+  Tfinal <- min(last_ema_day,89) - 1
+  start_day <- first_ema_day 
   mod$dims['T'] <- Tfinal
   mod$dims['TT'] <- Tfinal-first_ema_day
   
@@ -77,7 +77,7 @@ run_mle_fit <- function(the_subid, data, info, fit_lapse=FALSE){
   #     Attach Data     #
   # # # # # # # # # # # #
   # Put in the data
-  datamat <- t(as.matrix(subid_data))[c(3,4,5,6,7,8,9,10,11,12),start_day:Tfinal]
+  datamat <- t(as.matrix(subid_data))[c(3, 4,5,6,7,8,9,10,11,12),start_day:Tfinal]
   
   mod[['data']]<-datamat
   
