@@ -91,7 +91,7 @@ run_mle_fit <- function(the_subid, data, info, fit_lapse=FALSE){
   # # # # # # # # # # # #
   
   # Fit model
-  local_mod <- run_kf(local_mod)
+  local_mod <- run_kf(local_mod) # MARSSkf() as another option?
   iters <- 15000
   conv_tol <- 0.0001
   fit_obj <- run_em(local_mod,iters,conv_tol,zero_priors_bool)

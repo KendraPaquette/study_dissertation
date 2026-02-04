@@ -1,0 +1,89 @@
+---
+title: "intro"
+format: html
+---
+
+## Substance Use Disorders
+In 2023, over 46 million U.S. adults had a substance use disorder (SUD) in the past year [@substanceabuseandmentalhealthservicesadministration2023NSDUHDetailed]. This is nearly 18% of the U.S. adult population.
+
+Substance use disorders are associated with high rates of morbidity and mortality. Opioid overdose rates remain high and continue to increase each year [@IncreasesDrugOpioid; @friedmanTrendsDrugOverdose2022]. Excessive alcohol use is a leading preventable cause of death, with the majority of these deaths caused by alcohol-attributed cancer, heart problems and stroke, and liver cirrhosis [@ARDIAlcoholAttributableDeaths]. Additionally, alcohol-impaired driving accounts for over 30% of traffic fatalities each year [@unitedstatesdepartmentoftransportation2024].  
+
+The economic cost of substance use disorders is substantial. In 2016 the economic cost associated with substance use disorders was estimated to exceed \$442 billion in lost productivity, health care expenses, law enforcement, and other criminal justice costs [@substanceabuseandmentalhealthservicesadministrationusFacingAddictionAmerica2016]. When also accounting for costs associated with loss of life and reduced quality of life, one research group estimated that in 2017 the cost of opioid use disorder alone exceeded \$1 trillion [@florenceEconomicBurdenOpioid2021]. 
+
+
+## SUD Treatment
+
+- current structure of care 
+- problems with getting inital access
+- dropout and lack of options for continuing care
+- what does insurance reimburse? time limited?
+
+
+## Disparities in SUD Access, Outcomes, and Stigma
+
+Limitations of our current SUD treatment infrastructure are magnified for certain groups of people. 
+
+### Sex and Gender
+Women are less likely to enter treatment compared to males. Sex does not predict retention, completion or outcome once in treatment. However, sex-specific predictors of treatment outcome exist [@greenfieldSubstanceAbuseTreatment2007].
+
+Women are also more vulnerable to adverse health and social consequences of substance use disorders [@mchughSexGenderDifferences2018]. They typically show an accelerated progression from onset of use to treatment entry and develop severe symptoms over fewer years compared to males [@campbellBriefReportGender2018].   
+
+Women are more likely to face additional barriers such as being unemployed, financially dependent, having psychiatric comorbidities, and having childcare responsibilities. Women who have children or are pregnant often report not entering treatment because they are scared to lose custody or have their baby taken away from them [@greenfieldSubstanceAbuseTreatment2007; @parlier-ahmadExploratoryStudySex2021].
+
+Women were less likely to obtain follow-up treatment compared with men after an emergency room visit for an opioid overdose [@kilaruIncidenceTreatmentOpioid2020].
+
+
+### Race and Ethnicity
+Black and Hispanic individuals are less likely to receive treatment and are more likely to experience negative consequences associated with SUDs [@pinedoCurrentReexaminationRacial2019; @guerreroDisparitiesLatinoSubstance2013; @schmidtEthnicDisparitiesClinical2007]. 
+
+Black patients were half as likely to obtain follow-up treatment compared with non-Hispanic white patients after an emergency room visit for an opioid overdose. Hispanic patients were also less likely to obtain follow-up treatment [@kilaruIncidenceTreatmentOpioid2020].
+
+### Income
+After Affordable Care Act, those with OUD were significantly less likely to be uninsured and were less likely to report financial barriers as a reason for not receiving substance use treatment. Individuals were also more likely to receive substance use treatment and were more likely to report that insurance paid for treatment [@mckennaTreatmentUseSources2017; @johnsonReceivingAddictionTreatment2020].
+
+Still, disparities exist. Seventeen percent of low-income adults with substance use disorders reported having no health insurance coverage in the past year. These individuals were less likely to report a past year SUD treatment visit, an outpatient care visit, an emergency department visit, or inpatient admission compared to low-income adults with continuous or discontinuous coverage [@olfsonHealthcareCoverageService2022]. 
+
+### Geographic Location
+
+
+### Orientation
+
+
+### Age
+Older adults (65 years +) may have complicating factors increasing risk related to SUDs (medical comorbidities, medications and health history) [@kuerbisSubstanceAbuseOlder2014]. Additionally, other factors such as being divorced, widowed, retired, or fewer social activities could result in family or friends missing symptoms related to harmful substance use. Doctors also may attribute symptoms to other health or age related factors.
+
+Participants over 65 were less likely to receive SUD treatment or perceive a need for treatment compared to other age groups. Additionally, they found that the 50 - 64 years age group did not differ from the 35 - 49 years age group in SUD treatment use or perceived need for treatment [@choiTreatmentUsePerceived2014]. Those in age group 26 - 49 years are more likely to receive treatment [@johnsonReceivingAddictionTreatment2020].
+			
+For each additional year of age, patients were 0.2% less likely to obtain follow-up treatment after an emergency room visit for an opioid overdose [@kilaruIncidenceTreatmentOpioid2020]. Additionally, middle age is associated with fewer drug related ER visits compared to younger or older people.
+
+
+
+## Relapse Prevention
+
+- constructs identified from literature
+
+- dynamic nature of lapse risk, inter and intra individual differences (Individualized Lapse Risk Trajectories)
+
+
+
+## Recovery Monitoring and Support System
+
+### Personal sensing of risk-relevant data
+
+This is already feasible. Proliferation of smartphone access. People find sensing data acceptable.
+
+### Machine Learning for Modeling and Explaining Lapse Risk
+
+- Machine learning model that can predict and explain risk with high temporal precision. (review current lit)
+
+- Must be fair (less lit on this). Discuss importance of explicitly assessing 
+
+
+
+## Aims
+
+Series of studies to develop fair and temporally precise machine learning models for lapse risk prediction back to alcohol and opioid use.
+
+
+
+
