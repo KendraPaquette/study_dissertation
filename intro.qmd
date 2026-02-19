@@ -4,61 +4,37 @@ format: html
 ---
 
 ## Substance Use Disorders
-In 2023, over 46 million U.S. adults had a substance use disorder (SUD) in the past year [@substanceabuseandmentalhealthservicesadministration2023NSDUHDetailed]. This is nearly 18% of the U.S. adult population.
-
-Substance use disorders are associated with high rates of morbidity and mortality. Opioid overdose rates remain high and continue to increase each year [@IncreasesDrugOpioid; @friedmanTrendsDrugOverdose2022]. Excessive alcohol use is a leading preventable cause of death, with the majority of these deaths caused by alcohol-attributed cancer, heart problems and stroke, and liver cirrhosis [@ARDIAlcoholAttributableDeaths]. Additionally, alcohol-impaired driving accounts for over 30% of traffic fatalities each year [@unitedstatesdepartmentoftransportation2024].  
+In 2023, over 46 million U.S. adults had a substance use disorder (SUD) in the past year [@substanceabuseandmentalhealthservicesadministration2023NSDUHDetailed]. Substance use disorders are associated with high rates of morbidity and mortality. Opioid overdose rates remain high and continue to increase each year [@IncreasesDrugOpioid; @friedmanTrendsDrugOverdose2022]. Excessive alcohol use is a leading preventable cause of death, with the majority of these deaths caused by alcohol-attributed cancer, heart problems and stroke, and liver cirrhosis [@ARDIAlcoholAttributableDeaths]. Additionally, alcohol-impaired driving accounts for over 30% of traffic fatalities each year [@unitedstatesdepartmentoftransportation2024].  
 
 The economic cost of substance use disorders is substantial. In 2016 the economic cost associated with substance use disorders was estimated to exceed \$442 billion in lost productivity, health care expenses, law enforcement, and other criminal justice costs [@substanceabuseandmentalhealthservicesadministrationusFacingAddictionAmerica2016]. When also accounting for costs associated with loss of life and reduced quality of life, one research group estimated that in 2017 the cost of opioid use disorder alone exceeded \$1 trillion [@florenceEconomicBurdenOpioid2021]. 
 
-
-## SUD Treatment
-
-- current structure of care 
+- chronic relapsing disease
+- current infrastructure of care - episodic, revolving door vs. disease management
 - problems with getting inital access
 - dropout and lack of options for continuing care
 - what does insurance reimburse? time limited?
 
 
-## Disparities in SUD Access, Outcomes, and Stigma
+## Disparities in SUD Treatment Access and Outcomes
 
-Limitations of our current SUD treatment infrastructure are magnified for certain groups of people. 
+Limitations of the current SUD treatment infrastructure are magnified for people with certain identities. Women, low income individuals, rural residents, and older adults may face unique barriers to treatment, including financial constraints, limited service availability, and mobility or transportation challenges. Marginalized groups, such as racial, ethnic, and sexual minorities additionally may additionally experience minority stress, stigma, discrimination, and isolation leading to higher rates of SUD and poorer treatment outcomes. 
 
-### Sex and Gender
-Women are less likely to enter treatment compared to males. Sex does not predict retention, completion or outcome once in treatment. However, sex-specific predictors of treatment outcome exist [@greenfieldSubstanceAbuseTreatment2007].
+Black and Hispanic individuals are less likely to receive treatment and are more likely to experience negative consequences associated with SUDs [@pinedoCurrentReexaminationRacial2019; @guerreroDisparitiesLatinoSubstance2013; @schmidtEthnicDisparitiesClinical2007; @kilaruIncidenceTreatmentOpioid2020]. Among those who do receive treatment, dropout rates are higher compared to non-Hispanic White individuals [@salonerBlacksHispanicsAre2013]. Hispanic and non-White individuals are also more likely to face socioeconomic barriers, including unemployment and housing instability. 
 
-Women are also more vulnerable to adverse health and social consequences of substance use disorders [@mchughSexGenderDifferences2018]. They typically show an accelerated progression from onset of use to treatment entry and develop severe symptoms over fewer years compared to males [@campbellBriefReportGender2018].   
+Sexual minority populations experience disproportionately high rates of SUD compared to heterosexual populations [@freitagVariationsSubstanceUse2021; @craneAlcoholUseDisorders2020]. Some research suggests that these elevated rates are related to depleted coping mechanisms resulting from chronic minority stress and enacted stigma (e.g., discrimination, biased treatment, microaggressions) [@dyarSexualMinorityStress2023; Krueger]. These disparities intensify when sexual orientation intersects with other identities such as race or gender [@freitagVariationsSubstanceUse2021; Kerridge].
 
-Women are more likely to face additional barriers such as being unemployed, financially dependent, having psychiatric comorbidities, and having childcare responsibilities. Women who have children or are pregnant often report not entering treatment because they are scared to lose custody or have their baby taken away from them [@greenfieldSubstanceAbuseTreatment2007; @parlier-ahmadExploratoryStudySex2021].
+Women are less likely than men to enter treatment [@greenfieldSubstanceAbuseTreatment2007; @kilaruIncidenceTreatmentOpioid2020] and more frequently experience barriers related to unemployment, financial dependence, psychiatric comorbidities, and childcare responsibilities. Women who are pregnant or have children often report avoiding treatment because they fear losing custody or having their baby removed [@greenfieldSubstanceAbuseTreatment2007; @parlier-ahmadExploratoryStudySex2021]. Women are also more vulnerable to adverse health and social consequences of SUDs [@mchughSexGenderDifferences2018]. They typically show an accelerated progression from onset of use to treatment entry and develop severe symptoms over fewer years compared to men [@campbellBriefReportGender2018].  
 
-Women were less likely to obtain follow-up treatment compared with men after an emergency room visit for an opioid overdose [@kilaruIncidenceTreatmentOpioid2020].
+Low-income individuals face heightened risk for developing SUD and greater challenges accessing treatment. Prior to the 2014 Affordable Care Act, financial barriers prevented many low-income individuals from accessing SUD treatment. The Affordable Care Act expanded Medicaid eligibility to include nearly all low-income individuals, broadening access to government-funded SUD treatment services. This expansion has also been shown to reduce racial and ethnic disparities in access to care, as minorities are disproportionately represented among low-income populations [@lecookRacialEthnicDisparitiesSubstance2011]. Nevertheless, low income remains associated with higher rates of SUD, more severe SUD, and co-occurence with socioenvironmental risk factors that can interfere with treatment and recovery [@grantEpidemiologyDSM5Alcohol2015b].
 
+Rural areas have higher SUD prevalence yet fewer treatment clinics and providers [Lister et al.]. This imbalance results in a disproportionate SUD burden for rural residents, including elevated opioid overdose rates and treatment waitlists that may last months to years [Sigmon]. For individuals who do get treatment, services are often not near by. The time and financial costs associated with travel contribute to missed appointments and early treatment dropout. This is especially true for individuals receiving medication for OUD, who often must attend daily clinic visits for observed dosing. Stigma surrounding SUD treatment may also be higher in small rural communities where services are more visible and harder to access discreetly [Wood et al].
 
-### Race and Ethnicity
-Black and Hispanic individuals are less likely to receive treatment and are more likely to experience negative consequences associated with SUDs [@pinedoCurrentReexaminationRacial2019; @guerreroDisparitiesLatinoSubstance2013; @schmidtEthnicDisparitiesClinical2007]. 
-
-Black patients were half as likely to obtain follow-up treatment compared with non-Hispanic white patients after an emergency room visit for an opioid overdose. Hispanic patients were also less likely to obtain follow-up treatment [@kilaruIncidenceTreatmentOpioid2020].
-
-### Income
-After Affordable Care Act, those with OUD were significantly less likely to be uninsured and were less likely to report financial barriers as a reason for not receiving substance use treatment. Individuals were also more likely to receive substance use treatment and were more likely to report that insurance paid for treatment [@mckennaTreatmentUseSources2017; @johnsonReceivingAddictionTreatment2020].
-
-Still, disparities exist. Seventeen percent of low-income adults with substance use disorders reported having no health insurance coverage in the past year. These individuals were less likely to report a past year SUD treatment visit, an outpatient care visit, an emergency department visit, or inpatient admission compared to low-income adults with continuous or discontinuous coverage [@olfsonHealthcareCoverageService2022]. 
-
-### Geographic Location
-
-
-### Orientation
-
-
-### Age
-Older adults (65 years +) may have complicating factors increasing risk related to SUDs (medical comorbidities, medications and health history) [@kuerbisSubstanceAbuseOlder2014]. Additionally, other factors such as being divorced, widowed, retired, or fewer social activities could result in family or friends missing symptoms related to harmful substance use. Doctors also may attribute symptoms to other health or age related factors.
-
-Participants over 65 were less likely to receive SUD treatment or perceive a need for treatment compared to other age groups. Additionally, they found that the 50 - 64 years age group did not differ from the 35 - 49 years age group in SUD treatment use or perceived need for treatment [@choiTreatmentUsePerceived2014]. Those in age group 26 - 49 years are more likely to receive treatment [@johnsonReceivingAddictionTreatment2020].
-			
-For each additional year of age, patients were 0.2% less likely to obtain follow-up treatment after an emergency room visit for an opioid overdose [@kilaruIncidenceTreatmentOpioid2020]. Additionally, middle age is associated with fewer drug related ER visits compared to younger or older people.
-
+Older adults (65+) are less likely to receive SUD treatment or perceive a need for treatment compared to younger age groups [@choiTreatmentUsePerceived2014; @kilaruIncidenceTreatmentOpioid2020]. They are also more likely to experience complicating factors such as medical comorbidities, chronic pain and heightened sensitivity to medication interactions and side effects [@kuerbisSubstanceAbuseOlder2014; Salive]. Additionally, factors such as being divorced or widowed, retired, or having fewer social activities may reduce opportunities for family or friends to notice harmful substance use. Doctors and clinicians may also attribute SUD symptoms to other health or age-related issues.
 
 
 ## Relapse Prevention
+
+- Due to chronic relapsing nature of substance use disorders an important focus is relapse prevention.
 
 - constructs identified from literature
 
@@ -72,12 +48,18 @@ For each additional year of age, patients were 0.2% less likely to obtain follow
 
 This is already feasible. Proliferation of smartphone access. People find sensing data acceptable.
 
+Put burden paper in appendix
+
 ### Machine Learning for Modeling and Explaining Lapse Risk
 
 - Machine learning model that can predict and explain risk with high temporal precision. (review current lit)
 
-- Must be fair (less lit on this). Discuss importance of explicitly assessing 
 
+Limitations:
+- predicting use before it occurs vs detecting drinking episodes
+- clinical vs convenience samples
+- Must be fair (less lit on this). Discuss importance of explicitly assessing 
+- explainability for recommendations
 
 
 ## Aims
