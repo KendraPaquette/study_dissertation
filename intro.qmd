@@ -8,51 +8,81 @@ In 2023, over 46 million U.S. adults had a substance use disorder (SUD) in the p
 
 The economic cost of substance use disorders is substantial. In 2016 the economic cost associated with substance use disorders was estimated to exceed \$442 billion in lost productivity, health care expenses, law enforcement, and other criminal justice costs [@substanceabuseandmentalhealthservicesadministrationusFacingAddictionAmerica2016]. When also accounting for costs associated with loss of life and reduced quality of life, one research group estimated that in 2017 the cost of opioid use disorder alone exceeded \$1 trillion [@florenceEconomicBurdenOpioid2021]. 
 
-- chronic relapsing disease
-- current infrastructure of care - episodic, revolving door vs. disease management
-- problems with getting inital access
-- dropout and lack of options for continuing care
-- what does insurance reimburse? time limited?
+SUDs are chronic, relapsing conditions [@mclellanDrugDependenceChronic2000; @mckayImpactContinuingCare2021]. Effective pharmacological and psychosocial interventions exist to support symptom stabilization and reduce substance use [@bowenMindfulnessBasedRelapsePrevention2021; @marlattRelapsePreventionSecond2007; @lieseCognitiveBehavioralTherapyAddictive2022]. Despite the availability of effective treatments, the majority of individuals with SUDs do not receive care. In 2023, less than 15% of individuals with an SUD receive any form of treatment [@substanceabuseandmentalhealthservicesadministration2023NSDUHDetailed<!--; Liu et al-->]. In contrast, treatment initiation for other chronic conditions is substantially higher (e.g., approximately 92.6% of individuals with diabetes receive treatment<!--Ali et al-->). Even among the minority who do initiate treatment, engagement is often brief and episodic. Relapse back to substance use is common, particularly in the absence of continued treatment engagement and recovery support. Importantly, relapse rates for SUDs are comparable to recurrence rates in other chronic conditions (e.g., type I diabetes, hypertension, asthma) when medication adherence and follow-up care are inconsistent. Thus, the recurrence of symptoms is not unique to SUDs but rather a challenge inherent in chronic disease management without adequate continuing care.
+
+These patterns reflect structural limitations within the current treatment system. Several factors, including cost and insurance reimbursement issues, lack of collaborative provider teams, passive referral processes, geographic barriers to accessing services, patient dropout, and changes in the patient’s clinical needs over time, suggest our current treatment system for SUDs does not have the capacity for long-term clinician-delivered care [@dennisManagingAddictionChronic2007; @taiTreatmentSubstanceUse2013; @mckayImpactContinuingCare2021; @stanojlovicTargetingBarriersSubstance2021]. Stigma surrounding SUD and historical views of substance use as a social or behavioral problem have contributed to the siloing of SUD care. Treatment typically occurs in specialized, community-based settings that are disconnected from primary care. This fragmented infrastructure results in poor care coordination, missed opportunities for early intervention and re-engagement, and a "revolving door" pattern in which individuals cycle repeatedly through acute episodes of care as opposed to receiving long-term chronic disease management.
 
 
 ## Disparities in SUD Treatment Access and Outcomes
-
 Limitations of the current SUD treatment infrastructure are magnified for people with certain identities. Women, low income individuals, rural residents, and older adults may face unique barriers to treatment, including financial constraints, limited service availability, and mobility or transportation challenges. Marginalized groups, such as racial, ethnic, and sexual minorities additionally may additionally experience minority stress, stigma, discrimination, and isolation leading to higher rates of SUD and poorer treatment outcomes. 
 
 Black and Hispanic individuals are less likely to receive treatment and are more likely to experience negative consequences associated with SUDs [@pinedoCurrentReexaminationRacial2019; @guerreroDisparitiesLatinoSubstance2013; @schmidtEthnicDisparitiesClinical2007; @kilaruIncidenceTreatmentOpioid2020]. Among those who do receive treatment, dropout rates are higher compared to non-Hispanic White individuals [@salonerBlacksHispanicsAre2013]. Hispanic and non-White individuals are also more likely to face socioeconomic barriers, including unemployment and housing instability. 
 
-Sexual minority populations experience disproportionately high rates of SUD compared to heterosexual populations [@freitagVariationsSubstanceUse2021; @craneAlcoholUseDisorders2020]. Some research suggests that these elevated rates are related to depleted coping mechanisms resulting from chronic minority stress and enacted stigma (e.g., discrimination, biased treatment, microaggressions) [@dyarSexualMinorityStress2023; Krueger]. These disparities intensify when sexual orientation intersects with other identities such as race or gender [@freitagVariationsSubstanceUse2021; Kerridge].
+Sexual minority populations experience disproportionately high rates of SUD compared to heterosexual populations [@freitagVariationsSubstanceUse2021; @craneAlcoholUseDisorders2020]. Some research suggests that these elevated rates are related to depleted coping mechanisms resulting from chronic minority stress and enacted stigma (e.g., discrimination, biased treatment, microaggressions) [@dyarSexualMinorityStress2023<!--; Krueger-->]. These disparities intensify when sexual orientation intersects with other identities such as race or gender [@freitagVariationsSubstanceUse2021; @kerridgePrevalenceSociodemographicCorrelates2017].
 
 Women are less likely than men to enter treatment [@greenfieldSubstanceAbuseTreatment2007; @kilaruIncidenceTreatmentOpioid2020] and more frequently experience barriers related to unemployment, financial dependence, psychiatric comorbidities, and childcare responsibilities. Women who are pregnant or have children often report avoiding treatment because they fear losing custody or having their baby removed [@greenfieldSubstanceAbuseTreatment2007; @parlier-ahmadExploratoryStudySex2021]. Women are also more vulnerable to adverse health and social consequences of SUDs [@mchughSexGenderDifferences2018]. They typically show an accelerated progression from onset of use to treatment entry and develop severe symptoms over fewer years compared to men [@campbellBriefReportGender2018].  
 
 Low-income individuals face heightened risk for developing SUD and greater challenges accessing treatment. Prior to the 2014 Affordable Care Act, financial barriers prevented many low-income individuals from accessing SUD treatment. The Affordable Care Act expanded Medicaid eligibility to include nearly all low-income individuals, broadening access to government-funded SUD treatment services. This expansion has also been shown to reduce racial and ethnic disparities in access to care, as minorities are disproportionately represented among low-income populations [@lecookRacialEthnicDisparitiesSubstance2011]. Nevertheless, low income remains associated with higher rates of SUD, more severe SUD, and co-occurence with socioenvironmental risk factors that can interfere with treatment and recovery [@grantEpidemiologyDSM5Alcohol2015b].
 
-Rural areas have higher SUD prevalence yet fewer treatment clinics and providers [Lister et al.]. This imbalance results in a disproportionate SUD burden for rural residents, including elevated opioid overdose rates and treatment waitlists that may last months to years [Sigmon]. For individuals who do get treatment, services are often not near by. The time and financial costs associated with travel contribute to missed appointments and early treatment dropout. This is especially true for individuals receiving medication for OUD, who often must attend daily clinic visits for observed dosing. Stigma surrounding SUD treatment may also be higher in small rural communities where services are more visible and harder to access discreetly [Wood et al].
+Rural areas have higher SUD prevalence yet fewer treatment clinics and providers [@listerSystematicReviewRuralspecific2020]. This imbalance results in a disproportionate SUD burden for rural residents, including elevated opioid overdose rates and treatment waitlists that may last months to years [@sigmonAccessTreatmentOpioid2014]. For individuals who do get treatment, services are often not near by. The time and financial costs associated with travel contribute to missed appointments and early treatment dropout. This is especially true for individuals receiving medication for OUD, who often must attend daily clinic visits for observed dosing. Stigma surrounding SUD treatment may also be higher in small rural communities where services are more visible and harder to access discreetly [@woodLotPeopleCall2019].
 
 Older adults (65+) are less likely to receive SUD treatment or perceive a need for treatment compared to younger age groups [@choiTreatmentUsePerceived2014; @kilaruIncidenceTreatmentOpioid2020]. They are also more likely to experience complicating factors such as medical comorbidities, chronic pain and heightened sensitivity to medication interactions and side effects [@kuerbisSubstanceAbuseOlder2014; Salive]. Additionally, factors such as being divorced or widowed, retired, or having fewer social activities may reduce opportunities for family or friends to notice harmful substance use. Doctors and clinicians may also attribute SUD symptoms to other health or age-related issues.
 
 
 ## Relapse Prevention
-
-- Due to chronic relapsing nature of substance use disorders an important focus is relapse prevention.
+Due to chronic relapsing nature of SUDs, an extant relapse prevention literature has been established to identify the underlying precursors to lapse and relapse.
 
 - constructs identified from literature
 
 - dynamic nature of lapse risk, inter and intra individual differences (Individualized Lapse Risk Trajectories)
 
+- clinical importance of identifying lapse
+
+- our treatment system does not have capacity to do this
+
+
+<!-- # RP Determinants of Lapse and Relapse
+
+1. Self-efficacy
+
+2. Outcome expectancies
+
+3. Motivation
+
+4. Coping - Gossop, Steward, Browne, and Marsden (2002) found that patients who used more cognitive coping strategies (e.g., “urge-surfing”; Marlatt, 1985) had lower rates of relapse to heroin use.
+
+5. Emotional states
+
+6. Craving
+
+7. Social support (interpersonal antecedent whereas others are intrapersonal)-->
+
+<!-- Opioid specific factors:    
+distal - frequency/severity of use, situational patterns of use, and psychiatric comorbidity.   
+intermediate (stable or slow-changig) - lack of social support, poor coping skills, low self-efficacy, and negative expectancies.    
+proximal - negative affect, craving, cues, and high-risk situaitons.
+-->
+
 
 
 ## Recovery Monitoring and Support System
+An algorithm-guided recovery monitoring and support system could help individuals monitor their current and future risk of lapse and make adjustments in their activities and supports to meet their recovery goals after initial treatment. Such a tool could offer personalized, adaptive recommendations aligned with evidenced-based care and prompt individuals to engage with support at times of high risk. For example, individuals could receive daily messages about changes in their lapse risk and receive personalized recommendations based on top features contributing to their risk. Moreover, it would provide a scalable option for long-term monitoring and support to address the substantial unmet need for continuing care for SUDs. 
 
-### Personal sensing of risk-relevant data
+For such a system to exist, at least three pre-requisites must be met. One, the system must be able to collect a rich and densely sampled source (or sources) of risk-relevant data. Two, the system must have access to a model that can predict substance use with high performance and temporal precision and have interpretable model inputs for support recommendations to be mapped onto. Three, the model must perform fairly. The accuracy of the predictions and usefulness and relevance of the recommendations should be similar for everyone. Advances in both smartphone sensing [@mohrPersonalSensingUnderstanding2017] and machine learning [@hastieElementsStatisticalLearning2009] now make this possible.
+
+
+### Smartphone Sensing
+Smartphone sensing approaches (e.g., ecological momentary assessment [EMA], geolocation sensing) can provide the frequent, longitudinal measurement of proximal risk factors that is necessary for prediction of future lapses with high temporal precision. 
 
 This is already feasible. Proliferation of smartphone access. People find sensing data acceptable.
 
 Put burden paper in appendix
 
-### Machine Learning for Modeling and Explaining Lapse Risk
 
-- Machine learning model that can predict and explain risk with high temporal precision. (review current lit)
+### Machine Learning
+Machine learning models can handle the high dimensional feature sets that may result from feature engineering densely sampled raw EMA over time. They can also accommodate non-linear and interactive relationships between features and lapse probability.  And methods from interpretable machine learning can be used to understand which risk features contribute most strongly to a lapse prediction for a specific individual at a specific moment in time.
+
+- review current lit
 
 
 Limitations:
