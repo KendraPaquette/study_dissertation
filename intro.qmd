@@ -30,59 +30,24 @@ Older adults (65+) are less likely to receive SUD treatment or perceive a need f
 
 
 ## Relapse Prevention
-Due to chronic relapsing nature of SUDs, an extant relapse prevention literature has been established to identify the underlying precursors to lapse and relapse.
+Recovery from substance use disorders is a non-linear and dynamic process [@witkiewitzRelapsePreventionAlcohol2004]. Lapses back to substance use are common and, on their own, do not necessarily constitute relapse (i.e., a full return to problematic use). Nevertheless, lapses must precede relapse and therefore can be viewed as early warning signs, making them clinically meaningful targets for intervention and prevention.   
 
-- constructs identified from literature
-
-- dynamic nature of lapse risk, inter and intra individual differences (Individualized Lapse Risk Trajectories)
-
-- clinical importance of identifying lapse
-
-- our treatment system does not have capacity to do this
-
-
-<!-- # RP Determinants of Lapse and Relapse
-
-1. Self-efficacy
-
-2. Outcome expectancies
-
-3. Motivation
-
-4. Coping - Gossop, Steward, Browne, and Marsden (2002) found that patients who used more cognitive coping strategies (e.g., “urge-surfing”; Marlatt, 1985) had lower rates of relapse to heroin use.
-
-5. Emotional states
-
-6. Craving
-
-7. Social support (interpersonal antecedent whereas others are intrapersonal)-->
-
-<!-- Opioid specific factors:    
-distal - frequency/severity of use, situational patterns of use, and psychiatric comorbidity.   
-intermediate (stable or slow-changig) - lack of social support, poor coping skills, low self-efficacy, and negative expectancies.    
-proximal - negative affect, craving, cues, and high-risk situaitons.
--->
-
-
+An extant relapse prevention literature has identified a range of intrapersonal precursors to lapse and relapse. These include self‑efficacy (i.e., confidence in one's ability to maintain abstinence), craving, motivation, emotional states, and coping‑related or substance‑use behaviors [@witkiewitzRelapsePreventionAlcohol2004; @witkiewitzTherapistsGuideEvidenceBased2007; @marlattRelapsePreventionSecond2007]. These risk factors differ across individuals and within an individual over time. They interact with one another and with interpersonal and environmental situations to influence lapse risk [@stantonRelapsePreventionNeeds2005; @witkiewitzRelapsePreventionAlcohol2004]. For example, cravings are typically short-lived urges. Individuals in recovery-supportive environments may be able to ride out these cravings successfully. However, in unsupportive environments (e.g., locations with easily available alcohol or exposure to other substance-related cues), the likelihood of lapse increases. Given the complex, interactive, and time-varying nature of lapse risk, self-monitoring is difficult.
 
 ## Recovery Monitoring and Support System
 An algorithm-guided recovery monitoring and support system could help individuals monitor their current and future risk of lapse and make adjustments in their activities and supports to meet their recovery goals after initial treatment. Such a tool could offer personalized, adaptive recommendations aligned with evidenced-based care and prompt individuals to engage with support at times of high risk. For example, individuals could receive daily messages about changes in their lapse risk and receive personalized recommendations based on top features contributing to their risk. Moreover, it would provide a scalable option for long-term monitoring and support to address the substantial unmet need for continuing care for SUDs. 
 
 For such a system to exist, at least three pre-requisites must be met. One, the system must be able to collect a rich and densely sampled source (or sources) of risk-relevant data. Two, the system must have access to a model that can predict substance use with high performance and temporal precision and have interpretable model inputs for support recommendations to be mapped onto. Three, the model must perform fairly. The accuracy of the predictions and usefulness and relevance of the recommendations should be similar for everyone. Advances in both smartphone sensing [@mohrPersonalSensingUnderstanding2017] and machine learning [@hastieElementsStatisticalLearning2009] now make this possible.
 
-
-### Smartphone Sensing
 Smartphone sensing approaches (e.g., ecological momentary assessment [EMA], geolocation sensing) can provide the frequent, longitudinal measurement of proximal risk factors that is necessary for prediction of future lapses with high temporal precision. 
 
-This is already feasible. Proliferation of smartphone access. People find sensing data acceptable.
+- This is already feasible. Proliferation of smartphone access. People find sensing data acceptable.
 
-Put burden paper in appendix
-
-
-### Machine Learning
 Machine learning models can handle the high dimensional feature sets that may result from feature engineering densely sampled raw EMA over time. They can also accommodate non-linear and interactive relationships between features and lapse probability.  And methods from interpretable machine learning can be used to understand which risk features contribute most strongly to a lapse prediction for a specific individual at a specific moment in time.
 
 - review current lit
+
+[@baeMobilePhoneSensors2018; @waltersUsingMachineLearning2021; @baeLeveragingMobilePhone2023; @soysterPooledPersonspecificMachine2022]
 
 
 Limitations:
