@@ -919,7 +919,7 @@ Despite these opportunities, there is currently no consensus on how best to pres
 
 
 ## Conclusions
-Collectively, these studies demonstrate that it is feasible to (1) collect temporally dense, recovery‑relevant data, (2) predict lapse risk at clinically meaningful time scales with interpretable models, and (3) do so in a way that supports equitable performance across important demographic subgroups. Thus, these studies lay the groundwork for an automated recovery monitoring and support system to enhance continuing care following an intitial SUD treatment episode.
+Collectively, these studies demonstrate that it is feasible to (1) collect temporally dense, recovery‑relevant data, (2) predict lapse risk at clinically meaningful time scales with interpretable models, and (3) do so in a way that supports equitable performance across important demographic subgroups. Thus, these studies lay the groundwork for an automated recovery monitoring and support system to enhance continuing care following an initial SUD treatment episode.
 
 As immediate next steps, we have begun to address the gap in understanding how to deliver risk‑related feedback within a recovery monitoring and support system. We have recently launched an NIAAA‑funded study focused on optimizing daily support messages delivered by such a system [@wyantMaximizingEngagementTrust2025]. This work will explicitly examine which combinations of key message components, including lapse probability, important features, and recovery recommendations, maximize engagement, trust, and clinical outcomes.
 
