@@ -254,7 +254,16 @@ table_perf <- metrics |>
 #| tbl-cap: "Demographic and Lapse Characteristics"
 
 table_dem |> 
-  knitr::kable()
+  rename(` ` = var) |>
+  knitr::kable() |> 
+  kable_classic() |> 
+  kableExtra::group_rows(start_row = 3, end_row = 4) |>
+  kableExtra::group_rows(start_row = 6, end_row = 10) |> 
+  kableExtra::group_rows(start_row = 12, end_row = 13) |> 
+  kableExtra::group_rows(start_row = 15, end_row = 20) |> 
+  kableExtra::group_rows(start_row = 22, end_row = 30) |>
+  kableExtra::group_rows(start_row = 33, end_row = 37) |> 
+  kableExtra::group_rows(start_row = 40, end_row = 41)
 
 ```
 
@@ -267,7 +276,7 @@ table_dem |>
 #| tbl-footnote: "Areas under the receiver operating characteristic curves (auROCs) summarize the model's sensitivity and specificity over all possible decision thresholds. Sensitivity, specificity, balanced accuracy, positive predictive value, and negative predictive value are performance metrics calculated at a single decision threshold for each model determined with Youden’s index. All metrics represent median values across 30 held-out test sets."
 
 table_perf |> 
-  knitr::kable()
+  knitr::kable(digits = 3)
 
 ```
 
@@ -298,15 +307,15 @@ table_ci <- ci_baseline |>
   add_row(contrast = "Baseline Contrasts", median = "", ci = "", probability = "") |> 
   mutate(contrast = factor(contrast,
                            levels = c("Baseline Contrasts",
-                                      "0 vs. 24",
-                                      "0 vs. 72",
-                                      "0 vs. 168",
-                                      "0 vs. 336"),
+                                      "24 vs. 0",
+                                      "72 vs. 0",
+                                      "168 vs. 0",
+                                      "336 vs. 0"),
                            labels = c("Baseline Contrasts",
-                                      "No lag vs. 1 day",
-                                      "No lag vs. 3 days",
-                                      "No lag vs. 1 week",
-                                      "No lag vs. 2 weeks"))) |> 
+                                      "1 day vs. No lag",
+                                      "3 days vs. No lag",
+                                      "1 week vs. No lag",
+                                      "2 weeks vs. No lag"))) |> 
   arrange(contrast) |> 
   rbind(ci_lag |> 
           mutate(ci = str_c("[", round(lower, 3), ", ", round(upper, 3), "]"),
@@ -317,13 +326,13 @@ table_ci <- ci_baseline |>
                   probability = "") |> 
           mutate(contrast = factor(contrast,
                            levels = c("Adjacent Contrasts",
-                                      "24 vs. 72",
-                                      "72 vs. 168",
-                                      "168 vs. 336"),
+                                      "72 vs. 24",
+                                      "168 vs. 72",
+                                      "336 vs. 168"),
                            labels = c("Adjacent Contrasts",
-                                      "1 day vs. 3 days",
-                                      "3 days vs. 1 week",
-                                      "1 week vs. 2 weeks"))) |> 
+                                      "3 days vs. 1 day",
+                                      "1 week vs. 3 days",
+                                      "2 weeks vs. 1 week"))) |> 
           arrange(contrast)) |> 
     rename(Contrast = contrast,
          Median = median,
@@ -339,13 +348,13 @@ table_ci <- ci_baseline |>
                   probability = "") |> 
           mutate(contrast = factor(contrast,
                            levels = c("Fairness Contrasts (No Lag)",
-                                      "male vs female",
-                                      "non-hispanic white vs not white",
-                                      "above poverty vs below poverty"),
+                                      "female vs male",
+                                      "not white vs non-hispanic white",
+                                      "below poverty vs above poverty"),
                            labels = c("Fairness Contrasts (No Lag)",
-                                      "male vs. female",
-                                      "non-Hispanic White vs. not White",
-                                      "above poverty vs. below poverty"))) |> 
+                                      "female vs. male",
+                                      "not White vs. non-Hispanic White",
+                                      "below poverty vs. above poverty"))) |> 
           arrange(contrast) |> 
     rbind(ci_fairness_336 |> 
           mutate(ci = str_c("[", round(lower, 3), ", ", round(upper, 3), "]"),
@@ -356,13 +365,13 @@ table_ci <- ci_baseline |>
                   probability = "") |> 
           mutate(contrast = factor(contrast,
                            levels = c("Fairness Contrasts (2-week Lag)",
-                                      "male vs female",
-                                      "non-hispanic white vs not white",
-                                      "above poverty vs below poverty"),
+                                      "female vs male",
+                                      "not white vs non-hispanic white",
+                                      "below poverty vs above poverty"),
                            labels = c("Fairness Contrasts (2-week Lag)",
-                                      "male vs. female",
-                                      "non-Hispanic White vs. not White",
-                                      "above poverty vs. below poverty"))) |> 
+                                      "female vs. male",
+                                      "not White vs. non-hispanic white",
+                                      "below poverty vs. above poverty"))) |> 
           arrange(contrast)) |> 
   rename(Contrast = contrast,
          Median = median,

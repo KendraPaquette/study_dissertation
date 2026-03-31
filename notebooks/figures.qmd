@@ -45,7 +45,7 @@ pp_tidy <- read_csv(here::here(path_models_lag,
 ci <- read_csv(here::here(path_models_lag, "pp_perf_tibble.csv"), 
                                  show_col_types = FALSE) |> 
   mutate(model = factor(model, levels = c("0 lag", "24 lag", "72 lag", "168 lag", "336 lag"),
-                        labels = c("No lag", "1 day", "3 days", "1 week", "2 weeks")))
+                        labels = c("No lag", "1-day", "3-day", "1-week", "2-week")))
 
 preds_0 <- read_rds(here::here(path_models_lag, 
                                "final_preds_kfold_1_x_5_1day_0_v3_strat_lh_final.rds")) 
@@ -337,13 +337,16 @@ rug_data_logi <- preds_all_logi |>
 
 ```{r}
 #| label: fig-2
-#| fig-cap: "The left panel presents a calibration plot of raw and Platt scaled risk probabilities. Predicted probabilities (x-axis) are binned into deciles. Observed lapse probability (y-axis) represents the proportion of actual lapses observed in each bin. The dashed diagonal represents perfect calibration. Points below the line indicate overestimation and points above the line indicate underestimation. Raw probabilities are depicted as the dark purple line. Platt calibrated probabilities are depicted as the green dashed line. The rug plots along the x-axes depict the observation frequency in each bin for the raw (bottom) and Platt scaled (top) probabilities. The right panel presents histograms of raw (uncalibrated) risk probability distributions separately by true lapse outcome."
+#| fig-cap: "The top panel presents a calibration plot of raw and Platt calibrated risk probabilities. Predicted probabilities (x-axis) are binned into deciles. Observed lapse probability (y-axis) represents the proportion of actual lapses observed in each bin. The dashed diagonal represents perfect calibration. Points below the line indicate overestimation and points above the line indicate underestimation. Raw probabilities are depicted as the dark purple line. Platt calibrated probabilities are depicted as the green dashed line. The rug plots along the x-axes depict the observation frequency in each bin for the raw (bottom) and Platt calibrated (top) probabilities. The bottom left and right panel presents histograms of raw (uncalibrated) and Platt calibrated risk probability distributions, respectively, separately by true lapse outcome."
 #| fig-width: 8
+#| fig-height: 8
 
 cal <- preds_all_raw |> 
   bind_rows(preds_all_logi) |> 
   mutate(prob = factor(prob, levels = c("Raw (uncalibrated)", 
-                                        "Platt calibration"))) |> 
+                                        "Platt calibration"),
+                       labels = c("Raw (uncalibrated)", 
+                                        "Platt calibrated"))) |> 
   group_by(bins,  prob)  |> 
   summarize(mean_lapse = mean(lapse),
             n = n(),
@@ -376,23 +379,27 @@ cal <- preds_all_raw |>
   scale_linetype_manual(values = c("solid", "twodash")) +
   theme_classic() +
   theme(axis.text=element_text(size=9.5),
-        legend.key.size = unit(0.25, "cm"),
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 1),
+        legend.key.size = unit(0.25, "cm"),
         legend.position = "bottom") 
 
 
 hist <- preds |> 
+  pivot_longer(cols = c(prob_raw, prob_logi), names_to = "prob_type", values_to = "prob") |>
+  mutate(prob_type = factor(prob_type, levels = c("prob_raw", "prob_logi"),
+                                labels = c("Raw (uncalibrated)", "Platt calibrated"))) |> 
   ggplot() +
-  geom_histogram(aes(x = prob_raw), color = "black", 
-                 fill = "light grey", bins = 40) +
-  facet_wrap(~ label, ncol = 1, scales = "free_y") +
-  labs(x = "Raw (uncalibrated) probabilties",
+  geom_histogram(aes(x = prob, fill = prob_type), color = "white", bins = 40) +
+  facet_grid(label ~ prob_type, scales = "free_y") +
+  labs(x = NULL,
        y = NULL) +
+  scale_fill_manual(values = c("#240e31", "#046B52")) +
   theme_classic() +
   theme(axis.text=element_text(size=9.5),
-        panel.border = element_rect(colour = "black", fill = NA, linewidth = 1))
+        panel.border = element_rect(colour = "black", fill = NA, linewidth = 1),
+        legend.position = "none")
 
-cal + hist
+cal / hist
 ```
 
 

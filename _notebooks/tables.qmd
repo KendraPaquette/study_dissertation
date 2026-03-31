@@ -26,11 +26,11 @@ suppressPackageStartupMessages(source("https://github.com/jjcurtin/lab_support/b
 suppressPackageStartupMessages(library(tidyposterior))
 library(kableExtra)
 
-path_models_lag <- format_path(str_c("studydata/risk/models/lag"))
-path_shared <- format_path("studydata/risk/data_processed/shared")
-path_processed_lag <- format_path("studydata/risk/data_processed/lag")
-path_models_ema<- format_path(str_c("studydata/risk/models/ema"))
-path_processed_ema <- format_path("studydata/risk/data_processed/ema")
+path_models_lag <- format_path(str_c("risk/models/lag"))
+path_shared <- format_path("risk/data_processed/shared")
+path_processed_lag <- format_path("risk/data_processed/lag")
+path_models_ema<- format_path(str_c("risk/models/ema"))
+path_processed_ema <- format_path("risk/data_processed/ema")
 
 options(knitr.kable.NA = '')
 ```
@@ -262,7 +262,7 @@ table_dem |>
 #| tbl-footnote: "Areas under the receiver operating characteristic curves (auROCs) summarize the model's sensitivity and specificity over all possible decision thresholds. Sensitivity, specificity, balanced accuracy, positive predictive value, and negative predictive value are performance metrics calculated at a single decision threshold for each model determined with Youden’s index. All metrics represent median values across 30 held-out test sets."
 
 table_perf |> 
-  knitr::kable()
+  knitr::kable(digits = 3)
 
 ```
 
