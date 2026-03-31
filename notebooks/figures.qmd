@@ -338,7 +338,7 @@ rug_data_logi <- preds_all_logi |>
 ```{r}
 #| label: fig-2
 #| fig-cap: "The top panel presents a calibration plot of raw and Platt calibrated risk probabilities. Predicted probabilities (x-axis) are binned into deciles. Observed lapse probability (y-axis) represents the proportion of actual lapses observed in each bin. The dashed diagonal represents perfect calibration. Points below the line indicate overestimation and points above the line indicate underestimation. Raw probabilities are depicted as the dark purple line. Platt calibrated probabilities are depicted as the green dashed line. The rug plots along the x-axes depict the observation frequency in each bin for the raw (bottom) and Platt calibrated (top) probabilities. The bottom left and right panel presents histograms of raw (uncalibrated) and Platt calibrated risk probability distributions, respectively, separately by true lapse outcome."
-#| fig-width: 8
+#| fig-width: 7
 #| fig-height: 8
 
 cal <- preds_all_raw |> 
@@ -380,8 +380,7 @@ cal <- preds_all_raw |>
   theme_classic() +
   theme(axis.text=element_text(size=9.5),
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 1),
-        legend.key.size = unit(0.25, "cm"),
-        legend.position = "bottom") 
+        legend.key.size = unit(0.25, "cm")) 
 
 
 hist <- preds |> 
